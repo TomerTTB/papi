@@ -14,15 +14,13 @@ PAPI is an "amazing :)" API testing platform designed for complex API ecosystems
 
 ### 🎯 Key Highlights
 - **Multi-Environment Support**: Staging, Beta, Production, and custom environments
-- **Real-Time SLA Monitoring**: Continuous health checks with Slack integration
 - **Playwright Integration**: Reliable API testing framework
 - **Web-Based Dashboard**: Intuitive interface for test management and execution
-- **AWS ECR Hosted**: Professional container registry deployment
-- **CI/CD Ready**: Docker containerization with AWS integration
-- **Advanced Features**: SSL monitoring, performance tracking, audit trails, and Zephyr integration
 - **Test Management**: Automated test export/import with Zephyr integration
-
----
+- **CI/CD Ready**: Docker containerization with AWS integration
+- **Real-Time SLA Monitoring**: Continuous health checks with Slack integration
+- **Advanced Features**: SSL monitoring, performance tracking, audit trails, and Zephyr integration
+- **AWS ECR Hosted**: Professional container registry deployment
 
 ## 🏗️ Architecture Overview
 
@@ -225,13 +223,9 @@ PAPI is an "amazing :)" API testing platform designed for complex API ecosystems
 ### 🔗 **Zephyr Test Management Integration**
 - **Automated Export**: Export test cases from PAPI to Zephyr when code is updated
 - **Result Synchronization**: Import test execution results into Zephyr test cycles
-- **QA Workflow Automation**: Streamlined process for QA testers to manage test cases
-- **Test Traceability**: Complete audit trail from API changes to test execution
-- **Metadata Synchronization**: Bi-directional sync of test descriptions, priorities, and labels
 
 ### 🔄 **CI/CD Integration**
 - **Docker Support**: Containerized deployment with Windows Server Core
-- **Automated Reporting**: Timestamped reports for build pipelines
 - **Environment Variables**: Flexible configuration for different deployment stages
 - **Headless Execution**: Command-line test execution for automation
 
