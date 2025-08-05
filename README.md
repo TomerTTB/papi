@@ -1,6 +1,6 @@
 # 🚀 PAPI - Playright API Testing Platform
 
-> **A comprehensive, enterprise-grade API testing and monitoring platform built with Node.js, Playwright, and modern web technologies.**
+> **A comprehensive API testing and monitoring platform built with Node.js, Playwright, and modern web technologies.**
 
 [![Node.js](https://img.shields.io/badge/Node.js-18+-green.svg)](https://nodejs.org/)
 [![Playwright](https://img.shields.io/badge/Playwright-1.42+-blue.svg)](https://playwright.dev/)
@@ -10,16 +10,17 @@
 
 ## 📋 Project Overview
 
-PAPI is an "amazing :)" API testing platform designed for enterprise environments, featuring automated testing, real-time SLA monitoring, comprehensive reporting, and CI/CD integration. Built to handle complex API ecosystems with multiple environments and products.
+PAPI is an "amazing :)" API testing platform designed for complex API ecosystems, featuring automated testing, real-time SLA monitoring, comprehensive reporting, CI/CD integration, and seamless Zephyr test management integration. Built to handle multiple environments and products with professional-grade reliability.
 
 ### 🎯 Key Highlights
 - **Multi-Environment Support**: Staging, Beta, Production, and custom environments
 - **Real-Time SLA Monitoring**: Continuous health checks with Slack integration
 - **Playwright Integration**: Reliable API testing framework
 - **Web-Based Dashboard**: Intuitive interface for test management and execution
-- **AWS ECR Hosted**: Enterprise-grade container registry deployment
+- **AWS ECR Hosted**: Professional container registry deployment
 - **CI/CD Ready**: Docker containerization with AWS integration
-- **Enterprise Features**: SSL monitoring, performance tracking, and audit trails
+- **Advanced Features**: SSL monitoring, performance tracking, audit trails, and Zephyr integration
+- **Test Management**: Automated test export/import with Zephyr integration
 
 ---
 
@@ -83,7 +84,24 @@ PAPI is an "amazing :)" API testing platform designed for enterprise environment
 - Automated failure recovery detection
 - Performance metrics collection
 
-#### 4. 🔧 **API Server** (Backend)
+#### 4. 🎭 **Mock Server** (SLA Testing Support)
+- **Location**: `mock-server/` directory
+- **Technology**: Node.js, Express.js, Socket.IO
+- **Features**:
+  - Configurable mock API endpoints
+  - Real-time configuration updates via web interface
+  - Dynamic response customization (status codes, delays, JSON responses)
+  - Live endpoint testing capabilities
+  - WebSocket-based configuration synchronization
+
+**Mock Server Capabilities**:
+- **Dynamic Configuration**: Modify endpoint responses without server restart
+- **Response Simulation**: Configure custom status codes, delays, and JSON responses
+- **Real-Time Testing**: Built-in endpoint testing with response time measurement
+- **Web Interface**: User-friendly dashboard for configuration management
+- **SLA Testing Support**: Simulate various API conditions for comprehensive SLA monitoring
+
+#### 5. 🔧 **API Server** (Backend)
 - **Location**: `src/` directory
 - **Technology**: Node.js, Express.js, CORS
 - **Features**:
@@ -93,13 +111,28 @@ PAPI is an "amazing :)" API testing platform designed for enterprise environment
   - File download/upload handling
   - Cross-origin resource sharing
 
-#### 5. 📚 **Documentation Site**
+#### 6. 📚 **Documentation Site**
 - **Location**: `web_server/docs/` directory
 - **Features**:
   - Interactive API documentation
   - Test methodology explanations
   - Project structure guides
   - Version history and changelogs
+
+#### 7. 🔗 **Zephyr Integration** (Test Management)
+- **Technology**: REST API integration with Zephyr Scale/Squad
+- **Features**:
+  - Automated test case export from PAPI to Zephyr
+  - Seamless test result import into Zephyr test cycles
+  - Bi-directional synchronization of test metadata
+  - QA workflow automation for test management
+  - Real-time test execution status updates
+
+**Zephyr Integration Benefits**:
+- **Automated Workflow**: QA testers can export new tests automatically when code is updated
+- **Test Traceability**: Maintain complete audit trail from development to testing
+- **Centralized Management**: Unified test management across development and QA teams
+- **Compliance Support**: Structured test documentation for regulatory requirements
 
 ---
 
@@ -139,10 +172,20 @@ PAPI is an "amazing :)" API testing platform designed for enterprise environment
    ./start_local.sh
    ```
 
-4. **Access Interfaces**
+4. **Launch Mock Server** (Optional - for SLA testing)
+   ```bash
+   cd mock-server
+   .\mock_start.ps1  # Windows
+   # or
+   npm run dev       # Cross-platform
+   ```
+
+5. **Access Interfaces**
    - **Main API**: http://localhost:3000
    - **Web Dashboard**: http://localhost:8080
    - **SLA Monitor**: http://localhost:3001
+   - **Mock Server API**: http://localhost:3003
+   - **Mock Server Interface**: http://localhost:3004
 
 ---
 
@@ -161,6 +204,15 @@ PAPI is an "amazing :)" API testing platform designed for enterprise environment
 - **Performance Tracking**: Response time monitoring with configurable thresholds
 - **Slack Integration**: Instant notifications for failures and recoveries
 - **Multi-Region Support**: Monitor US and EU endpoints independently
+- **Mock Server Integration**: Test SLA monitoring with configurable mock endpoints
+
+### 🎭 **Mock Server for SLA Testing**
+- **Dynamic Configuration**: Modify endpoint behavior in real-time without restarts
+- **Response Simulation**: Configure custom status codes, response delays, and JSON payloads
+- **Web-Based Interface**: User-friendly dashboard for endpoint configuration
+- **Live Testing**: Built-in endpoint testing with response time measurement
+- **WebSocket Synchronization**: Real-time configuration updates across all clients
+- **SLA Scenario Testing**: Simulate various API failure conditions for comprehensive monitoring validation
 
 ### 🌐 **Web Dashboard**
 - **Product Overview**: Visual representation of API endpoints and health
@@ -168,6 +220,14 @@ PAPI is an "amazing :)" API testing platform designed for enterprise environment
 - **Environment Management**: Dynamic configuration updates
 - **Report Management**: Download and view historical test reports
 - **Documentation Hub**: Integrated help and API documentation
+- **Zephyr Integration**: One-click test export/import functionality
+
+### 🔗 **Zephyr Test Management Integration**
+- **Automated Export**: Export test cases from PAPI to Zephyr when code is updated
+- **Result Synchronization**: Import test execution results into Zephyr test cycles
+- **QA Workflow Automation**: Streamlined process for QA testers to manage test cases
+- **Test Traceability**: Complete audit trail from API changes to test execution
+- **Metadata Synchronization**: Bi-directional sync of test descriptions, priorities, and labels
 
 ### 🔄 **CI/CD Integration**
 - **Docker Support**: Containerized deployment with Windows Server Core
@@ -190,12 +250,21 @@ PAPI/
 ├── 🔧 src/                     # Backend API server
 │   ├── server.js              # Express.js main server
 │   ├── api.js                 # API route handlers
+│   ├── testController.js      # Test execution and Zephyr integration
 │   └── utils/                 # Server utilities
 ├── 📊 src-sla/                # SLA monitoring system
 │   ├── server-sla.js          # SLA monitoring server
 │   ├── sla.js                 # Core monitoring logic
 │   ├── slack.js               # Slack integration
 │   └── utils/                 # SLA utilities
+├── 🎭 mock-server/            # Configurable mock server for SLA testing
+│   ├── src/
+│   │   ├── server.js          # Mock API server with Socket.IO
+│   │   └── web-server.js      # Web interface server
+│   ├── public/
+│   │   └── index.html         # Configuration dashboard
+│   ├── package.json           # Mock server dependencies
+│   └── mock_start.ps1         # Windows startup script
 ├── 🌐 web_server/             # Frontend web application
 │   ├── index.html             # Main dashboard
 │   ├── product.html           # Test execution interface
@@ -230,6 +299,7 @@ PAPI/
 - **Configurable Workers**: Parallel execution for performance
 - **Rich Reporting**: HTML reports with detailed test information
 - **Helper Functions**: Reusable test utilities and data management
+- **Zephyr Integration**: Automated test case export and result import functionality
 
 ### **Monitoring System**
 - **Scheduled Checks**: Configurable interval monitoring
@@ -253,10 +323,16 @@ PAPI/
 npm run dev        # Development server with hot reload
 npm run sla        # SLA monitoring service
 npm run test       # Execute Playwright tests
+
+# Mock Server (for SLA testing)
+cd mock-server
+npm run dev        # Start mock server with auto-reload
+# or
+.\mock_start.ps1   # Windows - starts both API and web interface
 ```
 
 ### **AWS ECR Deployment** (Production)
-The platform is containerized and hosted on **Amazon Elastic Container Registry (ECR)** for enterprise deployment:
+The platform is containerized and hosted on **Amazon Elastic Container Registry (ECR)** for professional deployment:
 
 ```bash
 # Build and tag for ECR
@@ -329,6 +405,8 @@ docker push <aws-account-id>.dkr.ecr.<region>.amazonaws.com/papi-platform:latest
 - Comprehensive API validation
 - Real-time test execution feedback
 - Historical test result tracking
+- **Zephyr Integration**: Seamless test case management and result synchronization
+- **Automated Workflows**: Export new tests automatically when code updates occur
 
 ### **For DevOps Teams**
 - CI/CD pipeline integration
@@ -344,11 +422,78 @@ docker push <aws-account-id>.dkr.ecr.<region>.amazonaws.com/papi-platform:latest
 
 ---
 
+## 🔗 Zephyr Integration Workflow
+
+PAPI provides seamless integration with Zephyr Scale/Squad for comprehensive test management:
+
+### **Automated Test Export Process**
+1. **Code Update Detection**: When API code is updated, PAPI automatically detects changes
+2. **Test Generation**: New test cases are generated based on updated endpoints
+3. **Zephyr Export**: QA testers can export these tests directly to Zephyr with one click
+4. **Test Cycle Creation**: Tests are automatically organized into appropriate Zephyr test cycles
+
+### **Test Execution & Import**
+1. **PAPI Execution**: Run comprehensive API tests using Playwright framework
+2. **Result Processing**: Test results are formatted for Zephyr compatibility
+3. **Automatic Import**: Test execution results are imported into corresponding Zephyr test cycles
+4. **Status Synchronization**: Real-time updates of test execution status in Zephyr
+
+### **QA Team Benefits**
+- **Reduced Manual Work**: Eliminate manual test case creation and result entry
+- **Consistent Documentation**: Standardized test case format across all projects
+- **Audit Trail**: Complete traceability from code changes to test execution
+- **Compliance Support**: Structured test documentation for regulatory requirements
+
+### **Configuration**
+```javascript
+// Zephyr integration settings
+const zephyrConfig = {
+  baseUrl: 'https://your-jira-instance.atlassian.net',
+  projectKey: 'YOUR_PROJECT',
+  testCyclePrefix: 'PAPI_Auto_',
+  exportOnCodeChange: true,
+  autoImportResults: true
+};
+```
+
+---
+
+## 🎭 Mock Server Usage
+
+The integrated mock server provides a powerful way to test SLA monitoring scenarios:
+
+### **Starting the Mock Server**
+```bash
+cd mock-server
+.\mock_start.ps1  # Windows - automatically opens web interface
+# or
+npm run dev       # Cross-platform development mode
+```
+
+### **Configuration Interface**
+- **Web Dashboard**: http://localhost:3004
+- **Mock API Endpoints**: http://localhost:3003/[a|b|c]
+
+### **Features**
+- **Real-Time Configuration**: Modify endpoint responses without server restart
+- **Response Customization**: Configure status codes, delays, and JSON responses
+- **Live Testing**: Built-in endpoint testing with response time measurement
+- **WebSocket Synchronization**: Configuration changes are instantly synchronized across all connected clients
+
+### **SLA Testing Scenarios**
+Use the mock server to simulate various API conditions:
+- **Timeout Testing**: Configure response delays to test timeout handling
+- **Error Simulation**: Set custom status codes (4xx, 5xx) to test error scenarios
+- **Performance Testing**: Measure response times under different delay configurations
+- **Availability Testing**: Toggle endpoints on/off to test monitoring alerts
+
+---
+
 ## 📈 Future Enhancements
 
 - **Database Integration**: Test result persistence
 - **Advanced Analytics**: Performance trend analysis
-- **API Mocking**: Built-in mock server capabilities
+- **Enhanced Mock Server**: Additional endpoint types and advanced response patterns
 - **Load Testing**: Performance testing integration
 - **Multi-Tenant Support**: Organization-level access control
 
@@ -356,7 +501,7 @@ docker push <aws-account-id>.dkr.ecr.<region>.amazonaws.com/papi-platform:latest
 
 ## 🤝 Contributing
 
-This project demonstrates enterprise-level software development practices including:
+This project demonstrates professional software development practices including:
 - **Clean Architecture**: Modular, maintainable code structure
 - **Comprehensive Testing**: Multiple testing strategies and frameworks
 - **DevOps Integration**: Docker, CI/CD, and monitoring capabilities
