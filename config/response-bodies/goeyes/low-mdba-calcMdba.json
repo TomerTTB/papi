@@ -1,0 +1,23 @@
+{
+    "flags": [
+      {
+        "id": "restart_after_low_mdba_cyl_0625",
+        "value": true
+      }
+    ],
+    "stations": [
+      {
+        "id": "mdba_cyl_low",
+        "value": -1071.3385230538786,
+        "upload": true,
+        "eye": "right"
+      }
+    ],
+    "event": "calculation_end",
+    "actions": [],
+    "mixpanelEvent": null,
+    "successMixpanelEvent": null,
+    "analyticsEvent": null,
+    "type": "ServerCalculationResponseAction",
+    "id": "go_eyes_v1.return_calculation.0.ServerCalculationResponseAction"
+  }

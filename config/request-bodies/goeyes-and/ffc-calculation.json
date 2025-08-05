@@ -1,0 +1,599 @@
+{
+    "phone_model": "SM-S901E",
+    "ffc_inputs": [
+              {
+                  "card_left_bottom_rect":
+                  {
+                      "x0": 0.33644348,
+                      "x1": 0.4011122,
+                      "y0": 0.42383572,
+                      "y1": 0.45642948
+                  },
+                  "card_rect":
+                  {
+                      "x0": 0.36366153,
+                      "x1": 0.69352865,
+                      "y0": 0.32104382,
+                      "y1": 0.43934846
+                  },
+                  "card_right_bottom_rect":
+                  {
+                      "x0": 0.6580251,
+                      "x1": 0.72708756,
+                      "y0": 0.41069552,
+                      "y1": 0.44865328
+                  },
+                  "distance": 347.92664,
+                  "eye_left":
+                  {
+                      "eye_width": 116.42407,
+                      "iris_visible_height": 45.857277,
+                      "iris_width": 53.267536
+                  },
+                  "eye_right":
+                  {
+                      "eye_width": 107.63136,
+                      "iris_visible_height": 46.34531,
+                      "iris_width": 50.549023
+                  },
+                  "time_stamp": 1678813556818
+              },
+              {
+                  "card_left_bottom_rect":
+                  {
+                      "x0": 0.33587873,
+                      "x1": 0.39942205,
+                      "y0": 0.42207944,
+                      "y1": 0.45455563
+                  },
+                  "card_rect":
+                  {
+                      "x0": 0.36142564,
+                      "x1": 0.6963377,
+                      "y0": 0.31963384,
+                      "y1": 0.4376288
+                  },
+                  "card_right_bottom_rect":
+                  {
+                      "x0": 0.65869725,
+                      "x1": 0.7254418,
+                      "y0": 0.4098066,
+                      "y1": 0.44697815
+                  },
+                  "distance": 347.29822,
+                  "eye_left":
+                  {
+                      "eye_width": 116.94713,
+                      "iris_visible_height": 46.182632,
+                      "iris_width": 51.658783
+                  },
+                  "eye_right":
+                  {
+                      "eye_width": 116.69066,
+                      "iris_visible_height": 46.16993,
+                      "iris_width": 53.91155
+                  },
+                  "time_stamp": 1678813557164
+              },
+              {
+                  "card_left_bottom_rect":
+                  {
+                      "x0": 0.33313662,
+                      "x1": 0.39820078,
+                      "y0": 0.42473662,
+                      "y1": 0.45701766
+                  },
+                  "card_rect":
+                  {
+                      "x0": 0.35953948,
+                      "x1": 0.6940905,
+                      "y0": 0.31974083,
+                      "y1": 0.4392327
+                  },
+                  "card_right_bottom_rect":
+                  {
+                      "x0": 0.65710187,
+                      "x1": 0.7254016,
+                      "y0": 0.40968478,
+                      "y1": 0.44752255
+                  },
+                  "distance": 345.79257,
+                  "eye_left":
+                  {
+                      "eye_width": 116.9272,
+                      "iris_visible_height": 43.136044,
+                      "iris_width": 52.18199
+                  },
+                  "eye_right":
+                  {
+                      "eye_width": 110.88306,
+                      "iris_visible_height": 46.674957,
+                      "iris_width": 52.09901
+                  },
+                  "time_stamp": 1678813557572
+              },
+              {
+                  "card_left_bottom_rect":
+                  {
+                      "x0": 0.32870144,
+                      "x1": 0.3916463,
+                      "y0": 0.43347263,
+                      "y1": 0.46463856
+                  },
+                  "card_rect":
+                  {
+                      "x0": 0.35966778,
+                      "x1": 0.68104476,
+                      "y0": 0.33606014,
+                      "y1": 0.44910073
+                  },
+                  "card_right_bottom_rect":
+                  {
+                      "x0": 0.64668417,
+                      "x1": 0.7128892,
+                      "y0": 0.4270677,
+                      "y1": 0.46362847
+                  },
+                  "distance": 352.96692,
+                  "eye_left":
+                  {
+                      "eye_width": 113.60444,
+                      "iris_visible_height": 44.300022,
+                      "iris_width": 51.470642
+                  },
+                  "eye_right":
+                  {
+                      "eye_width": 105.25867,
+                      "iris_visible_height": 40.603065,
+                      "iris_width": 47.047913
+                  },
+                  "time_stamp": 1678813557954
+              },
+              {
+                  "card_left_bottom_rect":
+                  {
+                      "x0": 0.33352938,
+                      "x1": 0.39633566,
+                      "y0": 0.4515456,
+                      "y1": 0.4850574
+                  },
+                  "card_rect":
+                  {
+                      "x0": 0.362612,
+                      "x1": 0.68015844,
+                      "y0": 0.3592977,
+                      "y1": 0.4819361
+                  },
+                  "card_right_bottom_rect":
+                  {
+                      "x0": 0.6308243,
+                      "x1": 0.69979906,
+                      "y0": 0.45939094,
+                      "y1": 0.49763668
+                  },
+                  "distance": 374.9634,
+                  "eye_left":
+                  {
+                      "eye_width": 105.58227,
+                      "iris_visible_height": 42.325115,
+                      "iris_width": 45.65957
+                  },
+                  "eye_right":
+                  {
+                      "eye_width": 101.34169,
+                      "iris_visible_height": 41.12194,
+                      "iris_width": 47.035076
+                  },
+                  "time_stamp": 1678813558336
+              },
+              {
+                  "card_left_bottom_rect":
+                  {
+                      "x0": 0.32486087,
+                      "x1": 0.38404584,
+                      "y0": 0.45486143,
+                      "y1": 0.48541114
+                  },
+                  "card_rect":
+                  {
+                      "x0": 0.35283673,
+                      "x1": 0.65075386,
+                      "y0": 0.36681545,
+                      "y1": 0.47942293
+                  },
+                  "card_right_bottom_rect":
+                  {
+                      "x0": 0.60763955,
+                      "x1": 0.6712557,
+                      "y0": 0.4587524,
+                      "y1": 0.4939046
+                  },
+                  "distance": 395.63126,
+                  "eye_left":
+                  {
+                      "eye_width": 102.08194,
+                      "iris_visible_height": 38.588905,
+                      "iris_width": 43.434185
+                  },
+                  "eye_right":
+                  {
+                      "eye_width": 99.78502,
+                      "iris_visible_height": 38.366318,
+                      "iris_width": 46.37005
+                  },
+                  "time_stamp": 1678813558732
+              },
+              {
+                  "card_left_bottom_rect":
+                  {
+                      "x0": 0.33561674,
+                      "x1": 0.3948024,
+                      "y0": 0.45261037,
+                      "y1": 0.4843145
+                  },
+                  "card_rect":
+                  {
+                      "x0": 0.3635648,
+                      "x1": 0.66599596,
+                      "y0": 0.3645923,
+                      "y1": 0.47836518
+                  },
+                  "card_right_bottom_rect":
+                  {
+                      "x0": 0.62059414,
+                      "x1": 0.6844195,
+                      "y0": 0.45727426,
+                      "y1": 0.4923557
+                  },
+                  "distance": 392.44943,
+                  "eye_left":
+                  {
+                      "eye_width": 103.205215,
+                      "iris_visible_height": 40.438328,
+                      "iris_width": 46.85452
+                  },
+                  "eye_right":
+                  {
+                      "eye_width": 97.974266,
+                      "iris_visible_height": 41.64379,
+                      "iris_width": 45.96148
+                  },
+                  "time_stamp": 1678813559121
+              },
+              {
+                  "card_left_bottom_rect":
+                  {
+                      "x0": 0.33420205,
+                      "x1": 0.39486396,
+                      "y0": 0.45139748,
+                      "y1": 0.48303244
+                  },
+                  "card_rect":
+                  {
+                      "x0": 0.36341655,
+                      "x1": 0.6664339,
+                      "y0": 0.36264274,
+                      "y1": 0.47547626
+                  },
+                  "card_right_bottom_rect":
+                  {
+                      "x0": 0.62364316,
+                      "x1": 0.68794817,
+                      "y0": 0.4544448,
+                      "y1": 0.49026853
+                  },
+                  "distance": 387.21472,
+                  "eye_left":
+                  {
+                      "eye_width": 104.26223,
+                      "iris_visible_height": 42.233105,
+                      "iris_width": 45.72239
+                  },
+                  "eye_right":
+                  {
+                      "eye_width": 99.44342,
+                      "iris_visible_height": 38.915577,
+                      "iris_width": 46.749687
+                  },
+                  "time_stamp": 1678813559470
+              },
+              {
+                  "card_left_bottom_rect":
+                  {
+                      "x0": 0.33411813,
+                      "x1": 0.39449996,
+                      "y0": 0.45049226,
+                      "y1": 0.4817863
+                  },
+                  "card_rect":
+                  {
+                      "x0": 0.3625899,
+                      "x1": 0.666452,
+                      "y0": 0.36047268,
+                      "y1": 0.47394955
+                  },
+                  "card_right_bottom_rect":
+                  {
+                      "x0": 0.62338865,
+                      "x1": 0.6875165,
+                      "y0": 0.45262277,
+                      "y1": 0.487827
+                  },
+                  "distance": 387.44336,
+                  "eye_left":
+                  {
+                      "eye_width": 103.524025,
+                      "iris_visible_height": 41.57942,
+                      "iris_width": 44.31219
+                  },
+                  "eye_right":
+                  {
+                      "eye_width": 98.29913,
+                      "iris_visible_height": 42.749176,
+                      "iris_width": 45.766895
+                  },
+                  "time_stamp": 1678813559862
+              },
+              {
+                  "card_left_bottom_rect":
+                  {
+                      "x0": 0.33404088,
+                      "x1": 0.3950038,
+                      "y0": 0.4501629,
+                      "y1": 0.48133773
+                  },
+                  "card_rect":
+                  {
+                      "x0": 0.36233264,
+                      "x1": 0.6660628,
+                      "y0": 0.35987684,
+                      "y1": 0.47350448
+                  },
+                  "card_right_bottom_rect":
+                  {
+                      "x0": 0.6236421,
+                      "x1": 0.68761027,
+                      "y0": 0.45201728,
+                      "y1": 0.48755658
+                  },
+                  "distance": 387.499,
+                  "eye_left":
+                  {
+                      "eye_width": 102.92614,
+                      "iris_visible_height": 41.058884,
+                      "iris_width": 44.500816
+                  },
+                  "eye_right":
+                  {
+                      "eye_width": 99.059166,
+                      "iris_visible_height": 39.85485,
+                      "iris_width": 46.322254
+                  },
+                  "time_stamp": 1678813560276
+              },
+              {
+                  "card_left_bottom_rect":
+                  {
+                      "x0": 0.32732177,
+                      "x1": 0.38684794,
+                      "y0": 0.4500994,
+                      "y1": 0.48044568
+                  },
+                  "card_rect":
+                  {
+                      "x0": 0.35662088,
+                      "x1": 0.65865433,
+                      "y0": 0.36050233,
+                      "y1": 0.47106504
+                  },
+                  "card_right_bottom_rect":
+                  {
+                      "x0": 0.6181535,
+                      "x1": 0.6821597,
+                      "y0": 0.45032984,
+                      "y1": 0.48536184
+                  },
+                  "distance": 384.96716,
+                  "eye_left":
+                  {
+                      "eye_width": 103.74162,
+                      "iris_visible_height": 39.89216,
+                      "iris_width": 43.88424
+                  },
+                  "eye_right":
+                  {
+                      "eye_width": 103.357864,
+                      "iris_visible_height": 37.707653,
+                      "iris_width": 48.899395
+                  },
+                  "time_stamp": 1678813560667
+              },
+              {
+                  "card_left_bottom_rect":
+                  {
+                      "x0": 0.3308071,
+                      "x1": 0.39084575,
+                      "y0": 0.44952387,
+                      "y1": 0.48132914
+                  },
+                  "card_rect":
+                  {
+                      "x0": 0.36016896,
+                      "x1": 0.6632784,
+                      "y0": 0.35980076,
+                      "y1": 0.47290215
+                  },
+                  "card_right_bottom_rect":
+                  {
+                      "x0": 0.62201494,
+                      "x1": 0.68658453,
+                      "y0": 0.4507054,
+                      "y1": 0.48627985
+                  },
+                  "distance": 384.4209,
+                  "eye_left":
+                  {
+                      "eye_width": 104.84157,
+                      "iris_visible_height": 41.295948,
+                      "iris_width": 45.275894
+                  },
+                  "eye_right":
+                  {
+                      "eye_width": 99.272125,
+                      "iris_visible_height": 42.018185,
+                      "iris_width": 46.98217
+                  },
+                  "time_stamp": 1678813561064
+              },
+              {
+                  "card_left_bottom_rect":
+                  {
+                      "x0": 0.3294365,
+                      "x1": 0.38891286,
+                      "y0": 0.45095527,
+                      "y1": 0.48196483
+                  },
+                  "card_rect":
+                  {
+                      "x0": 0.3584025,
+                      "x1": 0.66013414,
+                      "y0": 0.36100498,
+                      "y1": 0.471986
+                  },
+                  "card_right_bottom_rect":
+                  {
+                      "x0": 0.62093085,
+                      "x1": 0.6848114,
+                      "y0": 0.45029765,
+                      "y1": 0.48579592
+                  },
+                  "distance": 384.1773,
+                  "eye_left":
+                  {
+                      "eye_width": 104.237,
+                      "iris_visible_height": 41.441517,
+                      "iris_width": 45.00359
+                  },
+                  "eye_right":
+                  {
+                      "eye_width": 97.3035,
+                      "iris_visible_height": 41.266823,
+                      "iris_width": 45.987354
+                  },
+                  "time_stamp": 1678813561484
+              },
+              {
+                  "card_left_bottom_rect":
+                  {
+                      "x0": 0.33059335,
+                      "x1": 0.38989818,
+                      "y0": 0.45098013,
+                      "y1": 0.48169565
+                  },
+                  "card_rect":
+                  {
+                      "x0": 0.35878816,
+                      "x1": 0.66110414,
+                      "y0": 0.36110294,
+                      "y1": 0.47215307
+                  },
+                  "card_right_bottom_rect":
+                  {
+                      "x0": 0.62101793,
+                      "x1": 0.6856964,
+                      "y0": 0.45008504,
+                      "y1": 0.48580086
+                  },
+                  "distance": 384.9437,
+                  "eye_left":
+                  {
+                      "eye_width": 105.0252,
+                      "iris_visible_height": 44.634247,
+                      "iris_width": 45.308403
+                  },
+                  "eye_right":
+                  {
+                      "eye_width": 98.136894,
+                      "iris_visible_height": 42.45283,
+                      "iris_width": 45.668816
+                  },
+                  "time_stamp": 1678813561873
+              },
+              {
+                  "card_left_bottom_rect":
+                  {
+                      "x0": 0.33370513,
+                      "x1": 0.39207008,
+                      "y0": 0.45351118,
+                      "y1": 0.48397797
+                  },
+                  "card_rect":
+                  {
+                      "x0": 0.35943013,
+                      "x1": 0.6596872,
+                      "y0": 0.36277276,
+                      "y1": 0.47007132
+                  },
+                  "card_right_bottom_rect":
+                  {
+                      "x0": 0.6196263,
+                      "x1": 0.68339354,
+                      "y0": 0.45096922,
+                      "y1": 0.4854979
+                  },
+                  "distance": 390.94757,
+                  "eye_left":
+                  {
+                      "eye_width": 105.8995,
+                      "iris_visible_height": 41.3142,
+                      "iris_width": 45.39214
+                  },
+                  "eye_right":
+                  {
+                      "eye_width": 101.28959,
+                      "iris_visible_height": 41.62113,
+                      "iris_width": 47.41562
+                  },
+                  "time_stamp": 1678813562234
+              },
+              {
+                  "card_left_bottom_rect":
+                  {
+                      "x0": 0.32693347,
+                      "x1": 0.38696668,
+                      "y0": 0.45165372,
+                      "y1": 0.48356146
+                  },
+                  "card_rect":
+                  {
+                      "x0": 0.35526633,
+                      "x1": 0.6588113,
+                      "y0": 0.3610242,
+                      "y1": 0.47349262
+                  },
+                  "card_right_bottom_rect":
+                  {
+                      "x0": 0.61829424,
+                      "x1": 0.68246186,
+                      "y0": 0.450792,
+                      "y1": 0.48572534
+                  },
+                  "distance": 384.54364,
+                  "eye_left":
+                  {
+                      "eye_width": 105.11408,
+                      "iris_visible_height": 42.519035,
+                      "iris_width": 44.69559
+                  },
+                  "eye_right":
+                  {
+                      "eye_width": 100.264465,
+                      "iris_visible_height": 40.998573,
+                      "iris_width": 45.525013
+                  },
+                  "time_stamp": 1678813562664
+              }
+          ],
+    "full_resolution_x": 1920,
+    "full_resolution_y": 1080
+  }

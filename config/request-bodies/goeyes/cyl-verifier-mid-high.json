@@ -1,0 +1,619 @@
+{
+  "hostAppName": "SDKWrapper",
+  "phone_model": "iPhone14,2",
+  "configuration": {
+    "isCoverEyeEnabled": true,
+    "isDataCollectorEnabled": false,
+    "isSetupEnable": true,
+    "isShortDistanceEnabled": true,
+    "isOnboardingEnable": true,
+    "isLocalJSONEnabled": false,
+    "isDebugModeEnabled": true,
+    "isRestEyeEnabled": true,
+    "isGTrainingEnabled": false,
+    "isQuestionnaireEnable": true
+  },
+  "version": "5.44.2 (64)",
+  "hostAppVersion": "6.0.4 (941)",
+  "eye": "right",
+  "stationsData": {
+    "right": {
+      "sharpLineAxis": 172.5,
+      "globalFlags": {
+        "comfortableAlertFlag": "1",
+        "snrSharpLine": "172.5",
+        "snr_colors_count": "1",
+        "cyl_estimator": "-1",
+        "cyl_up_answer": "0",
+        "cyl_up_size": "1",
+        "sph_up_size": "0.3",
+        "cyl_down_size": "0"
+      },
+      "currentStationData": {
+        "commands": ["no"],
+        "logMar": 1,
+        "distance": 519.48285,
+        "id": "mid_high_cyl_verifier_cyl_up",
+        "correctAnswers": ["next", "no", "yes"],
+        "answerTimeInterval": 1.598181962966919,
+        "inputStream": ["No"]
+      },
+      "stations": [
+        {
+          "logMar": 0,
+          "id": "4_big_shapes",
+          "correctAnswers": ["three", "zero", "one", "two", "next", "four"],
+          "commands": [],
+          "distance": 592.2151,
+          "inputStream": []
+        },
+        {
+          "commands": ["one"],
+          "logMar": 0,
+          "distance": 590.05743,
+          "correctAnswers": ["three", "zero", "one", "two", "next", "four"],
+          "id": "4_big_shapes",
+          "answerTimeInterval": 1.8174149990081787,
+          "inputStream": ["One"]
+        },
+        {
+          "logMar": 0,
+          "commands": ["no"],
+          "distance": 591.9921,
+          "id": "small_shapes_60cm_a",
+          "correctAnswers": ["no", "yes"],
+          "answerTimeInterval": 3.3212759494781494,
+          "inputStream": ["No"]
+        },
+        {
+          "commands": ["yes"],
+          "logMar": 0,
+          "distance": 312.05933,
+          "correctAnswers": ["one"],
+          "id": "shapes_small",
+          "answerTimeInterval": 1.6001150608062744,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0,
+          "commands": ["one"],
+          "distance": 290.4043,
+          "id": "shapes_small",
+          "correctAnswers": ["two"],
+          "answerTimeInterval": 1.5969929695129395,
+          "inputStream": ["One"]
+        },
+        {
+          "commands": ["one"],
+          "logMar": 0,
+          "distance": 255.50642,
+          "id": "shapes_small",
+          "correctAnswers": ["one"],
+          "answerTimeInterval": 2.408184051513672,
+          "inputStream": ["One"]
+        },
+        {
+          "logMar": 0,
+          "id": "shapes_final",
+          "commands": [],
+          "distance": 255.50642,
+          "inputStream": []
+        },
+        {
+          "logMar": 0,
+          "id": "approximate_sph",
+          "commands": [],
+          "inputStream": [],
+          "distance": 255.50642
+        },
+        {
+          "logMar": 0,
+          "id": "check_light",
+          "commands": [],
+          "inputStream": [],
+          "distance": 255.30359
+        },
+        {
+          "logMar": 0,
+          "id": "check_face",
+          "commands": [],
+          "distance": 255.30359,
+          "inputStream": []
+        },
+        {
+          "logMar": 0,
+          "commands": ["one"],
+          "distance": 600.39417,
+          "correctAnswers": ["two", "zero", "four", "one", "next", "three"],
+          "id": "4_big_shapes",
+          "answerTimeInterval": 1.8165770769119263,
+          "inputStream": ["One"]
+        },
+        {
+          "logMar": 0,
+          "commands": ["no"],
+          "distance": 588.40497,
+          "correctAnswers": ["yes", "no"],
+          "id": "small_shapes_60cm_a",
+          "answerTimeInterval": 1.8077540397644043,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0,
+          "commands": ["yes"],
+          "distance": 298.42432,
+          "id": "shapes_small",
+          "correctAnswers": ["two"],
+          "answerTimeInterval": 1.4026600122451782,
+          "inputStream": ["Yes"]
+        },
+        {
+          "commands": ["one"],
+          "logMar": 0,
+          "distance": 301.6943,
+          "correctAnswers": ["one"],
+          "id": "shapes_small",
+          "answerTimeInterval": 1.5970580577850342,
+          "inputStream": ["One"]
+        },
+        {
+          "logMar": 0,
+          "id": "shapes_final",
+          "commands": [],
+          "inputStream": [],
+          "distance": 301.6943
+        },
+        {
+          "logMar": 0,
+          "id": "approximate_sph",
+          "commands": [],
+          "distance": 301.6943,
+          "inputStream": []
+        },
+        {
+          "commands": ["yes"],
+          "logMar": 0,
+          "distance": 312.18356,
+          "id": "snr_approximate_sph",
+          "correctAnswers": ["yes", "no", "all", "nothing"],
+          "answerTimeInterval": 1.812134027481079,
+          "inputStream": ["Yes"]
+        },
+        {
+          "commands": ["blue"],
+          "logMar": 0,
+          "distance": 324.08142,
+          "id": "snr_approximate_sph",
+          "correctAnswers": ["yellow", "blue", "red", "white", "next"],
+          "answerTimeInterval": 2.117464065551758,
+          "inputStream": ["Blue"]
+        },
+        {
+          "commands": ["red", "yellow"],
+          "logMar": 0,
+          "distance": 328.42856,
+          "correctAnswers": ["green", "next", "yellow", "red", "white", "blue"],
+          "id": "snr_approximate_sph",
+          "answerTimeInterval": 2.8142449855804443,
+          "inputStream": ["Where", "Where the", "Read the", "Read the yellow"]
+        },
+        {
+          "commands": ["no"],
+          "logMar": 0,
+          "distance": 332.4114,
+          "id": "snr_approximate_sph",
+          "correctAnswers": ["yes", "none", "no"],
+          "answerTimeInterval": 1.593519926071167,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0,
+          "id": "putOnGlasses",
+          "commands": [],
+          "inputStream": [],
+          "distance": 304.5
+        },
+        {
+          "logMar": 0.85,
+          "id": "putOnGlasses_onFinish",
+          "commands": [],
+          "inputStream": [],
+          "distance": 507.16074
+        },
+        {
+          "commands": ["no"],
+          "logMar": 0.85,
+          "distance": 457.88925,
+          "correctAnswers": ["yes", "next", "no"],
+          "id": "1_training_2_line",
+          "answerTimeInterval": 1.8141080141067505,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0.85,
+          "commands": ["yes"],
+          "distance": 449.7293,
+          "correctAnswers": ["no", "yes", "next"],
+          "id": "1_training_2_line",
+          "answerTimeInterval": 1.596521019935608,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0.85,
+          "commands": ["no"],
+          "distance": 464.09283,
+          "id": "2_training_0_line",
+          "correctAnswers": ["next", "yes", "no"],
+          "answerTimeInterval": 2.407201051712036,
+          "inputStream": ["No"]
+        },
+        {
+          "commands": ["yes"],
+          "logMar": 0.85,
+          "distance": 474.53864,
+          "id": "3_training_slightly_defocused_line",
+          "correctAnswers": ["next", "yes", "no"],
+          "answerTimeInterval": 1.8065540790557861,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0.85,
+          "commands": ["no"],
+          "distance": 477.4736,
+          "correctAnswers": ["yes", "next", "no"],
+          "id": "4_training_1_line_a",
+          "answerTimeInterval": 3.808681011199951,
+          "inputStream": ["No"]
+        },
+        {
+          "commands": ["no"],
+          "logMar": 0.85,
+          "distance": 481.12497,
+          "id": "5_training_1_line_b",
+          "correctAnswers": ["no", "next", "yes"],
+          "answerTimeInterval": 1.8078969717025757,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0.85,
+          "id": "removeGlasses",
+          "commands": [],
+          "distance": 768.0104,
+          "inputStream": []
+        },
+        {
+          "commands": ["yes"],
+          "logMar": 0.4,
+          "distance": 312.3964,
+          "id": "rough_va_0.4",
+          "correctAnswers": ["no", "next", "yes"],
+          "answerTimeInterval": 2.1087000370025635,
+          "inputStream": ["Yes"]
+        },
+        {
+          "commands": ["yes"],
+          "logMar": 0.3,
+          "distance": 303.93927,
+          "correctAnswers": ["no", "yes", "next"],
+          "id": "rough_va_0.3_a",
+          "answerTimeInterval": 2.0973459482192993,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0,
+          "id": "sphere_1",
+          "commands": [],
+          "distance": 303.93927,
+          "inputStream": []
+        },
+        {
+          "commands": ["yes"],
+          "logMar": 0.35,
+          "distance": 356.51285,
+          "correctAnswers": ["no", "yes", "next"],
+          "id": "mono_blur_back_035_sph_first",
+          "answerTimeInterval": 1.8129979372024536,
+          "inputStream": ["Yes"]
+        },
+        {
+          "commands": ["yes"],
+          "logMar": 0.35,
+          "distance": 428.48505,
+          "correctAnswers": ["no", "yes", "next"],
+          "id": "mono_blur_back_035_sph_first",
+          "answerTimeInterval": 2.406928062438965,
+          "inputStream": ["Yes"]
+        },
+        {
+          "commands": ["yes"],
+          "logMar": 0.35,
+          "distance": 559.1993,
+          "correctAnswers": ["no", "yes", "next"],
+          "id": "mono_blur_back_035_sph_first",
+          "answerTimeInterval": 2.595847010612488,
+          "inputStream": ["Yes"]
+        },
+        {
+          "commands": ["no"],
+          "logMar": 0.35,
+          "distance": 752.9519,
+          "id": "mono_blur_back_035_sph_first",
+          "correctAnswers": ["no", "yes", "next"],
+          "answerTimeInterval": 1.215893030166626,
+          "inputStream": ["No"]
+        },
+        {
+          "commands": ["no"],
+          "logMar": 0.75,
+          "distance": 752.6077,
+          "correctAnswers": ["no", "next", "yes"],
+          "id": "mono_blur_back_075_cyl",
+          "answerTimeInterval": 3.598552942276001,
+          "inputStream": ["No"]
+        },
+        {
+          "commands": ["no"],
+          "logMar": 0.75,
+          "distance": 744.9183,
+          "correctAnswers": ["no", "next", "yes"],
+          "id": "mono_blur_back_075_cyl",
+          "answerTimeInterval": 2.8093539476394653,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0.35,
+          "commands": ["no"],
+          "distance": 747.52,
+          "id": "mono_blur_back_035_sph_second",
+          "correctAnswers": ["yes", "no", "next"],
+          "answerTimeInterval": 3.3052200078964233,
+          "inputStream": ["No"]
+        },
+        {
+          "commands": ["no"],
+          "logMar": 0.25,
+          "distance": 542.1736,
+          "id": "va_at_sphere",
+          "correctAnswers": ["next", "no", "yes"],
+          "answerTimeInterval": 1.5980809926986694,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0,
+          "id": "sphere_2",
+          "commands": [],
+          "distance": 542.1736,
+          "inputStream": []
+        },
+        {
+          "commands": ["yes"],
+          "logMar": 0.25,
+          "distance": 542.21,
+          "id": "va_at_sphere",
+          "correctAnswers": ["next", "no", "yes"],
+          "answerTimeInterval": 2.8145769834518433,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0,
+          "id": "sph_j",
+          "commands": [],
+          "inputStream": [],
+          "distance": 542.21
+        },
+        {
+          "commands": ["no"],
+          "logMar": 0.65,
+          "distance": 540.64355,
+          "id": "cyl_verifier_0.65",
+          "correctAnswers": ["next", "no", "yes"],
+          "answerTimeInterval": 1.597025990486145,
+          "inputStream": ["No"]
+        },
+        {
+          "commands": ["yes"],
+          "logMar": 0.3,
+          "distance": 517.64716,
+          "id": "mid_high_cyl_verifier_sph_0.3_up",
+          "correctAnswers": ["yes", "no", "next"],
+          "answerTimeInterval": 3.6010279655456543,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0.7,
+          "commands": ["no"],
+          "distance": 522.5128,
+          "id": "mid_high_cyl_verifier_cyl_up",
+          "correctAnswers": ["next", "no", "yes"],
+          "answerTimeInterval": 2.5925400257110596,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0.8,
+          "commands": ["no"],
+          "distance": 524.5942,
+          "id": "mid_high_cyl_verifier_cyl_up",
+          "correctAnswers": ["next", "no", "yes"],
+          "answerTimeInterval": 2.4096139669418335,
+          "inputStream": ["No"]
+        },
+        {
+          "commands": ["no"],
+          "logMar": 0.9,
+          "distance": 522.2224,
+          "correctAnswers": ["next", "no", "yes"],
+          "id": "mid_high_cyl_verifier_cyl_up",
+          "answerTimeInterval": 1.8102359771728516,
+          "inputStream": ["No"]
+        },
+        {
+          "commands": ["no"],
+          "logMar": 1,
+          "distance": 519.48285,
+          "correctAnswers": ["next", "no", "yes"],
+          "id": "mid_high_cyl_verifier_cyl_up",
+          "answerTimeInterval": 1.598181962966919,
+          "inputStream": ["No"]
+        }
+      ],
+      "stationsJourney": [
+        "4_big_shapes",
+        "4_big_shapes",
+        "small_shapes_60cm_a",
+        "shapes_small",
+        "shapes_small",
+        "shapes_small",
+        "check_light",
+        "check_face",
+        "4_big_shapes",
+        "small_shapes_60cm_a",
+        "shapes_small",
+        "shapes_small",
+        "snr_approximate_sph",
+        "snr_approximate_sph",
+        "snr_approximate_sph",
+        "snr_approximate_sph",
+        "putOnGlasses",
+        "putOnGlasses_onFinish",
+        "1_training_2_line",
+        "1_training_2_line",
+        "2_training_0_line",
+        "3_training_slightly_defocused_line",
+        "4_training_1_line_a",
+        "5_training_1_line_b",
+        "removeGlasses",
+        "rough_va_0.4",
+        "rough_va_0.3_a",
+        "mono_blur_back_035_sph_first",
+        "mono_blur_back_035_sph_first",
+        "mono_blur_back_035_sph_first",
+        "mono_blur_back_035_sph_first",
+        "mono_blur_back_075_cyl",
+        "mono_blur_back_075_cyl",
+        "mono_blur_back_035_sph_second",
+        "va_at_sphere",
+        "va_at_sphere",
+        "cyl_verifier_0.65",
+        "mid_high_cyl_verifier_sph_0.3_up",
+        "mid_high_cyl_verifier_cyl_up",
+        "mid_high_cyl_verifier_cyl_up",
+        "mid_high_cyl_verifier_cyl_up",
+        "mid_high_cyl_verifier_cyl_up"
+      ]
+    },
+    "left": {
+      "stationsJourney": [
+        "4_big_shapes",
+        "small_shapes_60cm_a",
+        "shapes_small",
+        "shapes_small",
+        "snr_approximate_sph",
+        "snr_approximate_sph",
+        "snr_approximate_sph",
+        "snr_approximate_sph"
+      ],
+      "globalFlags": {
+        "snrSharpLine": "165.0",
+        "snr_colors_count": "1"
+      },
+      "sharpLineAxis": 165,
+      "stations": [
+        {
+          "logMar": 0,
+          "commands": ["one"],
+          "distance": 590.9836,
+          "correctAnswers": ["one", "two", "next", "zero", "four", "three"],
+          "id": "4_big_shapes",
+          "answerTimeInterval": 1.8108710050582886,
+          "inputStream": ["One"]
+        },
+        {
+          "logMar": 0,
+          "commands": ["no"],
+          "distance": 588.789,
+          "id": "small_shapes_60cm_a",
+          "correctAnswers": ["yes", "no"],
+          "answerTimeInterval": 1.5970219373703003,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0,
+          "commands": ["yes"],
+          "distance": 275.59073,
+          "correctAnswers": ["three"],
+          "id": "shapes_small",
+          "answerTimeInterval": 1.4065380096435547,
+          "inputStream": ["Yes"]
+        },
+        {
+          "commands": ["one"],
+          "logMar": 0,
+          "distance": 277.44424,
+          "correctAnswers": ["one"],
+          "id": "shapes_small",
+          "answerTimeInterval": 2.4085729122161865,
+          "inputStream": ["One"]
+        },
+        {
+          "logMar": 0,
+          "id": "shapes_final",
+          "commands": [],
+          "distance": 277.44424,
+          "inputStream": []
+        },
+        {
+          "logMar": 0,
+          "id": "approximate_sph",
+          "commands": [],
+          "inputStream": [],
+          "distance": 277.44424
+        },
+        {
+          "logMar": 0,
+          "commands": ["yes"],
+          "distance": 302.74216,
+          "correctAnswers": ["all", "yes", "nothing", "no"],
+          "id": "snr_approximate_sph",
+          "answerTimeInterval": 3.0062140226364136,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0,
+          "commands": ["blue"],
+          "distance": 303.64774,
+          "correctAnswers": ["next", "red", "white", "blue", "yellow"],
+          "id": "snr_approximate_sph",
+          "answerTimeInterval": 1.404595971107483,
+          "inputStream": ["Blue"]
+        },
+        {
+          "commands": ["red"],
+          "logMar": 0,
+          "distance": 304.38297,
+          "id": "snr_approximate_sph",
+          "correctAnswers": ["yellow", "next", "blue", "white", "red", "green"],
+          "answerTimeInterval": 2.815826892852783,
+          "inputStream": ["Red"]
+        },
+        {
+          "logMar": 0,
+          "commands": ["none"],
+          "distance": 304.77975,
+          "id": "snr_approximate_sph",
+          "correctAnswers": ["no", "yes", "none"],
+          "answerTimeInterval": 1.5894279479980469,
+          "inputStream": ["No"]
+        }
+      ],
+      "currentStationData": {
+        "commands": ["none"],
+        "logMar": 0,
+        "distance": 304.77975,
+        "id": "snr_approximate_sph",
+        "correctAnswers": ["no", "yes", "none"],
+        "answerTimeInterval": 1.5894279479980469,
+        "inputStream": ["No"]
+      }
+    }
+  }
+}

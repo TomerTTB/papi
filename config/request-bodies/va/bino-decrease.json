@@ -1,0 +1,256 @@
+{
+    "stationsData": {
+        "right": {
+            "stations": [
+                {
+                    "id": "distance_measurement",
+                    "distance": null,
+                    "commands": [],
+                    "correctAnswers": null,
+                    "inputStream": [],
+                    "logMar": 0
+                },
+                {
+                    "id": "bino_descending",
+                    "distance": 2999.9999999999995,
+                    "commands": [],
+                    "correctAnswers": [
+                        "9",
+                        "2",
+                        "3",
+                        "5",
+                        "6"
+                    ],
+                    "inputStream": [
+                        "Next"
+                    ],
+                    "logMar": "0"
+                },
+                {
+                    "id": "bino_5_equal_optotypes",
+                    "distance": 2999.9999999999995,
+                    "commands": [
+                        5,
+                        8,
+                        9,
+                        3,
+                        2
+                    ],
+                    "correctAnswers": [
+                        "5",
+                        "8",
+                        "9",
+                        "3",
+                        "2"
+                    ],
+                    "inputStream": [
+                        "Five",
+                        "58",
+                        "589",
+                        "5893",
+                        "58932"
+                    ],
+                    "logMar": 0.4
+                },
+                {
+                    "id": "bino_decrease_station",
+                    "distance": 2999.9999999999995,
+                    "commands": [
+                        9,
+                        3,
+                        5,
+                        2,
+                        6
+                    ],
+                    "correctAnswers": [
+                        "9",
+                        "3",
+                        "5",
+                        "2",
+                        "6"
+                    ],
+                    "inputStream": [
+                        "Nine",
+                        "93",
+                        "935",
+                        "9352",
+                        "93526"
+                    ],
+                    "logMar": 0.3
+                },
+                {
+                    "id": "bino_decrease_station",
+                    "distance": 2999.9999999999995,
+                    "commands": [
+                        3,
+                        2,
+                        5,
+                        8,
+                        9
+                    ],
+                    "correctAnswers": [
+                        "3",
+                        "2",
+                        "5",
+                        "8",
+                        "9"
+                    ],
+                    "inputStream": [
+                        "Three",
+                        "32",
+                        "325",
+                        "3258",
+                        "32589"
+                    ],
+                    "logMar": 0.2
+                },
+                {
+                    "id": "bino_decrease_station",
+                    "distance": 2999.9999999999995,
+                    "commands": [
+                        5,
+                        9,
+                        8,
+                        6,
+                        2
+                    ],
+                    "correctAnswers": [
+                        "5",
+                        "9",
+                        "8",
+                        "6",
+                        "2"
+                    ],
+                    "inputStream": [
+                        "Five",
+                        "59",
+                        "598",
+                        "5986",
+                        "59862"
+                    ],
+                    "logMar": 0.1
+                },
+                {
+                    "id": "bino_decrease_station",
+                    "distance": 2999.9999999999995,
+                    "commands": [
+                        6,
+                        2,
+                        8,
+                        9,
+                        5
+                    ],
+                    "correctAnswers": [
+                        "6",
+                        "2",
+                        "8",
+                        "9",
+                        "5"
+                    ],
+                    "inputStream": [
+                        "Six",
+                        "62",
+                        "628",
+                        "6289",
+                        "62895"
+                    ],
+                    "logMar": 0
+                },
+                {
+                    "id": "bino_decrease_station",
+                    "distance": 2999.9999999999995,
+                    "commands": [
+                        5,
+                        8,
+                        9,
+                        6,
+                        2
+                    ],
+                    "correctAnswers": [
+                        "5",
+                        "8",
+                        "9",
+                        "6",
+                        "2"
+                    ],
+                    "inputStream": [
+                        "Five",
+                        "58",
+                        "589",
+                        "5896",
+                        "58962"
+                    ],
+                    "logMar": -0.1
+                }
+            ],
+            "stationsJourney": [
+                "distance_measurement",
+                "bino_descending",
+                "bino_5_equal_optotypes",
+                "bino_decrease_station",
+                "bino_decrease_station",
+                "bino_decrease_station",
+                "bino_decrease_station",
+                "bino_decrease_station"
+            ],
+            "pageFlags": {
+                "descending_question": 0,
+                "bino_equal_question": 0,
+                "decrease_failures_counter": null,
+                "bino_decrease_question": 4
+            },
+            "globalFlags": {
+                "va_size": -0.1,
+                "va_errors_0.4": 0,
+                "va_errors": 0,
+                "va_errors_0.3": 0,
+                "va_errors_0.2": 0,
+                "va_errors_0.1": 0,
+                "va_errors_0": 0,
+                "va_errors_-0.1": 0
+            },
+            "currentStationData": {
+                "id": "bino_decrease_station",
+                "distance": 2999.9999999999995,
+                "commands": [
+                    5,
+                    8,
+                    9,
+                    6,
+                    2
+                ],
+                "correctAnswers": [
+                    "5",
+                    "8",
+                    "9",
+                    "6",
+                    "2"
+                ],
+                "inputStream": [
+                    "Five",
+                    "58",
+                    "589",
+                    "5896",
+                    "58962"
+                ],
+                "logMar": -0.1
+            }
+        },
+        "left": {
+            "stations": [],
+            "stationsJourney": [],
+            "pageFlags": {},
+            "globalFlags": {},
+            "currentStationData": {
+                "id": " ",
+                "distance": null,
+                "commands": [],
+                "correctAnswers": null,
+                "inputStream": [],
+                "logMar": 0
+            }
+        }
+    },
+    "eye": "right",
+    "version": "1.30.0"
+}

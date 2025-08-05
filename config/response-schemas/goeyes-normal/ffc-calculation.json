@@ -1,0 +1,245 @@
+{
+  "type": "array",
+  "required": ["items"],
+  "additionalProperties": false,
+  "items": {
+    "oneOf": [
+      {
+        "type": "object",
+        "required": ["flow", "type", "data", "id"],
+        "additionalProperties": false,
+        "properties": {
+          "flow": { "type": "string" },
+          "type": { "type": "string", "enum": ["SaveToClientAction"] },
+          "data": {
+            "type": "object",
+            "required": ["status", "fov", "left_iris_width", "right_iris_width", "left_eye_width", "right_eye_width", "left_iris_visible_height", "right_iris_visible_height", "ffc_raw_data", "inputs_to_algo", "front_hfov_vfov", "duration_from_start"],
+            "additionalProperties": false,
+            "properties": {
+              "status": { "type": "string" },
+              "fov": { "type": "number" },
+              "left_iris_width": { "type": "number" },
+              "right_iris_width": { "type": "number" },
+              "left_eye_width": { "type": "number" },
+              "right_eye_width": { "type": "number" },
+              "left_iris_visible_height": { "type": "number" },
+              "right_iris_visible_height": { "type": "number" },
+              "ffc_raw_data": {
+                "type": "object",
+                "required": ["is_success", "facial_feature_size_m_dict", "user_feedback", "used_images_dict", "status_messages", "confidence_value", "facial_feature_size_vec_m_in_window_dict", "timestamps"],
+                "additionalProperties": false,
+                "properties": {
+                  "is_success": { "type": "boolean" },
+                  "facial_feature_size_m_dict": {
+                    "type": "object",
+                    "required": ["left_iris_width", "right_iris_width", "left_eye_width", "right_eye_width", "left_iris_visible_height", "right_iris_visible_height"],
+                    "additionalProperties": false,
+                    "properties": {
+                      "left_iris_width": { "type": "number" },
+                      "right_iris_width": { "type": "number" },
+                      "left_eye_width": { "type": "number" },
+                      "right_eye_width": { "type": "number" },
+                      "left_iris_visible_height": { "type": "number" },
+                      "right_iris_visible_height": { "type": "number" }
+                    }
+                  },
+                  "user_feedback": {
+                    "type": "object",
+                    "required": ["not_enough_pictures"],
+                    "additionalProperties": false,
+                    "properties": {
+                      "not_enough_pictures": { "type": "boolean" }
+                    }
+                  },
+                  "used_images_dict": {
+                    "type": "object",
+                    "required": ["num_of_all_input_images", "num_of_image_in_window", "images_in_window", "left_iris_width", "right_iris_width"],
+                    "additionalProperties": false,
+                    "properties": {
+                      "num_of_all_input_images": { "type": "number" },
+                      "num_of_image_in_window": { "type": "number" },
+                      "images_in_window": { "type": "array", "items": { "type": "number" } },
+                      "left_iris_width": { "type": "array", "items": { "type": "number" } },
+                      "right_iris_width": { "type": "array", "items": { "type": "number" } }
+                    }
+                  },
+                  "status_messages": { "type": "array", "items": { "type": "string" } },
+                  "confidence_value": {
+                    "type": "object",
+                    "required": ["combination_error_est_confidence", "valid_in_window_confidence", "yolo_seg_confidence", "open_eye_confidence", "final_feature_confidence_mean_value"],
+                    "additionalProperties": false,
+                    "properties": {
+                      "combination_error_est_confidence": {
+                        "type": "object",
+                        "required": ["left_iris_width", "right_iris_width", "left_eye_width", "right_eye_width", "left_iris_visible_height", "right_iris_visible_height"],
+                        "additionalProperties": false,
+                        "properties": {
+                          "left_iris_width": { "type": "number" },
+                          "right_iris_width": { "type": "number" },
+                          "left_eye_width": { "type": "number" },
+                          "right_eye_width": { "type": "number" },
+                          "left_iris_visible_height": { "type": "number" },
+                          "right_iris_visible_height": { "type": "number" }
+                        }
+                      },
+                      "valid_in_window_confidence": {
+                        "type": "object",
+                        "required": ["left_iris_width", "right_iris_width", "left_eye_width", "right_eye_width", "left_iris_visible_height", "right_iris_visible_height"],
+                        "additionalProperties": false,
+                        "properties": {
+                          "left_iris_width": { "type": "number" },
+                          "right_iris_width": { "type": "number" },
+                          "left_eye_width": { "type": "number" },
+                          "right_eye_width": { "type": "number" },
+                          "left_iris_visible_height": { "type": "number" },
+                          "right_iris_visible_height": { "type": "number" }
+                        }
+                      },
+                      "yolo_seg_confidence": {
+                        "type": "object",
+                        "required": ["left_iris_width", "right_iris_width", "left_eye_width", "right_eye_width", "left_iris_visible_height", "right_iris_visible_height"],
+                        "additionalProperties": false,
+                        "properties": {
+                          "left_iris_width": { "type": "number" },
+                          "right_iris_width": { "type": "number" },
+                          "left_eye_width": { "type": "number" },
+                          "right_eye_width": { "type": "number" },
+                          "left_iris_visible_height": { "type": "number" },
+                          "right_iris_visible_height": { "type": "number" }
+                        }
+                      },
+                      "open_eye_confidence": {
+                        "type": "object",
+                        "required": ["left_iris_width", "right_iris_width", "left_eye_width", "right_eye_width", "left_iris_visible_height", "right_iris_visible_height"],
+                        "additionalProperties": false,
+                        "properties": {
+                          "left_iris_width": { "type": "number" },
+                          "right_iris_width": { "type": "number" },
+                          "left_eye_width": { "type": "number" },
+                          "right_eye_width": { "type": "number" },
+                          "left_iris_visible_height": { "type": "number" },
+                          "right_iris_visible_height": { "type": "number" }
+                        }
+                      },
+                      "final_feature_confidence_mean_value": {
+                        "type": "object",
+                        "required": ["left_iris_width", "right_iris_width", "left_eye_width", "right_eye_width", "left_iris_visible_height", "right_iris_visible_height"],
+                        "additionalProperties": false,
+                        "properties": {
+                          "left_iris_width": { "type": "number" },
+                          "right_iris_width": { "type": "number" },
+                          "left_eye_width": { "type": "number" },
+                          "right_eye_width": { "type": "number" },
+                          "left_iris_visible_height": { "type": "number" },
+                          "right_iris_visible_height": { "type": "number" }
+                        }
+                      }
+                    }
+                  },
+                  "facial_feature_size_vec_m_in_window_dict": {
+                    "type": "object",
+                    "required": ["left_iris_width", "right_iris_width", "left_eye_width", "right_eye_width", "left_iris_visible_height", "right_iris_visible_height"],
+                    "additionalProperties": false,
+                    "properties": {
+                      "left_iris_width": { "type": "array", "items": { "type": "number" } },
+                      "right_iris_width": { "type": "array", "items": { "type": "number" } },
+                      "left_eye_width": { "type": "array", "items": { "type": "number" } },
+                      "right_eye_width": { "type": "array", "items": { "type": "number" } },
+                      "left_iris_visible_height": { "type": "array", "items": { "type": "number" } },
+                      "right_iris_visible_height": { "type": "array", "items": { "type": "number" } }
+                    }
+                  },
+                  "timestamps": { "type": "array", "items": { "type": "number" } }
+                }
+              },
+              "inputs_to_algo": {
+                "type": "object",
+                "required": ["json_string", "uuid", "session_id", "min_num_valid_images", "window_size", "camera_params", "min_max_iris_size_m", "estimated_eye_depth", "is_on_device"],
+                "additionalProperties": false,
+                "properties": {
+                  "json_string": { "type": "string" },
+                  "uuid": { "type": "string" },
+                  "session_id": { "type": "string" },
+                  "min_num_valid_images": { "type": "number" },
+                  "window_size": { "type": "number" },
+                  "camera_params": {
+                    "type": "object",
+                    "required": ["ver_fov", "hor_fov", "full_resolution_x", "full_resolution_y"],
+                    "additionalProperties": false,
+                    "properties": {
+                      "ver_fov": { "type": "number" },
+                      "hor_fov": { "type": "number" },
+                      "full_resolution_x": { "type": "number" },
+                      "full_resolution_y": { "type": "number" }
+                    }
+                  },
+                  "min_max_iris_size_m": { "type": "array", "items": { "type": "number" }, "minItems": 2, "maxItems": 2 },
+                  "estimated_eye_depth": { "type": "number" },
+                  "is_on_device": { "type": "boolean" }
+                }
+              },
+              "front_hfov_vfov": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "required": ["hfov", "vfov", "state"],
+                  "additionalProperties": false,
+                  "properties": {
+                    "hfov": { "type": "number" },
+                    "vfov": { "type": "number" },
+                    "state": { "type": ["string", "null"] }
+                  }
+                }
+              },
+              "duration_from_start": { "type": "string" },
+              "subject_based_direction_convention": { "type": ["string", "null"] }
+            }
+          },
+          "mixpanelEvent": { "type": ["string", "null"] },
+          "successMixpanelEvent": { "type": ["string", "null"] },
+          "analyticsEvent": { "type": ["string", "null"] },
+          "id": { "type": "string" }
+        }
+      },
+      {
+        "type": "object",
+        "required": ["eventId", "type", "id"],
+        "additionalProperties": false,
+        "properties": {
+          "eventId": { "type": "string" },
+          "mixpanelEvent": { "type": ["string", "null"] },
+          "successMixpanelEvent": { "type": ["string", "null"] },
+          "analyticsEvent": { "type": ["string", "null"] },
+          "type": { "type": "string", "enum": ["StateEventAction"] },
+          "id": { "type": "string" }
+        }
+      },
+      {
+        "type": "object",
+        "required": ["sectionName", "nextAction", "comment", "type", "id"],
+        "additionalProperties": false,
+        "properties": {
+          "sectionName": { "type": "string" },
+          "nextAction": {
+            "type": "object",
+            "required": ["native_flow", "type"],
+            "additionalProperties": false,
+            "properties": {
+              "native_flow": { "type": "string" },
+              "mixpanelEvent": { "type": ["string", "null"] },
+              "successMixpanelEvent": { "type": ["string", "null"] },
+              "analyticsEvent": { "type": ["string", "null"] },
+              "type": { "type": "string", "enum": ["StartNativeFlowAction"] }
+            }
+          },
+          "comment": { "type": "string" },
+          "mixpanelEvent": { "type": ["string", "null"] },
+          "successMixpanelEvent": { "type": ["string", "null"] },
+          "analyticsEvent": { "type": ["string", "null"] },
+          "type": { "type": "string", "enum": ["StartSectionAction"] },
+          "id": { "type": "string" }
+        }
+      }
+    ]
+  }
+}

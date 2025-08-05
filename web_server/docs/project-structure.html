@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Structure - API Testing Platform</title>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/shared/styles/common.css" rel="stylesheet">
+    <link href="styles/docs.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb" class="mt-3 mb-4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/docs" class="text-decoration-none">Documentation</a></li>
+                    <li class="breadcrumb-item active">Project Structure</li>
+                </ol>
+            </nav>
+
+            <div class="row">
+                <!-- Sidebar Navigation -->
+                <div id="sidebar-placeholder"></div>
+
+                <!-- Documentation Content -->
+                <div class="col-md-9">
+                    <div class="wiki-content">
+                        <h2 id="project-structure">Project Structure</h2>
+                        <p>The PAPI (Playwright API Testing Platform) is organized into several key directories, each serving a specific purpose in the testing framework. This structure ensures clean separation of concerns and makes the codebase maintainable and scalable. The architecture maintains a clear separation between the testing framework and the tests themselves, allowing each component to evolve independently. This means that changes to the framework's core functionality do not require modifications to existing tests, and new tests can be added without altering the framework's implementation.</p>
+
+                        <h3 id="directory-structure">Directory Structure</h3>
+                        <pre class="bg-dark text-light p-3">PAPI/
+├── config/                             # Configuration files
+│   ├── endpoints.js                    # API endpoint definitions
+│   ├── request-bodies/                 # JSON request body templates
+│   ├── response-schemas/               # JSON schema files for validation
+│   ├── test-assets/                    # Test-related assets and resources
+│   ├── endpoints/                      # Endpoint-specific configurations
+│   ├── response-bodies/                # Expected response body templates
+│   └── upload-attachments/             # Files for upload testing
+├── output/                             # Generated test outputs
+│   ├── reports/                        # Test execution reports
+│   └── test-cases/                     # Generated test cases
+├── playwright-report/                  # Playwright HTML reports
+├── src/                                # Core application source code
+│   ├── api.js                          # API request handling
+│   ├── server.js                       # Main web server implementation
+│   ├── testCaseGenerator.js            # Test case generation logic
+│   └── testController.js               # Test execution controller
+├── src-sla/                            # SLA monitoring
+│   ├── public/                         # SLA monitoring interface
+│   │   ├── index.html                  # SLA monitoring page
+│   │   ├── sla-monitor.js              # SLA monitoring functionality
+│   │   ├── sla-version-fetcher.js      # Version fetcher
+│   │   ├── header.html                 # Common header
+│   │   └── footer.html                 # Common footer
+│   ├── logs/                           # SLA monitoring logs
+│   ├── sla.js                          # SLA monitoring logic
+│   ├── server-sla.js                   # SLA monitoring server
+│   ├── slack.js                        # Slack notifications
+│   └── utils/                          # SLA utilities
+│       ├── endpoint-utils.js           # Endpoint utilities
+│       └── status-tracker.js           # Status tracking
+├── test-results/                       # Test execution results
+├── tests/                              # Test suites
+│   ├── basic.spec.js                   # Basic API validation tests
+│   ├── headers.spec.js                 # Header validation tests
+│   ├── query-params.spec.js            # Query parameter tests
+│   ├── response-structure.spec.js      # Response structure tests
+│   ├── validation.spec.js              # Input validation tests
+│   ├── headers-pd.spec.js              # Protected data header tests
+│   ├── headers-phi.spec.js             # PHI header validation tests
+│   ├── basic-phi.spec.js               # Basic PHI test scenarios
+│   ├── upload-attachments.spec.js      # File upload test scenarios
+│   ├── headers-attachments.spec.js     # Attachment header tests
+│   ├── response-comparison.spec.js     # Response comparison tests
+│   ├── _response-comparison.spec.js    # Legacy response comparison tests
+│   └── helpers/                        # Test utility functions
+│       ├── testUtils.js                # Common test utilities
+│       └── schemaUtils.js              # Schema validation utilities
+├── web_server/                         # Documentation web server
+│   ├── docs/                           # Documentation pages
+│   ├── styles/                         # CSS stylesheets
+│   └── scripts/                        # JavaScript files
+├── node_modules/                       # Project dependencies
+├── package.json                        # Project dependencies
+├── package-lock.json                   # Dependency lock file
+├── playwright.config.js                # Playwright configuration
+├── Dockerfile                          # Docker container configuration
+├── README.md                           # Project documentation
+├── start.ps1                           # Windows startup script
+├── start.sh                            # Linux startup script
+├── start-web.ps1                       # Web server startup script
+├── run-test.ps1                        # Test execution script
+├── set-env.ps1                         # Environment setup script
+└── .dockerignore                       # Docker ignore rules</code></pre>
+
+                        <h3 id="server-api-endpoints">Server API Endpoints</h3>
+                        <p>The PAPI server provides the following API endpoints for test management and execution:</p>
+
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>Endpoint</th>
+                                    <th>Method</th>
+                                    <th>Description</th>
+                                    <th>Parameters</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td><code>/version</code></td>
+                                    <td>GET</td>
+                                    <td>Get current PAPI version</td>
+                                    <td>None</td>
+                                </tr>
+                                <tr>
+                                    <td><code>/product</code></td>
+                                    <td>GET</td>
+                                    <td>Get list of products and endpoint counts</td>
+                                    <td>None</td>
+                                </tr>
+                                <tr>
+                                    <td><code>/productDetails</code></td>
+                                    <td>GET</td>
+                                    <td>Get list of paths for each product</td>
+                                    <td>None</td>
+                                </tr>
+                                <tr>
+                                    <td><code>/tests</code></td>
+                                    <td>GET</td>
+                                    <td>Get list of available test files</td>
+                                    <td>None</td>
+                                </tr>
+                                <tr>
+                                    <td><code>/environment</code></td>
+                                    <td>GET</td>
+                                    <td>Get list of environment variables</td>
+                                    <td>None</td>
+                                </tr>
+                                <tr>
+                                    <td><code>/csvFiles/:product</code></td>
+                                    <td>GET</td>
+                                    <td>List CSV files for a specific product</td>
+                                    <td>product (path)</td>
+                                </tr>
+                                <tr>
+                                    <td><code>/download/:product/:filename</code></td>
+                                    <td>GET</td>
+                                    <td>Download a specific CSV file</td>
+                                    <td>
+                                        <ul>
+                                            <li>product (path)</li>
+                                            <li>filename (path)</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>/report/:filename</code></td>
+                                    <td>GET</td>
+                                    <td>Download a specific test report file</td>
+                                    <td>filename (path) - Name of the HTML report file</td>
+                                </tr>
+                                <tr>
+                                    <td><code>/runTests</code></td>
+                                    <td>POST</td>
+                                    <td>Execute selected test suite</td>
+                                    <td>
+                                        <ul>
+                                            <li>product (body) - Name of the product (e.g., "GoEyes", "PD", "VA")</li>
+                                            <li>tests (body) - Array of test files to execute</li>
+                                            <li>productName (body) - Display name for the product in reports and notifications</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td><code>/environment/update</code></td>
+                                    <td>POST</td>
+                                    <td>Update environment variables</td>
+                                    <td>
+                                        <ul>
+                                            <li>name (body) - Variable name</li>
+                                            <li>value (body) - New value</li>
+                                        </ul>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+
+                        <h3 id="response-formats">Response Formats</h3>
+                        <p>All API responses follow a standard JSON format. Below are detailed explanations and examples for each endpoint:</p>
+
+                        <div class="mb-4">
+                            <h4 class="h5">GET /version</h4>
+                            <p>Returns the current version of the PAPI platform.</p>
+                            <pre class="bg-dark text-light p-3">Response:
+"1.0.0"</pre>
+                        </div>
+
+                        <div class="mb-4">
+                            <h4 class="h5">GET /product</h4>
+                            <p>Returns a list of all products and their endpoint counts.</p>
+                            <pre class="bg-dark text-light p-3">Response:
+[
+    {
+        "name": "GoEyes",
+        "endpointCount": 12,
+        "baseURL": "http://localhost:3000"
+    },
+    {
+        "name": "GoFlow",
+        "endpointCount": 8,
+        "baseURL": "http://localhost:3000"
+    }
+]</pre>
+                        </div>
+
+                        <div class="mb-4">
+                            <h4 class="h5">GET /productDetails</h4>
+                            <p>Returns detailed information about each product including available paths and tests.</p>
+                            <pre class="bg-dark text-light p-3">Response:
+[
+    {
+        "name": "GoEyes",
+        "paths": [
+            "/api/v1/vision-test",
+            "/api/v1/eye-test"
+        ],
+        "tests": [
+            "basic.spec.js",
+            "headers.spec.js"
+        ],
+        "baseURL": "http://localhost:3000"
+    }
+]</pre>
+                        </div>
+
+                        <div class="mb-4">
+                            <h4 class="h5">GET /tests</h4>
+                            <p>Returns a list of all available test files with their display names.</p>
+                            <pre class="bg-dark text-light p-3">Response:
+[
+    {
+        "name": "Basic",
+        "path": "basic.spec.js"
+    },
+    {
+        "name": "Headers Validation",
+        "path": "headers.spec.js"
+    }
+]</pre>
+                        </div>
+
+                        <div class="mb-4">
+                            <h4 class="h5">GET /environment</h4>
+                            <p>Returns a list of environment variables and their current values.</p>
+                            <pre class="bg-dark text-light p-3">Response:
+[
+    {
+        "name": "BASE_URL",
+        "value": "http://localhost:3000"
+    },
+    {
+        "name": "STAGING",
+        "value": "true"
+    }
+]</pre>
+                        </div>
+
+                        <div class="mb-4">
+                            <h4 class="h5">GET /csvFiles/:product</h4>
+                            <p>Returns a list of CSV files available for a specific product.</p>
+                            <pre class="bg-dark text-light p-3">Response:
+{
+    "success": true,
+    "product": "GoEyes",
+    "files": [
+        "GoEyes_Basic.csv",
+        "GoEyes_Headers.csv"
+    ]
+}</pre>
+                        </div>
+
+                        <div class="mb-4">
+                            <h4 class="h5">GET /download/:product/:filename</h4>
+                            <p>Downloads a specific CSV file for a product. Returns the file content with appropriate headers.</p>
+                            <pre class="bg-dark text-light p-3">Response Headers:
+Content-Type: text/csv
+Content-Disposition: attachment; filename="GoEyes_Basic.csv"
+
+Response Body:
+id,test_name,status,result
+1,Basic Test,passed,Success
+2,Header Test,passed,Success</pre>
+                        </div>
+
+                        <div class="mb-4">
+                            <h4 class="h5">POST /runTests</h4>
+                            <p>Executes the selected test suite and returns the test results.</p>
+                            <pre class="bg-dark text-light p-3">Request Body:
+{
+    "product": "GoEyes",
+    "tests": ["basic.spec.js", "headers.spec.js"],
+    "productName": "GoEyes Attachments"
+}
+
+Response:
+[
+    {
+        "testFile": "basic.spec.js",
+        "success": true,
+        "output": "Test execution output...",
+        "error": null
+    },
+    {
+        "testFile": "headers.spec.js",
+        "success": true,
+        "output": "Test execution output...",
+        "error": null
+    }
+]</pre>
+                        </div>
+
+                        <div class="mb-4">
+                            <h4 class="h5">POST /environment/update</h4>
+                            <p>Updates an environment variable and returns the confirmation.</p>
+                            <pre class="bg-dark text-light p-3">Request Body:
+{
+    "name": "BASE_URL",
+    "value": "https://api.example.com"
+}
+
+Response:
+{
+    "success": true,
+    "message": "BASE_URL updated successfully",
+    "value": "https://api.example.com"
+}</pre>
+                        </div>
+
+                        <h3 id="common-issues">Common Issues</h3>
+                        <div class="alert alert-warning">
+                            <h4 class="h5">Test Execution Timeouts</h4>
+                            <p class="mb-0">
+                                Test executions have a default timeout of 30 minutes. For longer test suites,
+                                use the <code>timeout</code> parameter in the request body to extend this limit.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Template Loader -->
+    <script src="../scripts/template-loader.js"></script>
+    <!-- Version Fetcher -->
+    <script src="../scripts/version-fetcher.js"></script>
+    <!-- Documentation Scripts -->
+    <script src="scripts/docs.js"></script>
+    <!-- Sidebar Loader -->
+    <script src="scripts/sidebar-loader.js"></script>
+</body>
+</html> 

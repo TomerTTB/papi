@@ -1,0 +1,58 @@
+{
+    "flags": [],
+    "stations": [
+      {
+        "id": "mono_va",
+        "value": -2000,
+        "upload": true,
+        "eye": "right"
+      }
+    ],
+    "event": "calc_end",
+    "actions": [
+      {
+        "flag": "end_flow",
+        "value": true,
+        "shouldIncrement": false,
+        "shouldMultiply": false,
+        "isGlobal": true,
+        "type": "SetFlagAction",
+        "id": "go_va.prescription.0.0.SetFlagAction"
+      },
+      {
+        "flow": "go-va",
+        "type": "SaveToClientAction",
+        "data": {
+          "redirect_url": "https://www.bing.com",
+          "mono_left": "ERROR",
+          "mono_right": "0.5",
+          "binocular": "-0.1",
+          "did_pass": false
+        },
+        "mixpanelEvent": null,
+        "successMixpanelEvent": null,
+        "analyticsEvent": null,
+        "id": "go_va.prescription.0.1.SaveToClientAction"
+      },
+      {
+        "id": "go_va.prescription.0.2.CallCallbackAction",
+        "type": "CallCallbackAction",
+        "callbackType": "results",
+        "event": {
+          "results": {
+            "redirect_url": "https://www.bing.com",
+            "mono_left": "ERROR",
+            "mono_right": "0.5",
+            "binocular": "-0.1",
+            "did_pass": false
+          }
+        },
+        "isEndOfFlow": true
+      }
+    ],
+    "mixpanelEvent": null,
+    "successMixpanelEvent": null,
+    "analyticsEvent": null,
+    "type": "ServerCalculationResponseAction",
+    "id": "go_va.prescription.0.ServerCalculationResponseAction"
+  }

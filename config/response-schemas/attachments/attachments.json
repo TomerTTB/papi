@@ -1,0 +1,42 @@
+{
+  "type": "object",
+  "required": ["s3_objects"],
+  "additionalProperties": false,
+  "properties": {
+    "s3_objects": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["url", "fields"],
+        "additionalProperties": false,
+        "properties": {
+          "url": {
+            "type": "string"
+          },
+          "fields": {
+            "type": "object",
+            "required": ["key", "AWSAccessKeyId", "x-amz-security-token", "policy", "signature"],
+            "additionalProperties": false,
+            "properties": {
+              "key": {
+                "type": "string"
+              },
+              "AWSAccessKeyId": {
+                "type": "string"
+              },
+              "x-amz-security-token": {
+                "type": "string"
+              },
+              "policy": {
+                "type": "string"
+              },
+              "signature": {
+                "type": "string"
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+} 

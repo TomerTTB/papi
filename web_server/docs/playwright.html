@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Playwright - API Testing Platform</title>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../styles/common.css" rel="stylesheet">
+    <link href="styles/docs.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb" class="mt-3 mb-4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/docs" class="text-decoration-none">Documentation</a></li>
+                    <li class="breadcrumb-item active">Playwright</li>
+                </ol>
+            </nav>
+
+            <div class="row">
+                <!-- Sidebar Navigation -->
+                <div id="sidebar-placeholder"></div>
+
+                <!-- Documentation Content -->
+                <div class="col-md-9">
+                    <div class="wiki-content">
+                        <h2 id="general">General</h2>
+                        <p>
+                            Playwright is a powerful end-to-end testing framework that enables reliable testing for modern web applications. In our platform, we utilize Playwright's capabilities specifically for API testing, leveraging its robust features for making HTTP requests and validating responses.
+                            For more information, visit the <a href="https://playwright.dev/" target="_blank" rel="noopener noreferrer">official Playwright documentation <i class="bi bi-box-arrow-up-right"></i></a>.
+                        </p>
+
+                        <h4>Key Features</h4>
+                        <ul>
+                            <li><strong>Cross-platform Support:</strong> Works seamlessly across Windows, Linux, and macOS</li>
+                            <li><strong>Multiple Language Support:</strong> Available for TypeScript, JavaScript, Python, .NET, and Java</li>
+                            <li><strong>Auto-waiting:</strong> Built-in smart waiting mechanisms that reduce test flakiness</li>
+                            <li><strong>Powerful Assertions:</strong> Rich set of web-first assertions specifically designed for API testing</li>
+                            <li><strong>Request Interception:</strong> Ability to intercept, modify, and validate HTTP requests and responses</li>
+                            <li><strong>Network Activity Monitoring:</strong> Comprehensive tracking of all network requests and responses</li>
+                        </ul>
+
+                        <h4>API Testing Capabilities</h4>
+                        <ul>
+                            <li><strong>Headers Validation:</strong> Comprehensive validation of HTTP headers including:
+                                <ul>
+                                    <li>Content-Type verification</li>
+                                    <li>CORS header behavior</li>
+                                    <li>Cache control directives</li>
+                                    <li>Connection headers</li>
+                                    <li>AWS headers validation</li>
+                                </ul>
+                            </li>
+                            <li><strong>Response Validation:</strong> Detailed validation of API responses including structure, content, and format</li>
+                            <li><strong>Performance Metrics:</strong> Capture and analyze response times and execution duration</li>
+                        </ul>
+
+                        <h4>Test Execution Controls</h4>
+                        <ul>
+                            <li><strong>Timer Management:</strong>
+                                <ul>
+                                    <li>Timer starts automatically when test execution begins</li>
+                                    <li>Timer stops when test execution completes or if there's an error</li>
+                                    <li>Timer display shows hours:minutes:seconds format (HH:MM:SS)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Run Button State:</strong>
+                                <ul>
+                                    <li>Button is enabled only when at least one endpoint and one test are selected</li>
+                                    <li>Button state updates automatically when:
+                                        <ul>
+                                            <li>Individual test or endpoint checkboxes are changed</li>
+                                            <li>"Select All" checkbox is toggled</li>
+                                            <li>Page is initially loaded</li>
+                                            <li>Test execution completes</li>
+                                        </ul>
+                                    </li>
+                                    <li>Button is disabled during test execution to prevent multiple runs</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h2 id="reporter">Reporter</h2>
+                        <p>
+                            The Playwright HTML Reporter provides a comprehensive, user-friendly interface for viewing test results. The reporter automatically opens in your default browser after test execution and is also saved locally in the <code>playwright-report</code> folder for future reference.
+                        </p>
+
+                        <div class="example-section mb-4">
+                            <h4>Example Report</h4>
+                            <div class="card">
+                                <div class="card-body">
+                                    <img src="../images/playwright-report.png" alt="Playwright HTML Reporter Example" class="img-fluid mb-3 border rounded">
+                                    <p class="text-muted">
+                                        Example of a test run showing Headers Validation test suite with various test cases. 
+                                        The report shows 11 total tests (11 passed, 0 failed, 0 flaky, 1 skipped) with a total execution time of 15.8s.
+                                        Each test case displays its execution time and specific endpoint being tested.
+                                    </p>
+                                </div>
+                            </div>
+                        </div>
+
+                        <h4>Reporter Features</h4>
+                        <ul>
+                            <li><strong>Test Overview:</strong>
+                                <ul>
+                                    <li>Total number of tests run</li>
+                                    <li>Pass/Fail/Flaky/Skipped status indicators with counts</li>
+                                    <li>Total execution time</li>
+                                    <li>Timestamp of test execution</li>
+                                </ul>
+                            </li>
+                            <li><strong>Detailed Test Results:</strong>
+                                <ul>
+                                    <li>Individual test execution time</li>
+                                    <li>Test suite organization and hierarchy</li>
+                                    <li>Clear pass/fail indicators</li>
+                                    <li>Descriptive test names and categories</li>
+                                </ul>
+                            </li>
+                            <li><strong>Search and Filter:</strong>
+                                <ul>
+                                    <li>Search functionality for finding specific tests</li>
+                                    <li>Filter by test status (All, Passed, Failed, Flaky, Skipped)</li>
+                                    <li>Quick navigation through test suites</li>
+                                </ul>
+                            </li>
+                            <li><strong>Test Artifacts:</strong>
+                                <ul>
+                                    <li>Detailed error messages and stack traces</li>
+                                    <li>Request/response information</li>
+                                    <li>Test execution logs</li>
+                                    <li>Network activity logs</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h4>Accessing Reports</h4>
+                        <ul>
+                            <li><strong>Automatic Opening:</strong> The HTML report automatically opens in your default browser after test execution</li>
+                            <li><strong>Local Storage:</strong> Reports are saved in the <code>playwright-report</code> folder within your project directory</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Template Loader -->
+    <script src="../scripts/template-loader.js"></script>
+    <!-- Version Fetcher -->
+    <script src="../scripts/version-fetcher.js"></script>
+    <!-- Sidebar Loader -->
+    <script src="scripts/sidebar-loader.js"></script>
+    <!-- Documentation Scripts -->
+    <script src="scripts/docs.js"></script>
+</body>
+</html> 

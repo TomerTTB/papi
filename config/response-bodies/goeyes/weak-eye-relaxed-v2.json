@@ -1,0 +1,24 @@
+{
+    "flags": [],
+    "stations": [
+      {
+        "id": "bino_power",
+        "value": 362.48126220703125,
+        "upload": true,
+        "eye": "right"
+      },
+      {
+        "id": "mono_weak_sphere",
+        "value": 268.63822848231206,
+        "upload": true,
+        "eye": "left"
+      }
+    ],
+    "event": "calculation_end",
+    "actions": [],
+    "mixpanelEvent": null,
+    "successMixpanelEvent": null,
+    "analyticsEvent": null,
+    "type": "ServerCalculationResponseAction",
+    "id": "go_eyes_v1.return_calculation.0.ServerCalculationResponseAction"
+  }

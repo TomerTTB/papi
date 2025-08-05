@@ -1,0 +1,99 @@
+{
+    "flags": [],
+    "stations": [
+      {
+        "id": "bino_power",
+        "value": 388.5929143234496,
+        "upload": true,
+        "eye": "left"
+      },
+      {
+        "id": "sph_final",
+        "value": 391.3832532624066,
+        "upload": true,
+        "eye": "left"
+      },
+      {
+        "id": "sph_final",
+        "value": 371.18526382328105,
+        "upload": true,
+        "eye": "right"
+      }
+    ],
+    "event": "prescription",
+    "actions": [
+      {
+        "page": {
+          "prescriptionType": "default",
+          "isLastPrescription": null,
+          "mainTitle": "Well done!",
+          "title": "Your prescription details",
+          "nate": null,
+          "prescription_view": {
+            "prescription": {
+              "r_sph": "-2.75",
+              "r_cyl": "",
+              "r_axis": null,
+              "l_sph": "-2.50",
+              "l_cyl": "",
+              "l_axis": null,
+              "pd": "0.0",
+              "id": "left",
+              "mono_pd": null,
+              "is_pd_oor": false,
+              "is_pd_session_timedout": false
+            },
+            "tableResources": {
+              "copyGlass": {
+                "sph": "SPH",
+                "cyl": "CYL",
+                "axis": "Axis",
+                "right": "Right (OD)",
+                "left": "Left (OS)"
+              }
+            },
+            "type": "FullPrescriptionView",
+            "id": "go_eyes_v1.prescription.0.0.src=/go_eyes/go_to_prescription_page_action.json.FullPrescriptionView"
+          },
+          "bottom_section_view": {
+            "vi_image_resource": {
+              "value": "vi_success.png",
+              "type": "Resource",
+              "cdnPath": null
+            },
+            "type": "FinalSuccessView",
+            "id": "go_eyes_v1.prescription.0.0.src=/go_eyes/go_to_prescription_page_action.json.FinalSuccessView"
+          },
+          "mixpanelEvent": null,
+          "prescription": null,
+          "extraAssets": null,
+          "id": "go_eyes_v1.prescription.0.0.src=/go_eyes/go_to_prescription_page_action.json.PrescriptionPage",
+          "type": "PrescriptionPage",
+          "webStage": "results",
+          "mixpanelStep": "results",
+          "headerTitle": "RESULTS",
+          "scanner_rect_width": null,
+          "scanner_rect_height": null,
+          "hamburgerIconColor": "white"
+        },
+        "sound": {
+          "value": "go_eyes_asset_container_common_one_hundred_percentage_audio.mp3",
+          "type": "Resource",
+          "cdnPath": null
+        },
+        "transitionType": "checkmark_progress",
+        "finishPreviousPageRequestUrl": null,
+        "mixpanelEvent": null,
+        "successMixpanelEvent": null,
+        "progress": 100,
+        "analyticsEvent": null,
+        "type": "GoToNextPageAction",
+        "id": "go_eyes_v1.prescription.0.0.src=/go_eyes/go_to_prescription_page_action.json.GoToNextPageAction"
+      }
+    ],
+    "mixpanelEvent": null,
+    "successMixpanelEvent": null,
+    "analyticsEvent": null,
+    "type": "ServerCalculationResponseAction",
+    "id": "go_eyes_v1.prescription.0.ServerCalculationResponseAction"
+  }

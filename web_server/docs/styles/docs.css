@@ -1,0 +1,108 @@
+.wiki-sidebar {
+    position: sticky;
+    top: 20px;
+    height: calc(100vh - 40px);
+    overflow-y: auto;
+}
+
+.wiki-content {
+    font-size: 16px;
+    line-height: 1.6;
+}
+
+.wiki-content h2 {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid #eee;
+}
+
+.wiki-content h3 {
+    margin-top: 1.5rem;
+}
+
+.wiki-content pre {
+    background: #f8f9fa;
+    padding: 1rem;
+    border-radius: 4px;
+}
+
+.nav-link {
+    padding: 0.5rem 1rem;
+    color: #666;
+}
+
+.nav-link:hover {
+    color: var(--bs-primary);
+    background: #f8f9fa;
+    border-radius: 4px;
+}
+
+.nav-link.active {
+    color: var(--bs-primary);
+    font-weight: 500;
+}
+
+.section-link {
+    display: block;
+    margin: 0.25rem 0;
+    padding: 0.25rem 0 0.25rem 1rem;
+    font-size: 0.9rem;
+    color: #666;
+    text-decoration: none;
+}
+
+.section-link:hover {
+    color: var(--bs-primary);
+}
+
+.collapse-toggle {
+    cursor: pointer;
+    position: relative;
+    padding-right: 20px;
+}
+
+.collapse-toggle::after {
+    content: '▼';
+    position: absolute;
+    right: 0;
+    transition: transform 0.3s ease;
+    font-size: 12px;
+}
+
+.collapse-toggle.collapsed::after {
+    transform: rotate(-90deg);
+}
+
+.nav-section {
+    margin-bottom: 10px;
+}
+
+.section-title {
+    color: #333;
+    font-weight: 500;
+    text-decoration: none;
+    display: block;
+    padding: 5px 0;
+}
+
+.section-title:hover {
+    color: #0d6efd;
+    text-decoration: none;
+}
+
+.subsection {
+    padding-left: 20px;
+    margin-top: 5px;
+}
+
+.subsection .section-link {
+    color: #666;
+    text-decoration: none;
+    display: block;
+    padding: 3px 0;
+}
+
+.subsection .section-link:hover,
+.subsection .section-link.active {
+    color: #0d6efd;
+} 

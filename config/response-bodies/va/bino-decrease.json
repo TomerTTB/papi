@@ -1,0 +1,35 @@
+{
+  "flags": [
+    {
+      "id": "va_size",
+      "value": -0.1,
+      "eye": "right"
+    },
+    {
+      "id": "va_size",
+      "value": -0.1,
+      "eye": "left"
+    }
+  ],
+  "stations": [
+    {
+      "id": "bino_va",
+      "value": 10000,
+      "upload": true,
+      "eye": "right"
+    },
+    {
+      "id": "bino_va",
+      "value": 10000,
+      "upload": false,
+      "eye": "left"
+    }
+  ],
+  "event": "calc_end",
+  "actions": [],
+  "mixpanelEvent": null,
+  "successMixpanelEvent": null,
+  "analyticsEvent": null,
+  "type": "ServerCalculationResponseAction",
+  "id": "go_va.return_calculation.0.ServerCalculationResponseAction"
+}

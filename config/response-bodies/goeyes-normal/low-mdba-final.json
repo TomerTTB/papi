@@ -1,0 +1,18 @@
+{
+  "flags": [],
+  "stations": [
+    {
+      "id": "cyl_final",
+      "value": 2000,
+      "upload": true,
+      "eye": "left"
+    }
+  ],
+  "event": "calculation_end",
+  "actions": [],
+  "mixpanelEvent": null,
+  "successMixpanelEvent": null,
+  "analyticsEvent": null,
+  "type": "ServerCalculationResponseAction",
+  "id": "go_eyes_v1.return_calculation.0.ServerCalculationResponseAction"
+}

@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tests - API Testing Platform</title>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../styles/common.css" rel="stylesheet">
+    <link href="styles/docs.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb" class="mt-3 mb-4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/docs" class="text-decoration-none">Documentation</a></li>
+                    <li class="breadcrumb-item active">Tests</li>
+                </ol>
+            </nav>
+
+            <div class="row">
+                <!-- Sidebar Navigation -->
+                <div id="sidebar-placeholder"></div>
+
+                <!-- Documentation Content -->
+                <div class="col-md-9">
+                    <div class="wiki-content">
+                        <h1>Response Comparison Test Suite Documentation</h1>
+                        
+                        <h2 id="response-comparison-tests">Response Comparison Tests (response-comparison.spec.js)</h2>
+                        <div class="alert alert-info">
+                            <h4 class="h5">Summary</h4>
+                            <p>
+                                The Response Comparison Tests verify that API responses match their expected structure and values
+                                while intelligently handling dynamic fields. These tests compare actual API responses against predefined response
+                                templates, ignoring specific fields that are known to change between requests.
+                            </p>
+                        </div>
+
+                        <h3>Test Cases Overview</h3>
+                        
+                        <h4>1. Response Body Comparison</h4>
+                        <p>
+                            <strong>Purpose:</strong> Verifies that API responses match their expected structure and values while handling dynamic fields.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>Response structure matches expected template</li>
+                                <li>Values match except for specified ignored fields</li>
+                                <li>Handles dynamic fields like IDs and timestamps</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>Response structure matches template</li>
+                                <li>Values match except for ignored fields</li>
+                                <li>No unexpected differences found</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Compare response body with expected ${endpoint.path}`, async ({ request }) => {
+    // Skip if no comparison file is specified
+    if (!endpoint.config.comparisonFile) {
+        test.skip();
+        return;
+    }
+
+    // Read the expected response body from the comparison file
+    const comparisonFilePath = path.join(process.cwd(), endpoint.config.comparisonFile);
+    let expectedResponseBody;
+    try {
+        expectedResponseBody = require(comparisonFilePath);
+    } catch (error) {
+        throw new Error(`Failed to load comparison file ${comparisonFilePath}: ${error.message}`);
+    }
+
+    // Execute the request
+    const response = await executeRequest(test, request, endpoint, endpoint.config.requiredHeaders);
+    expect(response.ok()).toBeTruthy();
+
+    // Extract only the response body for comparison
+    const actualResponseBody = await response.json();
+
+    // Compare only the response bodies while ignoring specified fields
+    const differences = compareObjects(actualResponseBody, expectedResponseBody);
+
+    // If there are differences, format them nicely and fail the test
+    if (differences.length > 0) {
+        const message = [
+            'Response body differences found:',
+            'Note: Only comparing response bodies, ignoring headers and other metadata.',
+            ...differences.map(diff => `- ${diff}`)
+        ].join('\n');
+        throw new Error(message);
+    }
+});</pre>
+
+                        <h3>Configuration</h3>
+                        <h4>Ignored Paths</h4>
+                        <p>
+                            The test can be configured to ignore specific fields at specific paths. Currently ignored paths include:
+                        </p>
+                        <pre class="bg-dark text-light p-3">// Specific fields in specific locations
+'first-flow-actions.actions[].id'
+'flows.lensesAndPupils[].id'
+'flows.lenses[].id'
+'flows.deviceCalibration[].id'
+'flows.prescription[].id'
+'flows.intercom[].id'
+'flows.eyes[].id'</pre>
+                        <p>
+                            To add more paths to ignore, update the <code>IGNORED_PATHS</code> array in <code>tests/helpers/responseComparator.js</code>.
+                        </p>
+
+                        <h3>Test Setup</h3>
+                        <h4>Setting Up Comparison Files</h4>
+                        <p>
+                            1. Create a comparison file in <code>config/response-comparisons/[product]/[endpoint].json</code> with the expected response.
+                        </p>
+                        <p>
+                            2. Add the comparison file path to your endpoint configuration:
+                        </p>
+                        <pre class="bg-dark text-light p-3">{
+    path: '/your/endpoint',
+    config: {
+        // ... other config
+        comparisonFile: '../papi/config/response-comparisons/product/endpoint.json'
+    }
+}</pre>
+
+                        <h3>Debugging</h3>
+                        <p>
+                            When running tests with <code>DEBUG=true</code>, the test will log:
+                        </p>
+                        <ul>
+                            <li>Expected response body</li>
+                            <li>Actual response body</li>
+                            <li>Detailed comparison differences</li>
+                        </ul>
+                        <p>
+                            Example debug output:
+                        </p>
+                        <pre class="bg-dark text-light p-3">Response body differences found:
+- flows.lenses[0].value: Expected 1.5, got 2.0
+- flows.prescription[0].sphere: Missing in actual response</pre>
+
+                        <h3>Extending the Tests</h3>
+                        <h4>Adding New Ignored Fields</h4>
+                        <p>
+                            To add new fields to ignore:
+                        </p>
+                        <ol>
+                            <li>Identify the exact path to the field</li>
+                            <li>Add the path to <code>IGNORED_PATHS</code> in <code>responseComparator.js</code></li>
+                            <li>Use array notation <code>[]</code> for array indices (e.g., <code>path.to.array[].field</code>)</li>
+                            <li>Use wildcards <code>**</code> for matching at any depth (e.g., <code>**.timestamp</code>)</li>
+                        </ol>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Template Loader -->
+    <script src="../scripts/template-loader.js"></script>
+    <!-- Version Fetcher -->
+    <script src="../scripts/version-fetcher.js"></script>
+    <!-- Sidebar Loader -->
+    <script src="scripts/sidebar-loader.js"></script>
+    <!-- Documentation Scripts -->
+    <script src="scripts/docs.js"></script>
+</body>
+</html> 

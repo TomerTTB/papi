@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Query Parameters Tests - API Testing Platform</title>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../styles/common.css" rel="stylesheet">
+    <link href="styles/docs.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb" class="mt-3 mb-4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/docs" class="text-decoration-none">Documentation</a></li>
+                    <li class="breadcrumb-item active">Query Parameters Tests</li>
+                </ol>
+            </nav>
+
+            <div class="row">
+                <!-- Sidebar Navigation -->
+                <div id="sidebar-placeholder"></div>
+
+                <!-- Documentation Content -->
+                <div class="col-md-9">
+                    <div class="wiki-content">
+                        <h1>Query Parameters Test Suite Documentation</h1>
+                        
+                        <h2 id="query-params-tests">Query Parameters Tests (query-params.spec.js)</h2>
+                        <div class="alert alert-info">
+                            <h4 class="h5">Summary</h4>
+                            <p>
+                                The query-params.spec.js file implements comprehensive testing for API endpoints that accept query parameters. 
+                                It ensures proper handling of query parameters, including validation of required parameters, handling of empty values, 
+                                and proper error responses for various query parameter scenarios. The test suite validates both endpoints that require 
+                                query parameters and those that don't, making it a crucial component for API parameter validation.
+                            </p>
+                        </div>
+
+                        <h3>Test Cases Overview</h3>
+                        
+                        <div class="alert alert-info">
+                            <h4 class="h5">Test Separation</h4>
+                            <p>
+                                The test suite is divided into two main categories based on endpoint configuration:
+                            </p>
+                            <ul>
+                                <li><strong>Endpoints WITH Query Parameters:</strong>
+                                    <ul>
+                                        <li>These endpoints require specific query parameters to function</li>
+                                        <li>Tests 1-3 are applied to these endpoints</li>
+                                        <li>Tests validate proper handling of required parameters</li>
+                                    </ul>
+                                </li>
+                                <li><strong>Endpoints WITHOUT Query Parameters:</strong>
+                                    <ul>
+                                        <li>These endpoints do not expect any query parameters</li>
+                                        <li>Test 4 is applied to these endpoints</li>
+                                        <li>Tests validate proper handling of unexpected parameters</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <p class="mb-0">
+                                The separation is determined by checking <code>endpoint.config.queryParams</code>:
+                                <pre class="bg-dark text-light p-2 mt-2">if (endpoint.config.queryParams && Object.keys(endpoint.config.queryParams).length > 0) {
+    // Tests for endpoints WITH query parameters
+} else {
+    // Tests for endpoints WITHOUT query parameters
+}</pre>
+                            </p>
+                        </div>
+
+                        <h4>1. No Query Parameters</h4>
+                        <p>
+                            <strong>Purpose:</strong> Tests API response when no query parameters are provided for endpoints that require them.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>Response status is 400</li>
+                                <li>Error message indicates missing phone model parameter</li>
+                                <li>Headers are correctly set from endpoint configuration</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>Status code: 400</li>
+                                <li>Response body: "{'message':'Missing phone model in url parameters'}"</li>
+                                <li>Headers match endpoint configuration</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`No Query Parameters ${endpoint.path}`, async ({ request }) => {
+    const headers = endpoint.config.requiredHeaders;
+    const endpointWithoutParams = {
+        ...endpoint,
+        config: {
+            ...endpoint.config,
+            queryParams: undefined,
+            requiredHeaders: endpoint.config.requiredHeaders
+        }
+    };
+    const response = await executeRequest(test, request, endpointWithoutParams, headers);
+    expect(response.status()).toBe(400);
+    expect(await response.text()).toBe("{'message':'Missing phone model in url parameters'}");
+});</pre>
+
+                        <h4>2. Invalid Query Parameters</h4>
+                        <p>
+                            <strong>Purpose:</strong> Tests API response when query parameters have invalid values.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>Response status is 200</li>
+                                <li>Response is successful despite invalid parameter values</li>
+                                <li>Headers are correctly set from endpoint configuration</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>Status code: 200</li>
+                                <li>Response is successful (response.ok() is true)</li>
+                                <li>Headers match endpoint configuration</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Invalid Query Parameters ${endpoint.path}`, async ({ request }) => {
+    const headers = endpoint.config.requiredHeaders;
+    const invalidParams = Object.keys(endpoint.config.queryParams).reduce((acc, param) => {
+        acc[param] = 'invalid_value';
+        return acc;
+    }, {});
+    const endpointWithInvalidParams = {
+        ...endpoint,
+        config: {
+            ...endpoint.config,
+            queryParams: invalidParams,
+            requiredHeaders: endpoint.config.requiredHeaders
+        }
+    };
+    const response = await executeRequest(test, request, endpointWithInvalidParams, headers);
+    expect(response.ok()).toBeTruthy();
+    expect(response.status()).toBe(200);
+});</pre>
+
+                        <h4>3. Empty Query Parameters</h4>
+                        <p>
+                            <strong>Purpose:</strong> Tests API response when query parameters are present but empty.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>Response status is 400</li>
+                                <li>Error message indicates missing phone model parameter</li>
+                                <li>Headers are correctly set from endpoint configuration</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>Status code: 400</li>
+                                <li>Response body: "{'message':'Missing phone model in url parameters'}"</li>
+                                <li>Headers match endpoint configuration</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Empty Query Parameters ${endpoint.path}`, async ({ request }) => {
+    const headers = endpoint.config.requiredHeaders;
+    const emptyParams = Object.keys(endpoint.config.queryParams).reduce((acc, param) => {
+        acc[param] = '';
+        return acc;
+    }, {});
+    const endpointWithEmptyParams = {
+        ...endpoint,
+        config: {
+            ...endpoint.config,
+            queryParams: emptyParams,
+            requiredHeaders: endpoint.config.requiredHeaders
+        }
+    };
+    const response = await executeRequest(test, request, endpointWithEmptyParams, headers);
+    expect(response.status()).toBe(400);
+    expect(await response.text()).toBe("{'message':'Missing phone model in url parameters'}");
+});</pre>
+
+                        <h4>4. Unexpected Query Parameters</h4>
+                        <p>
+                            <strong>Purpose:</strong> Tests API response when unexpected query parameters are provided to endpoints that don't require them.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>Response status is 401</li>
+                                <li>Error message indicates "Something went wrong"</li>
+                                <li>Headers are correctly set from endpoint configuration</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>Status code: 401</li>
+                                <li>Response body: '"Something went wrong"'</li>
+                                <li>Headers match endpoint configuration</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Unexpected Query Parameters ${endpoint.path}`, async ({ request }) => {
+    const headers = endpoint.config.requiredHeaders;
+    const endpointWithUnexpectedParams = {
+        ...endpoint,
+        config: {
+            ...endpoint.config,
+            queryParams: { unexpected_param: 'value' },
+            requiredHeaders: endpoint.config.requiredHeaders
+        }
+    };
+    const response = await executeRequest(test, request, endpointWithUnexpectedParams, headers);
+    expect(response.status()).toBe(401);
+    expect(await response.text()).toBe('"Something went wrong"');
+});</pre>
+
+                        <h3>Test Configuration</h3>
+                        <p>
+                            The test suite uses several configuration elements:
+                        </p>
+                        <ul>
+                            <li><strong>Environment Variables:</strong>
+                                <ul>
+                                    <li>BASE_URL: API base URL (defaults to http://localhost:3000)</li>
+                                    <li>TEST_ENDPOINTS: JSON array of endpoint paths to test</li>
+                                </ul>
+                            </li>
+                            <li><strong>Query Parameters:</strong>
+                                <ul>
+                                    <li>Required parameters are defined in endpoint.config.queryParams</li>
+                                    <li>Parameters are validated based on endpoint requirements</li>
+                                </ul>
+                            </li>
+                            <li><strong>Headers:</strong>
+                                <ul>
+                                    <li>Uses endpoint-specific required headers</li>
+                                    <li>Headers are maintained across all test cases</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Template Loader -->
+    <script src="../scripts/template-loader.js"></script>
+    <!-- Version Fetcher -->
+    <script src="../scripts/version-fetcher.js"></script>
+    <!-- Sidebar Loader -->
+    <script src="scripts/sidebar-loader.js"></script>
+    <!-- Documentation Scripts -->
+    <script src="scripts/docs.js"></script>
+</body>
+</html> 

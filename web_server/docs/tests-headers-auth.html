@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Headers Suite (Authentication Annotated) - API Testing Platform</title>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../styles/common.css" rel="stylesheet">
+    <link href="styles/docs.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb" class="mt-3 mb-4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/docs" class="text-decoration-none">Documentation</a></li>
+                    <li class="breadcrumb-item active">Headers Suite (Authentication Annotated)</li>
+                </ol>
+            </nav>
+
+            <div class="row">
+                <!-- Sidebar Navigation -->
+                <div id="sidebar-placeholder"></div>
+
+                <!-- Documentation Content -->
+                <div class="col-md-9">
+                    <div class="wiki-content">
+                        <h1>Headers Suite Documentation (Authentication Annotated)</h1>
+                        <div class="alert alert-info">
+                            <h4 class="h5">Summary</h4>
+                            <p>
+                                This page documents all tests in <code>headers.spec.js</code> and indicates for each test whether it is related to <strong>Authentication</strong> or not. Use this as a reference for security and compliance reviews.
+                            </p>
+                        </div>
+
+                        <h2>Test Cases Overview</h2>
+                        <ol>
+                            <li><strong>Response Has Correct Content-Type</strong>
+                                <span class="badge bg-secondary ms-2">Not Authentication</span>
+                                <p>Verifies all responses include the <code>Content-Type: application/json</code> header.</p>
+                            </li>
+                            <li><strong>CORS No Origin Returns Wildcard</strong>
+                                <span class="badge bg-secondary ms-2">Not Authentication</span>
+                                <p>Verifies CORS wildcard behavior when no Origin header is sent.</p>
+                            </li>
+                            <li><strong>CORS Origin Echoed Back</strong>
+                                <span class="badge bg-secondary ms-2">Not Authentication</span>
+                                <p>Verifies CORS behavior when a specific Origin header is provided.</p>
+                            </li>
+                            <li><strong>Cache Control Directives</strong>
+                                <span class="badge bg-secondary ms-2">Not Authentication</span>
+                                <p>Ensures the response includes all required cache-control directives.</p>
+                            </li>
+                            <li><strong>Verify Connection header is keep-alive</strong>
+                                <span class="badge bg-secondary ms-2">Not Authentication</span>
+                                <p>Ensures the <code>connection</code> header is set to <code>keep-alive</code>.</p>
+                            </li>
+                            <li><strong>Required AWS Headers Present</strong>
+                                <span class="badge bg-secondary ms-2">Not Authentication</span>
+                                <p>Ensures required AWS API Gateway headers are present in the response.</p>
+                            </li>
+                            <li><strong>Missing Headers Validation</strong>
+                                <span class="badge bg-success ms-2">Authentication</span>
+                                <p>Verifies the server returns 401 when any required authentication header (<code>Glasseson-Client-Id</code>, <code>Glasseson-Profile-Name</code>, <code>Glasseson-Native-App-Id</code>) is missing.</p>
+                            </li>
+                            <li><strong>All Required Headers Missing</strong>
+                                <span class="badge bg-success ms-2">Authentication</span>
+                                <p>Verifies the server returns 401 when all required authentication headers are missing.</p>
+                            </li>
+                            <li><strong>Empty Headers Validation</strong>
+                                <span class="badge bg-success ms-2">Authentication</span>
+                                <p>Verifies the server returns 401 when required authentication headers are present but empty.</p>
+                            </li>
+                            <li><strong>All Required Headers Empty</strong>
+                                <span class="badge bg-success ms-2">Authentication</span>
+                                <p>Verifies the server returns 401 when all required authentication headers are empty.</p>
+                            </li>
+                            <li><strong>Invalid Header Values</strong>
+                                <span class="badge bg-success ms-2">Authentication</span>
+                                <p>Verifies the server returns 401 when required authentication headers have invalid values.</p>
+                            </li>
+                            <li><strong>All Invalid Header Values</strong>
+                                <span class="badge bg-success ms-2">Authentication</span>
+                                <p>Verifies the server returns 401 when all required authentication headers have invalid values.</p>
+                            </li>
+                            <li><strong>Missing Glasseson-Session-Id Header</strong>
+                                <span class="badge bg-success ms-2">Authentication</span>
+                                <p>Verifies the server returns 500 (or 401 for some endpoints) when the session ID header is missing.</p>
+                            </li>
+                        </ol>
+
+                        <h3>Legend</h3>
+                        <ul>
+                            <li><span class="badge bg-success">Authentication</span> &mdash; Test is directly related to authentication/session enforcement.</li>
+                            <li><span class="badge bg-secondary">Not Authentication</span> &mdash; Test is not related to authentication.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Template Loader -->
+    <script src="../scripts/template-loader.js"></script>
+    <!-- Version Fetcher -->
+    <script src="../scripts/version-fetcher.js"></script>
+    <!-- Sidebar Loader -->
+    <script src="scripts/sidebar-loader.js"></script>
+    <!-- Documentation Scripts -->
+    <script src="scripts/docs.js"></script>
+</body>
+</html> 

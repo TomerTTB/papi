@@ -1,0 +1,105 @@
+{
+  "type": "array",
+  "items": {
+    "type": "object",
+    "required": [
+      "title",
+      "image",
+      "priority",
+      "withMargin",
+      "alignToLeft",
+      "repeatGif",
+      "shouldDisplayInstructionText",
+      "scaleUpImage",
+      "type",
+      "id"
+    ],
+    "additionalProperties": false,
+    "properties": {
+      "title": {
+        "type": "string"
+      },
+      "sound": {
+        "type": ["null"]
+      },
+      "image": {
+        "type": "object",
+        "required": ["value", "type", "cdnPath"],
+        "additionalProperties": false,
+        "properties": {
+          "value": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["Resource"]
+          },
+          "cdnPath": {
+            "type": "string"
+          }
+        }
+      },
+      "priority": {
+        "type": "string",
+        "enum": ["low"]
+      },
+      "withMargin": {
+        "type": "boolean"
+      },
+      "alignToLeft": {
+        "type": "boolean"
+      },
+      "repeatGif": {
+        "type": "boolean"
+      },
+      "shouldDisplayInstructionText": {
+        "type": "boolean"
+      },
+      "scaleUpImage": {
+        "type": "boolean"
+      },
+      "label": {
+        "type": ["null"]
+      },
+      "mixpanelEvent": {
+        "type": "object",
+        "required": ["id", "type", "title", "eventType", "category"],
+        "additionalProperties": false,
+        "properties": {
+          "id": {
+            "type": "string"
+          },
+          "type": {
+            "type": "string",
+            "enum": ["MixpanelEvent"]
+          },
+          "title": {
+            "type": "string"
+          },
+          "eventType": {
+            "type": "string"
+          },
+          "innerTitle": {
+            "type": ["null"]
+          },
+          "category": {
+            "type": "string"
+          }
+        }
+      },
+      "successMixpanelEvent": {
+        "type": ["null"]
+      },
+      "analyticsEvent": {
+        "type": ["null"]
+      },
+      "type": {
+        "type": "string",
+        "enum": ["InstructionAction"]
+      },
+      "id": {
+        "type": "string"
+      }
+    }
+  }
+}

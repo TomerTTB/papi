@@ -1,0 +1,492 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Headers Tests - API Testing Platform</title>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../styles/common.css" rel="stylesheet">
+    <link href="styles/docs.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb" class="mt-3 mb-4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/docs" class="text-decoration-none">Documentation</a></li>
+                    <li class="breadcrumb-item active">Headers Tests</li>
+                </ol>
+            </nav>
+
+            <div class="row">
+                <!-- Sidebar Navigation -->
+                <div id="sidebar-placeholder"></div>
+
+                <!-- Documentation Content -->
+                <div class="col-md-9">
+                    <div class="wiki-content">
+                        <h1>Headers Test Suite Documentation</h1>
+                        
+                        <h2 id="headers-tests">Headers Tests (headers.spec.js)</h2>
+                        <div class="alert alert-info">
+                            <h4 class="h5">Summary</h4>
+                            <p>
+                                The headers.spec.js file implements comprehensive header validation testing for the API endpoints. 
+                                It ensures proper handling of required headers, security headers, and error responses for various 
+                                header scenarios. The test suite validates CORS policies, caching directives, connection settings, 
+                                and AWS API Gateway headers, making it a crucial component for API security and compliance.
+                            </p>
+                        </div>
+
+                        <h3>Test Cases Overview</h3>
+                        
+                        <h4>1. Content-Type Header Validation</h4>
+                        <p>
+                            <strong>Purpose:</strong> Verifies that all API responses include the correct Content-Type header.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>Response includes content-type header</li>
+                                <li>Content type is 'application/json'</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>Response headers include 'content-type'</li>
+                                <li>Content-Type value contains 'application/json'</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Response Has Correct Content-Type ${endpoint.path}`, async ({ request }) => {
+    const headers = { 
+        ...commonHeaders, 
+        ...endpoint.config.requiredHeaders 
+    };
+    const response = await executeRequest(test, request, endpoint, headers);
+    expect(response.headers()['content-type']).toContain('application/json');
+});</pre>
+
+                        <h4>2. CORS Header Behavior</h4>
+                        <p>
+                            <strong>Purpose:</strong> Validates the API's CORS (Cross-Origin Resource Sharing) implementation.<br>
+                            <strong>Test Cases:</strong>
+                            <ul>
+                                <li>CORS No Origin Returns Wildcard: Tests default behavior when no Origin header is sent</li>
+                                <li>CORS Origin Echoed Back: Tests behavior when a specific Origin header is provided</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>For requests without Origin header (Wildcard CORS):
+                                    <ul>
+                                        <li>access-control-allow-origin header is exactly '*'</li>
+                                        <li>access-control-allow-credentials header must not be present</li>
+                                    </ul>
+                                </li>
+                                <li>For requests with Origin header:
+                                    <ul>
+                                        <li>access-control-allow-origin matches the exact Origin header value</li>
+                                        <li>access-control-allow-credentials is 'true' if credentials are allowed</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">// Test 1: No Origin header - expect wildcard
+test(`CORS No Origin Returns Wildcard ${endpoint.path}`, async ({ request }) => {
+    const headers = {
+        ...endpoint.config.requiredHeaders
+        // No Origin header sent
+    };
+    const response = await executeRequest(test, request, endpoint, headers);
+    const corsHeader = response.headers()['access-control-allow-origin'];
+    expect(corsHeader).toBe('*');
+    expect(response.headers()['access-control-allow-credentials']).toBeFalsy();
+});
+
+// Test 2: Specific Origin header - expect echo back
+test(`CORS Origin Echoed Back ${endpoint.path}`, async ({ request }) => {
+    const headers = {
+        ...endpoint.config.requiredHeaders,
+        Origin: 'https://any-origin.com'
+    };
+    const response = await executeRequest(test, request, endpoint, headers);
+    const corsHeader = response.headers()['access-control-allow-origin'];
+    expect(corsHeader).toBe('https://any-origin.com');
+    if (response.headers()['access-control-allow-credentials']) {
+        expect(response.headers()['access-control-allow-credentials']).toBe('true');
+    }
+});</pre>
+
+                        <h4>3. Cache-Control Directives</h4>
+                        <p>
+                            <strong>Purpose:</strong> Ensures proper caching behavior through Cache-Control headers.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>no-store directive</li>
+                                <li>no-cache directive</li>
+                                <li>must-revalidate directive</li>
+                                <li>private directive</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>Cache-Control header is present</li>
+                                <li>Contains all required directives:
+                                    <ul>
+                                        <li>no-store</li>
+                                        <li>no-cache</li>
+                                        <li>must-revalidate</li>
+                                        <li>private</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Cache Control Directives ${endpoint.path}`, async ({ request }) => {
+    const response = await executeRequest(test, request, endpoint, headers);
+    const cacheControl = response.headers()['cache-control'];
+    const directives = cacheControl.split(',').map(d => d.trim());
+    // Verify required directives
+});</pre>
+
+                        <h4>4. Connection Header</h4>
+                        <p>
+                            <strong>Purpose:</strong> Validates the Connection header is set to keep-alive.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>Connection header is present</li>
+                                <li>Value is exactly 'keep-alive'</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>Connection header is present</li>
+                                <li>Connection header value is exactly 'keep-alive'</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Verify Connection header is keep-alive ${endpoint.path}`, async ({ request }) => {
+    const response = await executeRequest(test, request, endpoint, commonHeaders);
+    expect(response.headers()['connection']).toBe('keep-alive');
+});</pre>
+
+                        <h4>5. AWS API Gateway Headers</h4>
+                        <p>
+                            <strong>Purpose:</strong> Verifies presence of required AWS API Gateway headers.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>content-length</li>
+                                <li>x-amzn-requestid</li>
+                                <li>x-amzn-remapped-content-length</li>
+                                <li>x-amzn-remapped-connection</li>
+                                <li>x-amz-apigw-id</li>
+                                <li>x-amzn-remapped-server</li>
+                                <li>x-amzn-remapped-date</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>All required AWS headers are present in the response</li>
+                                <li>Each header has a non-empty value</li>
+                                <li>Headers match AWS API Gateway format</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Required Headers Present ${endpoint.path}`, async ({ request }) => {
+    const response = await executeRequest(test, request, endpoint, headers);
+    const responseHeaders = response.headers();
+    // Verify each required header
+});</pre>
+
+                        <h4>6. Missing Headers Validation</h4>
+                        <p>
+                            <strong>Purpose:</strong> Tests API response when required headers are missing.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>Glasseson-Client-Id: Returns 401 with "Client id does not exist"</li>
+                                <li>Glasseson-Profile-Name: Returns 401 with "Something went wrong"</li>
+                                <li>Glasseson-Native-App-Id: Returns 401 with "No Domain was provided for client Id"</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>For missing Glasseson-Client-Id:
+                                    <ul>
+                                        <li>Status code: 401</li>
+                                        <li>Error message: "Client id does not exist"</li>
+                                    </ul>
+                                </li>
+                                <li>For missing Glasseson-Profile-Name:
+                                    <ul>
+                                        <li>Status code: 401</li>
+                                        <li>Error message: "Something went wrong"</li>
+                                    </ul>
+                                </li>
+                                <li>For missing Glasseson-Native-App-Id:
+                                    <ul>
+                                        <li>Status code: 401</li>
+                                        <li>Error message: "No Domain was provided for client Id"</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Missing Headers Validation ${endpoint.path}`, async ({ request }) => {
+    const requiredHeaders = [
+        'Glasseson-Client-Id',
+        'Glasseson-Profile-Name',
+        'Glasseson-Native-App-Id'
+    ];
+    // Test each missing header
+});</pre>
+
+                        <h4>7. All Required Headers Missing</h4>
+                        <p>
+                            <strong>Purpose:</strong> Tests API response when all required headers are missing simultaneously.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>All required headers (Glasseson-Client-Id, Glasseson-Profile-Name, Glasseson-Native-App-Id) are missing</li>
+                                <li>Returns 401 status code</li>
+                                <li>Error message contains "Client id does not exist"</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>Status code: 401</li>
+                                <li>Error message contains "Client id does not exist"</li>
+                                <li>Response is in JSON format</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`All Required Headers Missing ${endpoint.path}`, async ({ request }) => {
+    const headers = { ...endpoint.config.requiredHeaders };
+    delete headers['Glasseson-Client-Id'];
+    delete headers['Glasseson-Profile-Name'];
+    delete headers['Glasseson-Native-App-Id'];
+    const response = await executeRequest(test, request, endpoint, headers);
+    expect(response.status()).toBe(401);
+    const errorResponse = await response.json();
+    expect(errorResponse.error_message).toContain('Client id does not exist');
+});</pre>
+
+                        <h4>8. Empty Headers Validation</h4>
+                        <p>
+                            <strong>Purpose:</strong> Tests API response when required headers are present but empty.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>Glasseson-Client-Id: Returns 401 with "Client id does not exist"</li>
+                                <li>Glasseson-Profile-Name: Returns 401 with "Profile name does not exist for the provided client id"</li>
+                                <li>Glasseson-Native-App-Id: Returns 401 with "No Domain was provided for client Id"</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>For empty Glasseson-Client-Id:
+                                    <ul>
+                                        <li>Status code: 401</li>
+                                        <li>Error message: "Client id does not exist"</li>
+                                    </ul>
+                                </li>
+                                <li>For empty Glasseson-Profile-Name:
+                                    <ul>
+                                        <li>Status code: 401</li>
+                                        <li>Error message: "Profile name does not exist for the provided client id"</li>
+                                    </ul>
+                                </li>
+                                <li>For empty Glasseson-Native-App-Id:
+                                    <ul>
+                                        <li>Status code: 401</li>
+                                        <li>Error message: "No Domain was provided for client Id"</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Empty Headers Validation ${endpoint.path}`, async ({ request }) => {
+    const requiredHeaders = [
+        'Glasseson-Client-Id',
+        'Glasseson-Profile-Name',
+        'Glasseson-Native-App-Id'
+    ];
+    // Test each empty header
+});</pre>
+
+                        <h4>9. All Required Headers Empty</h4>
+                        <p>
+                            <strong>Purpose:</strong> Tests API response when all required headers are present but empty.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>All required headers are set to empty strings</li>
+                                <li>Returns 401 status code</li>
+                                <li>Error message contains "Client id does not exist"</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>Status code: 401</li>
+                                <li>Error message contains "Client id does not exist"</li>
+                                <li>Response is in JSON format</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`All Required Headers Empty ${endpoint.path}`, async ({ request }) => {
+    const headers = { ...endpoint.config.requiredHeaders };
+    headers['Glasseson-Client-Id'] = '';
+    headers['Glasseson-Profile-Name'] = '';
+    headers['Glasseson-Native-App-Id'] = '';
+    const response = await executeRequest(test, request, endpoint, headers);
+    expect(response.status()).toBe(401);
+    const errorResponse = await response.json();
+    expect(errorResponse.error_message).toContain('Client id does not exist');
+});</pre>
+
+                        <h4>10. Invalid Header Values</h4>
+                        <p>
+                            <strong>Purpose:</strong> Tests API response when required headers have invalid values.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>Glasseson-Client-Id: Returns 401 with "Client id does not exist"</li>
+                                <li>Glasseson-Profile-Name: Returns 401 with "Profile name does not exist for the provided client id"</li>
+                                <li>Glasseson-Native-App-Id: Returns 401 with "The provided client id does not match with the provided app id"</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>For invalid Glasseson-Client-Id:
+                                    <ul>
+                                        <li>Status code: 401</li>
+                                        <li>Error message: "Client id does not exist"</li>
+                                    </ul>
+                                </li>
+                                <li>For invalid Glasseson-Profile-Name:
+                                    <ul>
+                                        <li>Status code: 401</li>
+                                        <li>Error message: "Profile name does not exist for the provided client id"</li>
+                                    </ul>
+                                </li>
+                                <li>For invalid Glasseson-Native-App-Id:
+                                    <ul>
+                                        <li>Status code: 401</li>
+                                        <li>Error message: "The provided client id does not match with the provided app id"</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Invalid Header Values ${endpoint.path}`, async ({ request }) => {
+    const requiredHeaders = [
+        'Glasseson-Client-Id',
+        'Glasseson-Profile-Name',
+        'Glasseson-Native-App-Id'
+    ];
+    // Test each invalid header value
+});</pre>
+
+                        <h4>11. All Invalid Header Values</h4>
+                        <p>
+                            <strong>Purpose:</strong> Tests API response when all required headers have invalid values.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>All required headers are set to 'invalid_value'</li>
+                                <li>Returns 401 status code</li>
+                                <li>Error message contains "Client id does not exist"</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>Status code: 401</li>
+                                <li>Error message contains "Client id does not exist"</li>
+                                <li>Response is in JSON format</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`All Invalid Header Values ${endpoint.path}`, async ({ request }) => {
+    const headers = { ...endpoint.config.requiredHeaders };
+    const requiredHeaders = [
+        'Glasseson-Client-Id',
+        'Glasseson-Profile-Name',
+        'Glasseson-Native-App-Id'
+    ];
+    requiredHeaders.forEach(header => {
+        headers[header] = 'invalid_value';
+    });
+    const response = await executeRequest(test, request, endpoint, headers);
+    expect(response.status()).toBe(401);
+    const errorResponse = await response.json();
+    expect(errorResponse.error_message).toContain('Client id does not exist');
+});</pre>
+
+                        <h4>12. Glasseson-Session-Id Header Validation</h4>
+                        <p>
+                            <strong>Purpose:</strong> Tests API response when Glasseson-Session-Id header is missing (POST requests only).<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>Returns 500 status code</li>
+                                <li>Response contains "Internal Server Error, error_id"</li>
+                                <li>Test is skipped for GET requests</li>
+                                <li>Special case for /@/go-eyes/save-station endpoint:
+                                    <ul>
+                                        <li>Returns 401 status code</li>
+                                        <li>Response: "Something went wrong"</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>For POST requests (except /@/go-eyes/save-station):
+                                    <ul>
+                                        <li>Status code: 500</li>
+                                        <li>Response contains "Internal Server Error, error_id"</li>
+                                    </ul>
+                                </li>
+                                <li>For /@/go-eyes/save-station:
+                                    <ul>
+                                        <li>Status code: 401</li>
+                                        <li>Response: "Something went wrong"</li>
+                                    </ul>
+                                </li>
+                                <li>For GET requests:
+                                    <ul>
+                                        <li>Test is skipped</li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Missing Glasseson-Session-Id Header ${endpoint.path}`, async ({ request }) => {
+    if (endpoint.method === 'GET') {
+        test.skip();
+        return;
+    }
+    // Test missing session ID
+});</pre>
+
+                        <h3>Test Configuration</h3>
+                        <p>
+                            The test suite uses several configuration elements:
+                        </p>
+                        <ul>
+                            <li><strong>Environment Variables:</strong>
+                                <ul>
+                                    <li>BASE_URL: API base URL (defaults to http://localhost:3000)</li>
+                                    <li>TEST_ENDPOINTS: JSON array of endpoint paths to test</li>
+                                </ul>
+                            </li>
+                            <li><strong>Common Headers:</strong> Shared headers applied to all requests</li>
+                            <li><strong>Required Headers:</strong> Endpoint-specific required headers including:
+                                <ul>
+                                    <li>Glasseson-Client-Id</li>
+                                    <li>Glasseson-Profile-Name</li>
+                                    <li>Glasseson-Native-App-Id</li>
+                                    <li>Glasseson-Session-Id (for POST requests)</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Template Loader -->
+    <script src="../scripts/template-loader.js"></script>
+    <!-- Version Fetcher -->
+    <script src="../scripts/version-fetcher.js"></script>
+    <!-- Sidebar Loader -->
+    <script src="scripts/sidebar-loader.js"></script>
+    <!-- Documentation Scripts -->
+    <script src="scripts/docs.js"></script>
+</body>
+</html> 

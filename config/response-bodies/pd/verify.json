@@ -1,0 +1,30 @@
+[
+    {
+      "title": "",
+      "sound": null,
+      "image": {
+        "value": "in_front_of_your_face.vue",
+        "type": "Resource",
+        "cdnPath": "/in_front_of_your_face.vue"
+      },
+      "priority": "low",
+      "withMargin": false,
+      "alignToLeft": true,
+      "repeatGif": false,
+      "shouldDisplayInstructionText": false,
+      "scaleUpImage": true,
+      "label": null,
+      "mixpanelEvent": {
+        "id": "pd.error_phone_too_close.0.src=/pd/actions/error_actions_by_order.json.key=error_3.src=/pd/actions/actions/actions_by_order/error_3.json.0.src=/pd/actions/actions/instruction_actions/arms_length_image_only_instruction_action.json.src=/pd/actions/mixpanel_events/error_instruction_actions/error_3_instruction_event.json.MixpanelEvent",
+        "type": "MixpanelEvent",
+        "title": "pv mobile pd verify error 3",
+        "eventType": "pv",
+        "innerTitle": null,
+        "category": "Critical"
+      },
+      "successMixpanelEvent": null,
+      "analyticsEvent": null,
+      "type": "InstructionAction",
+      "id": "pd.error_phone_too_close.0.src=/pd/actions/error_actions_by_order.json.key=error_3.src=/pd/actions/actions/actions_by_order/error_3.json.0.src=/pd/actions/actions/instruction_actions/arms_length_image_only_instruction_action.json.InstructionAction"
+    }
+  ]

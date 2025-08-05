@@ -1,0 +1,2196 @@
+{
+  "partner_name": "glasseson",
+  "campagin-properties": {
+    "accuracy": false,
+    "feedback": false,
+    "flow": "copy-glass-pd",
+    "first_flow": "copy-glass-pd",
+    "flows": [
+      "copy-glass-pd",
+      "pd"
+    ],
+    "webappFlows": [],
+    "authorizedFlows": [
+      "copy-glass-pd",
+      "pd"
+    ],
+    "isServerDebugMode": false,
+    "campaign_url": "web.glasseson.com/qr",
+    "banner_url": "",
+    "banner_text": "",
+    "allow_unsupported_countries": false,
+    "use_web_pd_disclaimer_link": true,
+    "use_web_pd_unsuccessful_flow": false,
+    "campaign_assets_file_name": "glasseson",
+    "audioFolder": "glasseson",
+    "imageFolder": "glasseson",
+    "videoFolder": "glasseson",
+    "assetsGroup": "glasseson",
+    "pagesLayout": "{}",
+    "redirectToProduction": false,
+    "downloadLink": "https://glasseson.app.link/download",
+    "smsText": "Click here to download GlassesOn ",
+    "shouldIgnoreErrors": false,
+    "shouldIgnoreOutOfRangeError": true,
+    "onboardingUrl": "onboarding",
+    "onboardingType": "default",
+    "prescriptionType": "default",
+    "checkRepeatScan": false,
+    "usePreloadPage": true,
+    "goToFlowConfig": "default",
+    "smsView": "prescription-teaser",
+    "qrView": "qr-scanner",
+    "qrTargetUrl": "web.glasseson.com/qr",
+    "congratsView": "congrats-prescription-affiliate",
+    "prescriptionBottomView": "affiliation",
+    "useInterimResults": false,
+    "displayHeader": true,
+    "slackWebhook": "https://hooks.slack.com/services/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",
+    "skipSms": false,
+    "phoneNumber": "+1 (555) 555 5555",
+    "allow_multifocal": false,
+    "allow_laptop": false,
+    "useCustomUserNames": false,
+    "show_results": "last",
+    "show_leaderboard": false,
+    "go_to_flow_view": "default",
+    "ignorePhoneNotSupported": false,
+    "show_multitilt_error_references": false,
+    "ampirical_pos_l_sph": -0.05,
+    "ampirical_pos_r_sph": -0.05,
+    "ampirical_neg_l_sph": 0.05,
+    "ampirical_neg_r_sph": 0.05,
+    "should_round_results": true,
+    "should_display_oor_prescription": false,
+    "provide_oor_error_sdk": true,
+    "should_display_next_button_immediately": false,
+    "should_display_instruction_text": true,
+    "should_override_settings_for_hardcopy_targets": false,
+    "should_display_prescription_page_immediately": false,
+    "should_use_previous_screen_calibration": false,
+    "allow_mini_targets": false,
+    "mini_targets_type": "ipad-mini",
+    "eye_prescribe_middle_way_results": true,
+    "should_disaply_contact_us": true,
+    "post_qr_scan_flow": "copy-glass-pd",
+    "post_qr_scan_multi_focal_flow": "copy-glass-multi-focal",
+    "post_qr_scan_bi_focal_flow": "pro-copy-glass-bi-focal",
+    "show_qr_text_tutorial": true,
+    "mobileSoundVolume": 70,
+    "tilt_request": "video",
+    "pd_camera_mode": "front_camera",
+    "show_prescription_on_verify": false,
+    "show_score_prescription": false,
+    "should_display_slow_connection_indication": false,
+    "slow_connection_indication_threshold": 2.5,
+    "affiliationRules": "BRAND(zenni)",
+    "fontFamily": "Roboto",
+    "styleType": "glasseson",
+    "styleTypeColor": "#5fb8e3",
+    "show_by_6over6_logo": true,
+    "terms_and_condition_link": "https://www.glasseson.com/terms.html",
+    "privacy_link": "https://www.glasseson.com/privacy.html",
+    "contactType": "intercom",
+    "contactEmail": "support@6over6.com",
+    "always_show_onboarding": false,
+    "shouldSendQrVerifyImages": false,
+    "shouldWatchStageSync": true,
+    "shouldSkipTutorial": false,
+    "should_show_focus_border": false,
+    "instructionImagesToCenterWithMargin": false,
+    "isTiltWithHighRes": false,
+    "pd_convertor": "number",
+    "start_eye": "right",
+    "use_open_closed_eyes_server": true,
+    "use_mono_pd": false,
+    "eyes_open_closed_detection_threshold": 0.75,
+    "lock_focus_before_glasses": false,
+    "useScaleArchitecture": true,
+    "algo_running_mode": "full_python",
+    "verify_python": false,
+    "focus_threshold_factor": 1,
+    "poor_network": false,
+    "automation": false,
+    "show_camera_low_res_alert_page": false,
+    "card_blur_type": "cryptor",
+    "skip_pd_analyze": false,
+    "estimated_pd_slop": 3.667,
+    "estimated_pd_bias": 25.852,
+    "estimated_pd_slop_yolo": 15.00003136,
+    "estimated_pd_bias_yolo": 24.74692506,
+    "min_estimated_distance_from_face_mm": 350,
+    "max_estimated_distance_from_face_mm": 700,
+    "average_pd_for_frame_size": 62,
+    "source_image_width": 720,
+    "avr_dist_mm": 54,
+    "use_websocket_microservice": false,
+    "asset_group_id": "3f8609c1-bcbd-4f37-84a8-d55bbd3e52fd",
+    "brand_app_name": "GlassesOn",
+    "pd_mode": "yolo",
+    "send_email_on_result": false,
+    "sender_email": "idogueta@6over6.com",
+    "show_eu_regulation_symbols_web_pd": false,
+    "is_go_eyes": false,
+    "asset_mode": "AssetGroup",
+    "pd_timeout_seconds": -1,
+    "is_hub": false,
+    "app_store_link": "https://appstore.com/6over6/golenses",
+    "play_store_link": "https://play.google.com/store/apps/details?id=com.glasseson.hub",
+    "telehealth_consent_link": "https://luna.io/trust/6over6-telehealth/",
+    "multiple_assets_group": {},
+    "mono_pass_threshold": 0,
+    "bino_pass_threshold": 0,
+    "should_display_end_of_flow_redirect_button": false,
+    "brand_name": "Luna",
+    "enable_pd_without_card": false,
+    "locale": [],
+    "web_log_mode": "defined",
+    "allow_organic_users": true,
+    "online_only": false,
+    "enable_sc_yolo": false,
+    "enable_fixed_focus_distance": true,
+    "disable_area_focus": true,
+    "disable_continuous_focus": true,
+    "screen_select_enabled": false,
+    "product_calibration_name": "default",
+    "patents_link": "https://luna.io/patents/",
+    "authentication_header": "referrer",
+    "debug_voice": false,
+    "id": "glasseson__go_lenses"
+  },
+  "mobile-settings": {
+    "_cls": "MobileSettings",
+    "tilt_number_of_times": 40,
+    "tilt_timeout": 100,
+    "upper_bound_preview_width": 1300,
+    "copy_glass_upper_bound_picture_width": 3500,
+    "error_count_limit": 1,
+    "phone_distance_threshold": 50,
+    "copy_glass_scale_factor": 0.5,
+    "skip_face_detection": true,
+    "face_too_close_factor": 0.53,
+    "face_too_far_factor": 0.1,
+    "pd_pitch_vertical_threshold": 80,
+    "default_url": "www.glasseson.com",
+    "seconds_until_QR_message": 12,
+    "eye_detector_confidence_threshold": 0.45,
+    "ios_face_detector": "vision",
+    "depth_filter_enabled": false,
+    "force_ios_version": "1.0.0",
+    "force_android_version": "3.0.0",
+    "lod_min_memory": 0,
+    "calendly_url": "",
+    "cdn_sdk_domain": "",
+    "cdn_uri": "",
+    "enable_recaptcha": true,
+    "global_tilt_count_enabled": true,
+    "logging_debug_mode": true,
+    "replicator": true,
+    "send_sms": false,
+    "unsupported_models": [],
+    "use_legacy_contnet_directory": true,
+    "use_yolo_pd": true,
+    "lenses_verify_performance": false,
+    "pd_scale_logs": false,
+    "use_china_link": true,
+    "record_session": false,
+    "ignore_obfuscation_profiles": [
+      "glasseson__go_eyes",
+      "goeyeshub__go_eyes"
+    ],
+    "phone_model_settings": {
+      "front_settings": {
+        "hfov": 73.29196,
+        "vfov": 73.29196
+      },
+      "pixels_per_inches": 458
+    },
+    "diopter_correction": 0,
+    "pd_woc_enabled": false
+  },
+  "menu-actions": {},
+  "first-flow-actions": {
+    "actions": [
+      {
+        "flow": "copy-glass-pd",
+        "start_new_flow": false,
+        "mixpanelEvent": null,
+        "successMixpanelEvent": null,
+        "analyticsEvent": null,
+        "type": "ChangeFlowAction",
+        "id": "1841188908816910462"
+      },
+      {
+        "page": {
+          "url_request": "@/qr-scanned",
+          "actions": [
+            {
+              "title": "Visit web.glasseson.com/qr",
+              "sound": {
+                "type": "Resource",
+                "cdnPath": "https://assets.dev.glasseson.com/2019/9/5/3e7fcd6f-5618-4a20-a087-6a41e3618cc9.mp3",
+                "value": "go_lenses_asset_container_qr_open_audio.mp3"
+              },
+              "image": {
+                "value": "qr_scan.png"
+              },
+              "priority": "high",
+              "withMargin": true,
+              "alignToLeft": false,
+              "repeatGif": false,
+              "shouldDisplayInstructionText": true,
+              "scaleUpImage": true,
+              "label": null,
+              "mixpanelEvent": {
+                "id": "copy-glass-pd.initial_actions.0.src=/go_lenses_pd/actions/go_to_next_page_actions/go_to_next_page_actions.json.key=go_lenses_pd_initial.src=/go_lenses_pd/actions/go_to_next_page_actions/go_lenses_pd_initial.json.src=/go_lenses_pd/pages/qr_page.json.0.src=/go_lenses_pd/actions/instructions/qr_open_instruction.json.src=/go_lenses_pd/mixpanel_events/qr_open_event.json.MixpanelEvent",
+                "type": "MixpanelEvent",
+                "title": "pv mobile qr instructions",
+                "eventType": "pv",
+                "innerTitle": "qr",
+                "category": "Serenity"
+              },
+              "successMixpanelEvent": null,
+              "analyticsEvent": null,
+              "type": "InstructionAction",
+              "id": "copy-glass-pd.initial_actions.0.src=/go_lenses_pd/actions/go_to_next_page_actions/go_to_next_page_actions.json.key=go_lenses_pd_initial.src=/go_lenses_pd/actions/go_to_next_page_actions/go_lenses_pd_initial.json.src=/go_lenses_pd/pages/qr_page.json.0.src=/go_lenses_pd/actions/instructions/qr_open_instruction.json.InstructionAction"
+            }
+          ],
+          "title": null,
+          "subtitle": null,
+          "mixpanelEvent": null,
+          "use_alternative_title": false,
+          "alternative_title": null,
+          "verbose_button_text": "Share link to computer",
+          "verbose_main_body": "Type the URL into your computer browser:",
+          "verbose_secondary_body": "Then, use your phone to scan the QR code",
+          "verbose_title": "Pair your devices",
+          "verbose_qr_image": "qr_scan_new.png",
+          "id": "copy-glass-pd.initial_actions.0.src=/go_lenses_pd/actions/go_to_next_page_actions/go_to_next_page_actions.json.key=go_lenses_pd_initial.src=/go_lenses_pd/actions/go_to_next_page_actions/go_lenses_pd_initial.json.src=/go_lenses_pd/pages/qr_page.json.QRScanPage",
+          "type": "QRScanPage",
+          "webStage": null,
+          "mixpanelStep": "sync",
+          "headerTitle": "SYNC",
+          "scanner_rect_width": 300,
+          "scanner_rect_height": 200,
+          "hamburgerIconColor": "black"
+        },
+        "sound": null,
+        "transitionType": "fadein",
+        "finishPreviousPageRequestUrl": null,
+        "mixpanelEvent": null,
+        "successMixpanelEvent": null,
+        "analyticsEvent": {
+          "eventName": "QR started",
+          "description": "",
+          "id": "copy-glass-pd.initial_actions.0.src=/go_lenses_pd/actions/go_to_next_page_actions/go_to_next_page_actions.json.key=go_lenses_pd_initial.src=/go_lenses_pd/actions/go_to_next_page_actions/go_lenses_pd_initial.json.AnalyticsEvent"
+        },
+        "type": "GoToNextPageAction",
+        "id": "copy-glass-pd.initial_actions.0.src=/go_lenses_pd/actions/go_to_next_page_actions/go_to_next_page_actions.json.key=go_lenses_pd_initial.src=/go_lenses_pd/actions/go_to_next_page_actions/go_lenses_pd_initial.json.GoToNextPageAction"
+      }
+    ]
+  },
+  "flows": {
+    "lensesAndPupils": [
+      {
+        "flow": "copy-glass-pd",
+        "start_new_flow": false,
+        "mixpanelEvent": null,
+        "successMixpanelEvent": null,
+        "analyticsEvent": null,
+        "type": "ChangeFlowAction",
+        "id": "1841188908816910462"
+      },
+      {
+        "page": {
+          "url_request": "@/qr-scanned",
+          "actions": [
+            {
+              "title": "Visit web.glasseson.com/qr",
+              "sound": {
+                "type": "Resource",
+                "cdnPath": "https://assets.dev.glasseson.com/2019/9/5/3e7fcd6f-5618-4a20-a087-6a41e3618cc9.mp3",
+                "value": "go_lenses_asset_container_qr_open_audio.mp3"
+              },
+              "image": {
+                "value": "qr_scan.png"
+              },
+              "priority": "high",
+              "withMargin": true,
+              "alignToLeft": false,
+              "repeatGif": false,
+              "shouldDisplayInstructionText": true,
+              "scaleUpImage": true,
+              "label": null,
+              "mixpanelEvent": {
+                "id": "copy-glass-pd.initial_actions.0.src=/go_lenses_pd/actions/go_to_next_page_actions/go_to_next_page_actions.json.key=go_lenses_pd_initial.src=/go_lenses_pd/actions/go_to_next_page_actions/go_lenses_pd_initial.json.src=/go_lenses_pd/pages/qr_page.json.0.src=/go_lenses_pd/actions/instructions/qr_open_instruction.json.src=/go_lenses_pd/mixpanel_events/qr_open_event.json.MixpanelEvent",
+                "type": "MixpanelEvent",
+                "title": "pv mobile qr instructions",
+                "eventType": "pv",
+                "innerTitle": "qr",
+                "category": "Serenity"
+              },
+              "successMixpanelEvent": null,
+              "analyticsEvent": null,
+              "type": "InstructionAction",
+              "id": "copy-glass-pd.initial_actions.0.src=/go_lenses_pd/actions/go_to_next_page_actions/go_to_next_page_actions.json.key=go_lenses_pd_initial.src=/go_lenses_pd/actions/go_to_next_page_actions/go_lenses_pd_initial.json.src=/go_lenses_pd/pages/qr_page.json.0.src=/go_lenses_pd/actions/instructions/qr_open_instruction.json.InstructionAction"
+            }
+          ],
+          "title": null,
+          "subtitle": null,
+          "mixpanelEvent": null,
+          "use_alternative_title": false,
+          "alternative_title": null,
+          "verbose_button_text": "Share link to computer",
+          "verbose_main_body": "Type the URL into your computer browser:",
+          "verbose_secondary_body": "Then, use your phone to scan the QR code",
+          "verbose_title": "Pair your devices",
+          "verbose_qr_image": "qr_scan_new.png",
+          "id": "copy-glass-pd.initial_actions.0.src=/go_lenses_pd/actions/go_to_next_page_actions/go_to_next_page_actions.json.key=go_lenses_pd_initial.src=/go_lenses_pd/actions/go_to_next_page_actions/go_lenses_pd_initial.json.src=/go_lenses_pd/pages/qr_page.json.QRScanPage",
+          "type": "QRScanPage",
+          "webStage": null,
+          "mixpanelStep": "sync",
+          "headerTitle": "SYNC",
+          "scanner_rect_width": 300,
+          "scanner_rect_height": 200,
+          "hamburgerIconColor": "black"
+        },
+        "sound": null,
+        "transitionType": "fadein",
+        "finishPreviousPageRequestUrl": null,
+        "mixpanelEvent": null,
+        "successMixpanelEvent": null,
+        "analyticsEvent": {
+          "eventName": "QR started",
+          "description": "",
+          "id": "copy-glass-pd.initial_actions.0.src=/go_lenses_pd/actions/go_to_next_page_actions/go_to_next_page_actions.json.key=go_lenses_pd_initial.src=/go_lenses_pd/actions/go_to_next_page_actions/go_lenses_pd_initial.json.AnalyticsEvent"
+        },
+        "type": "GoToNextPageAction",
+        "id": "copy-glass-pd.initial_actions.0.src=/go_lenses_pd/actions/go_to_next_page_actions/go_to_next_page_actions.json.key=go_lenses_pd_initial.src=/go_lenses_pd/actions/go_to_next_page_actions/go_lenses_pd_initial.json.GoToNextPageAction"
+      }
+    ],
+    "pupilsDistance": [
+      {
+        "flow": "pd",
+        "start_new_flow": false,
+        "mixpanelEvent": null,
+        "successMixpanelEvent": null,
+        "analyticsEvent": null,
+        "type": "ChangeFlowAction",
+        "id": "893547278590793212"
+      },
+      {
+        "page": {
+          "tutorial_page": {
+            "title": "Pupils distance",
+            "secondaryTitle": "Tutorial tip",
+            "content": "To perfectly fit the glasses to your eyes, we need to measure the distance between your pupils.",
+            "button": {
+              "shouldDismissPage": false,
+              "id": "pd.initial_actions.0.src=/pd/actions/go_to_next_page_actions.json.key=distance_calibration_initial.src=/pd/actions/actions/go_to_next_page_actions/glasses_detect_initial.json.src=/pd/actions/pages/tutorial_with_video_page/distance_calibration_initial.json.src=/pd/actions/tutorial_pages.json.key=glasses_detect_tutorial.src=/pd/actions/pages/tutorial_page/glasses_detect_tutorial.json.src=/pd/actions/buttons/before_we_start_btn.json.Button",
+              "type": "Button",
+              "buttonTitle": "Show me how",
+              "buttonActions": null,
+              "styleClass": null,
+              "mixpanelEvent": {
+                "id": "pd.initial_actions.0.src=/pd/actions/go_to_next_page_actions.json.key=distance_calibration_initial.src=/pd/actions/actions/go_to_next_page_actions/glasses_detect_initial.json.src=/pd/actions/pages/tutorial_with_video_page/distance_calibration_initial.json.src=/pd/actions/tutorial_pages.json.key=glasses_detect_tutorial.src=/pd/actions/pages/tutorial_page/glasses_detect_tutorial.json.src=/pd/actions/buttons/before_we_start_btn.json.src=/pd/actions/mixpanel_events/before_we_start_btn_event.json.MixpanelEvent",
+                "type": "MixpanelEvent",
+                "title": "act mobile pd tutorial",
+                "eventType": "act",
+                "innerTitle": null,
+                "category": "Good"
+              },
+              "name": null
+            },
+            "bgImage": {
+              "value": "tut_pd.jpg",
+              "type": "Resource",
+              "cdnPath": "/tut_pd.jpg"
+            },
+            "soundResources": [
+              {
+                "type": "Resource",
+                "cdnPath": "https://assets.dev.glasseson.com/2019/9/5/f7362e21-6074-47ea-8378-e7e659ce35b0.mp3",
+                "value": "pd_asset_container_before_we_start_tutorial_container_audio.mp3"
+              }
+            ],
+            "image_in_center": {
+              "value": "pd_instruction_page.png",
+              "type": "Resource",
+              "cdnPath": "/pd_instruction_page.png"
+            },
+            "mixpanelEvent": {
+              "id": "pd.initial_actions.0.src=/pd/actions/go_to_next_page_actions.json.key=distance_calibration_initial.src=/pd/actions/actions/go_to_next_page_actions/glasses_detect_initial.json.src=/pd/actions/pages/tutorial_with_video_page/distance_calibration_initial.json.src=/pd/actions/tutorial_pages.json.key=glasses_detect_tutorial.src=/pd/actions/pages/tutorial_page/glasses_detect_tutorial.json.src=/pd/actions/mixpanel_events/before_we_start_tutorial_event.json.MixpanelEvent",
+              "type": "MixpanelEvent",
+              "title": "pv mobile pd tutorial",
+              "eventType": "pv",
+              "innerTitle": null,
+              "category": "Good"
+            },
+            "playSoundsAction": {
+              "sounds": [
+                {
+                  "type": "Resource",
+                  "cdnPath": "https://assets.dev.glasseson.com/2019/9/5/f7362e21-6074-47ea-8378-e7e659ce35b0.mp3",
+                  "value": "pd_asset_container_before_we_start_tutorial_container_audio.mp3"
+                }
+              ],
+              "mixpanelEvent": null,
+              "successMixpanelEvent": null,
+              "analyticsEvent": null,
+              "type": "PlaySoundsAction",
+              "id": "7008010773022335510"
+            },
+            "icon": {
+              "value": "pd_instruction_page.vue",
+              "type": "Resource",
+              "cdnPath": "/pd_instruction_page.vue"
+            },
+            "secondaryIcon": {
+              "value": "pd_instruction_page_secondary.vue",
+              "type": "Resource",
+              "cdnPath": "/pd_instruction_page_secondary.vue"
+            },
+            "id": "pd.initial_actions.0.src=/pd/actions/go_to_next_page_actions.json.key=distance_calibration_initial.src=/pd/actions/actions/go_to_next_page_actions/glasses_detect_initial.json.src=/pd/actions/pages/tutorial_with_video_page/distance_calibration_initial.json.src=/pd/actions/tutorial_pages.json.key=glasses_detect_tutorial.src=/pd/actions/pages/tutorial_page/glasses_detect_tutorial.json.TutorialPage",
+            "type": "TutorialPage",
+            "webStage": null,
+            "mixpanelStep": null,
+            "headerTitle": null,
+            "scanner_rect_width": null,
+            "scanner_rect_height": null,
+            "hamburgerIconColor": "black"
+          },
+          "video_page": {
+            "videoResource": {
+              "type": "Resource",
+              "cdnPath": "https://assets.dev.glasseson.com/2019/9/5/51fb4b24-bf2b-4479-b823-3869cf497f85.mp4",
+              "value": "pd_asset_container_before_we_start_video_container_video.mp4"
+            },
+            "soundResources": [
+              {
+                "type": "Resource",
+                "cdnPath": "https://assets.dev.glasseson.com/2019/9/5/6f8d2217-6524-4f05-af61-eea7abfe3658.mp3",
+                "value": "pd_asset_container_before_we_start_video_container_audio.mp3"
+              }
+            ],
+            "webStage": null,
+            "mixpanelStep": null,
+            "buttonTitle": "Next",
+            "headerTitle": null,
+            "tutorialId": "pdVerify",
+            "presentButtonDelayinSeconds": 6,
+            "replayVideoStartPointInSeconds": 0,
+            "bg_image": {
+              "value": "tut_pd.jpg",
+              "type": "Resource",
+              "cdnPath": "/tut_pd.jpg"
+            },
+            "buttonModel": {
+              "shouldDismissPage": false,
+              "id": "pd.initial_actions.0.src=/pd/actions/go_to_next_page_actions.json.key=distance_calibration_initial.src=/pd/actions/actions/go_to_next_page_actions/glasses_detect_initial.json.src=/pd/actions/pages/tutorial_with_video_page/distance_calibration_initial.json.src=/pd/actions/video_pages.json.key=glasses_detect_video_page.src=/pd/actions/pages/video_page/glasses_detect_video_tutorial.json.src=/pd/actions/buttons/before_we_start_video_end_btn.json.Button",
+              "type": "Button",
+              "buttonTitle": "Next",
+              "buttonActions": [
+                {
+                  "page": {
+                    "camera_mode": "front_camera",
+                    "url_request": "@/pd/verify",
+                    "compress": 0.95,
+                    "scale_down_resolution_height": null,
+                    "scale_down_resolution_width": null,
+                    "crop_mode": "eyes",
+                    "preview_resolution_width": 1280,
+                    "preview_resolution_height": 720,
+                    "actions": [
+                      {
+                        "title": "",
+                        "sound": {
+                          "type": "Resource",
+                          "cdnPath": "https://assets.dev.glasseson.com/2019/9/5/08570cde-22b4-4232-867b-d50b4ba86764.mp3",
+                          "value": "pd_asset_container_card_on_face_instruction_audio.mp3"
+                        },
+                        "image": {
+                          "value": "arms_length.png",
+                          "type": "Resource",
+                          "cdnPath": "/arms_length.png"
+                        },
+                        "priority": "high",
+                        "withMargin": false,
+                        "alignToLeft": false,
+                        "repeatGif": false,
+                        "shouldDisplayInstructionText": false,
+                        "scaleUpImage": true,
+                        "label": null,
+                        "mixpanelEvent": {
+                          "id": "pd.initial_actions.0.src=/pd/actions/go_to_next_page_actions.json.key=distance_calibration_initial.src=/pd/actions/actions/go_to_next_page_actions/glasses_detect_initial.json.src=/pd/actions/pages/tutorial_with_video_page/distance_calibration_initial.json.src=/pd/actions/video_pages.json.key=glasses_detect_video_page.src=/pd/actions/pages/video_page/glasses_detect_video_tutorial.json.src=/pd/actions/buttons/before_we_start_video_end_btn.json.0.src=/pd/actions/actions/go_to_next_page_actions/go_to_verification_page.json.src=/pd/actions/pages/verification_page.json.0.src=/pd/actions/actions/instruction_actions/first_instruction_action.json.src=/pd/actions/mixpanel_events/first_instruction_action_event.json.MixpanelEvent",
+                          "type": "MixpanelEvent",
+                          "title": "pv mobile pd instructions",
+                          "eventType": "pv",
+                          "innerTitle": null,
+                          "category": "Serenity"
+                        },
+                        "successMixpanelEvent": null,
+                        "analyticsEvent": null,
+                        "type": "InstructionAction",
+                        "id": "pd.initial_actions.0.src=/pd/actions/go_to_next_page_actions.json.key=distance_calibration_initial.src=/pd/actions/actions/go_to_next_page_actions/glasses_detect_initial.json.src=/pd/actions/pages/tutorial_with_video_page/distance_calibration_initial.json.src=/pd/actions/video_pages.json.key=glasses_detect_video_page.src=/pd/actions/pages/video_page/glasses_detect_video_tutorial.json.src=/pd/actions/buttons/before_we_start_video_end_btn.json.0.src=/pd/actions/actions/go_to_next_page_actions/go_to_verification_page.json.src=/pd/actions/pages/verification_page.json.0.src=/pd/actions/actions/instruction_actions/first_instruction_action.json.InstructionAction"
+                      },
+                      {
+                        "instrcution_actions": [
+                          {
+                            "title": "",
+                            "sound": {
+                              "type": "Resource",
+                              "cdnPath": "https://assets.dev.glasseson.com/2019/9/5/371bdd2c-dd70-4ef9-b17d-8c4d5a43f62a.mp3",
+                              "value": "pd_asset_container_phone_too_low_instruction_audio.mp3"
+                            },
+                            "image": {
+                              "value": "extend_your_arm_2.gif",
+                              "type": "Resource",
+                              "cdnPath": "/extend_your_arm_2.gif"
+                            },
+                            "priority": "low",
+                            "withMargin": false,
+                            "alignToLeft": false,
+                            "repeatGif": false,
+                            "shouldDisplayInstructionText": false,
+                            "scaleUpImage": true,
+                            "label": null,
+                            "mixpanelEvent": {
+                              "id": "pd.initial_actions.0.src=/pd/actions/go_to_next_page_actions.json.key=distance_calibration_initial.src=/pd/actions/actions/go_to_next_page_actions/glasses_detect_initial.json.src=/pd/actions/pages/tutorial_with_video_page/distance_calibration_initial.json.src=/pd/actions/video_pages.json.key=glasses_detect_video_page.src=/pd/actions/pages/video_page/glasses_detect_video_tutorial.json.src=/pd/actions/buttons/before_we_start_video_end_btn.json.0.src=/pd/actions/actions/go_to_next_page_actions/go_to_verification_page.json.src=/pd/actions/pages/verification_page.json.1.src=/pd/actions/actions/start_vertical_observer_action.json.0.src=/pd/actions/actions/instruction_actions/phone_too_low.json.src=/pd/actions/mixpanel_events/phone_to_low_instruction_event.json.MixpanelEvent",
+                              "type": "MixpanelEvent",
+                              "title": "pv mobile vertical error",
+                              "eventType": "pv",
+                              "innerTitle": null,
+                              "category": "Critical"
+                            },
+                            "successMixpanelEvent": null,
+                            "analyticsEvent": null,
+                            "type": "InstructionAction",
+                            "id": "pd.initial_actions.0.src=/pd/actions/go_to_next_page_actions.json.key=distance_calibration_initial.src=/pd/actions/actions/go_to_next_page_actions/glasses_detect_initial.json.src=/pd/actions/pages/tutorial_with_video_page/distance_calibration_initial.json.src=/pd/actions/video_pages.json.key=glasses_detect_video_page.src=/pd/actions/pages/video_page/glasses_detect_video_tutorial.json.src=/pd/actions/buttons/before_we_start_video_end_btn.json.0.src=/pd/actions/actions/go_to_next_page_actions/go_to_verification_page.json.src=/pd/actions/pages/verification_page.json.1.src=/pd/actions/actions/start_vertical_observer_action.json.0.src=/pd/actions/actions/instruction_actions/phone_too_low.json.InstructionAction"
+                          },
+                          {
+                            "title": "",
+                            "sound": {
+                              "type": "Resource",
+                              "cdnPath": "https://assets.dev.glasseson.com/2019/9/5/5a039333-ba5d-4c95-9736-231a461e40d3.mp3",
+                              "value": "pd_asset_container_phone_tilted_instruction_audio.mp3"
+                            },
+                            "image": {
+                              "value": "extend_your_arm_2.gif",
+                              "type": "Resource",
+                              "cdnPath": "/extend_your_arm_2.gif"
+                            },
+                            "priority": "low",
+                            "withMargin": false,
+                            "alignToLeft": false,
+                            "repeatGif": false,
+                            "shouldDisplayInstructionText": false,
+                            "scaleUpImage": true,
+                            "label": null,
+                            "mixpanelEvent": {
+                              "id": "pd.initial_actions.0.src=/pd/actions/go_to_next_page_actions.json.key=distance_calibration_initial.src=/pd/actions/actions/go_to_next_page_actions/glasses_detect_initial.json.src=/pd/actions/pages/tutorial_with_video_page/distance_calibration_initial.json.src=/pd/actions/video_pages.json.key=glasses_detect_video_page.src=/pd/actions/pages/video_page/glasses_detect_video_tutorial.json.src=/pd/actions/buttons/before_we_start_video_end_btn.json.0.src=/pd/actions/actions/go_to_next_page_actions/go_to_verification_page.json.src=/pd/actions/pages/verification_page.json.1.src=/pd/actions/actions/start_vertical_observer_action.json.1.src=/pd/actions/actions/instruction_actions/phone_tilted.json.src=/pd/actions/mixpanel_events/phone_tilted_instruction_event.json.MixpanelEvent",
+                              "type": "MixpanelEvent",
+                              "title": "pv mobile vertical error",
+                              "eventType": "pv",
+                              "innerTitle": null,
+                              "category": "Critical"
+                            },
+                            "successMixpanelEvent": null,
+                            "analyticsEvent": null,
+                            "type": "InstructionAction",
+                            "id": "pd.initial_actions.0.src=/pd/actions/go_to_next_page_actions.json.key=distance_calibration_initial.src=/pd/actions/actions/go_to_next_page_actions/glasses_detect_initial.json.src=/pd/actions/pages/tutorial_with_video_page/distance_calibration_initial.json.src=/pd/actions/video_pages.json.key=glasses_detect_video_page.src=/pd/actions/pages/video_page/glasses_detect_video_tutorial.json.src=/pd/actions/buttons/before_we_start_video_end_btn.json.0.src=/pd/actions/actions/go_to_next_page_actions/go_to_verification_page.json.src=/pd/actions/pages/verification_page.json.1.src=/pd/actions/actions/start_vertical_observer_action.json.1.src=/pd/actions/actions/instruction_actions/phone_tilted.json.InstructionAction"
+                          }
+                        ],
+                        "lowVericalThreshold": 0,
+                        "highVerticalThreshold": 180,
+                        "verticalPlaySoundThreshold": 30,
+                        "mixpanelEvent": null,
+                        "successMixpanelEvent": null,
+                        "analyticsEvent": null,
+                        "type": "StartVerticalObserverAction",
+                        "id": "pd.initial_actions.0.src=/pd/actions/go_to_next_page_actions.json.key=distance_calibration_initial.src=/pd/actions/actions/go_to_next_page_actions/glasses_detect_initial.json.src=/pd/actions/pages/tutorial_with_video_page/distance_calibration_initial.json.src=/pd/actions/video_pages.json.key=glasses_detect_video_page.src=/pd/actions/pages/video_page/glasses_detect_video_tutorial.json.src=/pd/actions/buttons/before_we_start_video_end_btn.json.0.src=/pd/actions/actions/go_to_next_page_actions/go_to_verification_page.json.src=/pd/actions/pages/verification_page.json.1.src=/pd/actions/actions/start_vertical_observer_action.json.StartVerticalObserverAction"
+                      }
+                    ],
+                    "should_detect_face": true,
+                    "camera_background": null,
+                    "mixpanelEvent": {
+                      "id": "pd.initial_actions.0.src=/pd/actions/go_to_next_page_actions.json.key=distance_calibration_initial.src=/pd/actions/actions/go_to_next_page_actions/glasses_detect_initial.json.src=/pd/actions/pages/tutorial_with_video_page/distance_calibration_initial.json.src=/pd/actions/video_pages.json.key=glasses_detect_video_page.src=/pd/actions/pages/video_page/glasses_detect_video_tutorial.json.src=/pd/actions/buttons/before_we_start_video_end_btn.json.0.src=/pd/actions/actions/go_to_next_page_actions/go_to_verification_page.json.src=/pd/actions/pages/verification_page.json.src=/pd/actions/mixpanel_events/verification_page_event.json.MixpanelEvent",
+                      "type": "MixpanelEvent",
+                      "title": "pv web verification",
+                      "eventType": "pv",
+                      "innerTitle": null,
+                      "category": "Serenity"
+                    },
+                    "additionalAssets": {
+                      "allow_camera_message": "To start the scan, click “Allow“ when prompted on the screen",
+                      "initalizing_message": "Initializing..."
+                    },
+                    "rect_height": null,
+                    "send_depth_map_data": false,
+                    "id": "pd.initial_actions.0.src=/pd/actions/go_to_next_page_actions.json.key=distance_calibration_initial.src=/pd/actions/actions/go_to_next_page_actions/glasses_detect_initial.json.src=/pd/actions/pages/tutorial_with_video_page/distance_calibration_initial.json.src=/pd/actions/video_pages.json.key=glasses_detect_video_page.src=/pd/actions/pages/video_page/glasses_detect_video_tutorial.json.src=/pd/actions/buttons/before_we_start_video_end_btn.json.0.src=/pd/actions/actions/go_to_next_page_actions/go_to_verification_page.json.src=/pd/actions/pages/verification_page.json.VerificationPage",
+                    "type": "VerificationPage",
+                    "webStage": "pd",
+                    "mixpanelStep": "pd",
+                    "headerTitle": "RETRIEVE PD",
+                    "scanner_rect_width": 300,
+                    "scanner_rect_height": 200,
+                    "hamburgerIconColor": "black"
+                  },
+                  "sound": null,
+                  "transitionType": "fadein",
+                  "finishPreviousPageRequestUrl": null,
+                  "mixpanelEvent": null,
+                  "successMixpanelEvent": null,
+                  "analyticsEvent": {
+                    "eventName": "PD started",
+                    "description": "",
+                    "id": "pd.initial_actions.0.src=/pd/actions/go_to_next_page_actions.json.key=distance_calibration_initial.src=/pd/actions/actions/go_to_next_page_actions/glasses_detect_initial.json.src=/pd/actions/pages/tutorial_with_video_page/distance_calibration_initial.json.src=/pd/actions/video_pages.json.key=glasses_detect_video_page.src=/pd/actions/pages/video_page/glasses_detect_video_tutorial.json.src=/pd/actions/buttons/before_we_start_video_end_btn.json.0.src=/pd/actions/actions/go_to_next_page_actions/go_to_verification_page.json.AnalyticsEvent"
+                  },
+                  "type": "GoToNextPageAction",
+                  "id": "pd.initial_actions.0.src=/pd/actions/go_to_next_page_actions.json.key=distance_calibration_initial.src=/pd/actions/actions/go_to_next_page_actions/glasses_detect_initial.json.src=/pd/actions/pages/tutorial_with_video_page/distance_calibration_initial.json.src=/pd/actions/video_pages.json.key=glasses_detect_video_page.src=/pd/actions/pages/video_page/glasses_detect_video_tutorial.json.src=/pd/actions/buttons/before_we_start_video_end_btn.json.0.src=/pd/actions/actions/go_to_next_page_actions/go_to_verification_page.json.GoToNextPageAction"
+                }
+              ],
+              "styleClass": null,
+              "mixpanelEvent": {
+                "id": "pd.initial_actions.0.src=/pd/actions/go_to_next_page_actions.json.key=distance_calibration_initial.src=/pd/actions/actions/go_to_next_page_actions/glasses_detect_initial.json.src=/pd/actions/pages/tutorial_with_video_page/distance_calibration_initial.json.src=/pd/actions/video_pages.json.key=glasses_detect_video_page.src=/pd/actions/pages/video_page/glasses_detect_video_tutorial.json.src=/pd/actions/buttons/before_we_start_video_end_btn.json.src=/pd/actions/mixpanel_events/before_we_start_video_end_btn_event.json.MixpanelEvent",
+                "type": "MixpanelEvent",
+                "title": "act mobile pd video",
+                "eventType": "act",
+                "innerTitle": null,
+                "category": "Good"
+              },
+              "name": null
+            },
+            "mixpanelEvent": {
+              "id": "pd.initial_actions.0.src=/pd/actions/go_to_next_page_actions.json.key=distance_calibration_initial.src=/pd/actions/actions/go_to_next_page_actions/glasses_detect_initial.json.src=/pd/actions/pages/tutorial_with_video_page/distance_calibration_initial.json.src=/pd/actions/video_pages.json.key=glasses_detect_video_page.src=/pd/actions/pages/video_page/glasses_detect_video_tutorial.json.src=/pd/actions/mixpanel_events/glasses_detect_video_tutorial_event.json.MixpanelEvent",
+              "type": "MixpanelEvent",
+              "title": "pv mobile pd video",
+              "eventType": "pv",
+              "innerTitle": null,
+              "category": "Good"
+            },
+            "playSoundsAction": {
+              "sounds": [
+                {
+                  "type": "Resource",
+                  "cdnPath": "https://assets.dev.glasseson.com/2019/9/5/6f8d2217-6524-4f05-af61-eea7abfe3658.mp3",
+                  "value": "pd_asset_container_before_we_start_video_container_audio.mp3"
+                }
+              ],
+              "mixpanelEvent": null,
+              "successMixpanelEvent": null,
+              "analyticsEvent": null,
+              "type": "PlaySoundsAction",
+              "id": "1816550157829014219"
+            },
+            "tutorialIsDoneAction": {
+              "tutorialId": "pdVerify",
+              "mixpanelEvent": null,
+              "successMixpanelEvent": null,
+              "analyticsEvent": null,
+              "type": "TutorialIsDoneAction",
+              "id": "-2974796006459588226"
+            },
+            "replayText": "Replay",
+            "sdkEvent": {
+              "stage": "onPdTutorialFinished"
+            },
+            "tip": "Next, we will ask you to allow access to your camera to start the scan",
+            "title": "PD video tutorial",
+            "id": "pd.initial_actions.0.src=/pd/actions/go_to_next_page_actions.json.key=distance_calibration_initial.src=/pd/actions/actions/go_to_next_page_actions/glasses_detect_initial.json.src=/pd/actions/pages/tutorial_with_video_page/distance_calibration_initial.json.src=/pd/actions/video_pages.json.key=glasses_detect_video_page.src=/pd/actions/pages/video_page/glasses_detect_video_tutorial.json.VideoPage",
+            "type": "VideoPage",
+            "scanner_rect_width": null,
+            "scanner_rect_height": null,
+            "hamburgerIconColor": "white"
+          },
+          "changeMenuIconColorAction": {
+            "iconColor": "white",
+            "mixpanelEvent": null,
+            "successMixpanelEvent": null,
+            "analyticsEvent": null,
+            "type": "ChangeMenuIconColorAction",
+            "id": "-8648115816411687661"
+          },
+          "id": "pd.initial_actions.0.src=/pd/actions/go_to_next_page_actions.json.key=distance_calibration_initial.src=/pd/actions/actions/go_to_next_page_actions/glasses_detect_initial.json.src=/pd/actions/pages/tutorial_with_video_page/distance_calibration_initial.json.TutorialWithVideoPage",
+          "type": "TutorialWithVideoPage",
+          "webStage": "tutorial_pd",
+          "mixpanelStep": "pd",
+          "headerTitle": "RETRIEVE PD",
+          "scanner_rect_width": null,
+          "scanner_rect_height": null,
+          "hamburgerIconColor": "black"
+        },
+        "sound": null,
+        "transitionType": "fadein",
+        "finishPreviousPageRequestUrl": null,
+        "mixpanelEvent": null,
+        "successMixpanelEvent": null,
+        "analyticsEvent": {
+          "eventName": "PD tutorial",
+          "description": "",
+          "id": "pd.initial_actions.0.src=/pd/actions/go_to_next_page_actions.json.key=distance_calibration_initial.src=/pd/actions/actions/go_to_next_page_actions/glasses_detect_initial.json.AnalyticsEvent"
+        },
+        "type": "GoToNextPageAction",
+        "id": "pd.initial_actions.0.src=/pd/actions/go_to_next_page_actions.json.key=distance_calibration_initial.src=/pd/actions/actions/go_to_next_page_actions/glasses_detect_initial.json.GoToNextPageAction"
+      }
+    ]
+  },
+  "is-device-supported-per-flow": {
+    "flows": [
+      {
+        "flow": "lensesAndPupils",
+        "supported": true
+      },
+      {
+        "flow": "pupilsDistance",
+        "supported": true
+      }
+    ]
+  },
+  "assets": {
+    "campaign_assets": [
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_before_we_start_tutorial_container_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/f7362e21-6074-47ea-8378-e7e659ce35b0.mp3",
+        "priority": 7
+      },
+      {
+        "type": "video/mp4",
+        "name": "pd_asset_container_before_we_start_video_container_video.mp4",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/51fb4b24-bf2b-4479-b823-3869cf497f85.mp4",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_before_we_start_video_container_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/6f8d2217-6524-4f05-af61-eea7abfe3658.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_before_we_start_pdwoc_tutorial_container_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/f7362e21-6074-47ea-8378-e7e659ce35b0.mp3",
+        "priority": 7
+      },
+      {
+        "type": "video/mp4",
+        "name": "pd_asset_container_before_we_start_pdwoc_video_container_video.mp4",
+        "value": "https://assets.dev.glasseson.com/native/english/pdwoc/video/pd_woc_tutorial_video.mp4",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_before_we_start_pdwoc_video_container_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/native/english/pdwoc/audio/pd_woc_tutorial_audio.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_pdwoc_first_instruction_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/native/english/pdwoc/audio/pdwoc_first_instruction_audio.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_card_on_face_instruction_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/08570cde-22b4-4232-867b-d50b4ba86764.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_phone_too_low_instruction_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/371bdd2c-dd70-4ef9-b17d-8c4d5a43f62a.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_phone_too_close_instruction_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/ec716266-b8f3-4103-bcef-ed8a19fca680.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_phone_tilted_instruction_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/5a039333-ba5d-4c95-9736-231a461e40d3.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_smile_instruction_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/dd8d03cd-f1d5-4c39-b8bc-f40717712475.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_you_did_brilliantly_instruction_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/33ca9b0b-9d16-4dee-ad74-1fa6324197ca.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_card_too_low_instruction_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/92c6cf78-f7c9-4651-be09-be9d7cb5073c.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_card_too_high_instruction_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/d84db9b9-28ef-4a6c-9008-9e474daa4389.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_card_facing_outward_instruction_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/f82bae81-321a-4300-9d01-26b8858371d1.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_card_hidden_instruction_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/d2df2cd7-acf4-4e29-8f83-1efe764f3904.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_card_top_corner_instruction_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/c0a06d46-28a5-4f74-a030-bb331ab6a88f.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_a_little_closer_instruction_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/6a303996-8066-4557-a5db-93b35ce98a5c.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_a_bit_closer_instruction_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/0e715bd4-67cc-4fc9-a766-fd40bf32bc3c.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_phone_too_far_instruction_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/5e8be5f7-74a2-4db2-8710-c51210669f5d.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_hold_on_instruction_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/7a42db27-df64-4cea-a2ae-50544b5656b3.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_hold_it_right_there_instruction_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/7d84e12f-97c3-4c3a-86fe-c0d2ee6a8d7b.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_card_flat_instruction_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/ec8481c6-b207-4ea7-8e64-f62695f888ce.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_card_multiple_sidelines_instruction_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/f82bae81-321a-4300-9d01-26b8858371d1.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_make_card_horizontal_instruction_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/e70b2de5-1dd2-447b-aec5-4889b17d382a.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_general_error_instruction_first_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/f82bae81-321a-4300-9d01-26b8858371d1.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_general_error_instruction_second_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/ec8481c6-b207-4ea7-8e64-f62695f888ce.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_result_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/9ee654d3-8779-45b7-8f22-f4fb771d56a5.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_eyes_not_detected_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/99971de5-f529-4be2-a1bb-5577fd68e34e.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_different_card_card_obstructed_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/6587e7d7-5574-479c-828a-6e1d10b85f8d.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_different_card_card_not_detected_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/6587e7d7-5574-479c-828a-6e1d10b85f8d.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_different_card_out_of_range_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/6587e7d7-5574-479c-828a-6e1d10b85f8d.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "pd_asset_container_oops_try_again_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/beb71b65-ef55-4fde-93fd-3951510ffcc2.mp3",
+        "priority": 7
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_qr_open_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/3e7fcd6f-5618-4a20-a087-6a41e3618cc9.mp3",
+        "priority": 2
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_qr_done_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/9d99b415-5b58-422a-933a-7f91e67396db.mp3",
+        "priority": 2
+      },
+      {
+        "type": "video/mp4",
+        "name": "go_lenses_asset_container_screen_calibration_tutorial_video.mp4",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/5a9a1173-0145-48e4-9e50-c9f7d1f08930.mp4",
+        "priority": 3
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_screen_calibration_tutorial_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/152ddca4-1750-4bd1-9351-15cbdac0325c.mp3",
+        "priority": 3
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_screen_calibration_open_camera_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/08e2c057-443c-4142-be36-44b5f4daa819.mp3",
+        "priority": 3
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_screen_calibration_intro_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/ceda0de1-f21e-4aa9-9f7b-c75f5189fc1d.mp3",
+        "priority": 1
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_screen_calibration_calibrated_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/9dbcb55f-19ab-4276-9183-66c545900abb.mp3",
+        "priority": 3
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_screen_calibration_hold_card_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/f5bfbf00-8f96-47dc-a0e6-374cf3fd5e12.mp3",
+        "priority": 3
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_screen_calibration_dots_visible_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/8be0655f-7bd3-4fa4-9aa1-eedb72f52914.mp3",
+        "priority": 3
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_screen_calibration_take_more_pictures_good_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/c88022e6-ebd6-4697-8793-7674a1d03d1e.mp3",
+        "priority": 3
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_screen_calibration_take_more_pictures_hold_on_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/7a42db27-df64-4cea-a2ae-50544b5656b3.mp3",
+        "priority": 3
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_screen_calibration_aspect_ratio_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/a0b2c427-af66-4b96-92be-2397a9911c20.mp3",
+        "priority": 3
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_screen_calibration_off_axis_first_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/4d2fbbba-d4f1-4872-affd-3372c52cbc9b.mp3",
+        "priority": 3
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_screen_calibration_off_axis_second_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/f7890dd8-a70b-4327-b55f-e49347b7685b.mp3",
+        "priority": 3
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_screen_calibration_off_axis_hold_it_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/dd1ca587-258e-4e61-91bb-a142c5e5bf98.mp3",
+        "priority": 3
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_screen_calibration_not_aligned_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/395ec738-3a09-4d41-b25d-0ec4ba1f2661.mp3",
+        "priority": 3
+      },
+      {
+        "type": "video/mp4",
+        "name": "go_lenses_asset_container_verify_tutorial_video.mp4",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/41e3bfbc-96fd-4c80-b3c2-622215d8428e.mp4",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_tutorial_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/78901554-0a4a-4374-a72b-6144d8dbf10b.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_instructions_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/1061a57b-0b0f-4ca8-a578-6785e424af50.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_dots_visible_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/970bd093-a79d-4c83-ac64-7c1405354375.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_phone_close_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/c700407c-b32b-43e6-bac3-87d90f6b8af6.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_good_position_glasses_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/ac59fda5-32ba-4982-9849-7f612dbbd281.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_position_glasses_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/978a3b2c-c864-4b71-b752-6ea79d5fd1c0.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_phone_too_close_1_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/f529a3b3-21f7-429d-ba57-1bdeb8ce0221.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_phone_too_close_2_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/c3d30891-00d3-436c-af16-1e259bb0d3e4.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_phone_too_close_3_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/52488e83-a8a3-43ca-ad3a-c3677a489507.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_phone_too_far_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/5e8be5f7-74a2-4db2-8710-c51210669f5d.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_glasses_close_to_phone_1_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/235be946-c581-4bfa-a9ce-a214e886cadd.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_glasses_close_to_phone_2_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/5b6db690-23d1-4db7-8ebe-73f2a672786c.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_glasses_far_from_phone_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/14202cf8-9b40-467e-9bd0-17628318f72a.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_inner_circles_show_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/dc55e5fe-50af-4bb6-a326-aefa7e10e88d.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_targets_not_detected_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/3315222d-a2d8-47f5-8912-890b21e203ae.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_targets_not_clear_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/fea00db7-fed7-4e49-ad92-b509fd30cc9c.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_left_lens_closer_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/61aabd94-0583-4a23-927e-6c99295c0710.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_make_sure_glasses_parallel_left_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/97177b5a-9c34-47dc-a4ce-61dd499f67e6.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_right_lens_closer_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/1f332693-e238-4703-be46-2644cccc27ca.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_make_sure_glasses_parallel_right_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/97177b5a-9c34-47dc-a4ce-61dd499f67e6.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_picture_not_focused_1_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/dd1ca587-258e-4e61-91bb-a142c5e5bf98.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_picture_not_focused_2_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/c88022e6-ebd6-4697-8793-7674a1d03d1e.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_take_more_pictures_1_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/dd1ca587-258e-4e61-91bb-a142c5e5bf98.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_take_more_pictures_2_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/c88022e6-ebd6-4697-8793-7674a1d03d1e.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_phone_too_high_1_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/411e8b7c-7354-4d25-848c-a6c66f684edf.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_phone_too_high_2_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/bd35c2d1-d2b7-4c96-85d8-1e29f1a0cf98.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_phone_too_low_1_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/372d2d98-96ee-4719-908d-8421b70f5fcd.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_phone_too_low_2_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/bd35c2d1-d2b7-4c96-85d8-1e29f1a0cf98.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_make_sure_glasses_centered_left_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/d17509da-73e2-498c-852f-6f112789beef.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_center_nose_bridge_left_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/0243f7a8-69af-49d9-a201-03e5bac2c722.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_make_sure_glasses_centered_right_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/d17509da-73e2-498c-852f-6f112789beef.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_center_nose_bridge_right_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/0243f7a8-69af-49d9-a201-03e5bac2c722.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_wrong_target_size_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/7d84e12f-97c3-4c3a-86fe-c0d2ee6a8d7b.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_hold_phone_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/2c0f64ed-66ba-446d-83c3-334b8bc52094.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_not_aligned_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/395ec738-3a09-4d41-b25d-0ec4ba1f2661.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_off_axis_first_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/4d2fbbba-d4f1-4872-affd-3372c52cbc9b.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_off_axis_second_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/f7890dd8-a70b-4327-b55f-e49347b7685b.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_verify_off_axis_hold_it_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/dd1ca587-258e-4e61-91bb-a142c5e5bf98.mp3",
+        "priority": 4
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_tilt_instructions_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/071ec29e-eca9-435a-a656-a8331053021f.mp3",
+        "priority": 5
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_tilt_hiding_markers_positive_tutorial_container_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/1e0a7302-f5e9-42de-8f7a-769c4352b5ee.mp3",
+        "priority": 5
+      },
+      {
+        "type": "video/mp4",
+        "name": "go_lenses_asset_container_tilt_hiding_markers_positive_video_container_video.mp4",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/877349a3-5dc9-43ed-abb8-8839a72d9fc6.mp4",
+        "priority": 5
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_tilt_hiding_markers_positive_video_container_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/ca4ef1b4-4f3d-48c7-8529-8c6ac5542397.mp3",
+        "priority": 5
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_tilt_hiding_markers_tutorial_container_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/1a3c647b-2d04-4b46-ab95-a3282be7ca24.mp3",
+        "priority": 5
+      },
+      {
+        "type": "video/mp4",
+        "name": "go_lenses_asset_container_tilt_hiding_markers_video_container_video.mp4",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/ebb6621e-89b9-41cf-8b14-16fd98ee9733.mp4",
+        "priority": 5
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_tilt_hiding_markers_video_container_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/0e53e736-ee2e-4ac9-99ed-84606e5d06a6.mp3",
+        "priority": 5
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_tilt_not_tilt_enough_positive_tutorial_container_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/1e0a7302-f5e9-42de-8f7a-769c4352b5ee.mp3",
+        "priority": 5
+      },
+      {
+        "type": "video/mp4",
+        "name": "go_lenses_asset_container_tilt_not_tilt_enough_positive_video_container_video.mp4",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/5c8be37b-2248-4391-ba76-add065f8a461.mp4",
+        "priority": 5
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_tilt_not_tilt_enough_positive_video_container_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/7578e2d3-d70d-4a68-9a75-11ce8ee7b4f9.mp3",
+        "priority": 5
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_tilt_not_tilt_enough_tutorial_container_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/1a3c647b-2d04-4b46-ab95-a3282be7ca24.mp3",
+        "priority": 5
+      },
+      {
+        "type": "video/mp4",
+        "name": "go_lenses_asset_container_tilt_not_tilt_enough_video_container_video.mp4",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/6797927c-e5db-49ee-9db3-fe843b34e037.mp4",
+        "priority": 5
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_tilt_not_tilt_enough_video_container_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/139e3685-a98d-4f5a-946d-b3628d5d26ee.mp3",
+        "priority": 5
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_tilt_one_direction_positive_tutorial_container_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/1e0a7302-f5e9-42de-8f7a-769c4352b5ee.mp3",
+        "priority": 5
+      },
+      {
+        "type": "video/mp4",
+        "name": "go_lenses_asset_container_tilt_one_direction_positive_video_container_video.mp4",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/5c8be37b-2248-4391-ba76-add065f8a461.mp4",
+        "priority": 5
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_tilt_one_direction_positive_video_container_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/7578e2d3-d70d-4a68-9a75-11ce8ee7b4f9.mp3",
+        "priority": 5
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_tilt_one_direction_tutorial_container_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/1a3c647b-2d04-4b46-ab95-a3282be7ca24.mp3",
+        "priority": 5
+      },
+      {
+        "type": "video/mp4",
+        "name": "go_lenses_asset_container_tilt_one_direction_video_container_video.mp4",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/6797927c-e5db-49ee-9db3-fe843b34e037.mp4",
+        "priority": 5
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_tilt_one_direction_video_container_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/139e3685-a98d-4f5a-946d-b3628d5d26ee.mp3",
+        "priority": 5
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_tilt_tilt_y_positive_tutorial_container_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/1e0a7302-f5e9-42de-8f7a-769c4352b5ee.mp3",
+        "priority": 5
+      },
+      {
+        "type": "video/mp4",
+        "name": "go_lenses_asset_container_tilt_tilt_y_positive_video_container_video.mp4",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/5e59ec6a-c88f-4df7-abbf-9d4862673636.mp4",
+        "priority": 5
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_tilt_tilt_y_positive_video_container_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/d478d519-4a3e-4ac5-ab20-3f9e2380e862.mp3",
+        "priority": 5
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_tilt_tilt_y_tutorial_container_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/1a3c647b-2d04-4b46-ab95-a3282be7ca24.mp3",
+        "priority": 5
+      },
+      {
+        "type": "video/mp4",
+        "name": "go_lenses_asset_container_tilt_tilt_y_video_container_video.mp4",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/a7e036f6-171d-408e-aba4-972946123ccd.mp4",
+        "priority": 5
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_tilt_tilt_y_video_container_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/9c9c43a3-5067-4bcc-8326-264e84fd6720.mp3",
+        "priority": 5
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_tilt_targets_not_clear_positive_tutorial_container_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/1e0a7302-f5e9-42de-8f7a-769c4352b5ee.mp3",
+        "priority": 5
+      },
+      {
+        "type": "video/mp4",
+        "name": "go_lenses_asset_container_tilt_targets_not_clear_positive_video_container_video.mp4",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/8980c7da-ad78-4d7e-a09c-f58865f702c7.mp4",
+        "priority": 5
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_tilt_targets_not_clear_positive_video_container_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/cccf8029-d611-4c5e-a37f-3aa421d68d7e.mp3",
+        "priority": 5
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_tilt_processing_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/32a14c9f-3d39-441d-85c7-d704a1d66881.mp3",
+        "priority": 5
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_tilt_contact_us_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/f6b60eeb-341b-44ea-8a13-b9deb653fccb.mp3",
+        "priority": 5
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_tilt_general_error_tutorial_container_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/1a3c647b-2d04-4b46-ab95-a3282be7ca24.mp3",
+        "priority": 5
+      },
+      {
+        "type": "video/mp4",
+        "name": "go_lenses_asset_container_tilt_general_error_video_container_video.mp4",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/1c09988b-b3cb-4289-96b6-5506e31ff43f.mp4",
+        "priority": 5
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_tilt_general_error_video_container_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/5390af7e-6de3-411c-84bb-62c11ea40486.mp3",
+        "priority": 5
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_tilt_success_almost_done_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/6cf10001-fb03-4e46-9b72-58a6095da893.mp3",
+        "priority": 5
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_lenses_asset_container_tilt_not_aligned_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/67a7f19b-f757-4c59-a7a8-2ef8ec5a76e6.mp3",
+        "priority": 5
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_calibration_asset_container_position_straight_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/8/25/a859dce3-e144-48e1-a1dc-20d37fdb611a.mp3",
+        "priority": 20
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_calibration_asset_container_position_translation_top_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/8/25/d1fbbf6d-ce77-4553-b227-c799f05b6d4a.mp3",
+        "priority": 20
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_calibration_asset_container_position_translation_right_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/8/25/280aca49-308f-4307-8802-7b26483d8514.mp3",
+        "priority": 20
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_calibration_asset_container_position_translation_bottom_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/8/25/0e338807-43c4-4e7f-b5b4-2441a2b70141.mp3",
+        "priority": 20
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_calibration_asset_container_position_translation_left_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/8/25/af97bde0-6e6e-4638-ab92-1c583b500a4b.mp3",
+        "priority": 20
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_calibration_asset_container_position_angle_top_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/8/25/af8aeb82-9bb4-48b6-b118-eff4dea88435.mp3",
+        "priority": 20
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_calibration_asset_container_position_angle_bottom_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/8/25/98a4e548-54d9-4bbe-b42d-91b9c6b44148.mp3",
+        "priority": 20
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_calibration_asset_container_position_angle_left_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/8/25/43c85aca-a717-44a6-9765-7766717a83c0.mp3",
+        "priority": 20
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_calibration_asset_container_position_angle_right_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/8/25/17c14154-3d47-4c8f-8383-a0dc2a89a28d.mp3",
+        "priority": 20
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_fit_asset_container_smile_instruction_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/dd8d03cd-f1d5-4c39-b8bc-f40717712475.mp3",
+        "priority": 25
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_fit_asset_container_result_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/9ee654d3-8779-45b7-8f22-f4fb771d56a5.mp3",
+        "priority": 25
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_fit_asset_container_phone_too_low_instruction_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/371bdd2c-dd70-4ef9-b17d-8c4d5a43f62a.mp3",
+        "priority": 25
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_fit_asset_container_phone_tilted_instruction_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/5a039333-ba5d-4c95-9736-231a461e40d3.mp3",
+        "priority": 25
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_fit_asset_container_phone_too_far_instruction_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/3b2d5bbe-c283-44e6-85b3-1686337feedd.mp3",
+        "priority": 25
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_fit_asset_container_hold_it_right_there_instruction_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/7d84e12f-97c3-4c3a-86fe-c0d2ee6a8d7b.mp3",
+        "priority": 25
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_fit_asset_container_hold_on_few_moments_instruction_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/7a42db27-df64-4cea-a2ae-50544b5656b3.mp3",
+        "priority": 25
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_fit_asset_container_eyes_not_detected_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/99971de5-f529-4be2-a1bb-5577fd68e34e.mp3",
+        "priority": 25
+      },
+      {
+        "type": "audio/mpeg",
+        "name": "go_fit_asset_container_phone_too_close_instruction_audio.mp3",
+        "value": "https://assets.dev.glasseson.com/2019/9/5/ec716266-b8f3-4103-bcef-ed8a19fca680.mp3",
+        "priority": 25
+      },
+      {
+        "name": "alertPage_noConnection_title",
+        "type": "plain/text",
+        "value": "Oops",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_noConnection_body",
+        "type": "plain/text",
+        "value": "No Internet Connection Detected \n Please reconnect and try again",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_noConnection_button",
+        "type": "plain/text",
+        "value": "Try again",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_qrRequestFailure_title",
+        "type": "plain/text",
+        "value": "Oops",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_qrRequestFailure_body",
+        "type": "plain/text",
+        "value": "That was unexpected, sorry about that!\n Please try scanning the QR again",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_qrRequestFailure_button",
+        "type": "plain/text",
+        "value": "Try Again",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_badQr_title",
+        "type": "plain/text",
+        "value": "Oops",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_badQr_body",
+        "type": "plain/text",
+        "value": "Are you sure this is the right QR? Please scan the QR showing on your computer screen",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_badQr_button",
+        "type": "plain/text",
+        "value": "Try Again",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_cameraUnsupported_title",
+        "type": "plain/text",
+        "value": "Unsupported Camera",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_cameraUnsupported_body",
+        "type": "plain/text",
+        "value": "Your camera resolution is too low, your phone can not be calibrated at the moment",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_cameraUnsupported_button",
+        "type": "plain/text",
+        "value": "Close",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_outOfSync_title",
+        "type": "plain/text",
+        "value": "Oops",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_outOfSync_body",
+        "type": "plain/text",
+        "value": "Your mobile and computer fell out of sync \nPlease restart the app and try again",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_outOfSync_button",
+        "type": "plain/text",
+        "value": "Restart",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_tiltRequestFailure_title",
+        "type": "plain/text",
+        "value": "Oops",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_tiltRequestFailure_body",
+        "type": "plain/text",
+        "value": "That was unexpected, sorry about that!\nPlease try again",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_tiltRequestFailure_button",
+        "type": "plain/text",
+        "value": "Try again",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_needUpdate_title",
+        "type": "plain/text",
+        "value": "Update Required",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_needUpdate_body",
+        "type": "plain/text",
+        "value": "Your app is not up to date, please update to the latest version to proceed",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_needUpdate_button",
+        "type": "plain/text",
+        "value": "OK",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_cameraPermission_title",
+        "type": "plain/text",
+        "value": "Camera Access Denied",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_cameraPermission_body",
+        "type": "plain/text",
+        "value": "We need access to your camera for the scan. Please allow camera access to start",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_cameraPermission_button",
+        "type": "plain/text",
+        "value": "Open settings",
+        "priority": 0
+      },
+      {
+        "name": "downloadPage_title",
+        "type": "plain/text",
+        "value": "Before you start, you will need:",
+        "priority": 0
+      },
+      {
+        "name": "downloadPage_voiceInstructions",
+        "type": "plain/text",
+        "value": "We use voice instructions",
+        "priority": 0
+      },
+      {
+        "name": "downloadPage_button",
+        "type": "plain/text",
+        "value": "Continue",
+        "priority": 0
+      },
+      {
+        "name": "downloadPage_computer_title",
+        "type": "plain/text",
+        "value": "A computer screen 12″-27″",
+        "priority": 0
+      },
+      {
+        "name": "downloadPage_computer_reason",
+        "type": "plain/text",
+        "value": "For pairing",
+        "priority": 0
+      },
+      {
+        "name": "downloadPage_card_title",
+        "type": "plain/text",
+        "value": "Any standard magnetic card",
+        "priority": 0
+      },
+      {
+        "name": "downloadPage_card_reason",
+        "type": "plain/text",
+        "value": "For scaling",
+        "priority": 0
+      },
+      {
+        "name": "downloadPage_glasses_title",
+        "type": "plain/text",
+        "value": "Your current prescription glasses",
+        "priority": 0
+      },
+      {
+        "name": "downloadPage_glasses_reason",
+        "type": "plain/text",
+        "value": "For scanning",
+        "priority": 0
+      },
+      {
+        "name": "downloadPage_light_title",
+        "type": "plain/text",
+        "value": "Good lighting",
+        "priority": 0
+      },
+      {
+        "name": "downloadPage_light_reason",
+        "type": "plain/text",
+        "value": "For scanning",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_deviceCalibrationUploadFailure_title",
+        "type": "plain/text",
+        "value": "Oops",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_deviceCalibrationUploadFailure_body",
+        "type": "plain/text",
+        "value": "Something went wrong, please try again",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_deviceCalibrationUploadFailure_button",
+        "type": "plain/text",
+        "value": "Try again",
+        "priority": 0
+      },
+      {
+        "name": "progressPage_title",
+        "type": "plain/text",
+        "value": "Extracting your glasses parameters",
+        "priority": 0
+      },
+      {
+        "name": "menu_exitScan",
+        "type": "plain/text",
+        "value": "Exit scan",
+        "priority": 0
+      },
+      {
+        "name": "menu_contactSupport",
+        "type": "plain/text",
+        "value": "Contact support",
+        "priority": 0
+      },
+      {
+        "name": "menu_scanQr",
+        "type": "plain/text",
+        "value": "Scan a new QR code",
+        "priority": 0
+      },
+      {
+        "name": "reminderPopup_InHour_title",
+        "type": "plain/text",
+        "value": "In an hour",
+        "priority": 0
+      },
+      {
+        "name": "reminderPopup_In2Hour_title",
+        "type": "plain/text",
+        "value": "In 2 hours",
+        "priority": 0
+      },
+      {
+        "name": "reminderPopup_TonightAt9pm_title",
+        "type": "plain/text",
+        "value": "Tonight at 9 pm",
+        "priority": 0
+      },
+      {
+        "name": "reminderPopup_TomorrowAt9am_title",
+        "type": "plain/text",
+        "value": "Tomorrow at 9 am",
+        "priority": 0
+      },
+      {
+        "name": "reminderAlertPage_title",
+        "type": "plain/text",
+        "value": "You need a computer to complete the scan",
+        "priority": 0
+      },
+      {
+        "name": "reminderAlertPage_body",
+        "type": "plain/text",
+        "value": "To get your prescription details, you will use your phone to scan an image showing on your computer screen through the glasses. Set a reminder for yourself to complete the scan when you've got a computer handy.",
+        "priority": 0
+      },
+      {
+        "name": "reminderAlertPage_button",
+        "type": "plain/text",
+        "value": "Set a reminder",
+        "priority": 0
+      },
+      {
+        "name": "reminderAlertPage_secondary_button",
+        "type": "plain/text",
+        "value": "Close",
+        "priority": 0
+      },
+      {
+        "name": "reminderPopup_title",
+        "type": "plain/text",
+        "value": "Set a reminder",
+        "priority": 0
+      },
+      {
+        "name": "reminderPopup_dismiss_button",
+        "type": "plain/text",
+        "value": "Dismiss",
+        "priority": 0
+      },
+      {
+        "name": "reminderPopup_done_button",
+        "type": "plain/text",
+        "value": "Done",
+        "priority": 0
+      },
+      {
+        "name": "cameraPage_DontHaveAComputer_button",
+        "type": "plain/text",
+        "value": "Don't have a computer?",
+        "priority": 0
+      },
+      {
+        "name": "downloadPage_loading_title",
+        "type": "plain/text",
+        "value": "Setting up...",
+        "priority": 0
+      },
+      {
+        "name": "popupClose_body",
+        "type": "plain/text",
+        "value": "Are you sure you want to exit the scan?",
+        "priority": 0
+      },
+      {
+        "name": "popupClose_cancel",
+        "type": "plain/text",
+        "value": "No",
+        "priority": 0
+      },
+      {
+        "name": "popupClose_ok",
+        "type": "plain/text",
+        "value": "Yes",
+        "priority": 0
+      },
+      {
+        "name": "downloadPage_volumeUp_title",
+        "type": "plain/text",
+        "value": "Turn the volume up",
+        "priority": 0
+      },
+      {
+        "name": "downloadPage_removeGlasses_title",
+        "type": "plain/text",
+        "value": "Remove your glasses",
+        "priority": 0
+      },
+      {
+        "name": "downloadPage_lookStraight_title",
+        "type": "plain/text",
+        "value": "Look straight at the camera",
+        "priority": 0
+      },
+      {
+        "name": "downloadPage_woc_title",
+        "type": "plain/text",
+        "value": "Before you start",
+        "priority": 0
+      },
+      {
+        "name": "downloadPage_disclaimer",
+        "type": "plain/text",
+        "value": "I understand that this app is not an eye exam and accept the Terms of Use and Privacy Policy",
+        "priority": 0
+      },
+      {
+        "name": "downloadPage_terms",
+        "type": "plain/text",
+        "value": "Terms of use",
+        "priority": 0
+      },
+      {
+        "name": "downloadPage_privacy",
+        "type": "plain/text",
+        "value": "Privacy policy",
+        "priority": 0
+      },
+      {
+        "name": "menu_aboutus",
+        "type": "plain/text",
+        "value": "About us",
+        "priority": 0
+      },
+      {
+        "name": "aboutPage_header",
+        "type": "plain/text",
+        "value": "About",
+        "priority": 0
+      },
+      {
+        "name": "aboutPage_title",
+        "type": "plain/text",
+        "value": "About us",
+        "priority": 0
+      },
+      {
+        "name": "aboutPage_content",
+        "type": "plain/text",
+        "value": "myRx Lens Scanner, a GlassesOn technology, is a simple to use, friendly interface that enables users to extract their prescription details from an existing pair of glasses and find their PD",
+        "priority": 0
+      },
+      {
+        "name": "aboutPage_terms",
+        "type": "plain/text",
+        "value": "Terms of use",
+        "priority": 0
+      },
+      {
+        "name": "aboutPage_privacy",
+        "type": "plain/text",
+        "value": "Privacy policy",
+        "priority": 0
+      },
+      {
+        "name": "aboutPage_powered_by",
+        "type": "plain/text",
+        "value": "Powered By 6over6",
+        "priority": 0
+      },
+      {
+        "name": "aboutPage_manufacturer_title",
+        "type": "plain/text",
+        "value": "Manufacturer",
+        "priority": 0
+      },
+      {
+        "name": "aboutPage_manufacturer_name",
+        "type": "plain/text",
+        "value": "6over6 vision Ltd.",
+        "priority": 0
+      },
+      {
+        "name": "aboutPage_manufacturer_place",
+        "type": "plain/text",
+        "value": "Place of production: Yigal Alon st 94 (Alon 2) Tel Aviv, Israel 6789139",
+        "priority": 0
+      },
+      {
+        "name": "aboutPage_authorized_rep_title",
+        "type": "plain/text",
+        "value": "EU authorized representatives",
+        "priority": 0
+      },
+      {
+        "name": "aboutPage_authorized_rep",
+        "type": "plain/text",
+        "value": "MDSS GmbH. Schiffgraben 41 Hannover 30175 Germany",
+        "priority": 0
+      },
+      {
+        "name": "aboutPage_protected_by_title",
+        "type": "plain/text",
+        "value": "Protected by",
+        "priority": 0
+      },
+      {
+        "name": "aboutPage_protected_by",
+        "type": "plain/text",
+        "value": "US Patent 10876923, 10876921, 10702149, 11931105",
+        "priority": 0
+      },
+      {
+        "name": "screenSelectorPage_title",
+        "type": "plain/text",
+        "value": "Select the type of computer screen you intend to use",
+        "priority": 0
+      },
+      {
+        "name": "screenSelectorPage_subtitle",
+        "type": "plain/text",
+        "value": "We'll show you how to pair your phone with your computer screen in the next step",
+        "priority": 0
+      },
+      {
+        "name": "screenSelectorPage_laptopButton",
+        "type": "plain/text",
+        "value": "Laptop screen",
+        "priority": 0
+      },
+      {
+        "name": "screenSelectorPage_desktopButton",
+        "type": "plain/text",
+        "value": "Desktop screen",
+        "priority": 0
+      },
+      {
+        "name": "screenSelectorPage_dontHaveAComputerButton",
+        "type": "plain/text",
+        "value": "I don't have a computer",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_multifocal_title",
+        "type": "plain/text",
+        "value": "Sorry! Multifocal lenses are not supported",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_multifocal_body_part_one",
+        "type": "plain/text",
+        "value": "Multifocal lenses, such as bifocals and progressives, have multiple corrective powers in one lens, with distance on the top and reading on the bottom.",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_multifocal_body_part_two",
+        "type": "plain/text",
+        "value": "The lens scanner cannot accurately extract the prescription details for these types of lenses at this time. We hope to add this option soon.",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_multifocal_button",
+        "type": "plain/text",
+        "value": "Contact support",
+        "priority": 0
+      },
+      {
+        "name": "alertPage_multifocal_return_button",
+        "type": "plain/text",
+        "value": "Return to scan",
+        "priority": 0
+      },
+      {
+        "name": "downloadPage_multifocal_computer_title",
+        "type": "plain/text",
+        "value": "A computer screen",
+        "priority": 0
+      },
+      {
+        "name": "downloadPage_multifocal_computer_reason",
+        "type": "plain/text",
+        "value": "12”-27” laptop or desktop",
+        "priority": 0
+      },
+      {
+        "name": "downloadPage_multifocal_card_reason",
+        "type": "plain/text",
+        "value": "Like a library or gym card",
+        "priority": 0
+      },
+      {
+        "name": "downloadPage_multifocal_glasses_reason",
+        "type": "plain/text",
+        "value": "The tool does not support bifocal lenses",
+        "priority": 0
+      },
+      {
+        "name": "downloadPage_multifocal_glasses_reason_search_word",
+        "type": "plain/text",
+        "value": "bifocal lenses",
+        "priority": 0
+      },
+      {
+        "name": "downloadPage_multifocal_button",
+        "type": "plain/text",
+        "value": "Sounds good!",
+        "priority": 0
+      },
+      {
+        "name": "aboutPage_protected_by_title_two",
+        "type": "plain/text",
+        "value": "Intellectual Property",
+        "priority": 0
+      },
+      {
+        "name": "aboutPage_protected_by_two",
+        "type": "plain/text",
+        "value": "This application is protected by the following patents listed here",
+        "priority": 0
+      },
+      {
+        "name": "aboutPage_protected_by_link",
+        "type": "plain/text",
+        "value": "here",
+        "priority": 0
+      }
+    ]
+  },
+  "native-flows": {},
+  "language_dictionary": {},
+  "dictionary_translations": {}
+}

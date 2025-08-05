@@ -1,0 +1,41 @@
+{
+  "flags": [
+    {
+      "id": "cyl_d_down",
+      "value": -2.125,
+      "eye": "right"
+    },
+    {
+      "id": "cyl_d_up",
+      "value": -2,
+      "eye": "right"
+    }
+  ],
+  "stations": [
+    {
+      "id": "j_high_cyl",
+      "value": 484.8484848484849,
+      "upload": true,
+      "eye": "right"
+    },
+    {
+      "id": "mdba_cyl",
+      "value": 533.3334580444546,
+      "upload": true,
+      "eye": "right"
+    },
+    {
+      "id": "cyl_final",
+      "value": 505.26323586482044,
+      "upload": true,
+      "eye": "right"
+    }
+  ],
+  "event": "calculation_end",
+  "actions": [],
+  "mixpanelEvent": null,
+  "successMixpanelEvent": null,
+  "analyticsEvent": null,
+  "type": "ServerCalculationResponseAction",
+  "id": "go_eyes_v1.return_calculation.0.ServerCalculationResponseAction"
+}

@@ -1,0 +1,62 @@
+{
+  "type": "object",
+  "required": ["flags", "stations", "event", "actions", "mixpanelEvent", "successMixpanelEvent", "analyticsEvent", "type", "id"],
+  "additionalProperties": false,
+  "properties": {
+    "flags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "value"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { 
+            "type": "string",
+            "enum": ["cyl_d_down", "cyl_d_up", "sph_last_size"]
+          },
+          "value": { "type": "number" }
+        }
+      }
+    },
+    "stations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "value", "upload"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { 
+            "type": "string",
+            "enum": ["j_low", "j_cyl", "s_up_sphere", "mdba_near_low"]
+          },
+          "value": { "type": "number" },
+          "upload": { "type": "boolean" }
+        }
+      }
+    },
+    "event": { 
+      "type": "string",
+      "enum": ["calculation_end"]
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "mixpanelEvent": { 
+      "type": ["string", "null"] 
+    },
+    "successMixpanelEvent": { 
+      "type": ["string", "null"] 
+    },
+    "analyticsEvent": { 
+      "type": ["string", "null"] 
+    },
+    "type": { 
+      "type": "string",
+      "enum": ["ServerCalculationResponseAction"]
+    },
+    "id": { "type": "string" }
+  }
+}

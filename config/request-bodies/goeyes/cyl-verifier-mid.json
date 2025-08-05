@@ -1,0 +1,1030 @@
+{
+  "hostAppName": "SDKWrapper",
+  "phone_model": "iPhone14,2",
+  "configuration": {
+    "isCoverEyeEnabled": true,
+    "isDataCollectorEnabled": false,
+    "isSetupEnable": true,
+    "isShortDistanceEnabled": true,
+    "isOnboardingEnable": true,
+    "isLocalJSONEnabled": false,
+    "isDebugModeEnabled": true,
+    "isRestEyeEnabled": true,
+    "isGTrainingEnabled": false,
+    "isQuestionnaireEnable": true
+  },
+  "version": "5.44.2 (64)",
+  "hostAppVersion": "6.0.4 (941)",
+  "eye": "left",
+  "stationsData": {
+    "right": {
+      "sharpLineAxis": 52.5,
+      "stationsJourney": [
+        "4_big_shapes",
+        "small_shapes_60cm_a",
+        "shapes_small",
+        "shapes_small",
+        "check_light",
+        "check_face",
+        "4_big_shapes",
+        "small_shapes_60cm_a",
+        "shapes_small",
+        "shapes_small",
+        "snr_approximate_sph",
+        "snr_approximate_sph",
+        "snr_approximate_sph",
+        "snr_approximate_sph",
+        "snr_approximate_sph",
+        "snr_approximate_sph",
+        "snr_approximate_sph",
+        "putOnGlasses",
+        "putOnGlasses_onFinish",
+        "1_training_2_line",
+        "2_training_0_line",
+        "3_training_slightly_defocused_line",
+        "4_training_1_line_a",
+        "5_training_1_line_b",
+        "removeGlasses",
+        "rough_va_0.4",
+        "rough_va_0.3_a",
+        "mono_blur_back_035_sph_first",
+        "mono_blur_back_035_sph_first",
+        "mono_blur_back_075_cyl",
+        "mono_blur_back_075_cyl",
+        "mono_blur_back_035_sph_second",
+        "mono_blur_back_035_sph_third",
+        "mono_blur_back_035_cyl_second",
+        "mono_blur_back_035_cyl_second",
+        "va_at_sphere",
+        "cyl_verifier_0.65",
+        "low_cyl_verifier_sph_0.3_down",
+        "low_cyl_verifier_cyl_down",
+        "low_cyl_verifier_sph_up",
+        "low_cyl_verifier_cyl_up",
+        "low_cyl_verifier_cyl_up",
+        "low_cyl_verifier_cyl_up",
+        "low_cyl_verifier_cyl_up",
+        "low_cyl_verifier_cyl_up",
+        "j_low",
+        "j_cyl",
+        "s_up_sphere",
+        "high_cyl_verifier_cyl_down",
+        "high_cyl_verifier_cyl_down",
+        "high_cyl_verifier_cyl_up",
+        "high_cyl_verifier_cyl_up",
+        "high_cyl_verifier_cyl_up",
+        "high_cyl_verifier_cyl_up",
+        "high_cyl_verifier_mdba_near",
+        "high_cyl_verifier_mdba_near_reduced",
+        "j_high_cyl",
+        "mdba_cyl",
+        "cyl_final"
+      ],
+      "currentStationData": {
+        "logMar": 0.65,
+        "commands": ["no"],
+        "distance": 377.25235,
+        "id": "high_cyl_verifier_mdba_near_reduced",
+        "correctAnswers": ["yes", "next", "no"],
+        "answerTimeInterval": 1.608212947845459,
+        "inputStream": ["No"]
+      },
+      "globalFlags": {
+        "cyl_estimator": "-1.125",
+        "snrSharpLine": "52.5",
+        "cyl_up_answer": "1",
+        "cyl_down_answer": "0",
+        "cyl_up_size": "0.8",
+        "sph_down_size": "0.3",
+        "cyl_d_up": "-2.125",
+        "c_last_logMar_mdba": "0.65",
+        "sph_last_size": "0.25",
+        "comfortableAlertFlag": "1",
+        "cyl_down_size": "0.65",
+        "snr_colors_count": "1",
+        "cyl_d_down": "-2",
+        "sph_up_size": "0.25"
+      },
+      "stations": [
+        {
+          "logMar": 0,
+          "commands": ["one"],
+          "distance": 655.0321,
+          "id": "4_big_shapes",
+          "correctAnswers": ["next", "three", "four", "zero", "one", "two"],
+          "answerTimeInterval": 1.6515480279922485,
+          "inputStream": ["One"]
+        },
+        {
+          "logMar": 0,
+          "commands": ["no"],
+          "distance": 616.0048,
+          "correctAnswers": ["yes", "no"],
+          "id": "small_shapes_60cm_a",
+          "answerTimeInterval": 1.4380180835723877,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0,
+          "commands": ["yes"],
+          "distance": 264.63925,
+          "id": "shapes_small",
+          "correctAnswers": ["one"],
+          "answerTimeInterval": 1.620447039604187,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0,
+          "commands": ["three"],
+          "distance": 269.2109,
+          "correctAnswers": ["three"],
+          "id": "shapes_small",
+          "answerTimeInterval": 1.6181490421295166,
+          "inputStream": ["Three"]
+        },
+        {
+          "logMar": 0,
+          "id": "shapes_final",
+          "commands": [],
+          "distance": 269.2109,
+          "inputStream": []
+        },
+        {
+          "logMar": 0,
+          "id": "approximate_sph",
+          "commands": [],
+          "distance": 269.2109,
+          "inputStream": []
+        },
+        {
+          "logMar": 0,
+          "id": "check_light",
+          "commands": [],
+          "distance": 269.65247,
+          "inputStream": []
+        },
+        {
+          "logMar": 0,
+          "id": "check_face",
+          "commands": [],
+          "inputStream": [],
+          "distance": 682.807
+        },
+        {
+          "logMar": 0,
+          "commands": ["one"],
+          "distance": 598.09607,
+          "correctAnswers": ["three", "two", "one", "four", "zero", "next"],
+          "id": "4_big_shapes",
+          "answerTimeInterval": 1.6236000061035156,
+          "inputStream": ["One"]
+        },
+        {
+          "commands": ["no"],
+          "logMar": 0,
+          "distance": 579.6559,
+          "id": "small_shapes_60cm_a",
+          "correctAnswers": ["yes", "no"],
+          "answerTimeInterval": 1.4212870597839355,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0,
+          "commands": ["yes"],
+          "distance": 290.4476,
+          "correctAnswers": ["two"],
+          "id": "shapes_small",
+          "answerTimeInterval": 1.4249670505523682,
+          "inputStream": ["Yes"]
+        },
+        {
+          "commands": ["one"],
+          "logMar": 0,
+          "distance": 292.21683,
+          "id": "shapes_small",
+          "correctAnswers": ["one"],
+          "answerTimeInterval": 1.6135579347610474,
+          "inputStream": ["One"]
+        },
+        {
+          "logMar": 0,
+          "id": "shapes_final",
+          "commands": [],
+          "inputStream": [],
+          "distance": 292.21683
+        },
+        {
+          "logMar": 0,
+          "id": "approximate_sph",
+          "commands": [],
+          "inputStream": [],
+          "distance": 292.21683
+        },
+        {
+          "commands": ["yes"],
+          "logMar": 0,
+          "distance": 301.49487,
+          "correctAnswers": ["yes", "nothing", "all", "no"],
+          "id": "snr_approximate_sph",
+          "answerTimeInterval": 1.60822594165802,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0,
+          "commands": ["yellow"],
+          "distance": 298.28934,
+          "correctAnswers": ["next", "red", "yellow", "white", "blue"],
+          "id": "snr_approximate_sph",
+          "answerTimeInterval": 1.4224770069122314,
+          "inputStream": ["Yellow"]
+        },
+        {
+          "logMar": 0,
+          "commands": ["blue"],
+          "distance": 297.93832,
+          "id": "snr_approximate_sph",
+          "correctAnswers": ["blue", "next", "red", "green", "yellow", "white"],
+          "answerTimeInterval": 2.4384469985961914,
+          "inputStream": ["Blue"]
+        },
+        {
+          "logMar": 0,
+          "commands": ["yes"],
+          "distance": 313.94778,
+          "correctAnswers": ["no", "none", "yes"],
+          "id": "snr_approximate_sph",
+          "answerTimeInterval": 2.4171500205993652,
+          "inputStream": ["Yes"]
+        },
+        {
+          "commands": ["yellow"],
+          "logMar": 0,
+          "distance": 305.34372,
+          "correctAnswers": ["blue", "red", "next", "yellow", "white"],
+          "id": "snr_approximate_sph",
+          "answerTimeInterval": 1.6093800067901611,
+          "inputStream": ["Yellow"]
+        },
+        {
+          "commands": ["blue", "yellow"],
+          "logMar": 0,
+          "distance": 310.28683,
+          "correctAnswers": ["blue", "red", "yellow", "next", "green", "white"],
+          "id": "snr_approximate_sph",
+          "answerTimeInterval": 3.3289600610733032,
+          "inputStream": ["Blue", "Blue yellow"]
+        },
+        {
+          "commands": ["no"],
+          "logMar": 0,
+          "distance": 320.80698,
+          "id": "snr_approximate_sph",
+          "correctAnswers": ["yes", "none", "no"],
+          "answerTimeInterval": 1.6146149635314941,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0,
+          "id": "putOnGlasses",
+          "commands": [],
+          "distance": 210.77626,
+          "inputStream": []
+        },
+        {
+          "logMar": 0.85,
+          "id": "putOnGlasses_onFinish",
+          "commands": [],
+          "distance": 506.1144,
+          "inputStream": []
+        },
+        {
+          "logMar": 0.85,
+          "commands": ["yes"],
+          "distance": 509.09262,
+          "id": "1_training_2_line",
+          "correctAnswers": ["no", "yes", "next"],
+          "answerTimeInterval": 1.6170730590820312,
+          "inputStream": ["Yes"]
+        },
+        {
+          "commands": ["no"],
+          "logMar": 0.85,
+          "distance": 437.4396,
+          "id": "2_training_0_line",
+          "correctAnswers": ["no", "next", "yes"],
+          "answerTimeInterval": 1.6158579587936401,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0.85,
+          "commands": ["yes"],
+          "distance": 440.2256,
+          "id": "3_training_slightly_defocused_line",
+          "correctAnswers": ["next", "yes", "no"],
+          "answerTimeInterval": 1.6160560846328735,
+          "inputStream": ["Yes"]
+        },
+        {
+          "commands": ["no"],
+          "logMar": 0.85,
+          "distance": 441.15497,
+          "id": "4_training_1_line_a",
+          "correctAnswers": ["no", "yes", "next"],
+          "answerTimeInterval": 1.4253369569778442,
+          "inputStream": ["No"]
+        },
+        {
+          "commands": ["no"],
+          "logMar": 0.85,
+          "distance": 438.89758,
+          "correctAnswers": ["next", "yes", "no"],
+          "id": "5_training_1_line_b",
+          "answerTimeInterval": 1.6148239374160767,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0.85,
+          "id": "removeGlasses",
+          "commands": [],
+          "distance": 444.99396,
+          "inputStream": []
+        },
+        {
+          "commands": ["yes"],
+          "logMar": 0.4,
+          "distance": 300.3346,
+          "correctAnswers": ["yes", "no", "next"],
+          "id": "rough_va_0.4",
+          "answerTimeInterval": 1.6106810569763184,
+          "inputStream": ["Yes"]
+        },
+        {
+          "commands": ["yes"],
+          "logMar": 0.3,
+          "distance": 300.65723,
+          "id": "rough_va_0.3_a",
+          "correctAnswers": ["yes", "next", "no"],
+          "answerTimeInterval": 1.826443076133728,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0,
+          "id": "sphere_1",
+          "commands": [],
+          "inputStream": [],
+          "distance": 300.65723
+        },
+        {
+          "commands": ["yes"],
+          "logMar": 0.35,
+          "distance": 343.3742,
+          "correctAnswers": ["yes", "next", "no"],
+          "id": "mono_blur_back_035_sph_first",
+          "answerTimeInterval": 1.609205961227417,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0.35,
+          "commands": ["no"],
+          "distance": 416.72256,
+          "id": "mono_blur_back_035_sph_first",
+          "correctAnswers": ["yes", "next", "no"],
+          "answerTimeInterval": 2.4257709980010986,
+          "inputStream": ["No"]
+        },
+        {
+          "commands": ["no"],
+          "logMar": 0.75,
+          "distance": 416.69955,
+          "id": "mono_blur_back_075_cyl",
+          "correctAnswers": ["next", "yes", "no"],
+          "answerTimeInterval": 2.6177979707717896,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0.75,
+          "commands": ["no"],
+          "distance": 410.20178,
+          "correctAnswers": ["next", "yes", "no"],
+          "id": "mono_blur_back_075_cyl",
+          "answerTimeInterval": 2.8272749185562134,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0.35,
+          "commands": ["yes"],
+          "distance": 408.4487,
+          "id": "mono_blur_back_035_sph_second",
+          "correctAnswers": ["next", "no", "yes"],
+          "answerTimeInterval": 2.117854952812195,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0.35,
+          "commands": ["no"],
+          "distance": 472.91022,
+          "correctAnswers": ["next", "no", "yes"],
+          "id": "mono_blur_back_035_sph_third",
+          "answerTimeInterval": 1.8393930196762085,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0.35,
+          "commands": ["no"],
+          "distance": 472.7486,
+          "correctAnswers": ["yes", "next", "no"],
+          "id": "mono_blur_back_035_cyl_second",
+          "answerTimeInterval": 1.6177420616149902,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0.35,
+          "commands": ["no"],
+          "distance": 463.41208,
+          "id": "mono_blur_back_035_cyl_second",
+          "correctAnswers": ["yes", "next", "no"],
+          "answerTimeInterval": 5.0269999504089355,
+          "inputStream": ["Now", "Now no"]
+        },
+        {
+          "logMar": 0.25,
+          "commands": ["yes"],
+          "distance": 403.11423,
+          "id": "va_at_sphere",
+          "correctAnswers": ["next", "no", "yes"],
+          "answerTimeInterval": 1.6085349321365356,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0,
+          "id": "sph_j",
+          "commands": [],
+          "inputStream": [],
+          "distance": 403.11423
+        },
+        {
+          "logMar": 0,
+          "id": "sphere_2",
+          "commands": [],
+          "inputStream": [],
+          "distance": 403.11423
+        },
+        {
+          "logMar": 0.65,
+          "commands": ["yes"],
+          "distance": 401.743,
+          "correctAnswers": ["yes", "no", "next"],
+          "id": "cyl_verifier_0.65",
+          "answerTimeInterval": 1.6125479936599731,
+          "inputStream": ["Yes"]
+        },
+        {
+          "commands": ["yes"],
+          "logMar": 0.3,
+          "distance": 433.46393,
+          "id": "low_cyl_verifier_sph_0.3_down",
+          "correctAnswers": ["yes", "next", "no"],
+          "answerTimeInterval": 1.6096199750900269,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0.7,
+          "commands": ["no"],
+          "distance": 433.46082,
+          "id": "low_cyl_verifier_cyl_down",
+          "correctAnswers": ["next", "yes", "no"],
+          "answerTimeInterval": 1.827062964439392,
+          "inputStream": ["No"]
+        },
+        {
+          "commands": ["yes"],
+          "logMar": 0.25,
+          "distance": 433.44513,
+          "id": "low_cyl_verifier_sph_up",
+          "correctAnswers": ["next", "yes", "no"],
+          "answerTimeInterval": 1.8234219551086426,
+          "inputStream": ["Yes"]
+        },
+        {
+          "commands": ["no"],
+          "logMar": 0.55,
+          "distance": 433.23804,
+          "id": "low_cyl_verifier_cyl_up",
+          "correctAnswers": ["next", "no", "yes"],
+          "answerTimeInterval": 2.117187023162842,
+          "inputStream": ["No"]
+        },
+        {
+          "commands": ["no"],
+          "logMar": 0.65,
+          "distance": 433.16495,
+          "correctAnswers": ["next", "no", "yes"],
+          "id": "low_cyl_verifier_cyl_up",
+          "answerTimeInterval": 2.4254120588302612,
+          "inputStream": ["No"]
+        },
+        {
+          "commands": ["no"],
+          "logMar": 0.75,
+          "distance": 432.50586,
+          "id": "low_cyl_verifier_cyl_up",
+          "correctAnswers": ["next", "no", "yes"],
+          "answerTimeInterval": 2.1178879737854004,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0.85,
+          "commands": ["no"],
+          "distance": 431.2787,
+          "id": "low_cyl_verifier_cyl_up",
+          "correctAnswers": ["next", "no", "yes"],
+          "answerTimeInterval": 2.426835060119629,
+          "inputStream": ["No"]
+        },
+        {
+          "commands": ["yes"],
+          "logMar": 0.95,
+          "distance": 430.60587,
+          "correctAnswers": ["next", "no", "yes"],
+          "id": "low_cyl_verifier_cyl_up",
+          "answerTimeInterval": 2.1156829595565796,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0.95,
+          "id": "j_low",
+          "commands": [],
+          "distance": 571.4286,
+          "inputStream": []
+        },
+        {
+          "logMar": 0.95,
+          "id": "j_cyl",
+          "commands": [],
+          "distance": 571.4286,
+          "inputStream": []
+        },
+        {
+          "logMar": 0.95,
+          "id": "s_up_sphere",
+          "commands": [],
+          "inputStream": [],
+          "distance": 430.60587
+        },
+        {
+          "commands": ["yes"],
+          "logMar": 0.75,
+          "distance": 332.78952,
+          "id": "high_cyl_verifier_cyl_down",
+          "correctAnswers": ["yes", "next", "no"],
+          "answerTimeInterval": 1.4153679609298706,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0.65,
+          "commands": ["no"],
+          "distance": 332.3015,
+          "correctAnswers": ["yes", "next", "no"],
+          "id": "high_cyl_verifier_cyl_down",
+          "answerTimeInterval": 1.8238219022750854,
+          "inputStream": ["No"]
+        },
+        {
+          "commands": ["no"],
+          "logMar": 0.5,
+          "distance": 332.98093,
+          "id": "high_cyl_verifier_cyl_up",
+          "correctAnswers": ["next", "yes", "no"],
+          "answerTimeInterval": 2.1169309616088867,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0.6,
+          "commands": ["no"],
+          "distance": 332.84802,
+          "id": "high_cyl_verifier_cyl_up",
+          "correctAnswers": ["next", "yes", "no"],
+          "answerTimeInterval": 2.1200519800186157,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0.7,
+          "commands": ["no"],
+          "distance": 333.09225,
+          "correctAnswers": ["next", "yes", "no"],
+          "id": "high_cyl_verifier_cyl_up",
+          "answerTimeInterval": 2.116623044013977,
+          "inputStream": ["No"]
+        },
+        {
+          "commands": ["yes"],
+          "logMar": 0.8,
+          "distance": 334.02057,
+          "correctAnswers": ["next", "yes", "no"],
+          "id": "high_cyl_verifier_cyl_up",
+          "answerTimeInterval": 1.8222990036010742,
+          "inputStream": ["Yes"]
+        },
+        {
+          "commands": ["yes"],
+          "logMar": 0.8,
+          "distance": 377.3908,
+          "correctAnswers": ["no", "next", "yes"],
+          "id": "high_cyl_verifier_mdba_near",
+          "answerTimeInterval": 1.6018749475479126,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0.65,
+          "commands": ["no"],
+          "distance": 377.25235,
+          "id": "high_cyl_verifier_mdba_near_reduced",
+          "correctAnswers": ["yes", "next", "no"],
+          "answerTimeInterval": 1.608212947845459,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0.65,
+          "id": "j_high_cyl",
+          "commands": [],
+          "distance": 484.84848,
+          "inputStream": []
+        },
+        {
+          "logMar": 0.65,
+          "id": "mdba_cyl",
+          "commands": [],
+          "inputStream": [],
+          "distance": 772.1655
+        },
+        {
+          "logMar": 0.65,
+          "id": "cyl_final",
+          "commands": [],
+          "inputStream": [],
+          "distance": 614.7429
+        }
+      ]
+    },
+    "left": {
+      "currentStationData": {
+        "logMar": 0.6,
+        "commands": ["no"],
+        "distance": 429.54053,
+        "correctAnswers": ["next", "yes", "no"],
+        "id": "mid_high_cyl_verifier_cyl_down",
+        "answerTimeInterval": 1.6142680644989014,
+        "inputStream": ["No"]
+      },
+      "sharpLineAxis": 127.5,
+      "stations": [
+        {
+          "commands": ["one"],
+          "logMar": 0,
+          "distance": 612.5122,
+          "correctAnswers": ["zero", "two", "three", "next", "one", "four"],
+          "id": "4_big_shapes",
+          "answerTimeInterval": 1.8357230424880981,
+          "inputStream": ["One"]
+        },
+        {
+          "logMar": 0,
+          "commands": ["no"],
+          "distance": 599.54425,
+          "id": "small_shapes_60cm_a",
+          "correctAnswers": ["yes", "no"],
+          "answerTimeInterval": 1.4176969528198242,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0,
+          "commands": ["yes"],
+          "distance": 265.36172,
+          "correctAnswers": ["one"],
+          "id": "shapes_small",
+          "answerTimeInterval": 1.6099950075149536,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0,
+          "commands": ["one"],
+          "distance": 265.04288,
+          "id": "shapes_small",
+          "correctAnswers": ["one"],
+          "answerTimeInterval": 1.6089950799942017,
+          "inputStream": ["One"]
+        },
+        {
+          "logMar": 0,
+          "id": "shapes_final",
+          "commands": [],
+          "inputStream": [],
+          "distance": 265.04288
+        },
+        {
+          "logMar": 0,
+          "id": "approximate_sph",
+          "commands": [],
+          "distance": 265.04288,
+          "inputStream": []
+        },
+        {
+          "logMar": 0,
+          "commands": ["yes"],
+          "distance": 294.5559,
+          "correctAnswers": ["all", "nothing", "no", "yes"],
+          "id": "snr_approximate_sph",
+          "answerTimeInterval": 1.610592007637024,
+          "inputStream": ["Yes"]
+        },
+        {
+          "commands": ["red", "white"],
+          "logMar": 0,
+          "distance": 291.38574,
+          "id": "snr_approximate_sph",
+          "correctAnswers": ["red", "white", "yellow", "next", "blue"],
+          "answerTimeInterval": 3.3376420736312866,
+          "inputStream": ["Red", "Red white"]
+        },
+        {
+          "logMar": 0,
+          "commands": ["yellow", "blue", "white"],
+          "distance": 290.1077,
+          "id": "snr_approximate_sph",
+          "correctAnswers": ["blue", "green", "white", "yellow", "next", "red"],
+          "answerTimeInterval": 5.216982007026672,
+          "inputStream": ["Yellow", "Yellow blue", "Yellow blue white"]
+        },
+        {
+          "commands": ["yes"],
+          "logMar": 0,
+          "distance": 248.86827,
+          "correctAnswers": ["yes", "no", "none"],
+          "id": "snr_approximate_sph",
+          "answerTimeInterval": 1.4188330173492432,
+          "inputStream": ["Now", "Now now", "Yes"]
+        },
+        {
+          "logMar": 0,
+          "commands": ["white", "red"],
+          "distance": 249.10713,
+          "id": "snr_approximate_sph",
+          "correctAnswers": ["blue", "next", "yellow", "red", "white"],
+          "answerTimeInterval": 4.017886996269226,
+          "inputStream": ["White", "White red"]
+        },
+        {
+          "commands": ["blue", "yellow", "white"],
+          "logMar": 0,
+          "distance": 250.20638,
+          "id": "snr_approximate_sph",
+          "correctAnswers": ["blue", "yellow", "white", "next", "red", "green"],
+          "answerTimeInterval": 6.064543962478638,
+          "inputStream": ["Blue", "Blue yellow", "Blue yellow white"]
+        },
+        {
+          "logMar": 0,
+          "commands": ["no"],
+          "distance": 250.4561,
+          "id": "snr_approximate_sph",
+          "correctAnswers": ["yes", "none", "no"],
+          "answerTimeInterval": 1.4178520441055298,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0.65,
+          "id": "removeGlasses",
+          "commands": [],
+          "distance": 458.6722,
+          "inputStream": []
+        },
+        {
+          "commands": ["yes"],
+          "logMar": 0.4,
+          "distance": 271.52023,
+          "correctAnswers": ["no", "next", "yes"],
+          "id": "rough_va_0.4",
+          "answerTimeInterval": 1.4169800281524658,
+          "inputStream": ["Yes"]
+        },
+        {
+          "commands": ["yes"],
+          "logMar": 0.3,
+          "distance": 271.71512,
+          "id": "rough_va_0.3_a",
+          "correctAnswers": ["no", "next", "yes"],
+          "answerTimeInterval": 1.8255579471588135,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0,
+          "id": "sphere_1",
+          "commands": [],
+          "distance": 271.71512,
+          "inputStream": []
+        },
+        {
+          "commands": ["yes"],
+          "logMar": 0.35,
+          "distance": 311.16638,
+          "id": "mono_blur_back_035_sph_first",
+          "correctAnswers": ["next", "yes", "no"],
+          "answerTimeInterval": 1.41743803024292,
+          "inputStream": ["Yes"]
+        },
+        {
+          "commands": ["yes"],
+          "logMar": 0.35,
+          "distance": 363.11758,
+          "correctAnswers": ["next", "yes", "no"],
+          "id": "mono_blur_back_035_sph_first",
+          "answerTimeInterval": 1.6122039556503296,
+          "inputStream": ["Yes"]
+        },
+        {
+          "commands": ["yes"],
+          "logMar": 0.35,
+          "distance": 434.46677,
+          "id": "mono_blur_back_035_sph_first",
+          "correctAnswers": ["next", "yes", "no"],
+          "answerTimeInterval": 1.6102219820022583,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0.35,
+          "commands": ["no"],
+          "distance": 568.11035,
+          "correctAnswers": ["next", "yes", "no"],
+          "id": "mono_blur_back_035_sph_first",
+          "answerTimeInterval": 1.6161240339279175,
+          "inputStream": ["No"]
+        },
+        {
+          "commands": ["no"],
+          "logMar": 0.75,
+          "distance": 568.0939,
+          "id": "mono_blur_back_075_cyl",
+          "correctAnswers": ["next", "yes", "no"],
+          "answerTimeInterval": 1.6147969961166382,
+          "inputStream": ["No"]
+        },
+        {
+          "commands": ["no"],
+          "logMar": 0.75,
+          "distance": 567.8329,
+          "correctAnswers": ["next", "yes", "no"],
+          "id": "mono_blur_back_075_cyl",
+          "answerTimeInterval": 2.8371599912643433,
+          "inputStream": ["No"]
+        },
+        {
+          "commands": ["no"],
+          "logMar": 0.35,
+          "distance": 569.0452,
+          "id": "mono_blur_back_035_sph_second",
+          "correctAnswers": ["no", "yes", "next"],
+          "answerTimeInterval": 1.8294659852981567,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0.25,
+          "commands": ["yes"],
+          "distance": 438.20496,
+          "id": "va_at_sphere",
+          "correctAnswers": ["no", "next", "yes"],
+          "answerTimeInterval": 1.610834002494812,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0,
+          "id": "sph_j",
+          "commands": [],
+          "inputStream": [],
+          "distance": 438.20493
+        },
+        {
+          "logMar": 0,
+          "id": "sphere_2",
+          "commands": [],
+          "distance": 438.20496,
+          "inputStream": []
+        },
+        {
+          "commands": ["no"],
+          "logMar": 0.65,
+          "distance": 436.2873,
+          "id": "cyl_verifier_0.65",
+          "correctAnswers": ["no", "yes", "next"],
+          "answerTimeInterval": 1.827212929725647,
+          "inputStream": ["No"]
+        },
+        {
+          "commands": ["yes"],
+          "logMar": 0.3,
+          "distance": 432.91925,
+          "id": "mid_high_cyl_verifier_sph_0.3_up",
+          "correctAnswers": ["next", "yes", "no"],
+          "answerTimeInterval": 1.6137369871139526,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0.7,
+          "commands": ["yes"],
+          "distance": 430.92868,
+          "correctAnswers": ["next", "no", "yes"],
+          "id": "mid_high_cyl_verifier_cyl_up",
+          "answerTimeInterval": 1.6124531030654907,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0.3,
+          "commands": ["yes"],
+          "distance": 430.3273,
+          "correctAnswers": ["yes", "next", "no"],
+          "id": "mid_high_cyl_verifier_sph_0.3_down",
+          "answerTimeInterval": 1.825990080833435,
+          "inputStream": ["Yes"]
+        },
+        {
+          "commands": ["yes"],
+          "logMar": 0.75,
+          "distance": 430.37695,
+          "correctAnswers": ["next", "yes", "no"],
+          "id": "mid_high_cyl_verifier_cyl_down",
+          "answerTimeInterval": 1.8259260654449463,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0.7,
+          "commands": ["yes"],
+          "distance": 430.12115,
+          "id": "mid_high_cyl_verifier_cyl_down",
+          "correctAnswers": ["next", "yes", "no"],
+          "answerTimeInterval": 1.828373908996582,
+          "inputStream": ["Yes"]
+        },
+        {
+          "commands": ["yes"],
+          "logMar": 0.65,
+          "distance": 429.99896,
+          "correctAnswers": ["next", "yes", "no"],
+          "id": "mid_high_cyl_verifier_cyl_down",
+          "answerTimeInterval": 1.8261500597000122,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0.6,
+          "commands": ["no"],
+          "distance": 429.54053,
+          "id": "mid_high_cyl_verifier_cyl_down",
+          "correctAnswers": ["next", "yes", "no"],
+          "answerTimeInterval": 1.6142680644989014,
+          "inputStream": ["No"]
+        }
+      ],
+      "stationsJourney": [
+        "4_big_shapes",
+        "small_shapes_60cm_a",
+        "shapes_small",
+        "shapes_small",
+        "snr_approximate_sph",
+        "snr_approximate_sph",
+        "snr_approximate_sph",
+        "snr_approximate_sph",
+        "snr_approximate_sph",
+        "snr_approximate_sph",
+        "snr_approximate_sph",
+        "removeGlasses",
+        "rough_va_0.4",
+        "rough_va_0.3_a",
+        "mono_blur_back_035_sph_first",
+        "mono_blur_back_035_sph_first",
+        "mono_blur_back_035_sph_first",
+        "mono_blur_back_035_sph_first",
+        "mono_blur_back_075_cyl",
+        "mono_blur_back_075_cyl",
+        "mono_blur_back_035_sph_second",
+        "va_at_sphere",
+        "cyl_verifier_0.65",
+        "mid_high_cyl_verifier_sph_0.3_up",
+        "mid_high_cyl_verifier_cyl_up",
+        "mid_high_cyl_verifier_sph_0.3_down",
+        "mid_high_cyl_verifier_cyl_down",
+        "mid_high_cyl_verifier_cyl_down",
+        "mid_high_cyl_verifier_cyl_down",
+        "mid_high_cyl_verifier_cyl_down"
+      ],
+      "globalFlags": {
+        "cyl_down_answer": "0",
+        "snrSharpLine": "127.5",
+        "snr_colors_count": "2",
+        "cyl_up_size": "0.7",
+        "cyl_up_answer": "1",
+        "sph_down_size": "0.3",
+        "sph_up_size": "0.3",
+        "cyl_estimator": "-1",
+        "cyl_down_size": "0.6"
+      }
+    }
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "type": "object",
+  "required": ["status", "stage"],
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "type": "string"
+    },
+    "stage": {
+      "type": "string"
+    }
+  }
+} 

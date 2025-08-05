@@ -1,0 +1,63 @@
+{
+  "type": "object",
+  "required": ["flags", "stations", "event", "actions", "mixpanelEvent", "successMixpanelEvent", "analyticsEvent", "type", "id"],
+  "additionalProperties": false,
+  "properties": {
+    "flags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "value"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "value": { "type": "number" }
+        }
+      }
+    },
+    "stations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "value", "upload", "eye"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { 
+            "type": "string",
+            "enum": ["mdba_cyl_low", "cyl_final"]
+          },
+          "value": { "type": "number" },
+          "upload": { "type": "boolean" },
+          "eye": { 
+            "type": "string",
+            "enum": ["right"]
+          }
+        }
+      }
+    },
+    "event": { 
+      "type": "string",
+      "enum": ["oor6"]
+    },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "string"
+      }
+    },
+    "mixpanelEvent": { 
+      "type": ["string", "null"] 
+    },
+    "successMixpanelEvent": { 
+      "type": ["string", "null"] 
+    },
+    "analyticsEvent": { 
+      "type": ["string", "null"] 
+    },
+    "type": { 
+      "type": "string",
+      "enum": ["ServerCalculationResponseAction"]
+    },
+    "id": { "type": "string" }
+  }
+}

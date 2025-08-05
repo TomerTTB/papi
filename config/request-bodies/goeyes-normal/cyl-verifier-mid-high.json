@@ -1,0 +1,1080 @@
+{
+    "hostAppName": "SDKWrapper",
+    "phone_model": "iPhone14,2",
+    "configuration": {
+      "isRestEnabled": true,
+      "isShortDistanceEnabled": true,
+      "debugMode": "enabled",
+      "isJTrainingEnabled": false,
+      "isLocalJSONEnabled": false,
+      "isCoverEyeEnabled": true,
+      "maxBrightnessKey": 3.5,
+      "isSetupEnabled": true,
+      "disableQuestionnaire": false,
+      "disableOnboarding": false,
+      "minBrightnessKey": 0.04
+    },
+    "version": "6.0.4 (2916)",
+    "api_version": "1.0",
+    "eye": "right",
+    "stationsData": {
+      "right": {
+        "sharpLineAxis": 75,
+        "globalFlags": {
+          "comfortableAlertFlag": "1",
+          "snrSharpLine": "75.0",
+          "cyl_up_size": "1",
+          "cyl_up_answer": "0",
+          "snr_colors_count": "1",
+          "cyl_estimator": "-1",
+          "sph_up_size": "0.3",
+          "cyl_down_size": "0"
+        },
+        "stationsJourney": [
+          "4_big_shapes",
+          "small_shapes_60cm_a",
+          "small_shapes_60cm_b",
+          "shapes_small",
+          "shapes_small",
+          "check_light",
+          "check_face",
+          "4_big_shapes",
+          "small_shapes_60cm_a",
+          "small_shapes_60cm_b",
+          "shapes_small",
+          "shapes_small",
+          "snr_approximate_sph",
+          "snr_approximate_sph",
+          "snr_approximate_sph",
+          "snr_approximate_sph",
+          "putOnGlasses",
+          "putOnGlasses_onFinish",
+          "1_training_2_line",
+          "2_training_0_line",
+          "3_training_slightly_defocused_line",
+          "4_training_1_line_a",
+          "5_training_1_line_b",
+          "removeGlasses",
+          "rough_va_0.4",
+          "rough_va_0.3_a",
+          "mono_blur_back_035_sph_first",
+          "mono_blur_back_035_sph_first",
+          "mono_blur_back_035_sph_first",
+          "mono_blur_back_075_cyl",
+          "mono_blur_back_075_cyl",
+          "mono_blur_back_035_sph_second",
+          "va_at_sphere",
+          "cyl_verifier_0.65",
+          "mid_high_cyl_verifier_sph_0.3_up",
+          "mid_high_cyl_verifier_cyl_up",
+          "mid_high_cyl_verifier_cyl_up",
+          "mid_high_cyl_verifier_cyl_up",
+          "mid_high_cyl_verifier_cyl_up"
+        ],
+        "stations": [
+          {
+            "commands": [
+              "one"
+            ],
+            "logMar": 0.25,
+            "distance": 600.21497,
+            "id": "4_big_shapes",
+            "correctAnswers": [
+              "zero",
+              "next",
+              "four",
+              "two",
+              "three",
+              "one"
+            ],
+            "answerTimeInterval": 0.10132300853729248,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "one"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "logMar": 0,
+            "commands": [
+              "yes"
+            ],
+            "distance": 600.21497,
+            "correctAnswers": [
+              "no",
+              "yes"
+            ],
+            "id": "small_shapes_60cm_a",
+            "answerTimeInterval": 0.1032710075378418,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "yes"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "commands": [
+              "zero"
+            ],
+            "logMar": 0,
+            "distance": 600.21497,
+            "id": "small_shapes_60cm_b",
+            "correctAnswers": [
+              "two"
+            ],
+            "answerTimeInterval": 0.10345196723937988,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "zero"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "commands": [
+              "yes"
+            ],
+            "logMar": 0,
+            "distance": 285.7143,
+            "correctAnswers": [
+              "two"
+            ],
+            "id": "shapes_small",
+            "answerTimeInterval": 0.35978400707244873,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "yes"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "commands": [
+              "one"
+            ],
+            "logMar": 0,
+            "distance": 285.7143,
+            "id": "shapes_small",
+            "correctAnswers": [
+              "one"
+            ],
+            "answerTimeInterval": 0.1033940315246582,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "one"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "logMar": 0,
+            "commands": [],
+            "distance": 285.7143,
+            "id": "shapes_final",
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [],
+            "firstImageName": ""
+          },
+          {
+            "commands": [],
+            "logMar": 0,
+            "distance": 285.7143,
+            "id": "approximate_sph",
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [],
+            "firstImageName": ""
+          },
+          {
+            "logMar": 0,
+            "commands": [],
+            "distance": 285.7143,
+            "id": "check_light",
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [],
+            "firstImageName": ""
+          },
+          {
+            "logMar": 0,
+            "commands": [],
+            "distance": 285.7143,
+            "id": "check_face",
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [],
+            "firstImageName": ""
+          },
+          {
+            "logMar": 0,
+            "commands": [
+              "one"
+            ],
+            "distance": 600.21497,
+            "id": "4_big_shapes",
+            "correctAnswers": [
+              "four",
+              "three",
+              "one",
+              "next",
+              "zero",
+              "two"
+            ],
+            "answerTimeInterval": 0.09854602813720703,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "one"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "logMar": 0,
+            "commands": [
+              "yes"
+            ],
+            "distance": 600.21497,
+            "id": "small_shapes_60cm_a",
+            "correctAnswers": [
+              "yes",
+              "no"
+            ],
+            "answerTimeInterval": 0.10333192348480225,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "yes"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "logMar": 0,
+            "commands": [
+              "zero"
+            ],
+            "distance": 600.21497,
+            "correctAnswers": [
+              "two"
+            ],
+            "id": "small_shapes_60cm_b",
+            "answerTimeInterval": 0.10124707221984863,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "zero"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "logMar": 0,
+            "commands": [
+              "yes"
+            ],
+            "distance": 285.7143,
+            "id": "shapes_small",
+            "correctAnswers": [
+              "two"
+            ],
+            "answerTimeInterval": 0.3958779573440552,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "yes"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "logMar": 0,
+            "commands": [
+              "three"
+            ],
+            "distance": 285.7143,
+            "correctAnswers": [
+              "three"
+            ],
+            "id": "shapes_small",
+            "answerTimeInterval": 0.10382199287414551,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "three"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "commands": [],
+            "logMar": 0,
+            "distance": 285.7143,
+            "id": "shapes_final",
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [],
+            "firstImageName": ""
+          },
+          {
+            "logMar": 0,
+            "commands": [],
+            "distance": 285.7143,
+            "id": "approximate_sph",
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [],
+            "firstImageName": ""
+          },
+          {
+            "logMar": 0,
+            "commands": [
+              "yes"
+            ],
+            "distance": 285.7143,
+            "correctAnswers": [
+              "no",
+              "all",
+              "yes",
+              "nothing"
+            ],
+            "id": "snr_approximate_sph",
+            "answerTimeInterval": 0.1011359691619873,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "yes"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "commands": [
+              "red"
+            ],
+            "logMar": 0,
+            "distance": 285.7143,
+            "id": "snr_approximate_sph",
+            "correctAnswers": [
+              "white",
+              "blue",
+              "next",
+              "yellow",
+              "red"
+            ],
+            "answerTimeInterval": 0.10110604763031006,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "red"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "commands": [
+              "red"
+            ],
+            "logMar": 0,
+            "distance": 285.7143,
+            "correctAnswers": [
+              "green",
+              "red",
+              "next",
+              "yellow",
+              "blue",
+              "white"
+            ],
+            "id": "snr_approximate_sph",
+            "answerTimeInterval": 0.10209989547729492,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "red"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "logMar": 0,
+            "commands": [
+              "no"
+            ],
+            "distance": 285.7143,
+            "correctAnswers": [
+              "yes",
+              "none",
+              "no"
+            ],
+            "id": "snr_approximate_sph",
+            "answerTimeInterval": 0.10350799560546875,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "no"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "logMar": 0,
+            "commands": [],
+            "distance": 197.75252,
+            "id": "putOnGlasses",
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [],
+            "firstImageName": ""
+          },
+          {
+            "logMar": 0.85,
+            "commands": [],
+            "distance": 197.75252,
+            "id": "putOnGlasses_onFinish",
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [],
+            "firstImageName": ""
+          },
+          {
+            "logMar": 0.85,
+            "commands": [
+              "yes"
+            ],
+            "distance": 444.44446,
+            "correctAnswers": [
+              "no",
+              "yes",
+              "next"
+            ],
+            "id": "1_training_2_line",
+            "answerTimeInterval": 0.10196900367736816,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "yes"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "logMar": 0.85,
+            "commands": [
+              "no"
+            ],
+            "distance": 444.44446,
+            "id": "2_training_0_line",
+            "correctAnswers": [
+              "no",
+              "yes",
+              "next"
+            ],
+            "answerTimeInterval": 0.10356998443603516,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "no"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "logMar": 0.85,
+            "commands": [
+              "yes"
+            ],
+            "distance": 444.44446,
+            "correctAnswers": [
+              "no",
+              "yes",
+              "next"
+            ],
+            "id": "3_training_slightly_defocused_line",
+            "answerTimeInterval": 0.10353994369506836,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "yes"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "commands": [
+              "no"
+            ],
+            "logMar": 0.85,
+            "distance": 444.44446,
+            "id": "4_training_1_line_a",
+            "correctAnswers": [
+              "no",
+              "yes",
+              "next"
+            ],
+            "answerTimeInterval": 0.10256195068359375,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "no"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "logMar": 0.85,
+            "commands": [
+              "no"
+            ],
+            "distance": 444.44446,
+            "correctAnswers": [
+              "yes",
+              "no",
+              "next"
+            ],
+            "id": "5_training_1_line_b",
+            "answerTimeInterval": 0.10350096225738525,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "no"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "commands": [],
+            "logMar": 0.85,
+            "distance": 444.44446,
+            "id": "removeGlasses",
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [],
+            "firstImageName": ""
+          },
+          {
+            "logMar": 0.4,
+            "commands": [
+              "yes"
+            ],
+            "distance": 285.7143,
+            "id": "rough_va_0.4",
+            "correctAnswers": [
+              "yes",
+              "next",
+              "no"
+            ],
+            "answerTimeInterval": 0.09935200214385986,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "yes"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "logMar": 0.3,
+            "commands": [
+              "yes"
+            ],
+            "distance": 285.7143,
+            "correctAnswers": [
+              "yes",
+              "no",
+              "next"
+            ],
+            "id": "rough_va_0.3_a",
+            "answerTimeInterval": 0.09823000431060791,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "yes"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "commands": [],
+            "logMar": 0,
+            "distance": 285.7143,
+            "id": "sphere_1",
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [],
+            "firstImageName": ""
+          },
+          {
+            "logMar": 0.35,
+            "commands": [
+              "yes"
+            ],
+            "distance": 333.33334,
+            "correctAnswers": [
+              "next",
+              "yes",
+              "no"
+            ],
+            "id": "mono_blur_back_035_sph_first",
+            "answerTimeInterval": 0.10378897190093994,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "yes"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "commands": [
+              "yes"
+            ],
+            "logMar": 0.35,
+            "distance": 400,
+            "correctAnswers": [
+              "next",
+              "yes",
+              "no"
+            ],
+            "id": "mono_blur_back_035_sph_first",
+            "answerTimeInterval": 0.09970200061798096,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "yes"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "commands": [
+              "no"
+            ],
+            "logMar": 0.35,
+            "distance": 500,
+            "correctAnswers": [
+              "next",
+              "yes",
+              "no"
+            ],
+            "id": "mono_blur_back_035_sph_first",
+            "answerTimeInterval": 0.09880495071411133,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "no"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "commands": [
+              "no"
+            ],
+            "logMar": 0.75,
+            "distance": 500,
+            "id": "mono_blur_back_075_cyl",
+            "correctAnswers": [
+              "no",
+              "next",
+              "yes"
+            ],
+            "answerTimeInterval": 0.10151398181915283,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "no"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "commands": [
+              "no"
+            ],
+            "logMar": 0.75,
+            "distance": 500,
+            "id": "mono_blur_back_075_cyl",
+            "correctAnswers": [
+              "no",
+              "next",
+              "yes"
+            ],
+            "answerTimeInterval": 0.09957003593444824,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "no"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "logMar": 0.35,
+            "commands": [
+              "no"
+            ],
+            "distance": 500,
+            "id": "mono_blur_back_035_sph_second",
+            "correctAnswers": [
+              "no",
+              "yes",
+              "next"
+            ],
+            "answerTimeInterval": 0.09988999366760254,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "no"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "logMar": 0.25,
+            "commands": [
+              "yes"
+            ],
+            "distance": 400,
+            "id": "va_at_sphere",
+            "correctAnswers": [
+              "no",
+              "yes",
+              "next"
+            ],
+            "answerTimeInterval": 0.10335099697113037,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "yes"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "commands": [],
+            "logMar": 0,
+            "distance": 400,
+            "id": "sph_j",
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [],
+            "firstImageName": ""
+          },
+          {
+            "commands": [],
+            "logMar": 0,
+            "distance": 400,
+            "id": "sphere_2",
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [],
+            "firstImageName": ""
+          },
+          {
+            "logMar": 0.65,
+            "commands": [
+              "no"
+            ],
+            "distance": 400,
+            "correctAnswers": [
+              "yes",
+              "no",
+              "next"
+            ],
+            "id": "cyl_verifier_0.65",
+            "answerTimeInterval": 0.10332202911376953,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "no"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "logMar": 0.3,
+            "commands": [
+              "yes"
+            ],
+            "distance": 400,
+            "correctAnswers": [
+              "no",
+              "yes",
+              "next"
+            ],
+            "id": "mid_high_cyl_verifier_sph_0.3_up",
+            "answerTimeInterval": 0.1035839319229126,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "yes"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "commands": [
+              "no"
+            ],
+            "logMar": 0.7,
+            "distance": 400,
+            "id": "mid_high_cyl_verifier_cyl_up",
+            "correctAnswers": [
+              "next",
+              "yes",
+              "no"
+            ],
+            "answerTimeInterval": 0.09751105308532715,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "no"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "logMar": 0.8,
+            "commands": [
+              "no"
+            ],
+            "distance": 400,
+            "id": "mid_high_cyl_verifier_cyl_up",
+            "correctAnswers": [
+              "next",
+              "yes",
+              "no"
+            ],
+            "answerTimeInterval": 0.09818601608276367,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "no"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "commands": [
+              "no"
+            ],
+            "logMar": 0.9,
+            "distance": 400,
+            "id": "mid_high_cyl_verifier_cyl_up",
+            "correctAnswers": [
+              "next",
+              "yes",
+              "no"
+            ],
+            "answerTimeInterval": 0.09795498847961426,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "no"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "commands": [
+              "no"
+            ],
+            "logMar": 1,
+            "distance": 400,
+            "id": "mid_high_cyl_verifier_cyl_up",
+            "correctAnswers": [
+              "next",
+              "yes",
+              "no"
+            ],
+            "answerTimeInterval": 0.09816193580627441,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "no"
+            ],
+            "firstImageName": ""
+          }
+        ],
+        "currentStationData": {
+          "logMar": 1,
+          "commands": [
+            "no"
+          ],
+          "distance": 400,
+          "id": "mid_high_cyl_verifier_cyl_up",
+          "correctAnswers": [
+            "next",
+            "yes",
+            "no"
+          ],
+          "answerTimeInterval": 0.09816193580627441,
+          "coverEyeType": "",
+          "lastImageName": "",
+          "inputStream": [
+            "no"
+          ],
+          "firstImageName": ""
+        }
+      },
+      "left": {
+        "sharpLineAxis": 75,
+        "stationsJourney": [
+          "4_big_shapes",
+          "shapes_small",
+          "snr_approximate_sph",
+          "snr_approximate_sph",
+          "snr_approximate_sph",
+          "snr_approximate_sph"
+        ],
+        "stations": [
+          {
+            "commands": [
+              "zero"
+            ],
+            "logMar": 0,
+            "distance": 600.21497,
+            "id": "4_big_shapes",
+            "correctAnswers": [
+              "four",
+              "two",
+              "one",
+              "zero",
+              "three",
+              "next"
+            ],
+            "answerTimeInterval": 0.10364699363708496,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "zero"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "commands": [
+              "two"
+            ],
+            "logMar": 0,
+            "distance": 197.75252,
+            "id": "shapes_small",
+            "correctAnswers": [
+              "two"
+            ],
+            "answerTimeInterval": 0.10436999797821045,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "two"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "commands": [],
+            "logMar": 0,
+            "distance": 197.75252,
+            "id": "shapes_final",
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [],
+            "firstImageName": ""
+          },
+          {
+            "logMar": 0,
+            "commands": [],
+            "distance": 197.75252,
+            "id": "approximate_sph",
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [],
+            "firstImageName": ""
+          },
+          {
+            "commands": [
+              "yes"
+            ],
+            "logMar": 0,
+            "distance": 197.75252,
+            "id": "snr_approximate_sph",
+            "correctAnswers": [
+              "yes",
+              "all",
+              "no",
+              "nothing"
+            ],
+            "answerTimeInterval": 0.09931802749633789,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "yes"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "commands": [
+              "red"
+            ],
+            "logMar": 0,
+            "distance": 197.75252,
+            "correctAnswers": [
+              "red",
+              "white",
+              "next",
+              "blue",
+              "yellow"
+            ],
+            "id": "snr_approximate_sph",
+            "answerTimeInterval": 0.10073697566986084,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "red"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "commands": [
+              "red"
+            ],
+            "logMar": 0,
+            "distance": 197.75252,
+            "id": "snr_approximate_sph",
+            "correctAnswers": [
+              "blue",
+              "red",
+              "white",
+              "next",
+              "green",
+              "yellow"
+            ],
+            "answerTimeInterval": 0.10232698917388916,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "red"
+            ],
+            "firstImageName": ""
+          },
+          {
+            "logMar": 0,
+            "commands": [
+              "no"
+            ],
+            "distance": 197.75252,
+            "correctAnswers": [
+              "none",
+              "yes",
+              "no"
+            ],
+            "id": "snr_approximate_sph",
+            "answerTimeInterval": 0.10329699516296387,
+            "coverEyeType": "",
+            "lastImageName": "",
+            "inputStream": [
+              "no"
+            ],
+            "firstImageName": ""
+          }
+        ],
+        "globalFlags": {
+          "snr_colors_count": "1",
+          "snrSharpLine": "75.0"
+        },
+        "currentStationData": {
+          "commands": [
+            "no"
+          ],
+          "logMar": 0,
+          "distance": 197.75252,
+          "id": "snr_approximate_sph",
+          "correctAnswers": [
+            "none",
+            "yes",
+            "no"
+          ],
+          "answerTimeInterval": 0.10329699516296387,
+          "coverEyeType": "",
+          "lastImageName": "",
+          "inputStream": [
+            "no"
+          ],
+          "firstImageName": ""
+        }
+      }
+    }
+  }

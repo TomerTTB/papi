@@ -1,0 +1,36 @@
+# Environment configuration
+# Environment configuration
+start.ps1
+start.sh
+set_env.ps1
+dockerfile
+Dockerfile
+Dockerfile - Copy
+start-web.ps1
+run-test.ps1
+*.env
+
+# Logs
+logs/
+*.log
+sla-*.log
+sla-notifications-*.txt
+
+# Dependencies
+node_modules/
+package-lock.json
+
+# IDE files
+.vscode/
+.idea/
+*.swp
+*.swo
+
+# Test output
+playwright-report/
+test-results/
+output/
+
+# Misc
+.DS_Store
+Thumbs.db 

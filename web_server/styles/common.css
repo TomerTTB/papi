@@ -1,0 +1,408 @@
+:root {
+    --seekwell-navy: #000066;
+    --seekwell-navy-light: #000099;
+    --seekwell-coral: #FF7F7F;
+    --seekwell-turquoise: #00E5E5;
+    --seekwell-white: #FFFFFF;
+    --seekwell-light-gray: #F5F7FA;
+    --seekwell-dark-gray: #2C3E50;
+}
+
+/* Base typography */
+body {
+    font-family: 'Inter', sans-serif;
+    font-weight: 400;
+    line-height: 1.6;
+    color: var(--seekwell-dark-gray);
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    color: var(--seekwell-navy);
+    letter-spacing: -0.02em;
+}
+
+/* Navbar styles */
+.navbar {
+    background-color: var(--seekwell-navy) !important;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0,0,0,.1);
+}
+
+.navbar-brand img.seekwell-logo {
+    height: 40px;
+    width: auto;
+    margin-right: 10px;
+    object-fit: contain;
+}
+
+.navbar-title {
+    font-family: 'Inter', sans-serif;
+    font-weight: 600;
+    font-size: 1.5rem;
+    color: var(--seekwell-white);
+    margin-left: 10px;
+    letter-spacing: -0.01em;
+}
+
+.navbar-light .navbar-nav .nav-link {
+    font-weight: 500;
+    color: var(--seekwell-white) !important;
+    transition: color 0.3s ease;
+}
+
+.navbar-light .navbar-nav .nav-link:hover {
+    color: var(--seekwell-turquoise) !important;
+}
+
+.navbar-light .navbar-toggler {
+    border-color: var(--seekwell-white);
+}
+
+.navbar-light .navbar-toggler-icon {
+    background-image: url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 30 30'%3e%3cpath stroke='rgba(255, 255, 255, 1)' stroke-linecap='round' stroke-miterlimit='10' stroke-width='2' d='M4 7h22M4 15h22M4 23h22'/%3e%3c/svg%3e");
+}
+
+/* Footer styles */
+.footer {
+    background-color: var(--seekwell-navy);
+    padding: 1.5rem 0;
+    box-shadow: 0 -2px 4px rgba(0,0,0,.1);
+    margin-top: 3rem;
+    color: var(--seekwell-white);
+}
+
+.footer img.seekwell-logo {
+    height: 30px;
+    width: auto;
+    object-fit: contain;
+}
+
+.footer img.playwright-logo {
+    height: 30px;
+    width: auto;
+    object-fit: contain;
+    margin-left: 10px;
+}
+
+.footer .playwright-powered {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    gap: 0px;
+    color: var(--seekwell-white);
+}
+
+/* Main content styles */
+.main-content {
+    min-height: calc(100vh - 180px);
+    padding: 2rem 0;
+    background-color: var(--seekwell-light-gray);
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 15px;
+}
+
+/* Product card styles */
+.product-card {
+    border: 1px solid var(--seekwell-light-gray);
+    border-radius: 12px;
+    padding: 1.75rem;
+    margin-bottom: 1.5rem;
+    background-color: var(--seekwell-white);
+    transition: transform 0.2s, box-shadow 0.2s;
+    box-shadow: 0 4px 6px rgba(0, 0, 102, 0.1);
+}
+
+.product-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 15px rgba(0, 0, 102, 0.15);
+}
+
+.product-card h3 {
+    font-weight: 600;
+    letter-spacing: -0.01em;
+}
+
+.product-card h3 a {
+    color: var(--seekwell-navy);
+    text-decoration: none;
+}
+
+.product-card h3 a:hover {
+    color: var(--seekwell-navy-light);
+}
+
+.product-card p {
+    font-size: 0.95rem;
+    line-height: 1.5;
+}
+
+.product-card .font-monospace {
+    font-family: 'Monaco', 'Consolas', monospace;
+    font-size: 0.9rem;
+}
+
+/* Path item styles */
+.path-item {
+    background-color: var(--seekwell-light-gray);
+    padding: 0.5rem 1rem;
+    border-radius: 4px;
+    margin: 0.5rem 0;
+    font-family: monospace;
+    border-left: 3px solid var(--seekwell-turquoise);
+}
+
+/* Button styles */
+.btn {
+    font-weight: 500;
+    letter-spacing: -0.01em;
+}
+
+.btn-primary {
+    background-color: var(--seekwell-navy);
+    border-color: var(--seekwell-navy);
+    padding: 0.5rem 1.5rem;
+    font-weight: 500;
+}
+
+.btn-primary:hover {
+    background-color: var(--seekwell-navy-light);
+    border-color: var(--seekwell-navy-light);
+}
+
+.btn-primary:disabled {
+    background-color: var(--seekwell-coral);
+    border-color: var(--seekwell-coral);
+    color: var(--seekwell-white);
+    opacity: 0.7;
+}
+
+.btn-outline-primary {
+    color: var(--seekwell-navy);
+    border-color: var(--seekwell-navy);
+}
+
+.btn-outline-primary:hover {
+    background-color: var(--seekwell-navy);
+    border-color: var(--seekwell-navy);
+    color: var(--seekwell-white);
+}
+
+/* Alert styles */
+.alert-danger {
+    background-color: var(--seekwell-coral);
+    border-color: var(--seekwell-coral);
+    color: var(--seekwell-white);
+}
+
+/* List group styles */
+.list-group-item {
+    border-color: var(--seekwell-light-gray);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .navbar-collapse {
+        background-color: var(--seekwell-navy-light);
+        padding: 1rem;
+        border-radius: 8px;
+        margin-top: 1rem;
+    }
+}
+
+/* Quick Start Guide styles */
+.card {
+    border: none;
+    border-radius: 12px;
+    box-shadow: 0 4px 6px rgba(0, 0, 102, 0.1);
+}
+
+.card-body {
+    padding: 2rem;
+}
+
+.bg-primary {
+    background-color: var(--seekwell-navy) !important;
+}
+
+.rounded-circle {
+    font-weight: 600;
+    font-size: 1rem;
+}
+
+.card h5 {
+    font-weight: 600;
+    color: var(--seekwell-navy);
+    font-size: 1.1rem;
+}
+
+.card .text-muted {
+    color: var(--seekwell-dark-gray) !important;
+    font-size: 0.95rem;
+}
+
+/* Product Details Page */
+.paths-container {
+    max-height: 400px;
+    overflow-y: auto;
+    padding-right: 10px;
+}
+
+.paths-container::-webkit-scrollbar {
+    width: 6px;
+}
+
+.paths-container::-webkit-scrollbar-track {
+    background: var(--seekwell-light-gray);
+    border-radius: 3px;
+}
+
+.paths-container::-webkit-scrollbar-thumb {
+    background: var(--seekwell-navy);
+    border-radius: 3px;
+}
+
+.path-item {
+    background-color: var(--seekwell-light-gray);
+    padding: 0.75rem 1rem;
+    border-radius: 6px;
+    margin: 0.75rem 0;
+    border-left: 3px solid var(--seekwell-turquoise);
+    transition: all 0.2s ease;
+}
+
+.path-item:hover {
+    background-color: #f0f2f5;
+    border-left-color: var(--seekwell-navy);
+}
+
+.path-item .form-check {
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    min-height: unset;
+}
+
+.path-item .d-flex {
+    min-height: 24px;
+}
+
+.path-item .form-check-input {
+    margin: 0;
+    margin-right: 12px;
+    width: 18px;
+    height: 18px;
+    border: 2px solid var(--seekwell-navy);
+    flex-shrink: 0;
+    position: relative;
+    top: 1px;
+}
+
+.path-item .form-check-label {
+    font-family: 'Monaco', 'Consolas', monospace;
+    font-size: 0.9rem;
+    color: var(--seekwell-dark-gray);
+    cursor: pointer;
+    user-select: none;
+    line-height: 1.4;
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+/* Select All styles */
+.card-body .form-check {
+    margin: 0;
+    padding: 0;
+    display: flex;
+    align-items: center;
+}
+
+.card-body .form-check-label {
+    font-size: 0.9rem;
+    font-weight: 500;
+    color: var(--seekwell-navy);
+    cursor: pointer;
+    user-select: none;
+    margin-left: 8px;
+    line-height: 1;
+}
+
+.form-check-input {
+    cursor: pointer;
+    border: 2px solid var(--seekwell-navy);
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+.form-check-input:checked {
+    background-color: var(--seekwell-navy);
+    border-color: var(--seekwell-navy);
+}
+
+.form-check-input:focus {
+    border-color: var(--seekwell-navy);
+    box-shadow: 0 0 0 0.15rem rgba(0, 0, 102, 0.25);
+}
+
+/* Card adjustments for product details */
+.card .text-muted {
+    color: var(--seekwell-dark-gray) !important;
+    opacity: 0.7;
+}
+
+.font-monospace {
+    font-family: 'Monaco', 'Consolas', monospace;
+    font-size: 0.95rem;
+    color: var(--seekwell-navy);
+    padding: 0;
+    display: block;
+}
+
+/* Run Tests Section */
+#responseContainer {
+    background-color: var(--seekwell-light-gray);
+    border-radius: 8px;
+    overflow: hidden;
+}
+
+#responseContent {
+    font-family: 'Monaco', 'Consolas', monospace;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    margin: 0;
+    max-height: 300px;
+    overflow-y: auto;
+}
+
+#statusMessage {
+    font-size: 0.95rem;
+}
+
+.path-item .test-name {
+    font-weight: 500;
+    color: var(--seekwell-navy);
+    margin-bottom: 4px;
+}
+
+.path-item .test-description {
+    font-size: 0.85rem;
+    color: var(--seekwell-dark-gray);
+    line-height: 1.4;
+    opacity: 0.85;
+}
+
+.path-item .form-check-label {
+    padding-top: 0;
+    cursor: pointer;
+}
+
+.path-item .form-check-input {
+    margin-top: 4px;
+} 

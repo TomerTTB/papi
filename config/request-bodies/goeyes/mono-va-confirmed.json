@@ -1,0 +1,337 @@
+{
+  "hostAppName": "SDKWrapper",
+  "phone_model": "iPhone14,2",
+  "configuration": {
+    "isCoverEyeEnabled": true,
+    "isDataCollectorEnabled": false,
+    "isSetupEnable": true,
+    "isShortDistanceEnabled": true,
+    "isOnboardingEnable": true,
+    "isLocalJSONEnabled": false,
+    "isDebugModeEnabled": true,
+    "isRestEyeEnabled": true,
+    "isGTrainingEnabled": false,
+    "isQuestionnaireEnable": true
+  },
+  "version": "5.44.2 (64)",
+  "hostAppVersion": "6.0.4 (941)",
+  "eye": "left",
+  "stationsData": {
+    "right": {
+      "stations": [
+        {
+          "logMar": 0,
+          "id": "sph_j",
+          "commands": [],
+          "distance": 400,
+          "inputStream": []
+        },
+        {
+          "logMar": 0,
+          "id": "sph_final",
+          "commands": [],
+          "distance": 400,
+          "inputStream": []
+        },
+        {
+          "logMar": 0,
+          "id": "cyl_final",
+          "commands": [],
+          "distance": 0,
+          "inputStream": []
+        },
+        {
+          "logMar": 0.3499999940395355,
+          "commands": ["no"],
+          "distance": 529.9285888671875,
+          "id": "bino_blur_back_strong",
+          "correctAnswers": ["no", "yes", "next"],
+          "answerTimeInterval": 1.6321760416030884,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0,
+          "id": "Bino_strong_sphere",
+          "commands": [],
+          "distance": 418.92767333984375,
+          "inputStream": []
+        },
+        {
+          "logMar": 0.3499999940395355,
+          "commands": ["no"],
+          "distance": 436.7767333984375,
+          "id": "bino_strong_sphere",
+          "correctAnswers": ["no", "yes"],
+          "answerTimeInterval": 1.284492015838623,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0.3499999940395355,
+          "commands": ["yes"],
+          "distance": 380.7566223144531,
+          "id": "bino_strong_sphere",
+          "correctAnswers": ["yes", "no"],
+          "answerTimeInterval": 2.2935149669647217,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0,
+          "id": "bino_mdba_strong_sphere",
+          "commands": [],
+          "distance": 347.6628723144531,
+          "inputStream": []
+        },
+        {
+          "logMar": 0.20000000298023224,
+          "commands": ["no"],
+          "distance": 377.871337890625,
+          "id": "bino_va_0_0.20",
+          "correctAnswers": ["next", "no", "yes"],
+          "answerTimeInterval": 1.283627986907959,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0.25,
+          "commands": ["yes"],
+          "distance": 377.7413330078125,
+          "id": "bino_va_1_0.25",
+          "correctAnswers": ["next", "no", "yes"],
+          "answerTimeInterval": 1.5019630193710327,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0,
+          "id": "bino_va",
+          "commands": [],
+          "distance": -4000,
+          "inputStream": []
+        },
+        {
+          "logMar": 0,
+          "id": "bino_va_sphere",
+          "commands": [],
+          "distance": 377.7413330078125,
+          "inputStream": []
+        },
+        {
+          "logMar": 0.3499999940395355,
+          "commands": ["yes"],
+          "distance": 378.0788269042969,
+          "id": "mono_strong_check",
+          "correctAnswers": ["next", "yes", "no"],
+          "answerTimeInterval": 1.4997210502624512,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0.3499999940395355,
+          "commands": ["no"],
+          "distance": 442.7201232910156,
+          "id": "mono_strong_check",
+          "correctAnswers": ["next", "yes", "no"],
+          "answerTimeInterval": 1.392859935760498,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0,
+          "id": "mono_strong_check_final",
+          "commands": [],
+          "distance": 362.48126220703125,
+          "inputStream": []
+        },
+        {
+          "logMar": 0.550000011920929,
+          "id": "bino_power",
+          "commands": [],
+          "distance": 362.48126220703125,
+          "inputStream": []
+        }
+      ],
+      "stationsJourney": [
+        "bino_blur_back_strong",
+        "bino_strong_sphere",
+        "bino_strong_sphere",
+        "bino_va_0_0.20",
+        "bino_va_1_0.25",
+        "mono_strong_check",
+        "mono_strong_check"
+      ],
+      "sharpLineAxis": 15,
+      "globalFlags": {
+        "snrSharpLine": "15.0"
+      },
+      "currentStationData": {
+        "logMar": 0.3499999940395355,
+        "commands": ["no"],
+        "distance": 442.7201232910156,
+        "id": "mono_strong_check",
+        "correctAnswers": ["next", "yes", "no"],
+        "answerTimeInterval": 1.392859935760498,
+        "inputStream": ["No"]
+      }
+    },
+    "left": {
+      "globalFlags": {
+        "snrSharpLine": "15.0",
+        "isWeakEye": "true"
+      },
+      "sharpLineAxis": 15,
+      "stationsJourney": [
+        "bino_blur_back_weak",
+        "bino_weak_sphere",
+        "mono_weak_check",
+        "bino_weak_relaxed",
+        "mono_weak_relaxed_1",
+        "mono_weak_relaxed_2",
+        "mono_weak_confirmed",
+        "mono_weak_confirmed",
+        "bino_power",
+        "mono_weak_sphere",
+        "weak_va_0.35",
+        "weak_va_0.25"
+      ],
+      "stations": [
+        {
+          "logMar": 0,
+          "id": "sph_j",
+          "commands": [],
+          "distance": 400,
+          "inputStream": []
+        },
+        {
+          "logMar": 0,
+          "id": "sph_final",
+          "commands": [],
+          "distance": 400,
+          "inputStream": []
+        },
+        {
+          "logMar": 0,
+          "id": "cyl_final",
+          "commands": [],
+          "distance": 0,
+          "inputStream": []
+        },
+        {
+          "logMar": 0,
+          "commands": ["no"],
+          "distance": 527.7510986328125,
+          "id": "bino_blur_back_weak",
+          "correctAnswers": ["next", "no", "yes"],
+          "answerTimeInterval": 1.221925973892212,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0.3499999940395355,
+          "commands": ["no"],
+          "distance": 433.62054443359375,
+          "id": "bino_weak_sphere",
+          "correctAnswers": ["yes", "no"],
+          "answerTimeInterval": 1.2237319946289062,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0,
+          "id": "bino_mdba_strong_sphere",
+          "commands": [],
+          "distance": 347.6628723144531,
+          "inputStream": []
+        },
+        {
+          "logMar": 0,
+          "id": "bino_va_sphere",
+          "commands": [],
+          "distance": 377.7413330078125,
+          "inputStream": []
+        },
+        {
+          "logMar": 0.3499999940395355,
+          "commands": ["no"],
+          "distance": 370.26263427734375,
+          "id": "mono_weak_check",
+          "correctAnswers": ["yes", "no", "next"],
+          "answerTimeInterval": 1.5995310544967651,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0.550000011920929,
+          "commands": ["yes"],
+          "distance": 363.0163269042969,
+          "id": "bino_weak_relaxed",
+          "correctAnswers": ["next", "no", "yes"],
+          "answerTimeInterval": 1.5853509902954102,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0.550000011920929,
+          "commands": ["no"],
+          "distance": 367.57427978515625,
+          "id": "mono_weak_relaxed_1",
+          "correctAnswers": ["yes", "no", "next"],
+          "answerTimeInterval": 1.2848029136657715,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0.75,
+          "commands": ["yes"],
+          "distance": 366.5054016113281,
+          "id": "mono_weak_relaxed_2",
+          "correctAnswers": ["no", "yes", "next"],
+          "answerTimeInterval": 1.294569969177246,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0.6500000357627869,
+          "commands": ["yes"],
+          "distance": 365.4678955078125,
+          "id": "mono_weak_confirmed",
+          "correctAnswers": ["no", "next", "yes"],
+          "answerTimeInterval": 1.2852070331573486,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0.550000011920929,
+          "commands": ["no"],
+          "distance": 367.3123779296875,
+          "id": "mono_weak_confirmed",
+          "correctAnswers": ["next", "no", "yes"],
+          "answerTimeInterval": 1.2205820083618164,
+          "inputStream": ["No"]
+        },
+        {
+          "logMar": 0.550000011920929,
+          "id": "mono_weak_sphere",
+          "commands": [],
+          "distance": 268.6382141113281,
+          "inputStream": []
+        },
+        {
+          "logMar": 0.3499999940395355,
+          "commands": ["yes"],
+          "distance": 407.3963928222656,
+          "id": "weak_va_0.35",
+          "correctAnswers": ["no", "yes"],
+          "answerTimeInterval": 1.391950011253357,
+          "inputStream": ["Yes"]
+        },
+        {
+          "logMar": 0.25,
+          "commands": ["yes"],
+          "distance": 409.4731750488281,
+          "id": "weak_va_0.25",
+          "correctAnswers": ["no", "yes"],
+          "answerTimeInterval": 1.498486042022705,
+          "inputStream": ["Yes"]
+        }
+      ],
+      "currentStationData": {
+        "logMar": 0.25,
+        "commands": ["yes"],
+        "distance": 409.4731750488281,
+        "id": "weak_va_0.25",
+        "correctAnswers": ["no", "yes"],
+        "answerTimeInterval": 1.498486042022705,
+        "inputStream": ["Yes"]
+      }
+    }
+  }
+}

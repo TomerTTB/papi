@@ -1,0 +1,41 @@
+{
+  "type": "object",
+  "required": ["flags", "stations", "event", "actions", "mixpanelEvent", "successMixpanelEvent", "analyticsEvent", "type", "id"],
+  "additionalProperties": false,
+  "properties": {
+    "flags": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "value"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "value": { "type": "number" }
+        }
+      }
+    },
+    "stations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "value", "upload"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "value": { "type": "number" },
+          "upload": { "type": "boolean" }
+        }
+      }
+    },
+    "event": { "type": "string" },
+    "actions": {
+      "type": "array"
+    },
+    "mixpanelEvent": { "type": ["string", "null"] },
+    "successMixpanelEvent": { "type": ["string", "null"] },
+    "analyticsEvent": { "type": ["string", "null"] },
+    "type": { "type": "string" },
+    "id": { "type": "string" }
+  }
+}

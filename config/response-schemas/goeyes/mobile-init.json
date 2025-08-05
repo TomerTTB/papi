@@ -1,0 +1,186 @@
+{
+  "type": "object",
+  "required": [
+    "partner_name",
+    "campagin-properties",
+    "mobile-settings",
+    "menu-actions",
+    "first-flow-actions",
+    "flows",
+    "is-device-supported-per-flow",
+    "assets",
+    "native-flows",
+    "language_dictionary",
+    "dictionary_translations",
+    "questionnaire",
+    "theme"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "partner_name": { "type": "string" },
+    "campagin-properties": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "accuracy": { "type": "boolean" },
+        "feedback": { "type": "boolean" },
+        "flow": { "type": "string" },
+        "first_flow": { "type": "string" },
+        "flows": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "webappFlows": {
+          "type": "array"
+        },
+        "authorizedFlows": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "locale": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "multiple_assets_group": {
+          "type": "object",
+          "additionalProperties": true
+        }
+      }
+    },
+    "mobile-settings": {
+      "type": "object",
+      "required": ["_cls"],
+      "properties": {
+        "_cls": { "type": "string" },
+        "tilt_number_of_times": { "type": "number" },
+        "tilt_timeout": { "type": "number" },
+        "upper_bound_preview_width": { "type": "number" },
+        "phone_model_settings": {
+          "type": "object",
+          "properties": {
+            "front_settings": {
+              "type": "object",
+              "properties": {
+                "hfov": { "type": "number" },
+                "vfov": { "type": "number" }
+              }
+            },
+            "pixels_per_inches": { "type": "number" }
+          }
+        },
+        "unsupported_models": {
+          "type": "array"
+        },
+        "ignore_obfuscation_profiles": {
+          "type": "array",
+          "items": { "type": "string" }
+        }
+      },
+      "additionalProperties": true
+    },
+    "menu-actions": {
+      "type": "object"
+    },
+    "first-flow-actions": {
+      "type": "object",
+      "required": ["actions"],
+      "properties": {
+        "actions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type", "id"],
+            "properties": {
+              "flow": { "type": "string" },
+              "start_new_flow": { "type": "boolean" },
+              "native_flow": { "type": "string" },
+              "config": { "type": "object" },
+              "mixpanelEvent": { "type": ["string", "null"] },
+              "successMixpanelEvent": { "type": ["string", "null"] },
+              "analyticsEvent": { "type": ["string", "null"] },
+              "type": { "type": "string" },
+              "id": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "flows": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["type", "id"],
+          "properties": {
+            "flow": { "type": "string" },
+            "start_new_flow": { "type": "boolean" },
+            "mixpanelEvent": { "type": ["string", "null"] },
+            "successMixpanelEvent": { "type": ["string", "null"] },
+            "analyticsEvent": { "type": ["string", "null"] },
+            "type": { "type": "string" },
+            "id": { "type": "string" },
+            "native_flow": { "type": "string" },
+            "config": { "type": "object" }
+          }
+        }
+      }
+    },
+    "is-device-supported-per-flow": {
+      "type": "object",
+      "required": ["flows"],
+      "properties": {
+        "flows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["flow", "supported"],
+            "properties": {
+              "flow": { "type": "string" },
+              "supported": { "type": "boolean" }
+            }
+          }
+        }
+      }
+    },
+    "assets": {
+      "type": "object",
+      "required": ["campaign_assets"],
+      "properties": {
+        "campaign_assets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type", "name", "value", "priority"],
+            "properties": {
+              "type": { "type": "string" },
+              "name": { "type": "string" },
+              "value": { "type": "string" },
+              "priority": { "type": "number" }
+            }
+          }
+        }
+      }
+    },
+    "native-flows": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "language_dictionary": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "dictionary_translations": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "questionnaire": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "theme": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

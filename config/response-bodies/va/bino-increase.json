@@ -1,0 +1,75 @@
+{
+  "flags": [
+    {
+      "id": "va_size",
+      "value": 0.4,
+      "eye": "right"
+    },
+    {
+      "id": "va_size",
+      "value": 0.4,
+      "eye": "left"
+    }
+  ],
+  "stations": [
+    {
+      "id": "bino_va",
+      "value": -2777.777777777778,
+      "upload": true,
+      "eye": "right"
+    },
+    {
+      "id": "bino_va",
+      "value": -2777.777777777778,
+      "upload": false,
+      "eye": "left"
+    }
+  ],
+  "event": "calc_end",
+  "actions": [
+    {
+      "flag": "end_flow",
+      "value": true,
+      "shouldIncrement": false,
+      "shouldMultiply": false,
+      "isGlobal": true,
+      "type": "SetFlagAction",
+      "id": "go_va.prescription.0.0.SetFlagAction"
+    },
+    {
+      "flow": "go-va",
+      "type": "SaveToClientAction",
+      "data": {
+        "redirect_url": "https://www.bing.com",
+        "mono_left": "ERROR",
+        "mono_right": "ERROR",
+        "binocular": "0.36",
+        "did_pass": false
+      },
+      "mixpanelEvent": null,
+      "successMixpanelEvent": null,
+      "analyticsEvent": null,
+      "id": "go_va.prescription.0.1.SaveToClientAction"
+    },
+    {
+      "id": "go_va.prescription.0.2.CallCallbackAction",
+      "type": "CallCallbackAction",
+      "callbackType": "results",
+      "event": {
+        "results": {
+          "redirect_url": "https://www.bing.com",
+          "mono_left": "ERROR",
+          "mono_right": "ERROR",
+          "binocular": "0.36",
+          "did_pass": false
+        }
+      },
+      "isEndOfFlow": true
+    }
+  ],
+  "mixpanelEvent": null,
+  "successMixpanelEvent": null,
+  "analyticsEvent": null,
+  "type": "ServerCalculationResponseAction",
+  "id": "go_va.prescription.0.ServerCalculationResponseAction"
+}

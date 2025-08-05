@@ -1,0 +1,496 @@
+{
+  "stationsData": {
+    "right": {
+      "stations": [
+        {
+          "id": "distance_measurement",
+          "distance": null,
+          "commands": [],
+          "correctAnswers": null,
+          "inputStream": [],
+          "logMar": 0
+        },
+        {
+          "id": "bino_descending",
+          "distance": 2964.2345720324306,
+          "commands": [],
+          "correctAnswers": [
+            "3",
+            "5",
+            "2",
+            "9",
+            "6"
+          ],
+          "inputStream": [
+            "Next"
+          ],
+          "logMar": "0"
+        },
+        {
+          "id": "bino_5_equal_optotypes",
+          "distance": 2964.2345720324306,
+          "commands": [
+            6,
+            5,
+            9,
+            3,
+            2
+          ],
+          "correctAnswers": [
+            "6",
+            "5",
+            "9",
+            "3",
+            "2"
+          ],
+          "inputStream": [
+            "Six",
+            "65",
+            "659",
+            "6593",
+            "65932"
+          ],
+          "logMar": 0.4
+        },
+        {
+          "id": "bino_decrease_station",
+          "distance": 2964.2345720324306,
+          "commands": [
+            6,
+            9,
+            2,
+            5,
+            8
+          ],
+          "correctAnswers": [
+            "6",
+            "9",
+            "2",
+            "5",
+            "8"
+          ],
+          "inputStream": [
+            "Six",
+            "69",
+            "692",
+            "6925",
+            "69258"
+          ],
+          "logMar": 0.3
+        },
+        {
+          "id": "bino_decrease_station",
+          "distance": 2964.2345720324306,
+          "commands": [
+            3,
+            2,
+            5,
+            8,
+            9
+          ],
+          "correctAnswers": [
+            "3",
+            "2",
+            "5",
+            "8",
+            "9"
+          ],
+          "inputStream": [
+            "Three",
+            "32",
+            "325",
+            "3258",
+            "32589"
+          ],
+          "logMar": 0.2
+        },
+        {
+          "id": "bino_decrease_station",
+          "distance": 2964.2345720324306,
+          "commands": [
+            5,
+            8,
+            9,
+            6,
+            2
+          ],
+          "correctAnswers": [
+            "5",
+            "8",
+            "9",
+            "6",
+            "2"
+          ],
+          "inputStream": [
+            "Five",
+            "55",
+            "58",
+            "589",
+            "5896",
+            "58962"
+          ],
+          "logMar": 0.1
+        },
+        {
+          "id": "bino_decrease_station",
+          "distance": 2964.2345720324306,
+          "commands": [
+            9,
+            6,
+            2,
+            3,
+            5
+          ],
+          "correctAnswers": [
+            "9",
+            "6",
+            "2",
+            "3",
+            "5"
+          ],
+          "inputStream": [
+            "Nine",
+            "99",
+            "96",
+            "962",
+            "9623",
+            "96235"
+          ],
+          "logMar": 0
+        },
+        {
+          "id": "bino_decrease_station",
+          "distance": 2964.2345720324306,
+          "commands": [
+            3,
+            5,
+            2,
+            9,
+            6
+          ],
+          "correctAnswers": [
+            "3",
+            "5",
+            "2",
+            "9",
+            "6"
+          ],
+          "inputStream": [
+            "Three",
+            "35",
+            "352",
+            "3529",
+            "35296"
+          ],
+          "logMar": -0.1
+        },
+        {
+          "id": "bino_va",
+          "distance": 10000,
+          "commands": [],
+          "correctAnswers": null,
+          "inputStream": [],
+          "logMar": -0.1
+        },
+        {
+          "id": "5_equal_optotypes",
+          "distance": 2964.2345720324306,
+          "commands": [],
+          "correctAnswers": [
+            "9",
+            "5",
+            "8",
+            "2",
+            "3"
+          ],
+          "inputStream": [
+            "Next"
+          ],
+          "logMar": -0.1
+        },
+        {
+          "id": "increase_station",
+          "distance": 2964.2345720324306,
+          "commands": [],
+          "correctAnswers": [
+            "3",
+            "2",
+            "6",
+            "9",
+            "8"
+          ],
+          "inputStream": [
+            "Next"
+          ],
+          "logMar": 0
+        },
+        {
+          "id": "increase_station",
+          "distance": 2964.2345720324306,
+          "commands": [],
+          "correctAnswers": [
+            "6",
+            "5",
+            "9",
+            "3",
+            "2"
+          ],
+          "inputStream": [
+            "Next"
+          ],
+          "logMar": 0.1
+        },
+        {
+          "id": "increase_station",
+          "distance": 2964.2345720324306,
+          "commands": [],
+          "correctAnswers": [
+            "3",
+            "2",
+            "6",
+            "9",
+            "8"
+          ],
+          "inputStream": [
+            "Next"
+          ],
+          "logMar": 0.2
+        },
+        {
+          "id": "increase_station",
+          "distance": 2964.2345720324306,
+          "commands": [],
+          "correctAnswers": [
+            "5",
+            "9",
+            "8",
+            "6",
+            "2"
+          ],
+          "inputStream": [
+            "Next"
+          ],
+          "logMar": 0.3
+        },
+        {
+          "id": "increase_station",
+          "distance": 2964.2345720324306,
+          "commands": [],
+          "correctAnswers": [
+            "6",
+            "9",
+            "2",
+            "5",
+            "8"
+          ],
+          "inputStream": [
+            "Next"
+          ],
+          "logMar": 0.4
+        },
+        {
+          "id": "mono_va",
+          "distance": -2000,
+          "commands": [],
+          "correctAnswers": null,
+          "inputStream": [],
+          "logMar": 0.4
+        }
+      ],
+      "stationsJourney": [
+        "distance_measurement",
+        "bino_descending",
+        "bino_5_equal_optotypes",
+        "bino_decrease_station",
+        "bino_decrease_station",
+        "bino_decrease_station",
+        "bino_decrease_station",
+        "bino_decrease_station",
+        "bino_va",
+        "5_equal_optotypes",
+        "increase_station",
+        "increase_station",
+        "increase_station",
+        "increase_station",
+        "increase_station",
+        "mono_va"
+      ],
+      "pageFlags": {},
+      "globalFlags": {
+        "va_size": 0.4,
+        "va_errors_0.4": 5,
+        "va_errors": 5,
+        "va_errors_0.3": 5,
+        "va_errors_0.2": 5,
+        "va_errors_0.1": 5,
+        "va_errors_0": 5,
+        "va_errors_-0.1": 5
+      },
+      "currentStationData": {
+        "id": "increase_station",
+        "distance": 2964.2345720324306,
+        "commands": [],
+        "correctAnswers": [
+          "6",
+          "9",
+          "2",
+          "5",
+          "8"
+        ],
+        "inputStream": [
+          "Next"
+        ],
+        "logMar": 0.4
+      }
+    },
+    "left": {
+      "stations": [
+        {
+          "id": "bino_va",
+          "distance": 10000,
+          "commands": [],
+          "correctAnswers": null,
+          "inputStream": [],
+          "logMar": -0.1
+        },
+        {
+          "id": "5_equal_optotypes",
+          "distance": 2964.2345720324306,
+          "commands": [],
+          "correctAnswers": [
+            "3",
+            "2",
+            "5",
+            "8",
+            "9"
+          ],
+          "inputStream": [
+            "Next"
+          ],
+          "logMar": -0.1
+        },
+        {
+          "id": "increase_station",
+          "distance": 2964.2345720324306,
+          "commands": [],
+          "correctAnswers": [
+            "5",
+            "9",
+            "6",
+            "8",
+            "3"
+          ],
+          "inputStream": [
+            "Next"
+          ],
+          "logMar": 0
+        },
+        {
+          "id": "increase_station",
+          "distance": 2964.2345720324306,
+          "commands": [],
+          "correctAnswers": [
+            "5",
+            "3",
+            "2",
+            "6",
+            "9"
+          ],
+          "inputStream": [
+            "Next"
+          ],
+          "logMar": 0.1
+        },
+        {
+          "id": "increase_station",
+          "distance": 2964.2345720324306,
+          "commands": [],
+          "correctAnswers": [
+            "9",
+            "3",
+            "5",
+            "2",
+            "6"
+          ],
+          "inputStream": [
+            "Next"
+          ],
+          "logMar": 0.2
+        },
+        {
+          "id": "increase_station",
+          "distance": 2964.2345720324306,
+          "commands": [],
+          "correctAnswers": [
+            "9",
+            "5",
+            "8",
+            "2",
+            "3"
+          ],
+          "inputStream": [
+            "Next"
+          ],
+          "logMar": 0.3
+        },
+        {
+          "id": "increase_station",
+          "distance": 2964.2345720324306,
+          "commands": [],
+          "correctAnswers": [
+            "5",
+            "8",
+            "9",
+            "6",
+            "2"
+          ],
+          "inputStream": [
+            "Next"
+          ],
+          "logMar": 0.4
+        }
+      ],
+      "stationsJourney": [
+        "bino_va",
+        "5_equal_optotypes",
+        "increase_station",
+        "increase_station",
+        "increase_station",
+        "increase_station",
+        "increase_station"
+      ],
+      "pageFlags": {
+        "mono_equal_question": 0,
+        "mono_increase_question": 4
+      },
+      "globalFlags": {
+        "va_size": 0.4,
+        "va_errors_-0.1": 5,
+        "va_errors": 5,
+        "va_errors_0": 5,
+        "va_errors_0.1": 5,
+        "va_errors_0.2": 5,
+        "va_errors_0.3": 5,
+        "va_errors_0.4": 5
+      },
+      "currentStationData": {
+        "id": "increase_station",
+        "distance": 2964.2345720324306,
+        "commands": [],
+        "correctAnswers": [
+          "5",
+          "8",
+          "9",
+          "6",
+          "2"
+        ],
+        "inputStream": [
+          "Next"
+        ],
+        "logMar": 0.4
+      }
+    }
+  },
+  "eye": "left",
+  "version": "1.29.0"
+}

@@ -1,0 +1,199 @@
+{
+  "type": "object",
+  "required": [
+    "campagin_properties",
+    "first-flow-actions",
+    "mixpanel_id",
+    "loggly_id",
+    "campaignId",
+    "campaign_id",
+    "analytics_event",
+    "preload_page",
+    "preload_resources",
+    "language_dictionary",
+    "theme",
+    "coralogix_config",
+    "native-flows",
+    "offline_pages",
+    "preload_page_all_flows",
+    "preload_resources_all_flows",
+    "authorized_flows_actions",
+    "offline_pages_all_flows",
+    "settings_all_flows",
+    "constant_resources",
+    "logger_config",
+    "analytics",
+    "azure_config",
+    "native-data",
+    "native-settings"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "campagin_properties": {
+      "type": "object",
+      "required": [
+        "flow",
+        "first_flow",
+        "flows",
+        "webappFlows",
+        "authorizedFlows",
+        "isServerDebugMode",
+        "allow_unsupported_countries",
+        "campaign_assets_file_name",
+        "audioFolder",
+        "imageFolder",
+        "videoFolder",
+        "assetsGroup",
+        "locale",
+        "id"
+      ],
+      "additionalProperties": true,
+      "properties": {
+        "accuracy": { "type": "boolean" },
+        "feedback": { "type": "boolean" },
+        "flow": { "type": "string" },
+        "first_flow": { "type": "string" },
+        "flows": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "webappFlows": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "authorizedFlows": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "isServerDebugMode": { "type": "boolean" },
+        "allow_unsupported_countries": { "type": "boolean" },
+        "campaign_assets_file_name": { "type": "string" },
+        "audioFolder": { "type": "string" },
+        "imageFolder": { "type": "string" },
+        "videoFolder": { "type": "string" },
+        "assetsGroup": { "type": "string" },
+        "locale": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "id": { "type": "string" }
+      }
+    },
+    "first-flow-actions": {
+      "type": "object",
+      "required": ["actions"],
+      "properties": {
+        "actions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type", "id"],
+            "properties": {
+              "flow": { "type": "string" },
+              "start_new_flow": { "type": "boolean" },
+              "mixpanelEvent": { "type": ["object", "null"] },
+              "successMixpanelEvent": { "type": ["object", "null"] },
+              "analyticsEvent": { "type": ["object", "null"] },
+              "type": { "type": "string" },
+              "id": { "type": "string" },
+              "native_flow": { "type": "string" },
+              "config": {
+                "type": "object",
+                "properties": {
+                  "native_flows_path": { "type": "string" },
+                  "global_flows_path": { "type": "string" },
+                  "templates_path": { "type": "string" }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "mixpanel_id": { "type": "string" },
+    "loggly_id": { "type": "string" },
+    "preload_page": { "type": ["object", "null"] },
+    "preload_resources": { "type": ["object", "null"] },
+    "preload_page_all_flows": { "type": "object" },
+    "preload_resources_all_flows": { "type": "object" },
+    "authorized_flows_actions": { "type": "object" },
+    "offline_pages_all_flows": { "type": "object" },
+    "settings_all_flows": { "type": "object" },
+    "constant_resources": { "type": "object" },
+    "logger_config": { 
+      "type": "object",
+      "properties": {
+        "type": { "type": "string" },
+        "token": { "type": "string" }
+      }
+    },
+    "analytics": { 
+      "type": "object",
+      "properties": {
+        "type": { "type": "string" },
+        "token": { "type": "string" }
+      }
+    },
+    "azure_config": { 
+      "type": "object",
+      "properties": {
+        "speech_recognition_token": { "type": "string" }
+      }
+    },
+    "campaignId": { "type": "string" },
+    "campaign_id": { "type": "string" },
+    "flow_id": { "type": ["string", "null"] },
+    "analytics_event": {
+      "type": "object",
+      "required": ["id"],
+      "properties": {
+        "eventName": { "type": ["string", "null"] },
+        "description": { "type": "string" },
+        "id": { "type": "string" }
+      }
+    },
+    "offline_pages": { "type": "object" },
+    "language_dictionary": { "type": "object" },
+    "theme": {
+      "type": "object",
+      "properties": {
+        "_id": { "type": "object" },
+        "theme_name": { "type": "string" },
+        "version": { "type": "number" },
+        "base_color": { "type": "string" },
+        "brand_color": { "type": "string" },
+        "font_family": { "type": "string" },
+        "button_override_color": { "type": "boolean" },
+        "use_theme_colors": { "type": "boolean" },
+        "logo_image_name": { "type": "string" },
+        "light_color": { "type": "string" },
+        "dark_color": { "type": "string" },
+        "darkest_color": { "type": "string" }
+      }
+    },
+    "coralogix_config": {
+      "type": "object",
+      "properties": {
+        "secret_key": { "type": "string" },
+        "app_name": { "type": "string" },
+        "active": { "type": "boolean" },
+        "log_level": { "type": "string" },
+        "log_record_times": { "type": ["object", "null"] },
+        "url": { "type": "string" },
+        "log_level_num": { "type": "number" }
+      }
+    },
+    "native-flows": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "native-data": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "native-settings": {
+      "type": "object",
+      "additionalProperties": true
+    }
+  }
+}

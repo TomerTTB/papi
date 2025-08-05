@@ -1,0 +1,540 @@
+{
+  "type": "object",
+  "required": [
+    "partner_name",
+    "campagin-properties",
+    "mobile-settings",
+    "menu-actions",
+    "first-flow-actions",
+    "flows",
+    "is-device-supported-per-flow",
+    "assets"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "partner_name": { "type": "string" },
+    "theme": {
+      "type": "object",
+      "properties": {
+        "colors": {
+          "type": "object",
+          "properties": {
+            "primary": { "type": "string" },
+            "secondary": { "type": "string" },
+            "background": { "type": "string" },
+            "text": { "type": "string" }
+          }
+        },
+        "fonts": {
+          "type": "object",
+          "properties": {
+            "primary": { "type": "string" },
+            "secondary": { "type": "string" }
+          }
+        },
+        "layout": {
+          "type": "object",
+          "properties": {
+            "spacing": { "type": "string" },
+            "borderRadius": { "type": "string" }
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "native-flows": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "properties": {
+          "flow": { "type": "string" },
+          "start_new_flow": { "type": "boolean" },
+          "native_flow": { "type": "string" },
+          "config": { "type": "object" },
+          "mixpanelEvent": { "type": ["string", "null"] },
+          "successMixpanelEvent": { "type": ["string", "null"] },
+          "analyticsEvent": { "type": ["string", "null"] },
+          "type": { "type": "string" },
+          "id": { "type": "string" }
+        }
+      }
+    },
+    "language_dictionary": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "dictionary_translations": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "object",
+        "additionalProperties": true
+      }
+    },
+    "questionnaire": {
+      "type": "object",
+      "properties": {
+        "questions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["id", "type"],
+            "properties": {
+              "id": { "type": "string" },
+              "type": { "type": "string" },
+              "text": { "type": "string" },
+              "options": {
+                "type": "array",
+                "items": {
+                  "type": "object",
+                  "properties": {
+                    "id": { "type": "string" },
+                    "text": { "type": "string" },
+                    "value": { "type": ["string", "number", "boolean"] }
+                  }
+                }
+              },
+              "required": { "type": "boolean" },
+              "validation": {
+                "type": "object",
+                "properties": {
+                  "type": { "type": "string" },
+                  "params": { "type": "object" }
+                }
+              }
+            }
+          }
+        },
+        "settings": {
+          "type": "object",
+          "properties": {
+            "allow_skip": { "type": "boolean" },
+            "show_progress": { "type": "boolean" }
+          }
+        }
+      }
+    },
+    "campagin-properties": {
+      "type": "object",
+      "required": [
+        "accuracy",
+        "feedback",
+        "flow",
+        "first_flow",
+        "flows",
+        "webappFlows",
+        "authorizedFlows",
+        "locale",
+        "multiple_assets_group",
+        "id"
+      ],
+      "properties": {
+        "accuracy": { "type": "boolean" },
+        "feedback": { "type": "boolean" },
+        "flow": { "type": "string" },
+        "first_flow": { "type": "string" },
+        "flows": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "webappFlows": {
+          "type": "array"
+        },
+        "authorizedFlows": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "isServerDebugMode": { "type": "boolean" },
+        "allow_unsupported_countries": { "type": "boolean" },
+        "use_web_pd_disclaimer_link": { "type": "boolean" },
+        "use_web_pd_unsuccessful_flow": { "type": "boolean" },
+        "campaign_assets_file_name": { "type": "string" },
+        "audioFolder": { "type": "string" },
+        "imageFolder": { "type": "string" },
+        "videoFolder": { "type": "string" },
+        "assetsGroup": { "type": "string" },
+        "pagesLayout": { "type": "string" },
+        "redirectToProduction": { "type": "boolean" },
+        "downloadLink": { "type": "string" },
+        "smsText": { "type": "string" },
+        "shouldIgnoreErrors": { "type": "boolean" },
+        "shouldIgnoreOutOfRangeError": { "type": "boolean" },
+        "onboardingUrl": { "type": "string" },
+        "onboardingType": { "type": "string" },
+        "prescriptionType": { "type": "string" },
+        "checkRepeatScan": { "type": "boolean" },
+        "usePreloadPage": { "type": "boolean" },
+        "goToFlowConfig": { "type": "string" },
+        "smsView": { "type": "string" },
+        "qrView": { "type": "string" },
+        "qrTargetUrl": { "type": "string" },
+        "congratsView": { "type": "string" },
+        "prescriptionBottomView": { "type": "string" },
+        "useInterimResults": { "type": "boolean" },
+        "displayHeader": { "type": "boolean" },
+        "skipSms": { "type": "boolean" },
+        "phoneNumber": { "type": "string" },
+        "allow_multifocal": { "type": "boolean" },
+        "allow_laptop": { "type": "boolean" },
+        "useCustomUserNames": { "type": "boolean" },
+        "show_results": { "type": "string" },
+        "show_leaderboard": { "type": "boolean" },
+        "go_to_flow_view": { "type": "string" },
+        "ignorePhoneNotSupported": { "type": "boolean" },
+        "show_multitilt_error_references": { "type": "boolean" },
+        "ampirical_pos_l_sph": { "type": "number" },
+        "ampirical_pos_r_sph": { "type": "number" },
+        "ampirical_neg_l_sph": { "type": "number" },
+        "ampirical_neg_r_sph": { "type": "number" },
+        "should_round_results": { "type": "boolean" },
+        "should_display_oor_prescription": { "type": "boolean" },
+        "provide_oor_error_sdk": { "type": "boolean" },
+        "should_display_next_button_immediately": { "type": "boolean" },
+        "should_display_instruction_text": { "type": "boolean" },
+        "should_override_settings_for_hardcopy_targets": { "type": "boolean" },
+        "should_display_prescription_page_immediately": { "type": "boolean" },
+        "should_use_previous_screen_calibration": { "type": "boolean" },
+        "allow_mini_targets": { "type": "boolean" },
+        "mini_targets_type": { "type": "string" },
+        "eye_prescribe_middle_way_results": { "type": "boolean" },
+        "should_disaply_contact_us": { "type": "boolean" },
+        "post_qr_scan_flow": { "type": "string" },
+        "post_qr_scan_multi_focal_flow": { "type": "string" },
+        "post_qr_scan_bi_focal_flow": { "type": "string" },
+        "show_qr_text_tutorial": { "type": "boolean" },
+        "mobileSoundVolume": { "type": "number" },
+        "tilt_request": { "type": "string" },
+        "pd_camera_mode": { "type": "string" },
+        "show_prescription_on_verify": { "type": "boolean" },
+        "show_score_prescription": { "type": "boolean" },
+        "should_display_slow_connection_indication": { "type": "boolean" },
+        "slow_connection_indication_threshold": { "type": "number" },
+        "fontFamily": { "type": "string" },
+        "styleType": { "type": "string" },
+        "styleTypeColor": { "type": "string" },
+        "show_by_6over6_logo": { "type": "boolean" },
+        "terms_and_condition_link": { "type": "string" },
+        "privacy_link": { "type": "string" },
+        "contactType": { "type": "string" },
+        "contactEmail": { "type": "string" },
+        "always_show_onboarding": { "type": "boolean" },
+        "shouldSendQrVerifyImages": { "type": "boolean" },
+        "shouldWatchStageSync": { "type": "boolean" },
+        "shouldSkipTutorial": { "type": "boolean" },
+        "should_show_focus_border": { "type": "boolean" },
+        "instructionImagesToCenterWithMargin": { "type": "boolean" },
+        "isTiltWithHighRes": { "type": "boolean" },
+        "pd_convertor": { "type": "string" },
+        "start_eye": { "type": "string" },
+        "use_open_closed_eyes_server": { "type": "boolean" },
+        "use_mono_pd": { "type": "boolean" },
+        "eyes_open_closed_detection_threshold": { "type": "number" },
+        "lock_focus_before_glasses": { "type": "boolean" },
+        "useScaleArchitecture": { "type": "boolean" },
+        "algo_running_mode": { "type": "string" },
+        "verify_python": { "type": "boolean" },
+        "focus_threshold_factor": { "type": "number" },
+        "poor_network": { "type": "boolean" },
+        "automation": { "type": "boolean" },
+        "show_camera_low_res_alert_page": { "type": "boolean" },
+        "card_blur_type": { "type": "string" },
+        "skip_pd_analyze": { "type": "boolean" },
+        "estimated_pd_slop": { "type": "number" },
+        "estimated_pd_bias": { "type": "number" },
+        "estimated_pd_slop_yolo": { "type": "number" },
+        "estimated_pd_bias_yolo": { "type": "number" },
+        "min_estimated_distance_from_face_mm": { "type": "number" },
+        "max_estimated_distance_from_face_mm": { "type": "number" },
+        "average_pd_for_frame_size": { "type": "number" },
+        "source_image_width": { "type": "number" },
+        "avr_dist_mm": { "type": "number" },
+        "use_websocket_microservice": { "type": "boolean" },
+        "asset_group_id": { "type": "string" },
+        "brand_app_name": { "type": "string" },
+        "pd_mode": { "type": "string" },
+        "send_email_on_result": { "type": "boolean" },
+        "sender_email": { "type": "string" },
+        "show_eu_regulation_symbols_web_pd": { "type": "boolean" },
+        "is_go_eyes": { "type": "boolean" },
+        "asset_mode": { "type": "string" },
+        "pd_timeout_seconds": { "type": "number" },
+        "is_hub": { "type": "boolean" },
+        "app_store_link": { "type": "string" },
+        "play_store_link": { "type": "string" },
+        "telehealth_consent_link": { "type": "string" },
+        "multiple_assets_group": {
+          "type": "object",
+          "additionalProperties": {
+            "type": "object",
+            "additionalProperties": {
+              "type": "string"
+            }
+          }
+        },
+        "questionnaire_name": { "type": "string" },
+        "results_page_url": { "type": "string" },
+        "mono_pass_threshold": { "type": "number" },
+        "bino_pass_threshold": { "type": "number" },
+        "should_display_end_of_flow_redirect_button": { "type": "boolean" },
+        "brand_name": { "type": "string" },
+        "dr_portal_partner_code": { "type": "string" },
+        "enable_pd_without_card": { "type": "boolean" },
+        "locale": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "language_dictionary_id": { "type": "string" },
+        "web_log_mode": { "type": "string" },
+        "theme_name": { "type": "string" },
+        "allow_organic_users": { "type": "boolean" },
+        "online_only": { "type": "boolean" },
+        "enable_sc_yolo": { "type": "boolean" },
+        "enable_fixed_focus_distance": { "type": "boolean" },
+        "disable_area_focus": { "type": "boolean" },
+        "disable_continuous_focus": { "type": "boolean" },
+        "screen_select_enabled": { "type": "boolean" },
+        "product_calibration_name": { "type": "string" },
+        "patents_link": { "type": "string" },
+        "authentication_header": { "type": "string" },
+        "id": { "type": "string" }
+      },
+      "additionalProperties": false
+    },
+    "mobile-settings": {
+      "type": "object",
+      "required": ["_cls"],
+      "properties": {
+        "_cls": { "type": "string" },
+        "tilt_number_of_times": { "type": "number" },
+        "tilt_timeout": { "type": "number" },
+        "upper_bound_preview_width": { "type": "number" },
+        "copy_glass_upper_bound_picture_width": { "type": "number" },
+        "error_count_limit": { "type": "number" },
+        "phone_distance_threshold": { "type": "number" },
+        "copy_glass_scale_factor": { "type": "number" },
+        "skip_face_detection": { "type": "boolean" },
+        "face_too_close_factor": { "type": "number" },
+        "face_too_far_factor": { "type": "number" },
+        "pd_pitch_vertical_threshold": { "type": "number" },
+        "default_url": { "type": "string" },
+        "seconds_until_QR_message": { "type": "number" },
+        "eye_detector_confidence_threshold": { "type": "number" },
+        "ios_face_detector": { "type": "string" },
+        "depth_filter_enabled": { "type": "boolean" },
+        "force_ios_version": { "type": "string" },
+        "force_android_version": { "type": "string" },
+        "lod_min_memory": { "type": "number" },
+        "calendly_url": { "type": "string" },
+        "cdn_sdk_domain": { "type": "string" },
+        "cdn_uri": { "type": "string" },
+        "enable_recaptcha": { "type": "boolean" },
+        "global_tilt_count_enabled": { "type": "boolean" },
+        "logging_debug_mode": { "type": "boolean" },
+        "replicator": { "type": "boolean" },
+        "send_sms": { "type": "boolean" },
+        "unsupported_models": {
+          "type": "array"
+        },
+        "use_legacy_contnet_directory": { "type": "boolean" },
+        "use_yolo_pd": { "type": "boolean" },
+        "lenses_verify_performance": { "type": "boolean" },
+        "pd_scale_logs": { "type": "boolean" },
+        "use_china_link": { "type": "boolean" },
+        "record_session": { "type": "boolean" },
+        "ignore_obfuscation_profiles": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "phone_model_settings": {
+          "type": "object",
+          "properties": {
+            "front_settings": {
+              "type": "object",
+              "properties": {
+                "hfov": { "type": "number" },
+                "vfov": { "type": "number" }
+              }
+            },
+            "pixels_per_inches": { "type": "number" }
+          }
+        },
+        "diopter_correction": { "type": "number" },
+        "pd_woc_enabled": { "type": "boolean" }
+      },
+      "additionalProperties": false
+    },
+    "menu-actions": {
+      "type": "object",
+      "additionalProperties": false
+    },
+    "first-flow-actions": {
+      "type": "object",
+      "required": ["actions"],
+      "properties": {
+        "actions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type", "id"],
+            "properties": {
+              "flow": { "type": "string" },
+              "start_new_flow": { "type": "boolean" },
+              "native_flow": { "type": "string" },
+              "config": { "type": "object" },
+              "mixpanelEvent": { "type": ["string", "null"] },
+              "successMixpanelEvent": { "type": ["string", "null"] },
+              "analyticsEvent": { "type": ["string", "null"] },
+              "type": { "type": "string" },
+              "id": { "type": "string" }
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "flows": {
+      "type": "object",
+      "properties": {
+        "lensesAndPupils": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type", "id"],
+            "properties": {
+              "flow": { "type": "string" },
+              "start_new_flow": { "type": "boolean" },
+              "mixpanelEvent": { "type": ["string", "null"] },
+              "successMixpanelEvent": { "type": ["string", "null"] },
+              "analyticsEvent": { "type": ["string", "null"] },
+              "type": { "type": "string" },
+              "id": { "type": "string" }
+            }
+          }
+        },
+        "lenses": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type", "id"],
+            "properties": {
+              "flow": { "type": "string" },
+              "start_new_flow": { "type": "boolean" },
+              "mixpanelEvent": { "type": ["string", "null"] },
+              "successMixpanelEvent": { "type": ["string", "null"] },
+              "analyticsEvent": { "type": ["string", "null"] },
+              "type": { "type": "string" },
+              "id": { "type": "string" }
+            }
+          }
+        },
+        "deviceCalibration": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type", "id"],
+            "properties": {
+              "flow": { "type": "string" },
+              "start_new_flow": { "type": "boolean" },
+              "mixpanelEvent": { "type": ["string", "null"] },
+              "successMixpanelEvent": { "type": ["string", "null"] },
+              "analyticsEvent": { "type": ["string", "null"] },
+              "type": { "type": "string" },
+              "id": { "type": "string" }
+            }
+          }
+        },
+        "prescription": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type", "id"],
+            "properties": {
+              "flow": { "type": "string" },
+              "start_new_flow": { "type": "boolean" },
+              "mixpanelEvent": { "type": ["string", "null"] },
+              "successMixpanelEvent": { "type": ["string", "null"] },
+              "analyticsEvent": { "type": ["string", "null"] },
+              "type": { "type": "string" },
+              "id": { "type": "string" }
+            }
+          }
+        },
+        "intercom": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type", "id"],
+            "properties": {
+              "flow": { "type": "string" },
+              "start_new_flow": { "type": "boolean" },
+              "mixpanelEvent": { "type": ["string", "null"] },
+              "successMixpanelEvent": { "type": ["string", "null"] },
+              "analyticsEvent": { "type": ["string", "null"] },
+              "type": { "type": "string" },
+              "id": { "type": "string" }
+            }
+          }
+        },
+        "eyes": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type", "id"],
+            "properties": {
+              "flow": { "type": "string" },
+              "start_new_flow": { "type": "boolean" },
+              "native_flow": { "type": "string" },
+              "config": { "type": "object" },
+              "mixpanelEvent": { "type": ["string", "null"] },
+              "successMixpanelEvent": { "type": ["string", "null"] },
+              "analyticsEvent": { "type": ["string", "null"] },
+              "type": { "type": "string" },
+              "id": { "type": "string" }
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "is-device-supported-per-flow": {
+      "type": "object",
+      "required": ["flows"],
+      "properties": {
+        "flows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["flow", "supported"],
+            "properties": {
+              "flow": { "type": "string" },
+              "supported": { "type": "boolean" }
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    },
+    "assets": {
+      "type": "object",
+      "required": ["campaign_assets"],
+      "properties": {
+        "campaign_assets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type", "name", "value", "priority"],
+            "properties": {
+              "type": { "type": "string" },
+              "name": { "type": "string" },
+              "value": { "type": "string" },
+              "priority": { "type": "number" }
+            }
+          }
+        }
+      },
+      "additionalProperties": false
+    }
+  }
+}

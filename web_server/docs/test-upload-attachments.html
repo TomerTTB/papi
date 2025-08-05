@@ -1,0 +1,538 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Upload Attachments Tests - API Testing Platform</title>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../styles/common.css" rel="stylesheet">
+    <link href="styles/docs.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb" class="mt-3 mb-4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/docs" class="text-decoration-none">Documentation</a></li>
+                    <li class="breadcrumb-item active">Upload Attachments Tests</li>
+                </ol>
+            </nav>
+
+            <div class="row">
+                <!-- Sidebar Navigation -->
+                <div id="sidebar-placeholder"></div>
+
+                <!-- Documentation Content -->
+                <div class="col-md-9">
+                    <div class="wiki-content">
+                        <h1>Upload Attachments Test Suite Documentation</h1>
+                        
+                        <h2 id="upload-attachments-tests">Upload Attachments Tests (upload-attachments.spec.js)</h2>
+                        <div class="alert alert-info">
+                            <h4 class="h5">Summary</h4>
+                            <p>
+                                The upload-attachments.spec.js file implements comprehensive testing for file upload functionality
+                                through the API and S3 integration. It ensures proper handling of file uploads, validation of
+                                presigned URLs, and successful file transfer to S3 storage.
+                            </p>
+                        </div>
+
+                        <h3>Test Cases Overview</h3>
+                        
+                        <h4>1. S3 Upload Details Test</h4>
+                        <p>
+                            <strong>Purpose:</strong> Verifies that the API returns valid S3 upload details.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>API returns 200 status code</li>
+                                <li>Response contains valid S3 upload details</li>
+                                <li>Presigned URL is properly formatted</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>Response should include S3 bucket, key, and presigned URL</li>
+                                <li>All required fields should be present and valid</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Get S3 upload details ${endpoint.path}`, async ({ request }) => {
+    const response = await request.post(endpoint);
+    expect(response.status()).toBe(200);
+    expect(response.data).toHaveProperty('s3');
+    expect(response.data.s3).toHaveProperty('url');
+    expect(response.data.s3).toHaveProperty('fields');
+});</pre>
+
+                        <h4>2. File Upload Test</h4>
+                        <p>
+                            <strong>Purpose:</strong> Ensures successful file upload to S3 using presigned URL.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>File is properly prepared for upload</li>
+                                <li>Form data is correctly constructed</li>
+                                <li>Upload request is properly formatted</li>
+                                <li>S3 returns 204 status code</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>File should be successfully uploaded to S3</li>
+                                <li>Upload response should return 204 status code</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Upload file to S3 ${endpoint.path}`, async ({ request }) => {
+    // Get S3 upload details
+    const response = await request.post(endpoint);
+    const s3Details = response.data.s3;
+
+    // Prepare file and form data
+    const form = new FormData();
+    Object.entries(s3Details.fields).forEach(([key, value]) => {
+        form.append(key, value);
+    });
+    form.append('file', fs.createReadStream(filePath));
+
+    // Upload to S3
+    const uploadResponse = await fetch(s3Details.url, {
+        method: 'POST',
+        body: form
+    });
+    expect(uploadResponse.status).toBe(204);
+});</pre>
+
+                        <h4>3. Missing File Test</h4>
+                        <p>
+                            <strong>Purpose:</strong> Verifies error handling when no file is provided.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>Form data contains all required S3 fields but no file</li>
+                                <li>Error response format and content</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>400 status code</li>
+                                <li>Error message: "POST requires exactly one file upload per request."</li>
+                                <li>Error code: "InvalidArgument"</li>
+                                <li>ArgumentName: "file"</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Upload Attachments With Missing File ${endpoint.path}`, async ({ request }) => {
+    // Get S3 upload details and prepare form without file
+    const response = await executeRequest(test, request, endpoint, headers);
+    const s3Data = response.json().s3_objects[0];
+    const form = new FormData();
+    
+    // Add all S3 fields but skip file
+    Object.entries(s3Data.fields).forEach(([key, value]) => {
+        form.append(key, value);
+    });
+
+    // Verify error response
+    expect(uploadResponse.status).toBe(400);
+    expect(uploadResponse.body).toContain('<Code>InvalidArgument</Code>');
+    expect(uploadResponse.body).toContain('<ArgumentName>file</ArgumentName>');
+});</pre>
+
+                        <h4>4. Missing AWSAccessKeyId Test</h4>
+                        <p>
+                            <strong>Purpose:</strong> Verifies error handling when AWSAccessKeyId is missing.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>Form data excludes AWSAccessKeyId field</li>
+                                <li>Error response format and content</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>400 status code</li>
+                                <li>Error message: "Bucket POST must contain a field named 'AWSAccessKeyId'. If it is specified, please check the order of the fields."</li>
+                                <li>Error code: "InvalidArgument"</li>
+                                <li>Empty ArgumentValue field</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Upload Attachments With Missing AWSAccessKeyId ${endpoint.path}`, async ({ request }) => {
+    // Get S3 upload details and prepare form without AWSAccessKeyId
+    const response = await executeRequest(test, request, endpoint, headers);
+    const s3Data = response.json().s3_objects[0];
+    const form = new FormData();
+    
+    // Add all fields except AWSAccessKeyId
+    Object.entries(s3Data.fields).forEach(([key, value]) => {
+        if (key !== 'AWSAccessKeyId') {
+            form.append(key, value);
+        }
+    });
+
+    // Add file
+    form.append('file', fileBuffer, { filename: '0', contentType: 'application/octet-stream' });
+
+    // Verify error response
+    expect(uploadResponse.status).toBe(400);
+    expect(uploadResponse.body).toContain('<Code>InvalidArgument</Code>');
+    expect(uploadResponse.body).toContain('<ArgumentName>AWSAccessKeyId</ArgumentName>');
+    expect(uploadResponse.body).toContain('<ArgumentValue></ArgumentValue>');
+});</pre>
+
+                        <h4>5. Invalid AWSAccessKeyId Test</h4>
+                        <p>
+                            <strong>Purpose:</strong> Verifies error handling when AWSAccessKeyId is invalid.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>Form data includes invalid AWSAccessKeyId</li>
+                                <li>Error response format and content</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>403 status code</li>
+                                <li>Error message: "The AWS Access Key Id you provided does not exist in our records."</li>
+                                <li>Error code: "InvalidAccessKeyId"</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Upload Attachments With Invalid AWSAccessKeyId ${endpoint.path}`, async ({ request }) => {
+    // Get S3 upload details and prepare form with invalid AWSAccessKeyId
+    const response = await executeRequest(test, request, endpoint, headers);
+    const s3Data = response.json().s3_objects[0];
+    const form = new FormData();
+    
+    // Add fields with invalid AWSAccessKeyId
+    Object.entries(s3Data.fields).forEach(([key, value]) => {
+        if (key === 'AWSAccessKeyId') {
+            form.append(key, 'INVALID_ACCESS_KEY');
+        } else {
+            form.append(key, value);
+        }
+    });
+
+    // Add file
+    form.append('file', fileBuffer, { filename: '0', contentType: 'application/octet-stream' });
+
+    // Verify error response
+    expect(uploadResponse.status).toBe(403);
+    expect(uploadResponse.body).toContain('<Code>InvalidAccessKeyId</Code>');
+    expect(uploadResponse.body).toContain('<Message>The AWS Access Key Id you provided does not exist in our records.</Message>');
+});</pre>
+
+                        <h4>6. Missing x-amz-security-token Test</h4>
+                        <p>
+                            <strong>Purpose:</strong> Verifies error handling when security token is missing.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>Form data excludes x-amz-security-token field</li>
+                                <li>Error response format and content</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>403 status code</li>
+                                <li>Error message: "The AWS Access Key Id you provided does not exist in our records."</li>
+                                <li>Error code: "InvalidAccessKeyId"</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Upload Attachments With Missing x-amz-security-token ${endpoint.path}`, async ({ request }) => {
+    // Get S3 upload details and prepare form without security token
+    const response = await executeRequest(test, request, endpoint, headers);
+    const s3Data = response.json().s3_objects[0];
+    const form = new FormData();
+    
+    // Add all fields except x-amz-security-token
+    Object.entries(s3Data.fields).forEach(([key, value]) => {
+        if (key !== 'x-amz-security-token') {
+            form.append(key, value);
+        }
+    });
+
+    // Add file
+    form.append('file', fileBuffer, { filename: '0', contentType: 'application/octet-stream' });
+
+    // Verify error response
+    expect(uploadResponse.status).toBe(403);
+    expect(uploadResponse.body).toContain('<Code>InvalidAccessKeyId</Code>');
+    expect(uploadResponse.body).toContain('<Message>The AWS Access Key Id you provided does not exist in our records.</Message>');
+});</pre>
+
+                        <h4>7. Invalid x-amz-security-token Test</h4>
+                        <p>
+                            <strong>Purpose:</strong> Verifies error handling when security token is invalid.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>Form data includes invalid security token</li>
+                                <li>Error response format and content</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>400 status code</li>
+                                <li>Error message: "The provided token is malformed or otherwise invalid."</li>
+                                <li>Error code: "InvalidToken"</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Upload Attachments With Invalid x-amz-security-token ${endpoint.path}`, async ({ request }) => {
+    // Get S3 upload details and prepare form with invalid token
+    const response = await executeRequest(test, request, endpoint, headers);
+    const s3Data = response.json().s3_objects[0];
+    const form = new FormData();
+    
+    // Add fields with invalid security token
+    Object.entries(s3Data.fields).forEach(([key, value]) => {
+        if (key === 'x-amz-security-token') {
+            form.append(key, 'INVALID_SECURITY_TOKEN');
+        } else {
+            form.append(key, value);
+        }
+    });
+
+    // Add file
+    form.append('file', fileBuffer, { filename: '0', contentType: 'application/octet-stream' });
+
+    // Verify error response
+    expect(uploadResponse.status).toBe(400);
+    expect(uploadResponse.body).toContain('<Code>InvalidToken</Code>');
+    expect(uploadResponse.body).toContain('<Message>The provided token is malformed or otherwise invalid.</Message>');
+});</pre>
+
+                        <h4>8. Missing Policy Test</h4>
+                        <p>
+                            <strong>Purpose:</strong> Verifies error handling when policy is missing.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>Form data excludes policy field</li>
+                                <li>Error response format and content</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>400 status code</li>
+                                <li>Error message: "Bucket POST must contain a field named 'policy'. If it is specified, please check the order of the fields."</li>
+                                <li>Error code: "InvalidArgument"</li>
+                                <li>Empty ArgumentValue field</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Upload Attachments With Missing Policy ${endpoint.path}`, async ({ request }) => {
+    // Get S3 upload details and prepare form without policy
+    const response = await executeRequest(test, request, endpoint, headers);
+    const s3Data = response.json().s3_objects[0];
+    const form = new FormData();
+    
+    // Add all fields except policy
+    Object.entries(s3Data.fields).forEach(([key, value]) => {
+        if (key !== 'policy') {
+            form.append(key, value);
+        }
+    });
+
+    // Add file
+    form.append('file', fileBuffer, { filename: '0', contentType: 'application/octet-stream' });
+
+    // Verify error response
+    expect(uploadResponse.status).toBe(400);
+    expect(uploadResponse.body).toContain('<Code>InvalidArgument</Code>');
+    expect(uploadResponse.body).toContain('<ArgumentName>policy</ArgumentName>');
+    expect(uploadResponse.body).toContain('<ArgumentValue></ArgumentValue>');
+});</pre>
+
+                        <h4>9. Invalid Policy Test</h4>
+                        <p>
+                            <strong>Purpose:</strong> Verifies error handling when policy is invalid.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>Form data includes invalid policy</li>
+                                <li>Error response format and content</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>403 status code</li>
+                                <li>Error message: "The request signature we calculated does not match the signature you provided. Check your key and signing method."</li>
+                                <li>Error code: "SignatureDoesNotMatch"</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Upload Attachments With Invalid Policy ${endpoint.path}`, async ({ request }) => {
+    // Get S3 upload details and prepare form with invalid policy
+    const response = await executeRequest(test, request, endpoint, headers);
+    const s3Data = response.json().s3_objects[0];
+    const form = new FormData();
+    
+    // Add fields with invalid policy
+    Object.entries(s3Data.fields).forEach(([key, value]) => {
+        if (key === 'policy') {
+            form.append(key, 'INVALID_POLICY');
+        } else {
+            form.append(key, value);
+        }
+    });
+
+    // Add file
+    form.append('file', fileBuffer, { filename: '0', contentType: 'application/octet-stream' });
+
+    // Verify error response
+    expect(uploadResponse.status).toBe(403);
+    expect(uploadResponse.body).toContain('<Code>SignatureDoesNotMatch</Code>');
+    expect(uploadResponse.body).toContain('<Message>The request signature we calculated does not match the signature you provided.</Message>');
+});</pre>
+
+                        <h4>10. Missing Signature Test</h4>
+                        <p>
+                            <strong>Purpose:</strong> Verifies error handling when signature is missing.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>Form data excludes signature field</li>
+                                <li>Error response format and content</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>400 status code</li>
+                                <li>Error message: "Bucket POST must contain a field named 'Signature'. If it is specified, please check the order of the fields."</li>
+                                <li>Error code: "InvalidArgument"</li>
+                                <li>Empty ArgumentValue field</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Upload Attachments With Missing Signature ${endpoint.path}`, async ({ request }) => {
+    // Get S3 upload details and prepare form without signature
+    const response = await executeRequest(test, request, endpoint, headers);
+    const s3Data = response.json().s3_objects[0];
+    const form = new FormData();
+    
+    // Add all fields except signature
+    Object.entries(s3Data.fields).forEach(([key, value]) => {
+        if (key !== 'signature') {
+            form.append(key, value);
+        }
+    });
+
+    // Add file
+    form.append('file', fileBuffer, { filename: '0', contentType: 'application/octet-stream' });
+
+    // Verify error response
+    expect(uploadResponse.status).toBe(400);
+    expect(uploadResponse.body).toContain('<Code>InvalidArgument</Code>');
+    expect(uploadResponse.body).toContain('<ArgumentName>Signature</ArgumentName>');
+    expect(uploadResponse.body).toContain('<ArgumentValue></ArgumentValue>');
+});</pre>
+
+                        <h4>11. Invalid Signature Test</h4>
+                        <p>
+                            <strong>Purpose:</strong> Verifies error handling when signature is invalid.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>Form data includes invalid signature</li>
+                                <li>Error response format and content</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>403 status code</li>
+                                <li>Error message: "The request signature we calculated does not match the signature you provided. Check your key and signing method."</li>
+                                <li>Error code: "SignatureDoesNotMatch"</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Upload Attachments With Invalid Signature ${endpoint.path}`, async ({ request }) => {
+    // Get S3 upload details and prepare form with invalid signature
+    const response = await executeRequest(test, request, endpoint, headers);
+    const s3Data = response.json().s3_objects[0];
+    const form = new FormData();
+    
+    // Add fields with invalid signature
+    Object.entries(s3Data.fields).forEach(([key, value]) => {
+        if (key === 'signature') {
+            form.append(key, 'INVALID_SIGNATURE');
+        } else {
+            form.append(key, value);
+        }
+    });
+
+    // Add file
+    form.append('file', fileBuffer, { filename: '0', contentType: 'application/octet-stream' });
+
+    // Verify error response
+    expect(uploadResponse.status).toBe(403);
+    expect(uploadResponse.body).toContain('<Code>SignatureDoesNotMatch</Code>');
+    expect(uploadResponse.body).toContain('<Message>The request signature we calculated does not match the signature you provided.</Message>');
+});</pre>
+
+                        <h3>Understanding the Upload Process</h3>
+                        <p>
+                            The upload process consists of two main steps:
+                        </p>
+                        <ol>
+                            <li>
+                                <strong>Get S3 Upload Details</strong>
+                                <ul>
+                                    <li>API request to get presigned URL and required fields</li>
+                                    <li>Validation of response structure and content</li>
+                                    <li>Extraction of S3 upload parameters</li>
+                                </ul>
+                            </li>
+                            <li>
+                                <strong>File Upload to S3</strong>
+                                <ul>
+                                    <li>Preparation of form data with required fields</li>
+                                    <li>File attachment to form data</li>
+                                    <li>Upload request to S3 using presigned URL</li>
+                                    <li>Verification of successful upload</li>
+                                    </ul>
+                            </li>
+                        </ol>
+
+                        <h3>Required Configuration</h3>
+                        <div class="alert alert-warning">
+                            <h4 class="h5">Prerequisites</h4>
+                            <ul>
+                                <li>Valid S3 credentials and permissions</li>
+                                        <li>Test file present in config directory</li>
+                                        <li>Proper environment configuration</li>
+                                <li>Correct endpoint configuration in endpoints.js</li>
+                                    </ul>
+                                </div>
+
+                        <h3>Common Issues and Solutions</h3>
+                        <div class="table-responsive">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Issue</th>
+                                        <th>Possible Cause</th>
+                                        <th>Solution</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>401 Unauthorized</td>
+                                        <td>Invalid or expired presigned URL</td>
+                                        <td>Regenerate presigned URL and ensure proper authentication</td>
+                                    </tr>
+                                    <tr>
+                                        <td>403 Forbidden</td>
+                                        <td>Insufficient S3 permissions</td>
+                                        <td>Verify S3 bucket permissions and IAM roles</td>
+                                    </tr>
+                                    <tr>
+                                        <td>411 Length Required</td>
+                                        <td>Missing Content-Length header</td>
+                                        <td>Ensure form data length is calculated and included</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Template Loader -->
+    <script src="../scripts/template-loader.js"></script>
+    <!-- Version Fetcher -->
+    <script src="../scripts/version-fetcher.js"></script>
+    <!-- Sidebar Loader -->
+    <script src="scripts/sidebar-loader.js"></script>
+    <!-- Documentation Scripts -->
+    <script src="scripts/docs.js"></script>
+</body>
+</html> 

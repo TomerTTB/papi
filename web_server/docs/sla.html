@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLA Monitor - API Testing Platform</title>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../styles/common.css" rel="stylesheet">
+    <link href="styles/docs.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb" class="mt-3 mb-4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/docs" class="text-decoration-none">Documentation</a></li>
+                    <li class="breadcrumb-item active">SLA Monitor</li>
+                </ol>
+            </nav>
+
+            <div class="row">
+                <!-- Sidebar Navigation -->
+                <div class="col-md-3 position-relative px-0">
+                    <div id="sidebar-placeholder" class="position-sticky px-3" style="top: 20px; max-height: calc(100vh - 40px); overflow-y: auto; overflow-x: hidden;"></div>
+                </div>
+
+                <!-- Documentation Content -->
+                <div class="col-md-9">
+                    <div class="wiki-content">
+                        <h1>SLA Monitor Documentation</h1>
+                        
+                        <h2 id="overview">Overview</h2>
+                        <div class="alert alert-info">
+                            <h4 class="h5">Summary</h4>
+                            <p>
+                                The SLA Monitor is a real-time monitoring system that provides comprehensive monitoring across three key areas:
+                            </p>
+                            <ul class="mb-0">
+                                <li><strong>API Monitoring:</strong> Tracks the availability and response time of critical API endpoints across US and EU regions, with automatic update.</li>
+                                <li><strong>Compliance Tracking:</strong> Maintains daily compliance metrics for each endpoint, calculating success rates based on both response times and status codes. Compliance data is stored in daily logs for historical analysis.</li>
+                                <li><strong>SSL Certificate Monitoring:</strong> Proactively monitors SSL certificates across all regional domains, providing early warnings for certificate expiration and validation issues.</li>
+                            </ul>
+                        </div>
+
+                        <h2 id="sla-configuration">Configuration</h2>
+                        <p>
+                            The SLA Monitor can be configured through environment variables:
+                        </p>
+                        <ul>
+                            <li><strong>Timing and Retry Configuration:</strong>
+                                <ul>
+                                    <li>ITERATION: Monitoring interval in minutes (default: 5)</li>
+                                    <li>SLA_RESPONSE_TIME: Maximum allowed response time in seconds (default: 2.5)</li>
+                                    <li>RETRY_DELAY: Time between retry attempts in seconds (default: 60)</li>
+                                    <li>MAX_RETRIES: Number of retry attempts (default: 2, meaning 3 total attempts)</li>
+                                    <li>SSL_EXPIRY_THRESHOLD: Days before SSL certificate expiration to trigger alert (default: 30)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Regional Endpoint Configuration:</strong>
+                                <ul>
+                                    <li>BASE_URL_SLA_US: Base URL for GoEyes endpoints in US region</li>
+                                    <li>BASE_URL_SLA_EU: Base URL for GoEyes endpoints in EU region</li>
+                                    <li>BASE_URL_PHI_SLA_US: Base URL for PHI endpoints in US region</li>
+                                    <li>BASE_URL_PHI_SLA_EU: Base URL for PHI endpoints in EU region</li>
+                                </ul>
+                            </li>
+                            <li><strong>Authentication:</strong>
+                                <ul>
+                                    <li>PHI_API_KEY_US: API key for PHI endpoints in US region</li>
+                                    <li>PHI_API_KEY_EU: API key for PHI endpoints in EU region</li>
+                                </ul>
+                            </li>
+                            <li><strong>SSL Monitoring:</strong>
+                                <ul>
+                                    <li>US Region Domains:
+                                        <ul>
+                                            <li>[US_STAGING_DOMAIN]</li>
+                                            <li>[US_PRODUCTION_DOMAIN]</li>
+                                        </ul>
+                                    </li>
+                                    <li>EU Region Domains:
+                                        <ul>
+                                            <li>[EU_STAGING_DOMAIN]</li>
+                                            <li>[EU_PRODUCTION_DOMAIN]</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><strong>Logging and Notifications:</strong>
+                                <ul>
+                                    <li>ENABLE_SLA_LOGS: Enable/disable logging (true/false)</li>
+                                    <li>LOG_EXPIRY: Number of days to keep log folders (default: 30)</li>
+                                    <li>SLACK_WEBHOOK_URL: Webhook URL for Slack notifications</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="alert alert-info">
+                            <h4 class="h5">Configuration Best Practices</h4>
+                            <p class="mb-0">
+                                All configuration values should be set in environment variables or a secure configuration management system. 
+                                For production deployments, it's recommended to use AWS Secrets Manager or similar service to manage sensitive values 
+                                like API keys and webhook URLs. The SSL domains are configured per region and can be modified in the configuration 
+                                file without requiring application restart.
+                            </p>
+                        </div>
+
+                        <h2 id="monitoring">Monitoring</h2>
+                        <p>
+                            The SLA Monitor tracks the following products and endpoints with configurable monitoring parameters:
+                        </p>
+                        <div class="alert alert-secondary">
+                            <h5>Monitoring Configuration</h5>
+                            <ul class="mb-0">
+                                <li>Iteration Interval: Configurable via ITERATION env var (minutes)</li>
+                                <li>Response Time SLA: Configurable via SLA_RESPONSE_TIME env var (seconds)</li>
+                                <li>Maximum Retries: Configurable via MAX_RETRIES env var (Value of 2 means 3 attempts total including initial try)</li>
+                                <li>Retry Delay: Configurable via RETRY_DELAY env var (seconds)</li>
+                            </ul>
+                        </div>
+
+                        <h4>API Endpoints Monitoring</h4>
+                        <ul>
+                            <li><strong>GoEyes Core:</strong>
+                                <ul>
+                                    <li>Mobile Init (@/mobile/init)</li>
+                                    <li>WeakEyeRelaxed (@/go-eyes/weakEyeRelaxed)</li>
+                                    <li>Save Station (@/go-eyes/save-station)</li>
+                                </ul>
+                            </li>
+                            <li><strong>GoEyes FFC:</strong>
+                                <ul>
+                                    <li>FFC Calculation (@/face-distance-calibration/ffc-calculation)</li>
+                                </ul>
+                            </li>
+                            <li><strong>GoEyes Attachments:</strong>
+                                <ul>
+                                    <li>Attachments API (attachments)</li>
+                                </ul>
+                            </li>
+                            <li><strong>PHI:</strong>
+                                <ul>
+                                    <li>Questionnaire Stage (questionnaire_stage)</li>
+                                </ul>
+                            </li>
+                            <li><strong>PD</strong>
+                                <ul>
+                                    <li>WebSDK Init (@/websdk/init)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Lenses</strong>
+                                <ul>
+                                    <li>Web Companion (@/webcompanion/init)</li>
+                                </ul>
+                            </li>
+                            <li><strong>Visual Acuity:</strong>
+                                <ul>
+                                    <li>VA Bino Increase (@/go-va/bino/increase)</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h2 id="failure-types">Failure Types</h2>
+                        <p>
+                            The SLA Monitor detects two types of failures:
+                        </p>
+                        <ul>
+                            <li><strong>Status Code Failures:</strong>
+                                <ul>
+                                    <li>When an endpoint returns a non-200 HTTP status code</li>
+                                    <li>Examples: 404 Not Found, 500 Internal Server Error, 403 Forbidden</li>
+                                </ul>
+                            </li>
+                            <li><strong>Response Time Failures:</strong>
+                                <ul>
+                                    <li>When an endpoint returns 200 but exceeds the SLA response time threshold</li>
+                                    <li>Default threshold: 2.5 seconds (configurable via SLA_RESPONSE_TIME)</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h2 id="retry-logic">Retry Logic</h2>
+                        <p>
+                            The SLA Monitor implements a sophisticated retry system that handles both Status Code and Response Time failures independently:
+                        </p>
+                        <div class="alert alert-secondary">
+                            <h5>Retry Configuration</h5>
+                            <ul class="mb-0">
+                                <li>Maximum retries: 2 (3 attempts total including initial try)</li>
+                                <li>Retry delay: 60 seconds between attempts</li>
+                                <li>Response time SLA: Configurable via SLA_RESPONSE_TIME env var (default: 2.5 seconds)</li>
+                            </ul>
+                        </div>
+
+                        <h4>Retry Scenarios</h4>
+                        <h5>Pure Status Code Failure</h5>
+                        <pre class="bg-dark text-light p-3 rounded"><code>Initial try: Gets 500 error (attempt 1)
+Retry #1:    Gets 500 error (attempt 2)
+Retry #2:    Gets 500 error (attempt 3)
+→ System reports Status Code failure after 3 failed attempts</code></pre>
+
+                        <h5>Pure Response Time Failure</h5>
+                        <pre class="bg-dark text-light p-3 rounded"><code>Initial try: Gets 200 OK but takes 3s (attempt 1)
+Retry #1:    Gets 200 OK but takes 3s (attempt 2)
+Retry #2:    Gets 200 OK but takes 3s (attempt 3)
+→ System reports Response Time failure after 3 slow responses</code></pre>
+
+                        <h5>Mixed Failure Scenarios</h5>
+                        <p>The SLA Monitor handles transitions between different types of failures (status code and response time) in specific ways:</p>
+
+                        <h6>Status Code Failure → Response Time Failure</h6>
+                        <p>When an endpoint that was failing with status code errors starts returning 200 OK but with slow response times, the system gives it a fresh start:</p>
+                        <pre class="bg-dark text-light p-3 rounded"><code>Initial try: Gets 500 error (attempt 1)
+Retry #1:    Gets 500 error (attempt 2)
+Retry #2:    Gets 200 OK but takes 3s (over SLA)
+→ System RESETS the retry counter
+New try #1:  Checks response time
+New try #2:  Checks response time
+New try #3:  Checks response time
+→ Up to 6 total attempts possible in this scenario</code></pre>
+
+                        <h6>Response Time Failure → Status Code Failure</h6>
+                        <p>When an endpoint that was failing due to slow response times starts returning non-200 status codes, the system continues with the existing retry count:</p>
+                        <pre class="bg-dark text-light p-3 rounded"><code>Initial try: Gets 200 OK but takes 3s (attempt 1)
+Retry #1:    Gets 200 OK but takes 3s (attempt 2)
+Retry #2:    Gets 500 error (attempt 3)
+→ System counts this as the final attempt and fails
+→ Maximum of 3 total attempts in this scenario</code></pre>
+
+                        <div class="alert alert-info">
+                            <h4 class="h5">Important Notes</h4>
+                            <ul class="mb-0">
+                                <li><strong>Counter Reset:</strong> The retry counter resets ONLY when transitioning from status code failures to response time failures.</li>
+                                <li><strong>Maximum Attempts:</strong> While most scenarios have a maximum of 3 attempts, the status code to response time transition can result in up to 6 total attempts.</li>
+                                <li><strong>Failure Tracking:</strong> The system tracks both types of failures independently, with status code failures taking precedence in reporting to ensure critical service availability issues are highlighted first.</li>
+                                <li><strong>Retry Delay:</strong> There is a 60-second delay between each attempt to allow the system to stabilize.</li>
+                            </ul>
+                        </div>
+
+                        <h2 id="alerts">Alerts</h2>
+                        <p>
+                            The SLA Monitor sends alerts through Slack when critical failures are detected:
+                        </p>
+                        <div class="mb-4">
+                            <img src="../images/sla.png" alt="SLA Alert Example" class="img-fluid border rounded">
+                        </div>
+                        <ul>
+                            <li><strong>Alert Triggers:</strong>
+                                <ul>
+                                    <li>After all retry attempts are exhausted (3 failures)</li>
+                                    <li>For both Status Code and Response Time failures</li>
+                                </ul>
+                            </li>
+                            <li><strong>Alert Content:</strong>
+                                <ul>
+                                    <li>Environment (Staging/Production)</li>
+                                    <li>Region (US/EU)</li>
+                                    <li>Product name</li>
+                                    <li>Full endpoint URL</li>
+                                    <li>Failure type (Status Code/Response Time)</li>
+                                    <li>Number of attempts</li>
+                                    <li>Response time (if applicable)</li>
+                                    <li>Error message or response body</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h2 id="ssl-monitoring">SSL Certificate Monitoring</h2>
+                        <p>
+                            The SLA Monitor includes SSL certificate monitoring functionality to ensure the security and validity of SSL certificates across all domains:
+                        </p>
+
+                        <ul>
+                            <li><strong>Certificate Validation Process:</strong>
+                                <ul>
+                                    <li>Establishes a secure HTTPS connection to each domain on port 443</li>
+                                    <li>Verifies the certificate can be trusted (rejectUnauthorized: true)</li>
+                                    <li>Retrieves and validates the certificate data using getPeerCertificate()</li>
+                                    <li>Implements automatic retries (max 3 attempts with 30-second delays) on check failures</li>
+                                    <li>Sets a 10-second timeout for each certificate check</li>
+                                </ul>
+                            </li>
+                            <li><strong>Certificate Checks:</strong>
+                                <ul>
+                                    <li>Monitors SSL certificates for all configured domains in US and EU regions</li>
+                                    <li>Checks certificate validity and expiration dates</li>
+                                    <li>Configurable expiry threshold (default: 30 days)</li>
+                                    <li>Tracks certificate issuer details</li>
+                                </ul>
+                            </li>
+                            <li><strong>Validation States:</strong>
+                                <ul>
+                                    <li><strong>Valid:</strong> Certificate is trusted, properly configured, and not approaching expiration</li>
+                                    <li><strong>Warning:</strong> Certificate is valid but approaching expiration threshold</li>
+                                    <li><strong>Invalid:</strong> Certificate is untrusted, expired, or connection failed</li>
+                                </ul>
+                            </li>
+                            <li><strong>Alert System:</strong>
+                                <ul>
+                                    <li>Proactive alerts when certificates approach expiration threshold</li>
+                                    <li>One-time alerts to prevent notification spam (resets when certificate is renewed)</li>
+                                    <li>Automatic alert reset when certificate is renewed</li>
+                                    <li>Region-specific monitoring and alerting</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="alert alert-info">
+                            <h4 class="h5">Certificate Validation Details</h4>
+                            <p class="mb-0">
+                                The system considers a certificate valid when it successfully establishes a secure HTTPS connection, 
+                                verifies the certificate chain, and confirms the expiration date is beyond the configured threshold. 
+                                Certificates are checked with strict validation (rejectUnauthorized: true), ensuring they are properly 
+                                signed and trusted. Failed validations are retried up to 3 times before being marked as invalid.
+                            </p>
+                        </div>
+
+                        <h4>SSL Notification Example</h4>
+                        <p>
+                            When an SSL certificate is approaching expiration or has other issues, the system sends a Slack notification:
+                        </p>
+                        <div class="mb-4">
+                            <img src="../images/ssl.png" alt="SSL Notification Example" class="img-fluid border rounded">
+                        </div>
+
+                        <h2 id="compliance-tracking">Compliance Tracking</h2>
+                        <p>
+                            The SLA Monitor includes a comprehensive compliance tracking system that measures and displays the reliability of each endpoint:
+                        </p>
+                        <ul>
+                            <li><strong>Compliance Calculation:</strong>
+                                <ul>
+                                    <li>Calculated as: (Successful Checks / Total Checks) * 100</li>
+                                    <li>Each test attempt counts as a check</li>
+                                    <li>Success requires both 200 status code AND response time within SLA</li>
+                                    <li>Updated in real-time with each test run</li>
+                                </ul>
+                            </li>
+                            <li><strong>Daily Reset and History:</strong>
+                                <ul>
+                                    <li>Compliance percentage resets at midnight each day</li>
+                                    <li>Each day starts fresh with a new compliance calculation</li>
+                                    <li>Historical data is stored in daily log files but not used for current calculations</li>
+                                    <li>Example: If the monitor runs for 3 months, each day's compliance is calculated independently</li>
+                                </ul>
+                            </li>
+                            <li><strong>Compliance Display:</strong>
+                                <ul>
+                                    <li>Shown as a percentage in the UI for each endpoint</li>
+                                    <li>100% indicates perfect compliance</li>
+                                    <li>Lower percentages indicate reliability issues</li>
+                                    <li>Example: 66.67% means 2 out of 3 checks were successful</li>
+                                    <li>Note: The displayed percentage represents only the current day's performance</li>
+                                </ul>
+                            </li>
+                            <li><strong>Historical Data:</strong>
+                                <ul>
+                                    <li>Daily compliance data is stored in log files (<code>sla-{region}-YYYY-MM-DD.log</code>)</li>
+                                    <li>Each day gets its own log file per region</li>
+                                    <li>Long-term compliance analysis requires reviewing historical log files</li>
+                                    <li>Example: For a 3-month period, you would need to analyze ~90 daily log files per region</li>
+                                </ul>
+                            </li>
+                            <li><strong>Compliance Tracking Details:</strong>
+                                <ul>
+                                    <li>Tracked separately for each region (US/EU)</li>
+                                    <li>Reset daily at midnight</li>
+                                    <li>Includes retry attempts in the calculation</li>
+                                    <li>Stored in daily compliance report files</li>
+                                </ul>
+                            </li>
+                            <li><strong>Compliance Report Example:</strong>
+                                <pre class="bg-dark text-light p-3 rounded"><code>{
+  "timestamp": "2025-04-18T09:50:19.429Z",
+  "region": "US",
+  "overallCompliance": 76.19,
+  "endpoints": [
+    {
+      "endpoint": "@/mobile/init",
+      "compliance": 100,
+      "totalChecks": 2,
+      "successfulChecks": 2,
+      "averageResponseTime": 664.37,
+      "minResponseTime": 0,
+      "maxResponseTime": 1328.74
+    }
+  ]
+}</code></pre>
+                            </li>
+                        </ul>
+
+                        <div class="alert alert-info">
+                            <h4 class="h5">Compliance Interpretation</h4>
+                            <p class="mb-0">
+                                Compliance percentage is a key metric for service reliability. A compliance rate below 100% indicates 
+                                that the endpoint has experienced failures, either due to non-200 status codes or response times 
+                                exceeding the SLA threshold. This helps identify problematic endpoints that may require investigation 
+                                or optimization.
+                            </p>
+                        </div>
+
+                        <h2 id="logging">Logging System</h2>
+                        <p>
+                            The SLA Monitor maintains detailed logs for both US and EU regions, providing a comprehensive audit trail for regulatory compliance and troubleshooting:
+                        </p>
+                        <ul>
+                            <li><strong>Log File Structure:</strong>
+                                <ul>
+                                    <li>Separate log files for each region (US/EU)</li>
+                                    <li>Daily log files with format: <code>sla-{region}-YYYY-MM-DD.log</code></li>
+                                    <li>Located in <code>src-sla/logs</code> directory</li>
+                                    <li>New log files are automatically created at midnight each day without requiring program restart</li>
+                                </ul>
+                            </li>
+                            <li><strong>Automatic Log Cleanup:</strong>
+                                <ul>
+                                    <li>Configurable retention period via <code>LOG_EXPIRY</code> environment variable (default: 30 days)</li>
+                                    <li>Runs at the start of each monitoring cycle before SSL checks</li>
+                                    <li>Automatically removes log folders older than the specified retention period</li>
+                                    <li>Provides console output showing deleted folders and their age</li>
+                                    <li>Example cleanup output:
+                                        <pre class="bg-dark text-light p-3 rounded"><code>==================================================
+Starting log cleanup process...
+Log expiry period: 30 days
+Deleted log folder: 2024-01-15 (45 days old)
+Log cleanup completed. 1 folders deleted.
+==================================================</code></pre>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><strong>Slack Notifications:</strong>
+                                <ul>
+                                    <li>Configurable via SLACK_WEBHOOK_URL environment variable</li>
+                                    <li>Group mentions configurable via SLACK_SUBTEAM_ID environment variable</li>
+                                    <li>When SLACK_SUBTEAM_ID is set (e.g., "S08MPE8ATFU"), notifications will mention the specified group</li>
+                                    <li>Leave SLACK_SUBTEAM_ID empty to disable group mentions</li>
+                                    <li>Notifications include detailed failure information and environment context</li>
+                                </ul>
+                            </li>
+                            <li><strong>Log Entry Content:</strong>
+                                <ul>
+                                    <li>Timestamp of each check</li>
+                                    <li>Endpoint details (path, product)</li>
+                                    <li>Response status code</li>
+                                    <li>Response time in milliseconds</li>
+                                    <li>Success/failure status</li>
+                                    <li>SLA compliance status</li>
+                                </ul>
+                            </li>
+                            <li><strong>Log Entry Example:</strong>
+                                <pre class="bg-dark text-light p-3 rounded"><code>{
+  "timestamp": "2024-01-20T10:15:30.123Z",
+  "endpoint": "@/mobile/init",
+  "product": "GoEyes",
+  "status": 200,
+  "success": false,
+  "responseTime": 2856.42,
+  "isWithinSLA": false
+}</code></pre>
+                            </li>
+                            <li><strong>Regulatory Compliance:</strong>
+                                <ul>
+                                    <li>Logs provide proof of service level monitoring</li>
+                                    <li>Each log entry is timestamped and contains full request/response details</li>
+                                    <li>Historical data can be used for SLA compliance reporting</li>
+                                    <li>Logs can be used to track performance trends over time</li>
+                                </ul>
+                            </li>
+                            <li><strong>Log Management:</strong>
+                                <ul>
+                                    <li>Logs are created daily for each region</li>
+                                    <li>Each log entry is separated by 80 dashes for readability</li>
+                                    <li>Logs are written asynchronously to prevent blocking</li>
+                                    <li>Logging can be enabled/disabled via ENABLE_SLA_LOGS environment variable</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="alert alert-info">
+                            <h4 class="h5">Regulatory Note</h4>
+                            <p class="mb-0">
+                                The logging system is designed to meet regulatory requirements by providing detailed, 
+                                timestamped records of all endpoint checks. These logs serve as official documentation 
+                                of service level monitoring and can be used for compliance audits and performance analysis.
+                            </p>
+                        </div>
+
+                        <h2 id="secrets-management">Secrets Management</h2>
+                        <div class="alert alert-warning">
+                            <h4 class="h5">Security Note</h4>
+                            <p class="mb-0">
+                                All sensitive information such as URLs, API keys, and headers are managed securely through environment variables 
+                                and are never stored in the codebase.
+                            </p>
+                        </div>
+                        <p>
+                            The SLA Monitor implements secure secrets management following these principles:
+                        </p>
+                        <ul>
+                            <li><strong>Environment Variables:</strong>
+                                <ul>
+                                    <li>All sensitive configuration is defined in <code>start.ps1</code> (not included in the repository)</li>
+                                    <li>Includes API keys, base URLs, and authentication headers</li>
+                                    <li>Separate configurations for different environments (staging, production)</li>
+                                </ul>
+                            </li>
+                            <li><strong>CI/CD Integration:</strong>
+                                <ul>
+                                    <li>Ready for integration with CI/CD pipelines</li>
+                                    <li>Compatible with AWS Secrets Manager for cloud deployments</li>
+                                    <li>Supports secure secrets injection during deployment</li>
+                                </ul>
+                            </li>
+                            <li><strong>Security Best Practices:</strong>
+                                <ul>
+                                    <li>No hardcoded secrets in the codebase</li>
+                                    <li>Secrets are masked in logs and console output</li>
+                                    <li>Environment-specific configuration files are excluded from version control</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="alert alert-info">
+                            <h4 class="h5">AWS Integration</h4>
+                            <p class="mb-0">
+                                For AWS deployments, secrets can be managed through AWS Secrets Manager, allowing secure rotation 
+                                and access control of sensitive information without modifying the application code.
+                            </p>
+                        </div>
+
+                        <h2 id="memory-management">Memory Management</h2>
+                        <p>
+                            The SLA Monitor includes memory management features to ensure stable long-term operation:
+                        </p>
+                        <ul>
+                            <li><strong>Status Storage:</strong>
+                                <ul>
+                                    <li>Uses Map data structure for each region (US/EU)</li>
+                                    <li>Each endpoint has only one status entry at a time</li>
+                                    <li>Old statuses are overwritten, not accumulated</li>
+                                </ul>
+                            </li>
+                            <li><strong>Error Message Management:</strong>
+                                <ul>
+                                    <li>Long error messages are truncated to 1000 characters</li>
+                                    <li>Object errors are JSON stringified before truncation</li>
+                                    <li>Prevents memory bloat from large error responses</li>
+                                </ul>
+                            </li>
+                            <li><strong>Memory Usage:</strong>
+                                <ul>
+                                    <li>Fixed memory footprint per endpoint</li>
+                                    <li>Memory usage is stable regardless of runtime duration</li>
+                                    <li>No historical data accumulation in memory</li>
+                                </ul>
+                            </li>
+                            <li><strong>Data Persistence:</strong>
+                                <ul>
+                                    <li>Status data persists only during server runtime</li>
+                                    <li>Historical data available in Slack notifications and log files</li>
+                                    <li>Fresh start on server restart</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="alert alert-info mt-3">
+                            <h4 class="h5">Note</h4>
+                            <p class="mb-0">
+                                The SLA Monitor maintains status information in memory for the duration of the server session. 
+                                Upon server restart, the monitoring history starts fresh. For historical data, refer to Slack 
+                                notifications and log files in <code>src-sla/logs</code>.
+                            </p>
+                        </div>
+
+                        <h2 id="api-endpoints">API Documentation</h2>
+                        <p>
+                            The SLA Monitor exposes several API endpoints for status checking and monitoring:
+                        </p>
+                        <ul>
+                            <li><strong>Status Endpoints:</strong>
+                                <ul>
+                                    <li><code>GET /status</code> - Get general status including version, iteration, endpoints configuration, and SSL status</li>
+                                    <li><code>GET /api/status</code> - Get current status of all monitored endpoints and SSL certificates</li>
+                                </ul>
+                            </li>
+                            <li><strong>Response Format Example:</strong>
+                                <pre class="bg-dark text-light p-3 rounded"><code>{
+  "status": "success",
+  "endpoints": {
+    "US": {
+      "@/mobile/init": {
+        "status": {
+          "success": true,
+          "attempts": 1,
+          "error": null,
+          "responseTime": 245
+        },
+        "lastChecked": "2024-03-20T10:15:30Z",
+        "compliance": 100
+      }
+      // ... other endpoints
+    },
+    "EU": {
+      // ... EU endpoints
+    }
+  },
+  "ssl": {
+    "certificates": {
+      "US": {
+        "api.us.6over6-health.com": {
+          "valid": true,
+          "daysUntilExpiry": 45,
+          "expiryDate": "2024-05-04T12:00:00Z",
+          "lastChecked": "2024-03-20T10:15:30Z"
+        }
+      },
+      "EU": {
+        // ... EU certificates
+      }
+    },
+    "lastUpdate": "2024-03-20T10:15:30Z",
+    "threshold": 30
+  },
+  "lastUpdate": "2024-03-20T10:15:30Z",
+  "currentRun": {
+    "inProgress": false,
+    "startTime": null,
+    "endTime": null,
+    "region": null
+  }
+}</code></pre>
+                            </li>
+                            <li><strong>Additional Endpoints:</strong>
+                                <ul>
+                                    <li><code>POST /run</code> - Trigger an immediate SLA test run</li>
+                                    <li><code>GET /</code> - HTML status page showing the monitoring dashboard</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h2 id="sla-directory-structure">Directory Structure</h2>
+                        <p>
+                            The SLA Monitor codebase is organized in the following structure:
+                        </p>
+                        <pre class="bg-dark text-light p-3 rounded"><code>src-sla/
+├── config/
+│   └── endpoints.js                       # Endpoint configurations
+├── utils/
+│   ├── endpoint-utils.js                  # Endpoint utility functions
+│   ├── ssl-checker.js                     # SSL certificate checking functionality
+│   ├── ssl-status-tracker.js              # SSL status tracking
+│   ├── status-tracker.js                  # Endpoint status tracking
+│   ├── response-time-tracker.js           # Response time tracking
+│   └── sla-compliance.js                  # SLA compliance calculations
+├── public/
+│   ├── index.html                         # Main dashboard
+│   ├── sla-monitor.js                     # Frontend monitoring script
+│   └── styles/                            # CSS stylesheets
+├── logs/
+│   ├── sla-US-YYYY-MM-DD.log              # US region logs
+│   ├── sla-EU-YYYY-MM-DD.log              # EU region logs
+│   └── sla-compliance-US-YYYY-MM-DD.json  # Daily compliance reports
+│   └── sla-compliance-EU-YYYY-MM-DD.json  # Daily compliance reports
+├── slack.js                               # Slack notification handler
+└── sla.js                                 # Main SLA monitor application</code></pre>
+
+                        <div class="alert alert-info">
+                            <h4 class="h5">Note</h4>
+                            <p class="mb-0">
+                                The directory structure follows a modular approach, separating concerns into distinct components 
+                                for better maintainability and scalability.
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Template Loader -->
+    <script src="../scripts/template-loader.js"></script>
+    <!-- Version Fetcher -->
+    <script src="../scripts/version-fetcher.js"></script>
+    <!-- Sidebar Loader -->
+    <script>
+        document.addEventListener('DOMContentLoaded', async () => {
+            // Load sidebar
+            const sidebarResponse = await fetch('sidebar.html');
+            const sidebarHtml = await sidebarResponse.text();
+            document.getElementById('sidebar-placeholder').innerHTML = sidebarHtml;
+            
+            // Initialize Bootstrap components
+            const tooltipTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="tooltip"]'));
+            tooltipTriggerList.map(function (tooltipTriggerEl) {
+                return new bootstrap.Tooltip(tooltipTriggerEl);
+            });
+
+            // Handle sidebar section expansion
+            function handleSidebarExpansion() {
+                const currentPath = window.location.pathname;
+                const currentHash = window.location.hash;
+                
+                // Only expand SLA section if we're actually on the SLA page
+                const slaSection = document.getElementById('slaSection');
+                if (currentPath.includes('sla.html')) {
+                    slaSection.classList.add('show');
+                    slaSection.previousElementSibling.setAttribute('aria-expanded', 'true');
+                } else {
+                    slaSection.classList.remove('show');
+                    slaSection.previousElementSibling.setAttribute('aria-expanded', 'false');
+                }
+
+                // Handle other sections similarly
+                const sections = document.querySelectorAll('.collapse');
+                sections.forEach(section => {
+                    if (section.id !== 'slaSection') {
+                        const links = section.querySelectorAll('.section-link');
+                        let shouldExpand = false;
+                        links.forEach(link => {
+                            if (link.getAttribute('href') === currentPath + currentHash) {
+                                shouldExpand = true;
+                            }
+                        });
+                        if (shouldExpand) {
+                            section.classList.add('show');
+                            section.previousElementSibling.setAttribute('aria-expanded', 'true');
+                        }
+                    }
+                });
+            }
+
+            // Initial handling
+            handleSidebarExpansion();
+
+            // Handle hash changes
+            window.addEventListener('hashchange', handleSidebarExpansion);
+        });
+    </script>
+</body>
+</html> 

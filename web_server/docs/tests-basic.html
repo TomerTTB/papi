@@ -1,0 +1,222 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tests - API Testing Platform</title>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../styles/common.css" rel="stylesheet">
+    <link href="styles/docs.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb" class="mt-3 mb-4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/docs" class="text-decoration-none">Documentation</a></li>
+                    <li class="breadcrumb-item active">Tests</li>
+                </ol>
+            </nav>
+
+            <div class="row">
+                <!-- Sidebar Navigation -->
+                <div id="sidebar-placeholder"></div>
+
+                <!-- Documentation Content -->
+                <div class="col-md-9">
+                    <div class="wiki-content">
+                        <h1>Basic Test Suite Documentation</h1>
+                        
+                        <h2 id="basic-tests">Basic Tests (basic.spec.js)</h2>
+                        <div class="alert alert-info">
+                            <h4 class="h5">Summary</h4>
+                            <p>
+                                The basic.spec.js file implements fundamental API endpoint testing, ensuring core functionality 
+                                and reliability of the API endpoints. It performs essential checks including response status, 
+                                performance, method validation, and security protocols. The test suite is designed to run 
+                                against all configured endpoints automatically, making it a comprehensive first line of defense 
+                                for API quality assurance.
+                            </p>
+                        </div>
+
+                        <h3>Test Cases Overview</h3>
+                        
+                        <h4>1. Status Code Validation</h4>
+                        <p>
+                            <strong>Purpose:</strong> Verifies that each endpoint returns a successful HTTP 200 status code for valid requests.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>Response is successful (ok() returns true)</li>
+                                <li>Status code is exactly 200</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>Response status code: 200</li>
+                                <li>Response.ok(): true</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Status code 200 ${endpoint.path}`, async ({ request }) => {
+    const headers = {
+        ...commonHeaders,
+        ...endpoint.config.requiredHeaders
+    };
+    const response = await executeRequest(test, request, endpoint, headers);
+    expect(response.ok()).toBeTruthy();
+    expect(response.status()).toBe(200);
+});</pre>
+
+                        <h4>2. Response Time Testing</h4>
+                        <p>
+                            <strong>Purpose:</strong> Ensures that API responses are delivered within acceptable time limits.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>Measures response time for each request</li>
+                                <li>Verifies response time is under 3.5 seconds</li>
+                                <li>Helps identify performance bottlenecks</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>Response time: Less than 3500ms (3.5 seconds)</li>
+                                <li>Request completes successfully</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Response Time Within Limit ${endpoint.path}`, async ({ request }) => {
+    const headers = {
+        ...commonHeaders,
+        ...endpoint.config.requiredHeaders
+    };
+    const startTime = Date.now();
+    const response = await executeRequest(test, request, endpoint, headers);
+    const duration = Date.now() - startTime;
+    expect(duration).toBeLessThan(3500);
+});</pre>
+
+                        <h4>3. Invalid Method Testing</h4>
+                        <p>
+                            <strong>Purpose:</strong> Tests endpoint behavior when called with incorrect HTTP methods.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>Attempts to call GET endpoints with POST and vice versa</li>
+                                <li>Verifies appropriate error response (500)</li>
+                                <li>Only runs for endpoints that support GET or POST methods</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>Response status code: 500</li>
+                                <li>Test is skipped for non-GET/POST endpoints</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Invalid Method ${endpoint.path}`, async ({ request }) => {
+    if (!['GET', 'POST', 'PUT', 'DELETE'].includes(endpoint.method)) {
+        test.skip();
+    }
+    const invalidEndpoint = {
+        ...endpoint,
+        method: endpoint.method === 'GET' ? 'POST' : 'GET',
+        config: {
+            ...endpoint.config,
+            requiredHeaders: commonHeaders
+        }
+    };
+    const response = await executeRequest(test, request, invalidEndpoint, commonHeaders);
+    expect(response.status()).toBe(500);
+});</pre>
+
+                        <h4>4. HTTP Connection Refusal</h4>
+                        <p>
+                            <strong>Purpose:</strong> Tests that the server refuses HTTP connections when HTTPS is required.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>Attempts to connect via HTTP to HTTPS endpoints</li>
+                                <li>Verifies connection is refused with ECONNREFUSED error</li>
+                                <li>Only runs when BASE_URL uses HTTPS</li>
+                                <li>Restores original HTTPS connection after test</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>Connection refused with ECONNREFUSED error</li>
+                                <li>Test is skipped for non-HTTPS endpoints</li>
+                                <li>Original HTTPS connection restored after test</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Server Should Refuse HTTP Connection ${endpoint.path}`, async ({ request }) => {
+    if (!process.env.BASE_URL.startsWith('https://')) {
+        test.skip('Test only runs when BASE_URL uses HTTPS');
+    }
+    const httpEndpoint = {
+        ...endpoint,
+        config: {
+            ...endpoint.config,
+            requiredHeaders: commonHeaders
+        }
+    };
+    const originalBaseUrl = process.env.BASE_URL;
+    process.env.BASE_URL = process.env.BASE_URL.replace('https://', 'http://');
+    try {
+        await test.step('Testing HTTP Connection', async () => {
+            try {
+                await executeRequest(test, request, httpEndpoint, commonHeaders);
+                throw new Error('Expected connection to be refused');
+            } catch (error) {
+                if (!error.message.includes('ECONNREFUSED')) {
+                    throw error;
+                }
+                expect(error.message).toContain('ECONNREFUSED');
+            }
+        });
+    } finally {
+        process.env.BASE_URL = originalBaseUrl;
+    }
+});</pre>
+
+                        <h3>Test Configuration</h3>
+                        <p>
+                            The test suite uses several configuration elements:
+                        </p>
+                        <ul>
+                            <li><strong>Environment Variables:</strong>
+                                <ul>
+                                    <li>BASE_URL: API base URL (defaults to http://localhost:3000)</li>
+                                    <li>TEST_ENDPOINTS: JSON array of endpoint paths to test</li>
+                                </ul>
+                            </li>
+                            <li><strong>Common Headers:</strong> Shared headers applied to all requests</li>
+                            <li><strong>Endpoint Configuration:</strong> Individual endpoint settings including:
+                                <ul>
+                                    <li>Required headers</li>
+                                    <li>HTTP method (GET, POST, PUT, DELETE)</li>
+                                    <li>Endpoint path</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Template Loader -->
+    <script src="../scripts/template-loader.js"></script>
+    <!-- Version Fetcher -->
+    <script src="../scripts/version-fetcher.js"></script>
+    <!-- Sidebar Loader -->
+    <script src="scripts/sidebar-loader.js"></script>
+    <!-- Documentation Scripts -->
+    <script src="scripts/docs.js"></script>
+</body>
+</html> 

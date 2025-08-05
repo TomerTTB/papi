@@ -1,0 +1,21 @@
+{
+  "type": "object",
+  "required": ["status", "stage", "phi_sid", "version"],
+  "additionalProperties": false,
+  "properties": {
+    "status": {
+      "type": "string"
+    },
+    "stage": {
+      "type": "string"
+    },
+    "phi_sid": {
+      "type": "string",
+      "pattern": "^[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}$"
+    },
+    "version": {
+      "type": "string",
+      "pattern": "^\\d+\\.\\d+\\.\\d+$"
+    }
+  }
+} 

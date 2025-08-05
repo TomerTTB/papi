@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project Overview - API Testing Platform</title>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../styles/common.css" rel="stylesheet">
+    <link href="styles/docs.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb" class="mt-3 mb-4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/docs" class="text-decoration-none">Documentation</a></li>
+                    <li class="breadcrumb-item active">Project Overview</li>
+                </ol>
+            </nav>
+
+            <div class="row">
+                <!-- Sidebar Navigation -->
+                <div id="sidebar-placeholder"></div>
+
+                <!-- Documentation Content -->
+                <div class="col-md-9">
+                    <div class="wiki-content">
+                        <h2 id="project-overview">Project Overview</h2>
+                        <p>
+                            The API Testing Platform is a comprehensive testing solution designed to validate and verify API endpoints effectively. This platform combines automated testing capabilities with Zephyr Scale for efficient test case management, providing a robust framework for ensuring API reliability and functionality across different environments.
+                        </p>
+                        <p>
+                            PAPI implements a structured approach to API testing through four main components: Product Selection for easy navigation, Product Console for test execution, Environment Management for different testing contexts, and Zephyr Integration for test case documentation. These components work together to create a unified testing experience.
+                        </p>
+
+                        <h3 id="product-selection">Product Selection</h3>
+                        <p>
+                            The Product Selection page (index.html) serves as your starting point, offering:
+                        </p>
+                        <ul>
+                            <li><strong>Product Dashboard:</strong>
+                                <ul>
+                                    <li>Clean, two-column layout displaying available API products</li>
+                                    <li>Each product card provides:
+                                        <ul>
+                                            <li>Product name with direct access link</li>
+                                            <li>Base URL in monospace format</li>
+                                            <li>Total number of testable endpoints</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><strong>Quick Navigation:</strong>
+                                <ul>
+                                    <li>Direct links to product testing consoles</li>
+                                    <li>Easy access to product documentation</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h3 id="product-console">Product Console</h3>
+                        <p>
+                            The Product Console (product.html) is your testing command center, featuring:
+                        </p>
+                        <ul>
+                            <li><strong>Testing Matrix:</strong>
+                                <ul>
+                                    <li>Comprehensive endpoint selection panel</li>
+                                    <li>Test suite configuration options</li>
+                                    <li>Batch testing capabilities</li>
+                                </ul>
+                            </li>
+                            <li><strong>Real-time Monitoring:</strong>
+                                <ul>
+                                    <li>Live test execution status</li>
+                                    <li>Execution time tracking</li>
+                                    <li>Immediate test results display</li>
+                                </ul>
+                            </li>
+                            <li><strong>Test Management:</strong>
+                                <ul>
+                                    <li>Flexible endpoint selection with group actions</li>
+                                    <li>Customizable test suite combinations</li>
+                                    <li>Detailed test execution reports</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <h3 id="environments">Environments</h3>
+                        <p>
+                            The Environments page (environments.html) enables environment management:
+                        </p>
+                        <ul>
+                            <li><strong>Environment Control:</strong>
+                                <ul>
+                                    <li>Switch between development environments</li>
+                                    <li>View and verify active BASE_URL</li>
+                                    <li>Environment-specific configuration management</li>
+                                </ul>
+                            </li>
+                            <li><strong>Safety Features:</strong>
+                                <ul>
+                                    <li>Development-only environment restrictions</li>
+                                    <li>Confirmation dialogs for environment changes</li>
+                                    <li>Clear visibility of active environment</li>
+                                </ul>
+                            </li>
+                        </ul>
+
+                        <div class="alert alert-primary" role="alert">
+                            <strong>Note:</strong> When selecting a new environment, the change will be applied globally across the entire project. This means all subsequent API calls and tests will use the newly selected environment's BASE_URL. Always verify your environment selection before running tests to ensure you're working in the intended environment.
+                        </div>
+
+                        <h3 id="zephyr">Zephyr Integration</h3>
+                        <p>
+                            The Zephyr Integration (zephyr.html) provides test case management:
+                        </p>
+                        <ul>
+                            <li><strong>Test Case Management:</strong>
+                                <ul>
+                                    <li>Automated test case generation</li>
+                                    <li>CSV export in Zephyr-compatible format</li>
+                                    <li>Seamless integration with Zephyr Scale</li>
+                                </ul>
+                            </li>
+                            <li><strong>Documentation Features:</strong>
+                                <ul>
+                                    <li>Detailed test step documentation</li>
+                                    <li>Test data and expected results tracking</li>
+                                    <li>Standardized test case format for consistency</li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Template Loader -->
+    <script src="../scripts/template-loader.js"></script>
+    <!-- Version Fetcher -->
+    <script src="../scripts/version-fetcher.js"></script>
+    <!-- Sidebar Loader -->
+    <script src="scripts/sidebar-loader.js"></script>
+    <!-- Documentation Scripts -->
+    <script src="scripts/docs.js"></script>
+</body>
+</html> 

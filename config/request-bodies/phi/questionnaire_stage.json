@@ -1,0 +1,250 @@
+{
+    "questionnaire": {
+        "0": {
+            "answer": "BC",
+            "color": "Green",
+            "prompt": "What country are you in?"
+        },
+        "1": {
+            "answer": "22",
+            "color": "Red",
+            "prompt": "What is your age?"
+        },
+        "2": {
+            "answer": "true",
+            "color": "Green",
+            "prompt": "I agree to the GoEyes Terms of Service and Privacy Policy and to receive my eyeglasses prescription digitally."
+        },
+        "3": {
+            "answer": "OK, GOT IT",
+            "color": "Green",
+            "prompt": "This app will measure your prescription details, but does not check eye health."
+        },
+        "4": {
+            "answer": "NO",
+            "color": "Green",
+            "prompt": "Are you color blind?"
+        },
+        "5": {
+            "answer": "YES",
+            "color": "Green",
+            "prompt": "Can you identify all these colors?"
+        },
+        "6": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Prescription contact lenses"
+        },
+        "7": {
+            "answer": "true",
+            "color": "Green",
+            "prompt": "Prescription eyeglasses"
+        },
+        "8": {
+            "answer": "NO",
+            "color": "Green",
+            "prompt": "Do you wear progressive, multifocal, bifocal, or reading glasses?"
+        },
+        "9": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Soft contact lenses"
+        },
+        "10": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Hard/RGP contact lenses"
+        },
+        "11": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Ortho-K lenses"
+        },
+        "12": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "I am wearing my contacts right now"
+        },
+        "13": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Slept in my contacts"
+        },
+        "14": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Felt discomfort or other issues while wearing contacts"
+        },
+        "15": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Been advised by my doctor to switch contact lens brands for health reasons"
+        },
+        "16": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Worn glasses since I was 6 years old or younger"
+        },
+        "17": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Had LASIK or other laser refractive surgery"
+        },
+        "18": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Had other eye surgeries"
+        },
+        "19": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Had an eye infection"
+        },
+        "20": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Used medicated eye drops"
+        },
+        "21": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Lazy eye"
+        },
+        "22": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Crossed eyes"
+        },
+        "23": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Prismatic correction in my current eyeglass prescription"
+        },
+        "24": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Neurological condition or brain injury affecting my eye/vision"
+        },
+        "25": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Cataracts"
+        },
+        "26": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Glaucoma"
+        },
+        "27": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Freckle, birthmark, or mole inside the eye"
+        },
+        "28": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "A disease or trauma resulting in mild or severe loss of vision"
+        },
+        "29": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Corneal disease such as keratoconus or herpes"
+        },
+        "30": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Vessels in the cornea"
+        },
+        "31": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Retinal detachment"
+        },
+        "32": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Retinal disease that affects your vision"
+        },
+        "33": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Hereditary eye disease"
+        },
+        "34": {
+            "answer": "",
+            "color": "Orange",
+            "prompt": "Hereditary eye disease.Please explain"
+        },
+        "35": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Diabetic retinopathy"
+        },
+        "36": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Diabetes"
+        },
+        "37": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "My recent A1C is 7.0 or above"
+        },
+        "38": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "My recent A1C is less than 7.0"
+        },
+        "39": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "I don't know my recent A1C"
+        },
+        "40": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Other eye-related conditions"
+        },
+        "41": {
+            "answer": "",
+            "color": "Orange",
+            "prompt": "Other eye-related conditions.Please explain"
+        },
+        "42": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Double vision"
+        },
+        "43": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "New bright flashes or excessive floaters"
+        },
+        "44": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "A recent episode of vision loss"
+        },
+        "45": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Acute eye pain"
+        },
+        "46": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Sudden or intermittent blurred vision"
+        },
+        "47": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "High sensitivity to brightness"
+        },
+        "48": {
+            "answer": "false",
+            "color": "Green",
+            "prompt": "Headache, nausea, fatigue, or vertigo"
+        }
+    },
+    "device_id": "6over6-Automated-Testing"
+}

@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SLA Monitor Status - API Testing Platform</title>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="/shared/styles/common.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb" class="mt-3 mb-4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="http://localhost:8080" class="text-decoration-none">Home</a></li>
+                    <li class="breadcrumb-item active">SLA</li>
+                </ol>
+            </nav>
+
+            <!-- Status Header Card -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 class="h3 mb-3">SLA Monitor</h1>
+                            <p class="text-muted mb-0">SLA Monitor
+                                Monitor and track the status of our system in real time. This page performs automated API requests to our products to make sure the production environment is running properly.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Status Grid -->
+            <div id="status-grid" class="row g-4 mb-5">
+                <div class="col-12">
+                    <p>Loading...</p>
+                </div>
+            </div>
+
+            <!-- Current Run Information -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="d-flex justify-content-between align-items-center mb-4">
+                                <h2 class="h4 card-title mb-0">Current Run Information</h2>
+                                <button class="btn btn-primary" onclick="fetchStatus()">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-clockwise me-2" viewBox="0 0 16 16">
+                                        <path fill-rule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z"/>
+                                        <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z"/>
+                                    </svg>
+                                    Refresh Status
+                                </button>
+                            </div>
+                            <div id="run-info">
+                                <p>Loading run information...</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Template Loader -->
+    <script>
+        // Load templates
+        async function loadTemplate(templateName, targetElementId) {
+            try {
+                const response = await fetch(`/${templateName}.html`);
+                if (!response.ok) throw new Error(`HTTP error! status: ${response.status}`);
+                const html = await response.text();
+                document.getElementById(targetElementId).innerHTML = html;
+            } catch (error) {
+                console.error(`Error loading ${templateName} template:`, error);
+            }
+        }
+
+        // Load templates when the page loads
+        document.addEventListener('DOMContentLoaded', async () => {
+            await Promise.all([
+                loadTemplate('header', 'header-placeholder'),
+                loadTemplate('footer', 'footer-placeholder')
+            ]);
+        });
+    </script>
+    <!-- Version Fetcher -->
+    <script src="/sla-version-fetcher.js"></script>
+    <!-- SLA Monitor Script -->
+    <script src="/sla-monitor.js"></script>
+
+    <style>
+        .success { color: var(--bs-success); }
+        .failure { color: var(--bs-danger); }
+        .in-progress { color: var(--bs-warning); }
+    </style>
+</body>
+</html> 

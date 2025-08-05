@@ -1,0 +1,24 @@
+{
+  "flags": [],
+  "stations": [
+    {
+      "id": "mdba_cyl_low",
+      "value": 1333.3332456261985,
+      "upload": true,
+      "eye": "right"
+    },
+    {
+      "id": "cyl_final",
+      "value": 1000,
+      "upload": true,
+      "eye": "right"
+    }
+  ],
+  "event": "oor6",
+  "actions": [],
+  "mixpanelEvent": null,
+  "successMixpanelEvent": null,
+  "analyticsEvent": null,
+  "type": "ServerCalculationResponseAction",
+  "id": "go_eyes_low_myop.return_calculation.0.ServerCalculationResponseAction"
+}

@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Documentation - API Testing Platform</title>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../styles/common.css" rel="stylesheet">
+    <link href="styles/docs.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb" class="mt-3 mb-4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
+                    <li class="breadcrumb-item active">Documentation</li>
+                </ol>
+            </nav>
+
+            <div class="row">
+                <!-- Sidebar Navigation -->
+                <div id="sidebar-placeholder"></div>
+
+                <!-- Documentation Content -->
+                <div class="col-md-9">
+                    <div class="wiki-content">
+                        <h1>API Testing Platform Documentation</h1>
+                        <p class="lead">
+                            Welcome to the documentation for the API Testing Platform (PAPI). This comprehensive testing platform enables automated API testing, validation, and test case management, integrating smoothly into your workflow.
+                            PAPI is built on a Node.js server and leverages the Playwright engine to execute API tests efficiently. This combination ensures a powerful, scalable, and flexible testing environment for your API validation needs.
+                        </p>
+
+                        <h2 id="getting-started">Getting Started</h2>
+                        <p>This section will guide you through setting up and configuring PAPI in your environment.</p>
+                        
+                        <h3 id="prerequisites">Prerequisites</h3>
+                        <ul>
+                            <li>Node.js (v14 or higher)</li>
+                            <li>npm (v6 or higher)</li>
+                            <li>PowerShell 5.0 or higher (for Windows)</li>
+                            <li>Modern web browser (Chrome, Firefox, or Edge)</li>
+                            <li>Git (for version control and installation)</li>
+                        </ul>
+
+                        <h3 id="installation">Installation</h3>
+                        <p>Follow these steps to set up PAPI in your environment:</p>
+                        <ol>
+                            <li>Clone the repository:
+                                <pre class="bg-dark text-light p-3">git clone git@github.com:6over6/glasseson-qa-tools.git</pre>
+                            </li>
+                            <li>Navigate to the project directory:
+                                <pre class="bg-dark text-light p-3">cd PAPI</pre>
+                            </li>
+                            <li>Install dependencies:
+                                <pre class="bg-dark text-light p-3">npm install</pre>
+                                This will install all required packages, including:
+                                <ul>
+                                    <li><code>@playwright/test</code> - For automated API testing and test runner</li>
+                                    <li><code>express</code> - For the web server and API endpoints</li>
+                                    <li><code>cors</code> - For handling Cross-Origin Resource Sharing</li>
+                                    <li><code>node-fetch</code> - For making HTTP requests</li>
+                                    <li><code>ajv</code> - For JSON Schema validation</li>
+                                    <li><code>winston</code> - For logging and debugging</li>
+                                    <li><code>dotenv</code> - For environment variable management</li>
+                                    <li><code>body-parser</code> - For parsing HTTP request bodies</li>
+                                    <li><code>fs-extra</code> - For enhanced file system operations</li>
+                                    <li><code>path</code> - For handling file and directory paths</li>
+                                </ul>
+                            </li>
+                            <li>Verify installation:
+                                <pre class="bg-dark text-light p-3">npm run verify</pre>
+                                This will check if all components are properly installed.
+                            </li>
+                        </ol>
+
+                        <h3 id="configuration">Configuration</h3>
+                        <p>The platform uses environment variables for configuration. These are set in the start.ps1 file:</p>
+                        <pre class="bg-dark text-light p-3"># Version Configuration
+$env:PAPI_VERSION = "x.x.x"               # Current version of PAPI
+
+# Server Configuration
+$env:PORT = "3000"                        # API server port
+$env:BASE_URL = "your-api-base-url"       # Base URL for API endpoints
+
+# Authentication Configuration
+$env:GLASSESON_CLIENT_ID = "your-client-id"
+$env:GLASSESON_PROFILE_NAME = "your-profile-name"
+$env:GLASSESON_NATIVE_APP_ID = "your-app-id"
+$env:GLASSESON_FLOW_ID = "your-flow-id"
+$env:GLASSESON_USER_ID = "your-user-id"
+$env:GLASSESON_SESSION_ID = "your-session-id"
+
+# Web Server Configuration
+$env:WEB_PORT = "8080"                    # Web interface port</pre>
+
+                        <h3 id="how-to-run">How to Run the Project</h3>
+                        <p>To start the API Testing Platform, follow these steps:</p>
+                        <ol>
+                            <li>Ensure all environment variables are correctly set in the <code>start.ps1</code> file.</li>
+                            <li>Open a terminal and navigate to the project directory:</li>
+                            <pre class="bg-dark text-light p-3">cd PAPI</pre>
+                            <li>Run the start script:</li>
+                            <pre class="bg-dark text-light p-3">./start.ps1</pre>
+                            <li>Access the web interface by opening a browser and navigating to:</li>
+                            <pre class="bg-dark text-light p-3">http://localhost:8080</pre>
+                        </ol>
+
+                        <h3 id="cli-support">CLI Support</h3>
+                        <p>PAPI provides comprehensive command-line interface support for running tests, generating reports, and managing test environments. Here are the available CLI commands:</p>
+
+                        <h4>Running Tests</h4>
+                        <pre class="bg-dark text-light p-3"># Run all tests
+npm test
+
+# Run tests with HTML report generation
+npm run test:report
+
+# Run specific test file
+npx playwright test tests/response-structure.spec.js
+
+# Run tests in specific directory
+npx playwright test tests/
+
+# Run tests with specific title
+npx playwright test -g "Response Body Should Not Be Null"
+
+# Run tests in headed mode (shows browser)
+npx playwright test --headed
+
+# Run tests in debug mode
+npx playwright test --debug</pre>
+
+                        <h4>Environment Configuration</h4>
+                        <p>You can configure the test environment using environment variables. All required variables must be set before running the tests:</p>
+                        
+                        <h5>Windows PowerShell</h5>
+                        <pre class="bg-dark text-light p-3"># Server Configuration
+$env:PORT = "3000"                        # API server port (default: 3000)
+$env:BASE_URL = "your-api-base-url"       # Base URL for API endpoints
+$env:WEB_PORT = "8080"                    # Web interface port (default: 8080)
+
+# Authentication Configuration
+$env:GLASSESON_CLIENT_ID = "your-client-id"
+$env:GLASSESON_PROFILE_NAME = "your-profile-name"
+$env:GLASSESON_NATIVE_APP_ID = "your-app-id"
+$env:GLASSESON_FLOW_ID = "your-flow-id"
+$env:GLASSESON_USER_ID = "your-user-id"
+$env:GLASSESON_SESSION_ID = "your-session-id"
+
+# Run the tests
+npm test</pre>
+
+                        <h5>Linux/MacOS</h5>
+                        <pre class="bg-dark text-light p-3"># Export all variables
+export PORT="3000"
+export BASE_URL="your-api-base-url"
+export WEB_PORT="8080"
+export GLASSESON_CLIENT_ID="your-client-id"
+export GLASSESON_PROFILE_NAME="your-profile-name"
+export GLASSESON_NATIVE_APP_ID="your-app-id"
+export GLASSESON_FLOW_ID="your-flow-id"
+export GLASSESON_USER_ID="your-user-id"
+export GLASSESON_SESSION_ID="your-session-id"
+
+# Run the tests
+npm test
+
+# Alternatively, set inline
+PORT="3000" \
+BASE_URL="your-api-base-url" \
+WEB_PORT="8080" \
+GLASSESON_CLIENT_ID="your-client-id" \
+GLASSESON_PROFILE_NAME="your-profile-name" \
+GLASSESON_NATIVE_APP_ID="your-app-id" \
+GLASSESON_FLOW_ID="your-flow-id" \
+GLASSESON_USER_ID="your-user-id" \
+GLASSESON_SESSION_ID="your-session-id" \
+npm test</pre>
+
+                        <div class="alert alert-warning mt-3">
+                            <h5>⚠️ Important Notes</h5>
+                            <ul class="mb-0">
+                                <li>All authentication variables (GLASSESON_*) are required for the tests to run successfully</li>
+                                <li>PORT and WEB_PORT have default values but can be customized if needed</li>
+                                <li>BASE_URL must be set to your API endpoint (e.g., "http://localhost:3000" for local development)</li>
+                                <li>For security reasons, never commit these values to version control</li>
+                            </ul>
+                        </div>
+
+                        <h4>Test Reports</h4>
+                        <p>Playwright generates detailed HTML reports for test runs:</p>
+                        <pre class="bg-dark text-light p-3"># Generate and show HTML report
+npm run test:report
+
+# Show last generated report
+npx playwright show-report
+
+# Generate report in specific directory
+npx playwright test --reporter=html,line --output reports/custom-report</pre>
+
+                        <h4>Test Filtering</h4>
+                        <p>You can filter tests using various options:</p>
+                        <pre class="bg-dark text-light p-3"># Run tests that match a pattern
+npx playwright test -g "schema validation"
+
+# Run specific test file
+npx playwright test response-structure.spec.js
+
+# Run tests with specific tag
+npx playwright test --grep @smoke
+
+# Skip tests matching pattern
+npx playwright test --grep-invert "slow"</pre>
+
+                        <h4>Debugging Options</h4>
+                        <p>Playwright provides several debugging features:</p>
+                        <pre class="bg-dark text-light p-3"># Run in debug mode
+npx playwright test --debug
+
+# Run in headed mode
+npx playwright test --headed
+
+# Run with step-by-step execution
+npx playwright test --debug-mode
+
+# Show browser console logs
+npx playwright test --browser-console</pre>
+
+                        <h4>Configuration Options</h4>
+                        <p>Additional configuration options can be specified:</p>
+                        <pre class="bg-dark text-light p-3"># Run with specific config file
+npx playwright test --config=custom-config.js
+
+# Run with specific timeout
+npx playwright test --timeout=30000
+
+# Run with specific workers
+npx playwright test --workers=4
+
+# Run in specific project
+npx playwright test --project=api-tests</pre>
+
+                        <div class="alert alert-info mt-4">
+                            <h5>💡 Pro Tip</h5>
+                            <p>
+                                For CI/CD environments, it's recommended to use the following command to ensure proper reporting and error handling:
+                                <code>npx playwright test --reporter=html,line --output test-results</code>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Template Loader -->
+    <script src="../scripts/template-loader.js"></script>
+    <!-- Version Fetcher -->
+    <script src="../scripts/version-fetcher.js"></script>
+    <!-- Sidebar Loader -->
+    <script src="scripts/sidebar-loader.js"></script>
+</body>
+</html> 

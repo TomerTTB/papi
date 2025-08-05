@@ -1,0 +1,11 @@
+{
+    "flags": [],
+    "stations": [],
+    "event": null,
+    "actions": [],
+    "mixpanelEvent": null,
+    "successMixpanelEvent": null,
+    "analyticsEvent": null,
+    "type": "ServerCalculationResponseAction",
+    "id": "go_va.return_calculation.0.ServerCalculationResponseAction"
+  }

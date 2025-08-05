@@ -1,0 +1,1385 @@
+{
+    "hostAppName": "SDKWrapper",
+    "phone_model": "iPhone14,2",
+    "configuration": {
+      "isRestEnabled": true,
+      "isShortDistanceEnabled": true,
+      "isSetupEnabled": true,
+      "maxBrightnessKey": 3.5,
+      "isCoverEyeEnabled": true,
+      "disableOnboarding": false,
+      "disableQuestionnaire": false,
+      "isLocalJSONEnabled": false,
+      "debugMode": "enabled",
+      "isJTrainingEnabled": true,
+      "minBrightnessKey": 0.04
+    },
+    "version": "6.0.3 (2600)",
+    "hostAppVersion": "6.0.4 (941)",
+  "eye": "right",
+          "stationsData": {
+              "left": {
+                  "stations": [
+                      {
+                          "commands": [
+                              "one"
+                          ],
+                          "logMar": 0,
+                          "distance": 600.21497,
+                          "correctAnswers": [
+                              "next",
+                              "three",
+                              "zero",
+                              "two",
+                              "one",
+                              "four"
+                          ],
+                          "id": "4_big_shapes",
+                          "answerTimeInterval": 0.10349798202514648,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "one"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [
+                              "yes"
+                          ],
+                          "logMar": 0,
+                          "distance": 600.21497,
+                          "correctAnswers": [
+                              "yes",
+                              "no"
+                          ],
+                          "id": "small_shapes_60cm_a",
+                          "answerTimeInterval": 0.10311996936798096,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "yes"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [
+                              "zero"
+                          ],
+                          "logMar": 0,
+                          "distance": 600.21497,
+                          "correctAnswers": [
+                              "three"
+                          ],
+                          "id": "small_shapes_60cm_b",
+                          "answerTimeInterval": 0.10360991954803467,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "0"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [
+                              "yes"
+                          ],
+                          "logMar": 0,
+                          "distance": 444.44446,
+                          "correctAnswers": [
+                              "one"
+                          ],
+                          "id": "shapes_small",
+                          "answerTimeInterval": 0.36838197708129883,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "yes"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0,
+                          "commands": [
+                              "three"
+                          ],
+                          "distance": 444.44446,
+                          "correctAnswers": [
+                              "three"
+                          ],
+                          "id": "shapes_small",
+                          "answerTimeInterval": 0.0995720624923706,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "three"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [],
+                          "logMar": 0,
+                          "distance": 444.44446,
+                          "id": "shapes_final",
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0,
+                          "commands": [],
+                          "distance": 444.44446,
+                          "id": "approximate_sph",
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [
+                              "yes"
+                          ],
+                          "logMar": 0,
+                          "distance": 444.44446,
+                          "id": "snr_approximate_sph",
+                          "correctAnswers": [
+                              "nothing",
+                              "no",
+                              "yes",
+                              "all"
+                          ],
+                          "answerTimeInterval": 0.1036149263381958,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "yes"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0,
+                          "commands": [
+                              "red"
+                          ],
+                          "distance": 444.44446,
+                          "id": "snr_approximate_sph",
+                          "correctAnswers": [
+                              "white",
+                              "red",
+                              "next",
+                              "blue",
+                              "yellow"
+                          ],
+                          "answerTimeInterval": 0.09783899784088135,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "red"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0,
+                          "commands": [
+                              "red"
+                          ],
+                          "distance": 444.44446,
+                          "id": "snr_approximate_sph",
+                          "correctAnswers": [
+                              "green",
+                              "blue",
+                              "next",
+                              "white",
+                              "red",
+                              "yellow"
+                          ],
+                          "answerTimeInterval": 0.0988759994506836,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "red"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [
+                              "no"
+                          ],
+                          "logMar": 0.85,
+                          "distance": 444.44446,
+                          "correctAnswers": [
+                              "yes",
+                              "none",
+                              "no"
+                          ],
+                          "id": "snr_approximate_sph",
+                          "answerTimeInterval": 0.10168707370758057,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "no"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0.85,
+                          "commands": [],
+                          "distance": 421.05264,
+                          "id": "move_to_approximate_sph",
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0.85,
+                          "commands": [
+                              "yes"
+                          ],
+                          "distance": 421.05264,
+                          "correctAnswers": [
+                              "yes",
+                              "next",
+                              "no"
+                          ],
+                          "id": "1_training_2_line",
+                          "answerTimeInterval": 0.09915602207183838,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "yes"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [
+                              "no"
+                          ],
+                          "logMar": 0.85,
+                          "distance": 421.05264,
+                          "id": "2_training_0_line",
+                          "correctAnswers": [
+                              "no",
+                              "next",
+                              "yes"
+                          ],
+                          "answerTimeInterval": 0.09939396381378174,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "no"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [
+                              "yes"
+                          ],
+                          "logMar": 0.85,
+                          "distance": 421.05264,
+                          "correctAnswers": [
+                              "no",
+                              "next",
+                              "yes"
+                          ],
+                          "id": "3_training_slightly_defocused_line",
+                          "answerTimeInterval": 0.0993800163269043,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "yes"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0.85,
+                          "commands": [
+                              "no"
+                          ],
+                          "distance": 421.05264,
+                          "correctAnswers": [
+                              "yes",
+                              "no",
+                              "next"
+                          ],
+                          "id": "4_training_1_line_a",
+                          "answerTimeInterval": 0.10046303272247314,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "no"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0.85,
+                          "commands": [
+                              "no"
+                          ],
+                          "distance": 421.05264,
+                          "id": "5_training_1_line_b",
+                          "correctAnswers": [
+                              "yes",
+                              "no",
+                              "next"
+                          ],
+                          "answerTimeInterval": 0.10049498081207275,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "no"
+                          ],
+                          "firstImageName": ""
+                      }
+          ],
+          "globalFlags": {
+                      "snrSharpLine": "75.0",
+                      "snr_colors_count": "1"
+          },
+          "stationsJourney": [
+                      "4_big_shapes",
+                      "small_shapes_60cm_a",
+                      "small_shapes_60cm_b",
+                      "shapes_small",
+                      "shapes_small",
+                      "snr_approximate_sph",
+                      "snr_approximate_sph",
+                      "snr_approximate_sph",
+                      "snr_approximate_sph",
+                      "move_to_approximate_sph",
+                      "1_training_2_line",
+                      "2_training_0_line",
+                      "3_training_slightly_defocused_line",
+                      "4_training_1_line_a",
+                      "5_training_1_line_b"
+                  ],
+          "sharpLineAxis": 75,
+          "currentStationData": {
+              "commands": [
+                          "no"
+                      ],
+                      "logMar": 0.85,
+                      "distance": 421.05264,
+                      "correctAnswers": [
+                          "yes",
+                          "no",
+                          "next"
+                      ],
+                      "id": "5_training_1_line_b",
+                      "answerTimeInterval": 0.10049498081207275,
+                      "coverEyeType": "",
+                      "lastImageName": "",
+                      "inputStream": [
+                          "no"
+                      ],
+                      "firstImageName": ""
+          }
+      },
+      "right": {
+                  "currentStationData": {
+                      "logMar": 0.8,
+                      "commands": [
+                          "no"
+                      ],
+                      "distance": 347.82614,
+                      "correctAnswers": [
+                          "next",
+                          "no",
+                          "yes"
+                      ],
+                      "id": "high_cyl_verifier_mdba_near",
+                      "answerTimeInterval": 0.10346102714538574,
+                      "coverEyeType": "",
+                      "lastImageName": "",
+                      "inputStream": [
+                          "no"
+                      ],
+                      "firstImageName": ""
+          },
+          "stationsJourney": [
+                      "4_big_shapes",
+                      "small_shapes_60cm_a",
+                      "4_big_shapes",
+                      "small_shapes_60cm_a",
+                      "small_shapes_60cm_b",
+                      "shapes_small",
+                      "shapes_small",
+                      "check_light",
+                      "check_face",
+                      "4_big_shapes",
+                      "small_shapes_60cm_a",
+                      "small_shapes_60cm_b",
+                      "shapes_small",
+                      "snr_approximate_sph",
+                      "snr_approximate_sph",
+                      "snr_approximate_sph",
+                      "snr_approximate_sph",
+                      "move_to_approximate_sph",
+                      "rough_va_0.4",
+                      "rough_va_0.3_a",
+                      "movement",
+                      "mono_blur_back_035_sph_first",
+                      "movement",
+                      "mono_blur_back_035_sph_first",
+                      "movement",
+                      "mono_blur_back_035_sph_first",
+                      "mono_blur_back_075_cyl",
+                      "mono_blur_back_075_cyl",
+                      "mono_blur_back_035_sph_second",
+                      "movement",
+                      "va_at_sphere",
+                      "cyl_verifier_0.65",
+                      "move_to_sph_j",
+                      "mid_high_cyl_verifier_sph_0.3_up",
+                      "mid_high_cyl_verifier_cyl_up",
+                      "mid_high_cyl_verifier_cyl_up",
+                      "mid_high_cyl_verifier_cyl_up",
+                      "mid_high_cyl_verifier_cyl_up",
+                      "j_mid",
+                      "j_cyl",
+                      "s_up_sphere",
+                      "high_cyl_verifier_cyl_down",
+                      "high_cyl_verifier_cyl_up",
+                      "high_cyl_verifier_cyl_up",
+                      "high_cyl_verifier_cyl_up",
+                      "movement",
+                      "high_cyl_verifier_mdba_near"
+                  ],
+          "globalFlags": {
+                      "cyl_estimator": "-1",
+                      "snrSharpLine": "75.0",
+                      "cyl_up_size": "0.8",
+                      "blue_hi_res_verified": "true",
+                      "cyl_verifier_base_logmar": "0.25",
+                      "cyl_down_answer": "0",
+                      "mono_bb_base_logmar": "0.35",
+                      "sph_last_size": "0.3",
+                      "cyl_down_size": "0.75",
+                      "comfortableAlertFlag": "1",
+                      "mono_bb_0.35_0.12_is_yes": "false",
+                      "c_last_logMar_mdba": "0.8",
+                      "snr_colors_count": "1",
+                      "cyl_up_answer": "1",
+                      "is_va_at_sph_yes": "true",
+                      "scb_correct": "false",
+                      "va_at_sph_logmar": "0.25",
+                      "sph_up_size": "0.3"
+          },
+          "stations": [
+                      {
+                          "commands": [
+                              "one"
+                          ],
+                          "logMar": 0,
+                          "distance": 600.21497,
+                          "correctAnswers": [
+                              "four",
+                              "three",
+                              "two",
+                              "zero",
+                              "next",
+                              "one"
+                          ],
+                          "id": "4_big_shapes",
+                          "answerTimeInterval": 0.10010290145874023,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "one"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [
+                              "no"
+                          ],
+                          "logMar": 0,
+                          "distance": 600.21497,
+                          "correctAnswers": [
+                              "yes",
+                              "no"
+                          ],
+                          "id": "small_shapes_60cm_a",
+                          "answerTimeInterval": 0.1027529239654541,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "no"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0,
+                          "commands": [
+                              "one"
+                          ],
+                          "distance": 600.21497,
+                          "id": "4_big_shapes",
+                          "correctAnswers": [
+                              "three",
+                              "one",
+                              "zero",
+                              "two",
+                              "next",
+                              "four"
+                          ],
+                          "answerTimeInterval": 0.10064399242401123,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "one"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0,
+                          "commands": [
+                              "yes"
+                          ],
+                          "distance": 600.21497,
+                          "id": "small_shapes_60cm_a",
+                          "correctAnswers": [
+                              "yes",
+                              "no"
+                          ],
+                          "answerTimeInterval": 0.09833097457885742,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "yes"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [
+                              "zero"
+                          ],
+                          "logMar": 0,
+                          "distance": 600.21497,
+                          "id": "small_shapes_60cm_b",
+                          "correctAnswers": [
+                              "one"
+                          ],
+                          "answerTimeInterval": 0.09889793395996094,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "0"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0,
+                          "commands": [
+                              "yes"
+                          ],
+                          "distance": 285.7143,
+                          "correctAnswers": [
+                              "two"
+                          ],
+                          "id": "shapes_small",
+                          "answerTimeInterval": 0.09931004047393799,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "yes"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [
+                              "three"
+                          ],
+                          "logMar": 0,
+                          "distance": 285.7143,
+                          "correctAnswers": [
+                              "three"
+                          ],
+                          "id": "shapes_small",
+                          "answerTimeInterval": 0.10331094264984131,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "three"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0,
+                          "commands": [],
+                          "distance": 285.7143,
+                          "id": "shapes_final",
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [],
+                          "logMar": 0,
+                          "distance": 285.7143,
+                          "id": "approximate_sph",
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [],
+                          "logMar": 0,
+                          "distance": 285.7143,
+                          "id": "check_light",
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [],
+                          "logMar": 0,
+                          "distance": 285.7143,
+                          "id": "check_face",
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [
+                              "one"
+                          ],
+                          "logMar": 0,
+                          "distance": 600.21497,
+                          "correctAnswers": [
+                              "four",
+                              "two",
+                              "zero",
+                              "three",
+                              "next",
+                              "one"
+                          ],
+                          "id": "4_big_shapes",
+                          "answerTimeInterval": 0.10113394260406494,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "one"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [
+                              "yes"
+                          ],
+                          "logMar": 0,
+                          "distance": 600.21497,
+                          "id": "small_shapes_60cm_a",
+                          "correctAnswers": [
+                              "no",
+                              "yes"
+                          ],
+                          "answerTimeInterval": 0.09868800640106201,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "yes"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [
+                              "zero"
+                          ],
+                          "logMar": 0,
+                          "distance": 600.21497,
+                          "correctAnswers": [
+                              "two"
+                          ],
+                          "id": "small_shapes_60cm_b",
+                          "answerTimeInterval": 0.09655702114105225,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "0"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0,
+                          "commands": [
+                              "three"
+                          ],
+                          "distance": 285.7143,
+                          "correctAnswers": [
+                              "three"
+                          ],
+                          "id": "shapes_small",
+                          "answerTimeInterval": 0.36661791801452637,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "three"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0,
+                          "commands": [],
+                          "distance": 285.7143,
+                          "id": "shapes_final",
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [],
+                          "logMar": 0,
+                          "distance": 285.7143,
+                          "id": "approximate_sph",
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [
+                              "yes"
+                          ],
+                          "logMar": 0,
+                          "distance": 285.7143,
+                          "id": "snr_approximate_sph",
+                          "correctAnswers": [
+                              "yes",
+                              "no",
+                              "nothing",
+                              "all"
+                          ],
+                          "answerTimeInterval": 0.10225510597229004,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "yes"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0,
+                          "commands": [
+                              "red"
+                          ],
+                          "distance": 285.7143,
+                          "correctAnswers": [
+                              "white",
+                              "next",
+                              "red",
+                              "blue",
+                              "yellow"
+                          ],
+                          "id": "snr_approximate_sph",
+                          "answerTimeInterval": 0.10081708431243896,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "red"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0,
+                          "commands": [
+                              "red"
+                          ],
+                          "distance": 285.7143,
+                          "id": "snr_approximate_sph",
+                          "correctAnswers": [
+                              "yellow",
+                              "white",
+                              "red",
+                              "next",
+                              "green",
+                              "blue"
+                          ],
+                          "answerTimeInterval": 0.10193407535552979,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "red"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [
+                              "none"
+                          ],
+                          "logMar": 0,
+                          "distance": 285.7143,
+                          "id": "snr_approximate_sph",
+                          "correctAnswers": [
+                              "no",
+                              "none",
+                              "yes"
+                          ],
+                          "answerTimeInterval": 0.10356199741363525,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "no"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0.85,
+                          "commands": [],
+                          "distance": 421.05264,
+                          "id": "move_to_approximate_sph",
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [
+                              "yes"
+                          ],
+                          "logMar": 0.4,
+                          "distance": 285.7143,
+                          "id": "rough_va_0.4",
+                          "correctAnswers": [
+                              "next",
+                              "yes",
+                              "no"
+                          ],
+                          "answerTimeInterval": 0.10021805763244629,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "yes"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [
+                              "yes"
+                          ],
+                          "logMar": 0.3,
+                          "distance": 285.7143,
+                          "id": "rough_va_0.3_a",
+                          "correctAnswers": [
+                              "next",
+                              "yes",
+                              "no"
+                          ],
+                          "answerTimeInterval": 0.10005307197570801,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "yes"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0,
+                          "commands": [],
+                          "distance": 285.7143,
+                          "id": "sphere_1",
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [],
+                          "logMar": 0.3,
+                          "distance": 285.7143,
+                          "id": "movement",
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0.35,
+                          "commands": [
+                              "yes"
+                          ],
+                          "distance": 333.33334,
+                          "correctAnswers": [
+                              "no",
+                              "yes",
+                              "next"
+                          ],
+                          "id": "mono_blur_back_035_sph_first",
+                          "answerTimeInterval": 0.10367298126220703,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "yes"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0,
+                          "commands": [],
+                          "distance": 333.33334,
+                          "id": "mono_sph_bb_yes",
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0.35,
+                          "commands": [],
+                          "distance": 333.33334,
+                          "id": "movement",
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [
+                              "yes"
+                          ],
+                          "logMar": 0.35,
+                          "distance": 400,
+                          "id": "mono_blur_back_035_sph_first",
+                          "correctAnswers": [
+                              "next",
+                              "no",
+                              "yes"
+                          ],
+                          "answerTimeInterval": 0.10360503196716309,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "yes"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0,
+                          "commands": [],
+                          "distance": 400,
+                          "id": "mono_sph_bb_yes",
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [],
+                          "logMar": 0.35,
+                          "distance": 400,
+                          "id": "movement",
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0.35,
+                          "commands": [
+                              "no"
+                          ],
+                          "distance": 500,
+                          "id": "mono_blur_back_035_sph_first",
+                          "correctAnswers": [
+                              "yes",
+                              "no",
+                              "next"
+                          ],
+                          "answerTimeInterval": 0.09714400768280029,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "no"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0.75,
+                          "commands": [
+                              "no"
+                          ],
+                          "distance": 500,
+                          "correctAnswers": [
+                              "no",
+                              "yes",
+                              "next"
+                          ],
+                          "id": "mono_blur_back_075_cyl",
+                          "answerTimeInterval": 0.10088694095611572,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "no"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [
+                              "no"
+                          ],
+                          "logMar": 0.75,
+                          "distance": 500,
+                          "id": "mono_blur_back_075_cyl",
+                          "correctAnswers": [
+                              "no",
+                              "yes",
+                              "next"
+                          ],
+                          "answerTimeInterval": 0.09855997562408447,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "no"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [
+                              "no"
+                          ],
+                          "logMar": 0.35,
+                          "distance": 500,
+                          "id": "mono_blur_back_035_sph_second",
+                          "correctAnswers": [
+                              "next",
+                              "yes",
+                              "no"
+                          ],
+                          "answerTimeInterval": 0.1007300615310669,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "no"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [],
+                          "logMar": 0.35,
+                          "distance": 500,
+                          "id": "movement",
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0,
+                          "commands": [],
+                          "distance": 400,
+                          "id": "sphere_2",
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0.25,
+                          "commands": [
+                              "yes"
+                          ],
+                          "distance": 400,
+                          "id": "va_at_sphere",
+                          "correctAnswers": [
+                              "next",
+                              "yes",
+                              "no"
+                          ],
+                          "answerTimeInterval": 0.0989149808883667,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "yes"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0,
+                          "commands": [],
+                          "distance": 400,
+                          "id": "sph_j",
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [
+                              "no"
+                          ],
+                          "logMar": 0.65,
+                          "distance": 400,
+                          "correctAnswers": [
+                              "no",
+                              "next",
+                              "yes"
+                          ],
+                          "id": "cyl_verifier_0.65",
+                          "answerTimeInterval": 0.09964501857757568,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "no"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0.65,
+                          "commands": [],
+                          "distance": 400,
+                          "id": "move_to_sph_j",
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0.3,
+                          "commands": [
+                              "yes"
+                          ],
+                          "distance": 400,
+                          "correctAnswers": [
+                              "next",
+                              "yes",
+                              "no"
+                          ],
+                          "id": "mid_high_cyl_verifier_sph_0.3_up",
+                          "answerTimeInterval": 0.10001003742218018,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "yes"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [
+                              "no"
+                          ],
+                          "logMar": 0.7,
+                          "distance": 400,
+                          "correctAnswers": [
+                              "no",
+                              "yes",
+                              "next"
+                          ],
+                          "id": "mid_high_cyl_verifier_cyl_up",
+                          "answerTimeInterval": 0.1005779504776001,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "no"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0.8,
+                          "commands": [
+                              "no"
+                          ],
+                          "distance": 400,
+                          "correctAnswers": [
+                              "next",
+                              "yes",
+                              "no"
+                          ],
+                          "id": "mid_high_cyl_verifier_cyl_up",
+                          "answerTimeInterval": 0.1011199951171875,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "no"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0.9,
+                          "commands": [
+                              "no"
+                          ],
+                          "distance": 400,
+                          "id": "mid_high_cyl_verifier_cyl_up",
+                          "correctAnswers": [
+                              "no",
+                              "yes",
+                              "next"
+                          ],
+                          "answerTimeInterval": 0.10097205638885498,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "no"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 1,
+                          "commands": [
+                              "no"
+                          ],
+                          "distance": 400,
+                          "id": "mid_high_cyl_verifier_cyl_up",
+                          "correctAnswers": [
+                              "next",
+                              "no",
+                              "yes"
+                          ],
+                          "answerTimeInterval": 0.1015009880065918,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "no"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [],
+                          "logMar": 1,
+                          "distance": 444.44446,
+                          "id": "j_mid",
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [],
+                          "logMar": 1,
+                          "distance": 444.44446,
+                          "id": "j_cyl",
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 1,
+                          "commands": [],
+                          "distance": 380.9524,
+                          "id": "s_up_sphere",
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0.75,
+                          "commands": [
+                              "no"
+                          ],
+                          "distance": 307.69232,
+                          "id": "high_cyl_verifier_cyl_down",
+                          "correctAnswers": [
+                              "next",
+                              "yes",
+                              "no"
+                          ],
+                          "answerTimeInterval": 0.10102593898773193,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "no"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "commands": [
+                              "no"
+                          ],
+                          "logMar": 0.6,
+                          "distance": 307.69232,
+                          "correctAnswers": [
+                              "yes",
+                              "next",
+                              "no"
+                          ],
+                          "id": "high_cyl_verifier_cyl_up",
+                          "answerTimeInterval": 0.09984004497528076,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "no"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0.7,
+                          "commands": [
+                              "no"
+                          ],
+                          "distance": 307.69232,
+                          "correctAnswers": [
+                              "next",
+                              "yes",
+                              "no"
+                          ],
+                          "id": "high_cyl_verifier_cyl_up",
+                          "answerTimeInterval": 0.10124397277832031,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "no"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0.8,
+                          "commands": [
+                              "yes"
+                          ],
+                          "distance": 307.69232,
+                          "id": "high_cyl_verifier_cyl_up",
+                          "correctAnswers": [
+                              "next",
+                              "no",
+                              "yes"
+                          ],
+                          "answerTimeInterval": 0.09669506549835205,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "yes"
+                          ],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0.8,
+                          "commands": [],
+                          "distance": 307.69232,
+                          "id": "movement",
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [],
+                          "firstImageName": ""
+                      },
+                      {
+                          "logMar": 0.8,
+                          "commands": [
+                              "no"
+                          ],
+                          "distance": 347.82614,
+                          "correctAnswers": [
+                              "next",
+                              "no",
+                              "yes"
+                          ],
+                          "id": "high_cyl_verifier_mdba_near",
+                          "answerTimeInterval": 0.10346102714538574,
+                          "coverEyeType": "",
+                          "lastImageName": "",
+                          "inputStream": [
+                              "no"
+                          ],
+                          "firstImageName": ""
+                      }
+                  ]
+      }
+  }
+  }

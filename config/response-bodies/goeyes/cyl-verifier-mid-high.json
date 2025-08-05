@@ -1,0 +1,32 @@
+{
+    "flags": [
+      {
+        "id": "sph_last_size",
+        "value": 0.3
+      }
+    ],
+    "stations": [
+      {
+        "id": "j_mid",
+        "value": 444.44444444444446,
+        "upload": true
+      },
+      {
+        "id": "j_cyl",
+        "value": 444.44444444444446,
+        "upload": true
+      },
+      {
+        "id": "s_up_sphere",
+        "value": 487.80693302293577,
+        "upload": true
+      }
+    ],
+    "event": "calculation_end",
+    "actions": [],
+    "mixpanelEvent": null,
+    "successMixpanelEvent": null,
+    "analyticsEvent": null,
+    "type": "ServerCalculationResponseAction",
+    "id": "go_eyes_v1.return_calculation.0.ServerCalculationResponseAction"
+  }

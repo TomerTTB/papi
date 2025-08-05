@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Management - API Testing Platform</title>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="styles/common.css" rel="stylesheet">
+    <style>
+        .file-list {
+            max-height: 300px;
+            overflow-y: auto;
+        }
+        .file-item {
+            padding: 0.5rem 1rem;
+            border-bottom: 1px solid #e9ecef;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .file-item:last-child {
+            border-bottom: none;
+        }
+        .file-item:hover {
+            background-color: #f8f9fa;
+        }
+        .card {
+            height: 100%;
+        }
+        .card-body {
+            display: flex;
+            flex-direction: column;
+        }
+        #fileList {
+            flex: 1;
+            min-height: 150px;
+        }
+        #statusMessage {
+            min-height: 24px;
+            margin-top: 1rem !important;
+        }
+        .form-card {
+            min-height: 250px;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb" class="mt-3 mb-4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
+                    <li class="breadcrumb-item active">Test Management</li>
+                </ol>
+            </nav>
+
+            <!-- Title Card -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <div class="card">
+                        <div class="card-body">
+                            <h1 class="h3 mb-3">Zephyr Integration</h1>
+                            <p class="text-muted mb-0">Generate and download test suites that are import-compatible with Zephyr Scale, representing all tests within each test suite category of PAPI.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Main Content Area -->
+            <div class="row">
+                <!-- Product Selection Card -->
+                <div class="col-lg-6">
+                    <div class="card mb-4 form-card">
+                        <div class="card-body">
+                            <h2 class="h4 card-title mb-4">Select Product</h2>
+                            <div class="mb-3">                  
+                                <select class="form-select" id="productSelect" required>
+                                    <option value="" selected disabled>Choose a product...</option>
+                                </select>
+                            </div>
+                            <div id="statusMessage" class="text-muted mt-3">&nbsp;</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Available Files Card -->
+                <div class="col-lg-6">
+                    <div class="card mb-4">
+                        <div class="card-body">
+                            <h2 class="h4 card-title mb-4" id="filesCardTitle">Available Test Files</h2>
+                            <div id="noProductSelected" class="text-muted">
+                                Select a product to view available test suites for download.
+                            </div>
+                            <div id="fileListContainer" style="display: none;">
+                                <div id="noFilesMessage" class="text-muted" style="display: none;">
+                                    No test files available for this product.
+                                </div>
+                                <div id="fileList" class="file-list mt-3">
+                                    <!-- Files will be added here dynamically -->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Footer Placeholder -->
+    <div id="footer-placeholder"></div>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Template Loader -->
+    <script src="scripts/template-loader.js"></script>
+    <!-- Version Fetcher -->
+    <script src="scripts/version-fetcher.js"></script>
+    <!-- Test Management -->
+    <script src="scripts/test-management.js"></script>
+</body>
+</html> 

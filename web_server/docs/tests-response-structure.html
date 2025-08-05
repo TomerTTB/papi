@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Response Structure Tests - API Testing Platform</title>
+    <!-- Inter Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link href="../styles/common.css" rel="stylesheet">
+    <link href="styles/docs.css" rel="stylesheet">
+</head>
+<body>
+    <!-- Header Placeholder -->
+    <div id="header-placeholder"></div>
+
+    <!-- Main Content -->
+    <main class="main-content">
+        <div class="container">
+            <!-- Breadcrumb -->
+            <nav aria-label="breadcrumb" class="mt-3 mb-4">
+                <ol class="breadcrumb">
+                    <li class="breadcrumb-item"><a href="/" class="text-decoration-none">Home</a></li>
+                    <li class="breadcrumb-item"><a href="/docs" class="text-decoration-none">Documentation</a></li>
+                    <li class="breadcrumb-item active">Response Structure Tests</li>
+                </ol>
+            </nav>
+
+            <div class="row">
+                <!-- Sidebar Navigation -->
+                <div id="sidebar-placeholder"></div>
+
+                <!-- Documentation Content -->
+                <div class="col-md-9">
+                    <div class="wiki-content">
+                        <h1>Response Structure Test Suite Documentation</h1>
+                        
+                        <h2 id="response-structure-tests">Response Structure Tests (response-structure.spec.js)</h2>
+                        <div class="alert alert-info">
+                            <h4 class="h5">Summary</h4>
+                            <p>
+                                The response-structure.spec.js file implements comprehensive validation testing for API response structures.
+                                It ensures proper formatting, content validation, and schema compliance of API responses.
+                                The test suite validates response body structure, JSON formatting, size constraints, and schema validation,
+                                making it essential for maintaining API consistency and reliability.
+                            </p>
+                        </div>
+
+                        <h3>Test Cases Overview</h3>
+                        
+                        <h4>1. Response Body Not Null Test</h4>
+                        <p>
+                            <strong>Purpose:</strong> Verifies that API response body is not null or undefined.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>Response body exists</li>
+                                <li>Response body is not null</li>
+                                <li>Response body is not undefined</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>Response body should be defined and not null</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Response Body Should Not Be Null or Undefined ${endpoint.path}`, async ({ request }) => {
+    const headers = endpoint.config.requiredHeaders;
+    const response = await executeRequest(test, request, endpoint, headers);
+    const responseBody = await response.json();
+    expect(responseBody, 'Response body should not be null or undefined').toBeDefined();
+});</pre>
+
+                        <h4>2. Valid JSON Response Test</h4>
+                        <p>
+                            <strong>Purpose:</strong> Ensures that API response is in valid JSON format.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>Response can be parsed as JSON</li>
+                                <li>Response is not empty</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>Response should be parseable as JSON</li>
+                                <li>Response should not be empty</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Response Should Be Valid JSON ${endpoint.path}`, async ({ request }) => {
+    const response = await executeRequest(test, request, endpoint, headers);
+    const responseText = await response.text();
+    JSON.parse(responseText); // Should not throw
+    expect(responseText, 'Response should not be empty').not.toBe('');
+});</pre>
+
+                        <h4>3. Non-Empty Response Test</h4>
+                        <p>
+                            <strong>Purpose:</strong> Validates that API response is not an empty string.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>Response is not an empty string</li>
+                                <li>Empty objects and arrays are considered valid</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>Response body should not be an empty string ("")</li>
+                                <li>Empty object ({}) or array ([]) responses are valid</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Response Body Should Not Be Empty String ${endpoint.path}`, async ({ request }) => {
+    const response = await executeRequest(test, request, endpoint, headers);
+    const responseText = await response.text();
+    expect(responseText, 'Response body should not be an empty string').not.toBe('');
+});</pre>
+
+                        <h4>4. Response Size Test</h4>
+                        <p>
+                            <strong>Purpose:</strong> Ensures response body size is within acceptable range.<br>
+                            <strong>Checks:</strong>
+                            <ul>
+                                <li>Response size meets minimum requirements</li>
+                                <li>Response size does not exceed maximum limit</li>
+                                <li>Empty responses are handled appropriately</li>
+                            </ul>
+                            <strong>Expected Results:</strong>
+                            <ul>
+                                <li>Response size should be >= minimum bytes</li>
+                                <li>Response size should be <= maximum bytes</li>
+                                <li>Empty responses ({} or []) are exempt from size check</li>
+                            </ul>
+                        </p>
+                        <pre class="bg-dark text-light p-3">test(`Response Body Size Should Be Within Range ${endpoint.path}`, async ({ request }) => {
+    const response = await executeRequest(test, request, endpoint, headers);
+    const responseText = await response.text();
+    const responseSizeInBytes = Buffer.byteLength(responseText, 'utf8');
+    const { min, max } = endpoint.config.expectedSizeBytes;
+    
+    if (responseSizeInBytes > 0) {
+        expect(responseSizeInBytes).toBeGreaterThanOrEqual(min);
+        expect(responseSizeInBytes).toBeLessThanOrEqual(max);
+    }
+});</pre>
+
+                        <h4>5. Schema Validation Test</h4>
+                        <p>
+                            Schema validation ensures that API responses maintain a consistent structure and follow defined contracts.
+                            The validation process uses JSON Schema and the AJV library to verify response structure and data types.
+                        </p>
+
+                        <h5>Key Validation Rules</h5>
+                        <ul>
+                            <li><strong>Required Properties</strong>: Properties marked as required must be present in the response</li>
+                            <li><strong>Type Validation</strong>: Each property must match its defined type (string, number, boolean, etc.)</li>
+                            <li><strong>Additional Properties</strong>: When set to false, prevents any properties not explicitly defined in the schema</li>
+                            <li><strong>Array Validation</strong>: For arrays, validates both the array structure and its items</li>
+                        </ul>
+
+                        <h5>Common Validation Scenarios</h5>
+                        <pre class="bg-dark text-light p-3">
+                        // Example Schema
+                        {
+                            "type": "object",
+                            "required": ["id", "value", "upload", "eye"],
+                            "additionalProperties": false,
+                            "properties": {
+                                "id": { "type": "string" },
+                                "value": { "type": "number" },
+                                "upload": { "type": "boolean" },
+                                "eye": { "type": "string" }
+                            }
+                        }
+
+                        // ✅ Valid Response
+                        {
+                            "id": "123",
+                            "value": 1.0,
+                            "upload": true,
+                            "eye": "right"
+                        }
+
+                        // ❌ Invalid Responses:
+
+                        // 1. Missing Required Property
+                        {
+                            "id": "123",
+                            "value": 1.0,
+                            "upload": true
+                            // Missing "eye" property
+                        }
+
+                        // 2. Wrong Type
+                        {
+                            "id": "123",
+                            "value": "1.0",  // Should be number
+                            "upload": true,
+                            "eye": "right"
+                        }
+
+                        // 3. Extra Property
+                        {
+                            "id": "123",
+                            "value": 1.0,
+                            "upload": true,
+                            "eye": "right",
+                            "extraField": "value"  // Not allowed
+                        }
+
+                        // 4. Array Item Validation
+                        {
+                            "stations": [
+                                {
+                                    "id": "123",
+                                    "value": 1.0,
+                                    "upload": true
+                                    // Missing "eye" property
+                                }
+                            ]
+                        }
+                        </pre>
+
+                        <h5>Understanding Validation Errors</h5>
+                        <p>
+                            When validation fails, the error message will indicate:
+                        </p>
+                        <ul>
+                            <li>Which property failed validation</li>
+                            <li>What was expected vs what was received</li>
+                            <li>Where in the response structure the error occurred</li>
+                        </ul>
+
+                        <pre class="bg-dark text-light p-3">
+                        // Example Error Message
+                        {
+                            "keyword": "required",
+                            "dataPath": ".stations[0]",
+                            "schemaPath": "#/properties/stations/items/required",
+                            "params": {
+                                "missingProperty": "eye"
+                            },
+                            "message": "should have required property 'eye'"
+                        }
+                        </pre>
+
+                        <p>
+                            This error indicates that the first item in the stations array is missing the required "eye" property.
+                        </p>
+
+                        <h3>Understanding Schema Validation</h3>
+                        <p>
+                            Schema validation ensures that API responses maintain a consistent structure and follow defined contracts.
+                            The validation process uses JSON Schema and the AJV library to verify response structure and data types.
+                        </p>
+
+                        <h4>Schema Structure Example</h4>
+                        <pre class="bg-dark text-light p-3">{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "type": "object",
+    "properties": {
+        "status": {
+            "type": "string",
+            "enum": ["success", "error"]
+        },
+        "data": {
+            "type": "object",
+            "properties": {
+                "id": { "type": "string" },
+                "name": { "type": "string" },
+                "age": { "type": "number" }
+            },
+            "required": ["id", "name"],
+            "additionalProperties": false
+        }
+    },
+    "required": ["status", "data"],
+    "additionalProperties": false
+}</pre>
+
+                        <h4>additionalProperties: false Explained</h4>
+                        <p>
+                            The <code>additionalProperties: false</code> setting is a crucial schema validation rule that:
+                        </p>
+                        <ul>
+                            <li>Prevents additional fields not defined in the schema from appearing in the response</li>
+                            <li>Helps maintain strict API contracts by rejecting unexpected properties</li>
+                            <li>Ensures backward compatibility by failing validation if new fields are added without schema updates</li>
+                        </ul>
+
+                        <h5>Example with additionalProperties: false</h5>
+                        <pre class="bg-dark text-light p-3">// Schema
+{
+    "type": "object",
+    "properties": {
+        "name": { "type": "string" },
+        "age": { "type": "number" }
+    },
+    "additionalProperties": false
+}
+
+// ✅ Valid Response
+{
+    "name": "John",
+    "age": 30
+}
+
+// ❌ Invalid Response (contains extra field)
+{
+    "name": "John",
+    "age": 30,
+    "email": "john@example.com"  // This will fail validation
+}</pre>
+
+                        <h3>Implementation Notes</h3>
+                        <p>
+                            The response structure tests utilize the following tools and libraries:
+                        </p>
+                        <ul>
+                            <li><strong>AJV (Another JSON Validator)</strong>: For JSON Schema validation</li>
+                            <li><strong>Playwright</strong>: For making API requests and assertions</li>
+                            <li><strong>Custom Schema Utils</strong>: For generating and comparing schemas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <!-- Bootstrap JS and dependencies -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- Template Loader -->
+    <script src="../scripts/template-loader.js"></script>
+    <!-- Version Fetcher -->
+    <script src="../scripts/version-fetcher.js"></script>
+    <!-- Sidebar Loader -->
+    <script src="scripts/sidebar-loader.js"></script>
+    <!-- Documentation Scripts -->
+    <script src="scripts/docs.js"></script>
+</body>
+</html> 

@@ -1,0 +1,17 @@
+{
+  "go_eyes_session_id": "9319F759-77F8-46B1-B4F7-66BE65D929D0",
+  "device_id": "6over6-Automated-Testing",
+  "phi_sid": "8f5f00e5-9af6-4d0e-9157-7b521cab0a98",
+  "go_eyes_results": {
+    "r_axis": "100.0",
+    "l_axis": "100.0",
+    "pd": "62",
+    "l_sph": "-2.0",
+    "l_cyl": "0.0",
+    "r_sph": "-2.0",
+    "r_cyl": "0.0"
+  },
+  "dr_portal_code": "HelloEyes",
+  "partner_url": "https://staging.web.glasseson.com/goeyes/results",
+  "client_id": "89"
+}

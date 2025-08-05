@@ -1,0 +1,350 @@
+{
+  "type": "object",
+  "required": [
+    "partner_name",
+    "campagin-properties",
+    "mobile-settings",
+    "menu-actions",
+    "first-flow-actions",
+    "flows",
+    "is-device-supported-per-flow",
+    "assets",
+    "questionnaire",
+    "theme",
+    "native-flows",
+    "language_dictionary",
+    "dictionary_translations"
+  ],
+  "additionalProperties": false,
+  "properties": {
+    "partner_name": { "type": "string" },
+    "campagin-properties": {
+      "type": "object",
+      "additionalProperties": true,
+      "properties": {
+        "accuracy": { "type": "boolean" },
+        "feedback": { "type": "boolean" },
+        "flow": { "type": "string" },
+        "first_flow": { "type": "string" },
+        "flows": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "webappFlows": {
+          "type": "array"
+        },
+        "authorizedFlows": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "isServerDebugMode": { "type": "boolean" },
+        "allow_unsupported_countries": { "type": "boolean" },
+        "use_web_pd_disclaimer_link": { "type": "boolean" },
+        "use_web_pd_unsuccessful_flow": { "type": "boolean" },
+        "campaign_assets_file_name": { "type": "string" },
+        "audioFolder": { "type": "string" },
+        "imageFolder": { "type": "string" },
+        "videoFolder": { "type": "string" },
+        "assetsGroup": { "type": "string" },
+        "pagesLayout": { "type": "string" },
+        "redirectToProduction": { "type": "boolean" },
+        "downloadLink": { "type": "string" },
+        "smsText": { "type": "string" },
+        "shouldIgnoreErrors": { "type": "boolean" },
+        "shouldIgnoreOutOfRangeError": { "type": "boolean" },
+        "locale": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "multiple_assets_group": {
+          "type": "object",
+          "additionalProperties": true
+        },
+        "asset_group_id": { "type": "string" },
+        "brand_app_name": { "type": "string" },
+        "pd_mode": { "type": "string" },
+        "is_go_eyes": { "type": "boolean" },
+        "asset_mode": { "type": "string" },
+        "pd_timeout_seconds": { "type": "number" },
+        "is_hub": { "type": "boolean" }
+      }
+    },
+    "mobile-settings": {
+      "type": "object",
+      "required": ["_cls"],
+      "properties": {
+        "_cls": { "type": "string" },
+        "tilt_number_of_times": { "type": "number" },
+        "tilt_timeout": { "type": "number" },
+        "upper_bound_preview_width": { "type": "number" },
+        "copy_glass_upper_bound_picture_width": { "type": "number" },
+        "error_count_limit": { "type": "number" },
+        "phone_distance_threshold": { "type": "number" },
+        "copy_glass_scale_factor": { "type": "number" },
+        "skip_face_detection": { "type": "boolean" },
+        "face_too_close_factor": { "type": "number" },
+        "face_too_far_factor": { "type": "number" },
+        "pd_pitch_vertical_threshold": { "type": "number" },
+        "default_url": { "type": "string" },
+        "seconds_until_QR_message": { "type": "number" },
+        "eye_detector_confidence_threshold": { "type": "number" },
+        "ios_face_detector": { "type": "string" },
+        "depth_filter_enabled": { "type": "boolean" },
+        "force_ios_version": { "type": "string" },
+        "force_android_version": { "type": "string" },
+        "lod_min_memory": { "type": "number" },
+        "calendly_url": { "type": "string" },
+        "cdn_sdk_domain": { "type": "string" },
+        "cdn_uri": { "type": "string" },
+        "enable_recaptcha": { "type": "boolean" },
+        "global_tilt_count_enabled": { "type": "boolean" },
+        "logging_debug_mode": { "type": "boolean" },
+        "replicator": { "type": "boolean" },
+        "send_sms": { "type": "boolean" },
+        "unsupported_models": {
+          "type": "array"
+        },
+        "use_legacy_contnet_directory": { "type": "boolean" },
+        "use_yolo_pd": { "type": "boolean" },
+        "lenses_verify_performance": { "type": "boolean" },
+        "pd_scale_logs": { "type": "boolean" },
+        "use_china_link": { "type": "boolean" },
+        "record_session": { "type": "boolean" },
+        "ignore_obfuscation_profiles": {
+          "type": "array",
+          "items": { "type": "string" }
+        },
+        "phone_model_settings": {
+          "type": "object",
+          "properties": {
+            "front_settings": {
+              "type": "object",
+              "properties": {
+                "hfov": { "type": "number" },
+                "vfov": { "type": "number" }
+              }
+            },
+            "pixels_per_inches": { "type": "number" }
+          }
+        }
+      },
+      "additionalProperties": true
+    },
+    "menu-actions": {
+      "type": "object"
+    },
+    "first-flow-actions": {
+      "type": "object",
+      "required": ["actions"],
+      "properties": {
+        "actions": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type", "id"],
+            "properties": {
+              "flow": { "type": "string" },
+              "start_new_flow": { "type": "boolean" },
+              "native_flow": { "type": "string" },
+              "config": { "type": "object" },
+              "mixpanelEvent": { "type": ["string", "null"] },
+              "successMixpanelEvent": { "type": ["string", "null"] },
+              "analyticsEvent": { "type": ["string", "null"] },
+              "type": { "type": "string" },
+              "id": { "type": "string" }
+            }
+          }
+        }
+      }
+    },
+    "flows": {
+      "type": "object",
+      "additionalProperties": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "required": ["type", "id"],
+          "properties": {
+            "flow": { "type": "string" },
+            "start_new_flow": { "type": "boolean" },
+            "native_flow": { "type": "string" },
+            "config": { "type": "object" },
+            "mixpanelEvent": { "type": ["string", "null"] },
+            "successMixpanelEvent": { "type": ["string", "null"] },
+            "analyticsEvent": { "type": ["string", "null"] },
+            "type": { "type": "string" },
+            "id": { "type": "string" }
+          }
+        }
+      }
+    },
+    "is-device-supported-per-flow": {
+      "type": "object",
+      "required": ["flows"],
+      "properties": {
+        "flows": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["flow", "supported"],
+            "properties": {
+              "flow": { "type": "string" },
+              "supported": { "type": "boolean" }
+            }
+          }
+        }
+      }
+    },
+    "assets": {
+      "type": "object",
+      "required": ["campaign_assets"],
+      "properties": {
+        "campaign_assets": {
+          "type": "array",
+          "items": {
+            "type": "object",
+            "required": ["type", "name", "value", "priority"],
+            "properties": {
+              "type": { "type": "string" },
+              "name": { "type": "string" },
+              "value": { "type": "string" },
+              "priority": { "type": "number" }
+            }
+          }
+        }
+      }
+    },
+    "native-flows": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "language_dictionary": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "dictionary_translations": {
+      "type": "object",
+      "additionalProperties": true
+    },
+    "questionnaire": {
+      "type": "object",
+      "properties": {
+        "prescription_questionnaire": {
+          "type": "object",
+          "properties": {
+            "name": { "type": "string" },
+            "topHeading": { "type": "string" },
+            "topPrompt": { "type": "string" },
+            "surveyQuestionGroups": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "heading": { "type": "string" },
+                  "surveyQuestions": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "index": { "type": "number" },
+                        "prompt": { "type": "string" },
+                        "possibleAnswers": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "answer": { "type": "string" },
+                              "color": { "type": "string" }
+                            }
+                          }
+                        },
+                        "validations": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "regexPattern": { "type": "string" },
+                              "failureMessage": { "type": "string" }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        },
+        "glasses_questionnaire": {
+          "type": "object",
+          "properties": {
+            "topHeading": { "type": "string" },
+            "topPrompt": { "type": "string" },
+            "surveyQuestionGroups": {
+              "type": "array",
+              "items": {
+                "type": "object",
+                "properties": {
+                  "heading": { "type": "string" },
+                  "surveyQuestions": {
+                    "type": "array",
+                    "items": {
+                      "type": "object",
+                      "properties": {
+                        "index": { "type": "number" },
+                        "prompt": { "type": "string" },
+                        "possibleAnswers": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "answer": { "type": "string" },
+                              "color": { "type": "string" }
+                            }
+                          }
+                        },
+                        "validations": {
+                          "type": "array",
+                          "items": {
+                            "type": "object",
+                            "properties": {
+                              "regexPattern": { "type": "string" },
+                              "failureMessage": { "type": "string" }
+                            }
+                          }
+                        }
+                      }
+                    }
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "theme": {
+      "type": "object",
+      "properties": {
+        "_id": {
+          "type": "object",
+          "properties": {
+            "$oid": { "type": "string" }
+          }
+        },
+        "theme_name": { "type": "string" },
+        "version": { "type": "number" },
+        "base_color": { "type": "string" },
+        "brand_color": { "type": "string" },
+        "font_family": { "type": "string" },
+        "button_override_color": { "type": "boolean" },
+        "use_theme_colors": { "type": "boolean" },
+        "logo": { "type": "string" },
+        "light_color": { "type": "string" },
+        "dark_color": { "type": "string" },
+        "darkest_color": { "type": "string" }
+      }
+    }
+  }
+}

@@ -1,0 +1,143 @@
+{
+  "type": "object",
+  "required": ["flags", "stations", "event", "actions", "mixpanelEvent", "successMixpanelEvent", "analyticsEvent", "type", "id"],
+  "additionalProperties": false,
+  "properties": {
+    "flags": {
+      "type": "array"
+    },
+    "stations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "value", "upload", "eye"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "value": { "type": "number" },
+          "upload": { "type": "boolean" },
+          "eye": { "type": "string", "enum": ["right", "left"] }
+        }
+      }
+    },
+    "event": { "type": "string" },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["page", "sound", "transitionType", "progress", "type", "id"],
+        "additionalProperties": true,
+        "properties": {
+          "page": {
+            "type": "object",
+            "required": ["prescriptionType", "mainTitle", "title", "prescription_view", "bottom_section_view", "type", "id"],
+            "additionalProperties": true,
+            "properties": {
+              "prescriptionType": { "type": "string" },
+              "isLastPrescription": { "type": ["boolean", "null"] },
+              "mainTitle": { "type": "string" },
+              "title": { "type": "string" },
+              "nate": { "type": ["string", "null"] },
+              "webStage": { "type": "string" },
+              "mixpanelStep": { "type": "string" },
+              "headerTitle": { "type": "string" },
+              "scanner_rect_width": { "type": ["number", "null"] },
+              "scanner_rect_height": { "type": ["number", "null"] },
+              "hamburgerIconColor": { "type": "string" },
+              "prescription_view": {
+                "type": "object",
+                "required": ["prescription", "tableResources", "type", "id"],
+                "additionalProperties": false,
+                "properties": {
+                  "prescription": {
+                    "type": "object",
+                    "required": ["r_sph", "r_cyl", "r_axis", "l_sph", "l_cyl", "l_axis", "pd", "id", "is_pd_oor", "is_pd_session_timedout"],
+                    "additionalProperties": false,
+                    "properties": {
+                      "r_sph": { "type": "string" },
+                      "r_cyl": { "type": "string" },
+                      "r_axis": { "type": ["string", "null"] },
+                      "l_sph": { "type": "string" },
+                      "l_cyl": { "type": "string" },
+                      "l_axis": { "type": ["string", "null"] },
+                      "pd": { "type": "string" },
+                      "id": { "type": "string" },
+                      "mono_pd": { "type": ["string", "null"] },
+                      "is_pd_oor": { "type": "boolean" },
+                      "is_pd_session_timedout": { "type": "boolean" }
+                    }
+                  },
+                  "tableResources": {
+                    "type": "object",
+                    "required": ["copyGlass"],
+                    "additionalProperties": false,
+                    "properties": {
+                      "copyGlass": {
+                        "type": "object",
+                        "required": ["sph", "cyl", "axis", "right", "left"],
+                        "additionalProperties": false,
+                        "properties": {
+                          "sph": { "type": "string" },
+                          "cyl": { "type": "string" },
+                          "axis": { "type": "string" },
+                          "right": { "type": "string" },
+                          "left": { "type": "string" }
+                        }
+                      }
+                    }
+                  },
+                  "type": { "type": "string" },
+                  "id": { "type": "string" }
+                }
+              },
+              "bottom_section_view": {
+                "type": "object",
+                "required": ["vi_image_resource", "type", "id"],
+                "additionalProperties": false,
+                "properties": {
+                  "vi_image_resource": {
+                    "type": "object",
+                    "required": ["value", "type"],
+                    "additionalProperties": false,
+                    "properties": {
+                      "value": { "type": "string" },
+                      "type": { "type": "string" },
+                      "cdnPath": { "type": ["string", "null"] }
+                    }
+                  },
+                  "type": { "type": "string" },
+                  "id": { "type": "string" }
+                }
+              },
+              "type": { "type": "string" },
+              "id": { "type": "string" }
+            }
+          },
+          "sound": {
+            "type": "object",
+            "required": ["value", "type"],
+            "additionalProperties": false,
+            "properties": {
+              "value": { "type": "string" },
+              "type": { "type": "string" },
+              "cdnPath": { "type": ["string", "null"] }
+            }
+          },
+          "transitionType": { "type": "string" },
+          "finishPreviousPageRequestUrl": { "type": ["string", "null"] },
+          "mixpanelEvent": { "type": ["string", "null"] },
+          "successMixpanelEvent": { "type": ["string", "null"] },
+          "progress": { "type": "number" },
+          "analyticsEvent": { "type": ["string", "null"] },
+          "type": { "type": "string" },
+          "id": { "type": "string" }
+        }
+      }
+    },
+    "mixpanelEvent": { "type": ["string", "null"] },
+    "successMixpanelEvent": { "type": ["string", "null"] },
+    "analyticsEvent": { "type": ["string", "null"] },
+    "type": { "type": "string" },
+    "id": { "type": "string" }
+  }
+}

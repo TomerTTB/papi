@@ -1,0 +1,138 @@
+{
+  "type": "object",
+  "required": ["flags", "stations", "event", "actions", "mixpanelEvent", "successMixpanelEvent", "analyticsEvent", "type", "id"],
+  "additionalProperties": false,
+  "properties": {
+    "flags": {
+      "type": "array"
+    },
+    "stations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["id", "value", "upload", "eye"],
+        "additionalProperties": false,
+        "properties": {
+          "id": { "type": "string" },
+          "value": { "type": "number" },
+          "upload": { "type": "boolean" },
+          "eye": { "type": "string", "enum": ["left", "right"] }
+        }
+      }
+    },
+    "event": { "type": "string" },
+    "actions": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["page", "type", "id"],
+        "additionalProperties": false,
+        "properties": {
+          "page": {
+            "type": "object",
+            "required": ["type", "id", "prescriptionType", "mainTitle", "title", "prescription_view", "bottom_section_view", "webStage", "mixpanelStep", "headerTitle"],
+            "properties": {
+              "prescriptionType": { "type": "string" },
+              "isLastPrescription": { "type": ["boolean", "null"] },
+              "mainTitle": { "type": "string" },
+              "title": { "type": "string" },
+              "nate": { "type": ["object", "null"] },
+              "prescription_view": {
+                "type": "object",
+                "required": ["prescription", "tableResources", "type", "id"],
+                "properties": {
+                  "prescription": {
+                    "type": "object",
+                    "required": ["r_sph", "r_cyl", "r_axis", "l_sph", "l_cyl", "l_axis", "pd", "id", "is_pd_oor", "is_pd_session_timedout"],
+                    "properties": {
+                      "r_sph": { "type": "string" },
+                      "r_cyl": { "type": "string" },
+                      "r_axis": { "type": "string" },
+                      "l_sph": { "type": "string" },
+                      "l_cyl": { "type": "string" },
+                      "l_axis": { "type": "string" },
+                      "pd": { "type": "string" },
+                      "id": { "type": "string" },
+                      "mono_pd": { "type": ["string", "null"] },
+                      "is_pd_oor": { "type": "boolean" },
+                      "is_pd_session_timedout": { "type": "boolean" }
+                    }
+                  },
+                  "tableResources": {
+                    "type": "object",
+                    "required": ["copyGlass"],
+                    "properties": {
+                      "copyGlass": {
+                        "type": "object",
+                        "required": ["sph", "cyl", "axis", "right", "left"],
+                        "properties": {
+                          "sph": { "type": "string" },
+                          "cyl": { "type": "string" },
+                          "axis": { "type": "string" },
+                          "right": { "type": "string" },
+                          "left": { "type": "string" }
+                        }
+                      }
+                    }
+                  },
+                  "type": { "type": "string" },
+                  "id": { "type": "string" }
+                }
+              },
+              "bottom_section_view": {
+                "type": "object",
+                "required": ["vi_image_resource", "type", "id"],
+                "properties": {
+                  "vi_image_resource": {
+                    "type": "object",
+                    "required": ["value", "type"],
+                    "properties": {
+                      "value": { "type": "string" },
+                      "type": { "type": "string" },
+                      "cdnPath": { "type": ["string", "null"] }
+                    }
+                  },
+                  "type": { "type": "string" },
+                  "id": { "type": "string" }
+                }
+              },
+              "mixpanelEvent": { "type": ["string", "null"] },
+              "prescription": { "type": ["object", "null"] },
+              "extraAssets": { "type": ["object", "null"] },
+              "type": { "type": "string" },
+              "id": { "type": "string" },
+              "webStage": { "type": "string" },
+              "mixpanelStep": { "type": "string" },
+              "headerTitle": { "type": "string" },
+              "scanner_rect_width": { "type": ["number", "null"] },
+              "scanner_rect_height": { "type": ["number", "null"] },
+              "hamburgerIconColor": { "type": "string" }
+            }
+          },
+          "sound": {
+            "type": "object",
+            "required": ["value", "type"],
+            "properties": {
+              "value": { "type": "string" },
+              "type": { "type": "string" },
+              "cdnPath": { "type": ["string", "null"] }
+            }
+          },
+          "transitionType": { "type": "string" },
+          "finishPreviousPageRequestUrl": { "type": ["string", "null"] },
+          "mixpanelEvent": { "type": ["string", "null"] },
+          "successMixpanelEvent": { "type": ["string", "null"] },
+          "progress": { "type": "number" },
+          "analyticsEvent": { "type": ["string", "null"] },
+          "type": { "type": "string" },
+          "id": { "type": "string" }
+        }
+      }
+    },
+    "mixpanelEvent": { "type": ["string", "null"] },
+    "successMixpanelEvent": { "type": ["string", "null"] },
+    "analyticsEvent": { "type": ["string", "null"] },
+    "type": { "type": "string" },
+    "id": { "type": "string" }
+  }
+}
